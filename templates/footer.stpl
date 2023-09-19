@@ -1,0 +1,58 @@
+</div>
+
+        <footer>
+            <div class="container">
+                <div class="row no-margin">
+                    <div class="col-md-3 text">
+                        <h5>Jusmediation</h5>
+                        <p>© 2023 All rights reserved.</p>
+                    </div>
+                    <div class="col-md-3 text small">
+                        <p>
+                            One World Trade Center
+                            <br>
+                            285 Fulton Street 85th Floor, Suite 8500
+                            <br>
+                            New York City, NY 10007 USA
+                        </p>
+                    </div>
+                    <div class="col-md-2 text small">
+                        <p> 
+                            ‍<a href="tel:12122206580">+1 212 220 6580</a>
+                            <br>
+                            hello@jusmediation.com
+                        </p>
+                    </div>
+                    <div class="col-md-4 text">
+                        <div class="row no-margin">
+                            <ul class="social">
+                                <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/static/scripts/jquery.min.js"></script>
+        <script src="/static/scripts/bootstrap/bootstrap.min.js"></script>
+        <script src="/static/scripts/jquery.flexslider-min.js"></script>
+        <script src="/static/scripts/owl.carousel.min.js"></script>
+        <script src="/static/scripts/isotope.min.js"></script>
+        <script src="/static/scripts/jquery.magnific-popup.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false"></script>
+        <script src="/static/scripts/jquery.scrollTo.min.js"></script>
+        <script src="/static/scripts/smooth.scroll.min.js"></script>
+        <script src="/static/scripts/jquery.appear.js"></script>
+        <script src="/static/scripts/jquery.countTo.js"></script>
+        <script src="/static/scripts/jquery.scrolly.js"></script>
+        <script src="/static/scripts/plugins-scroll.js"></script>
+        <script src="/static/scripts/imagesloaded.min.js"></script>
+        <script src="/static/scripts/pace.min.js"></script>
+        <script src="/static/scripts/main.js"></script>
+    </body>
+</html>
