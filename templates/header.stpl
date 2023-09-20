@@ -13,7 +13,9 @@
         <meta content="Jusmediation is an easy-to-use, app-enabled platform that allows you to find the right lawyer to meet your needs across a wide range of legal areas and industries from one-time consults to complex issues with ease and transparency from start to finish of your legal issues." property="twitter:description" />
         <meta content="/static/images/logo.svg" property="twitter:image" />
         <meta property="og:type" content="website" />
-        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="summary_large_image" name="twitter:card" /> 
+        <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+        <link href="/static/images/apple-touch-icon.png" rel="apple-touch-icon" />
 
         <title>Jusmediation | How It Works</title>
         <link rel="stylesheet" href="/static/styles/bootstrap/bootstrap.min.css">
@@ -41,6 +43,7 @@
                     <nav class="navbar navbar-default">
                         <div id="logo">
                             <a class="navbar-brand" href="/">
+                                <img src="/static/images/icons/mstile-70x70.png">
                                 Jusmediation
                             </a>
                         </div>
