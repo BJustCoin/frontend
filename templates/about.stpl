@@ -168,4 +168,12 @@
     </div>
 </div>
 
+<% include!("testimonials.stpl"); %>
+
+<% include!("price.stpl"); %>
+
+<% include!("home_accordion.stpl"); %>
+
+<% include!("get_started.stpl"); %>
+
 <% include!("footer.stpl"); %>

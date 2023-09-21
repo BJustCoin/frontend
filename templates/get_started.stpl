@@ -7,7 +7,9 @@
         </div>
         <div class="col-md-8 padding-leftright-null">
             <div class="text last padding-topbottom-null">
-                <a href="#" class="btn-pro margin-null">Go to App</a>
+                <h4>
+                    <a href="#" style="margin-left: 10% !important;" class="btn-pro margin-null">Go to App</a>
+                </h4>
             </div>
         </div>
     </div>
