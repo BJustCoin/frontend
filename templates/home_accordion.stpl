@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="row no-margin padding-lg">
+        <div class="col-md-4 padding-leftright-null">
+            <div class="text first padding-top-null">
+                <h2 class="heading margin-bottom-extrasmall">Have More Questions<span class="color">?</span></h2>
+            </div>
+        </div>
+        <div class="col-md-8 padding-leftright-null">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading1">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1" class="collapsed">
+                                What is JusMediation?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body">
+                            JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively. Choose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading2">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2" class="collapsed">
+                                What’s the benefit of using the JusMediation platform?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body">
+                            JusMediation makes it easy to find the right mediator to meet your needs & budget.
+                            <br />
+                            JusMediation shortens the time to resolution by streamlining the process, facilitating collaboration and negotiation.
+                            <br />
+                            JusMediation creates billing transparency, houses all of your legal documents, and ensures all information stays private and secure from start to finish.
+                            <br />
+                            All mediators on the JusMediation platform have been vetted and credentials verified prior to joining our network.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading3">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed">
+                                How much does it cost to use the JusMediation platform to help resolve my legal disputes?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body">
+                            There is no fee for clients to leverage the JusMediation platform when you are being
+                            represented by a lawyer. If you would prefer to be represented by a lawyer, please check
+                            out our <a rel="noopener" target="_blank" href="https://www.juslaw.com/">JusLaw</a> platform which makes it easy to find and hire a lawyer on your terms and budget. The
+                            platform is free to use.
+                            <br />
+                            If you would like to resolve your legal dispute via mediation without a lawyer, you will have to subscribe to the JusMediation platform which is $48/month, no commitment required, cancel anytime.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading4">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4" class="collapsed">
+                                How does JusMediation ensure the confidentiality & security of my private information?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body">
+                            JusMediation values your privacy and the security of your private information. All information collected by JusMediation is encrypted using military grade encryption.
+                            <br />
+                            JusMediation will never share or sell your information without your permission.
+                            <br />
+                            JusMediation is the only legal platform that protects your data with an irrefutable blockchain process which monitors, tracks, records and stores your most important documents, like will and contracts, to ensure you always have the most recent version and the content has not been altered without your consent or knowledge.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading5">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5" class="collapsed">
+                                How do I sign up for JusMediation?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-body">
+                            Create an account on the JusMediation platform and you will have access to our network of mediators across the country.  You can browse or post a request for proposal with our easy-to-use form, review and accept a proposal directly on the platform.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
