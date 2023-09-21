@@ -1,11 +1,16 @@
 
 <% include!("header.stpl"); %>
+<div class="container wf-section">
+    <div class="w-container">
+        <h1 class="margin-bottom-small">Terms of use<span class="color">.</span></h1>
+    </div> 
+</div>
 
-<div class="section-4 wf-section">
+<div class="container section-4 wf-section">
     <div class="w-container">
       <div className="d-flex flex-column flex-1 overflow-auto px-2">
         <h3>JUSMEDIATION AGREEMENT TERMS OF USE</h3>
-        <p> 
+        <p>  
           These JusMediation Terms of Use, together with JusMediation’s Privacy Policy and, where 
           applicable, JusMediation’s Customer Subscription Agreement(collectively referred to as the 
           “Agreement”), constitute a legally binding agreement made between you, whether 
