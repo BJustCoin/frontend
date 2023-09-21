@@ -8,7 +8,28 @@
         <div class="col-md-8 padding-leftright-null">
             <div class="text last padding-topbottom-null">
                 <p class="heading left full margin-bottom-null">JusMediation was built with a belief that all individuals should have easy access to mediation as a way to 
-                    resolve disputes more efficiently and cost effectively.</p>
+                    resolve disputes more efficiently and cost effectively.
+                </p>
+
+                <div class="row no-margin wrap-text" style="margin-top:30px">
+                    <div class="col-md-12 padding-leftright-null">
+                        <div id="page-header" class="image">
+                            <div class="col-md-6 padding-leftright-null">
+                                <div style="padding-right:10px">
+                                    <h3 class="margin-bottom-small">It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h3>
+                                    <p class="heading right max full grey-dark">
+                                        JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 padding-leftright-null">
+                                <div class="">
+                                    <img src="/static/images/grid-images/match-with-a-mediator-green.png" />
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -22,114 +43,35 @@
             </div>
         </div>
         <div class="col-md-8 padding-leftright-null">
-            
-            <div class="text last padding-topbottom-null">
-                <div class="row no-margin wrap-text" style="margin-top:50px">
-    <div class="col-md-12 padding-leftright-null" >
-        <div id="page-header" class="image">
-            <div class="col-md-6 padding-leftright-null">
-                <div style="padding-right:10px">
-                    <h3 class="margin-bottom-small">1. It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h3>
-                    <p class="heading right max full grey-dark">
-                        JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
-                    </p>
+            <div class="row team no-margin">
+                <div class="col-sm-6 padding-leftright-null">
+                    <div class="person padding-onlybottom-md padding-md-bottom-null">
+                        <img src="/static/images/grid-images/match-with-a-mediator-green.png" alt="img" class="img-responsive">
+                        <h3 class="color">1. Post the details of your dispute into our easy-to-use form</h3>
+                        <span>Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.</span>
+                    </div>
                 </div>
-            </div>
-        </div> 
-        <div class="col-md-6 padding-leftright-null">
-            <div class="">
-                <div class="bg-img">
-                    <img src="/static/images/conference.png" style="border-radius: 20px;" />
+                <div class="col-sm-6 padding-leftright-null">
+                    <div class="person padding-onlybottom-md padding-md-bottom-null">
+                        <img src="/static/images/grid-images/compare-proposals-red.png" alt="img" class="img-responsive">
+                        <h3 class="color">2. Assess your options by comparing proposals</h3>
+                        <span>Review meditator’s background and experience, read reviews, and schedule consultation video chats or phone calls. All JusMediation mediators have been vetted prior to joining our network.</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row no-margin wrap-text" style="margin-top:30px">
-    <div class="col-md-12 padding-leftright-null">
-        <div id="page-header" class="image">
-            <div class="col-md-6 padding-leftright-null">
-                <div style="padding-right:10px">
-                    <h3 class="margin-bottom-small">2. Post the details of your dispute into our easy-to-use form<span class="color">.</span></h3>
-                    <p class="heading right max full grey-dark">
-                        Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.
-                    </p>
+                <div class="col-sm-6 padding-leftright-null">
+                    <div class="person padding-onlybottom-md padding-md-bottom-null">
+                        <img src="/static/images/grid-images/hire-a-mediator-green.png" alt="img" class="img-responsive">
+                        <h3 class="color">3. Hire your mediator</h3>
+                        <span>The JusMediation platform will support you as you navigate the process and prepare for your mediation session(s).</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 padding-leftright-null">
-                <div class="">
-                    <img src="/static/images/grid-images/match-with-a-mediator-green.png" />
+                <div class="col-sm-6 padding-leftright-null">
+                    <div class="person padding-onlybottom-md padding-md-bottom-null">
+                        <img src="/static/images/grid-images/settlement-red.png" alt="img" class="img-responsive">
+                        <h3 class="color">4. Drive to resolution in a faster, yet less costly manner</h3>
+                        <span>Shorten the time to resolution by using an easy to use, digital platform that streamlines the process, facilitates collaboration and negotiation. The JusMediation platform also creates billing transparency, houses all of your legal documents, and ensures all information stays private and secure from start to finish.</span>
+                    </div>
                 </div>
-            </div>
-        </div> 
-    </div>
-</div>
-
-<div class="row no-margin wrap-text" style="margin-top:30px">
-    <div class="col-md-12 padding-leftright-null">
-        <div id="page-header" class="image">
-            <div class="col-md-6 padding-leftright-null">
-                <div style="padding-right:10px">
-                    <h3 class="margin-bottom-small">3. Assess your options by comparing proposals<span class="color">.</span></h3>
-                    <p class="heading right max full grey-dark">
-                        Review meditator’s background and experience, read reviews, and schedule consultation video chats or phone calls. All JusMediation mediators have been vetted prior to joining our network.
-                    </p>
-                </div>
-            </div>
-        </div> 
-        <div class="col-md-6 padding-leftright-null">
-            <div class="">
-                <div class="bg-img">
-                    <img src="/static/images/grid-images/compare-proposals-red.png" style="border-radius: 20px;" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row no-margin wrap-text" style="margin-top:30px">
-    <div class="col-md-12 padding-leftright-null">
-        <div id="page-header" class="image">
-            
-            <div class="col-md-6 padding-leftright-null">
-                <div style="padding-right:10px">
-                    <h3 class="margin-bottom-small">4. Hire your mediator<span class="color">.</span></h3>
-                    <p class="heading right max full grey-dark">
-                        The JusMediation platform will support you as you navigate the process and prepare for your mediation session(s).
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 padding-leftright-null">
-                <div class="">
-                    <img src="/static/images/grid-images/hire-a-mediator-green.png" />
-                </div>
-            </div>
-        </div> 
-    </div>
-</div>
-
-<div class="row no-margin wrap-text" style="margin-top:30px">
-    <div class="col-md-12 padding-leftright-null">
-        <div id="page-header" class="image">
-            <div class="col-md-6 padding-leftright-null">
-                <div style="padding-right:10px">
-                    <h3 class="margin-bottom-small">5. Drive to resolution in a faster, yet less costly manner<span class="color">.</span></h3>
-                    <p class="heading right max full grey-dark">
-                        Shorten the time to resolution by using an easy to use, digital platform that streamlines the process, facilitates collaboration and negotiation. The JusMediation platform also creates billing transparency, houses all of your legal documents, and ensures all information stays private and secure from start to finish.
-                    </p>
-                </div>
-            </div>
-        </div> 
-        <div class="col-md-6 padding-leftright-null">
-            <div class="">
-                <div class="bg-img">
-                    <img src="/static/images/grid-images/settlement-red.png" style="border-radius: 20px;" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
             </div>
         </div>
     </div>
