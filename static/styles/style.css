@@ -411,7 +411,7 @@ a.btn-pro:after {
   display: block;
   position: absolute;
   right: -30px;
-  top: 1px;
+  top: 10px;
   transition: right .4s ease;
   color: #527a99;
   font-size: 30px;
