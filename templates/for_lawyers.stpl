@@ -197,4 +197,10 @@
     </div>
 </div>
 
+<% include!("testimonials.stpl"); %>
+
+<% include!("price.stpl"); %>
+
+<% include!("get_started.stpl"); %>
+
 <% include!("footer.stpl"); %>
