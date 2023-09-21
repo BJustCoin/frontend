@@ -1,16 +1,16 @@
 <div class="row no-margin wrap-text">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
-            <div class="col-md-4 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
-                    <h4 class="margin-bottom-small">It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h4>
+                    <h3 class="margin-bottom-small">It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
                     </p>
                 </div>
             </div>
         </div> 
-        <div class="col-md-8 padding-leftright-null">
+        <div class="col-md-6 padding-leftright-null">
             <div class="text small">
                 <div class="bg-img" style="background-image:url(/static/images/grid-images/conference.png)"></div>
             </div>
@@ -21,14 +21,14 @@
 <div class="row no-margin wrap-text">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
-            <div class="col-md-8 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
                     <div class="bg-img" style="background-image:url(/static/images/grid-images/match-with-a-mediator-green.png)"></div>
                 </div>
             </div>
-            <div class="col-md-4 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
-                    <h4 class="margin-bottom-small">Post the details of your dispute into our easy-to-use form<span class="color">.</span></h4>
+                    <h3 class="margin-bottom-small">Post the details of your dispute into our easy-to-use form<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.
                     </p>
@@ -42,16 +42,16 @@
 <div class="row no-margin wrap-text">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
-            <div class="col-md-4 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
-                    <h4 class="margin-bottom-small">It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h4>
+                    <h3 class="margin-bottom-small">It’s never been easier or faster to resolve your legal disputes<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
                     </p>
                 </div>
             </div>
         </div> 
-        <div class="col-md-8 padding-leftright-null">
+        <div class="col-md-6 padding-leftright-null">
             <div class="text small">
                 <div class="bg-img" style="background-image:url(/static/images/grid-images/conference.png)"></div>
             </div>
@@ -62,14 +62,14 @@
 <div class="row no-margin wrap-text">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
-            <div class="col-md-8 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
                     <div class="bg-img" style="background-image:url(/static/images/grid-images/match-with-a-mediator-green.png)"></div>
                 </div>
             </div>
-            <div class="col-md-4 padding-leftright-null">
+            <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
-                    <h4 class="margin-bottom-small">Post the details of your dispute into our easy-to-use form<span class="color">.</span></h4>
+                    <h3 class="margin-bottom-small">Post the details of your dispute into our easy-to-use form<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.
                     </p>

@@ -21,4 +21,6 @@
 
 <% include!("about.stpl"); %>
 
+<% include!("testimonials.stpl"); %>
+
 <% include!("footer.stpl"); %>
