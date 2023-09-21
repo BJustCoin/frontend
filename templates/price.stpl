@@ -29,8 +29,8 @@
                                                     <a href="#" class="btn-alt small shadow">Get&nbsp;Started</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 active padding-leftright-null">
-                                                <div class="price margin-md-bottom">
+                                            <div class="col-md-4 padding-leftright-null">
+                                                <div class="price active margin-md-bottom">
                                                     <div class="price-title">Monthly</div>
                                                     <div class="price-number">$48</div>
                                                     <div class="price-rate">per month</div>
