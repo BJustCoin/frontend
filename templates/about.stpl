@@ -1,4 +1,4 @@
-<div class="row no-margin wrap-text">
+<div class="row no-margin wrap-text" style="margin-top:50px">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
             <div class="col-md-6 padding-leftright-null">
@@ -12,7 +12,9 @@
         </div> 
         <div class="col-md-6 padding-leftright-null">
             <div class="text small">
-                <img class="bg-img" src="/static/images/conference.png" />
+                <div class="bg-img">
+                    <img src="/static/images/conference.png" />
+                </div>
             </div>
         </div>
     </div>
