@@ -22,6 +22,7 @@
             </div>
         </div>
         <div class="col-md-8 padding-leftright-null">
+            
             <div class="text last padding-topbottom-null">
                 <div class="row no-margin wrap-text" style="margin-top:50px">
     <div class="col-md-12 padding-leftright-null">
@@ -50,15 +51,15 @@
         <div id="page-header" class="image">
             <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
-                    <img src="/static/images/grid-images/match-with-a-mediator-green.png" />
-                </div>
-            </div>
-            <div class="col-md-6 padding-leftright-null">
-                <div class="text small">
                     <h3 class="margin-bottom-small">Post the details of your dispute into our easy-to-use form<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.
                     </p>
+                </div>
+            </div>
+            <div class="col-md-6 padding-leftright-null">
+                <div class="text small">
+                    <img src="/static/images/grid-images/match-with-a-mediator-green.png" />
                 </div>
             </div>
         </div> 
@@ -90,17 +91,18 @@
 <div class="row no-margin wrap-text">
     <div class="col-md-12 padding-leftright-null">
         <div id="page-header" class="image">
-            <div class="col-md-6 padding-leftright-null">
-                <div class="text small">
-                    <img src="/static/images/grid-images/hire-a-mediator-green.png" />
-                </div>
-            </div>
+            
             <div class="col-md-6 padding-leftright-null">
                 <div class="text small">
                     <h3 class="margin-bottom-small">Hire your mediator<span class="color">.</span></h3>
                     <p class="heading right max full grey-dark">
                         The JusMediation platform will support you as you navigate the process and prepare for your mediation session(s).
                     </p>
+                </div>
+            </div>
+            <div class="col-md-6 padding-leftright-null">
+                <div class="text small">
+                    <img src="/static/images/grid-images/hire-a-mediator-green.png" />
                 </div>
             </div>
         </div> 
