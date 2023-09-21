@@ -1,6 +1,7 @@
 
 <% include!("header.stpl"); %>
-<div class="container wf-section">
+
+<div class="container wf-section" style="margin-top:40px">
     <div class="w-container">
         <h1 class="margin-bottom-small">Terms of use<span class="color">.</span></h1>
     </div> 
