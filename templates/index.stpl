@@ -19,6 +19,6 @@
     </div>
 </div>
 
-
+<% include!("about.stpl"); %>
 
 <% include!("footer.stpl"); %>
