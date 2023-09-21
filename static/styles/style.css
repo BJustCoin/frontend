@@ -4230,7 +4230,7 @@ aside.left form .form-input span.form-button {
   position: relative;
 }
 
-#page-header .bg-img {
+#page-header .bg-img, #page-header .bg-img img {
   height: 350px;
   background-position: center center;
   background-size: cover;
