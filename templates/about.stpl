@@ -1,27 +1,26 @@
+<% include!("header.stpl"); %>
+
 <div class="container">
-    <div class="row no-margin padding-lg">
-        <div class="col-md-4 padding-leftright-null">
-            <div class="text first padding-top-null">
-                <h2 class="heading margin-bottom-extrasmall">What is JusMediation<span class="color">?</span></h2>
-            </div>
-        </div>
-        <div class="col-md-8 padding-leftright-null">
-            <div class="text last padding-topbottom-null">
-                <div class="row no-margin wrap-text">
-                    <div class="col-md-12 padding-leftright-null">
-                        <div id="page-header" class="">
-                            <div class="col-md-12 padding-leftright-null">
-                                <div style="padding-right:10px">
-                                    <p class="heading full margin-bottom-null">JusMediation was built with a belief that all individuals should have easy access to mediation as a way to 
-                                        resolve disputes more efficiently and cost effectively.
-                                    </p>
-                                    <br />
-                                    <p class="heading full margin-bottom-null">
-                                        JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
-                                    </p>
-                                </div>
-                            </div>
-                        </div> 
+    <div class="row no-margin wrap-text">
+        <div class="col-md-12 padding-leftright-null">
+            <div id="page-header" class="image">
+                <div class="col-md-4 padding-leftright-null">
+                    <div class="text small">
+                        <h1 class="margin-bottom-small">About<span class="color">.</span></h1>
+                        <p class="heading right max full grey-dark">
+                            JusMediation was built with a belief that all individuals should have easy access to mediation as a way 
+                            to resolve disputes more efficiently and cost effectively.
+                            <br />
+                            Founded by legal industry experts and headquartered in New York, JusMediation is a digital
+                            platform that facilitates the mediation process, making it easier for individuals,
+                            businesses, and lawyers to take advantage of a process that can shorten time to resolution
+                            and reduce overall costs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8 padding-leftright-null">
+                    <div class="text small">
+                        <div class="bg-img" style="background-image:url(/static/images/new-york.png)"></div>
                     </div>
                 </div>
             </div>
@@ -30,43 +29,39 @@
 </div>
 
 <div class="container">
-    <div class="row no-margin padding-lg">
+    <div class="row no-margin wrap-text padding-onlytop-lg padding-onlybottom-lg">
         <div class="col-md-4 padding-leftright-null">
-            <div class="text first padding-top-null">
-                <h2 class="heading margin-bottom-extrasmall">How It Works<span class="color">?</span></h2>
+            <div class="text small padding-top-null">
+                <h2 class="heading margin-bottom-extrasmall">Our Leadership Team<span class="color">.</span></h2>
             </div>
         </div>
         <div class="col-md-8 padding-leftright-null">
             <div class="row team no-margin">
-                <div class="col-sm-12 padding-leftright-null">
+
+                <div class="col-sm-6 padding-leftright-null">
                     <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/grid-images/match-with-a-mediator-green.png" alt="img" class="img-responsive">
-                        <h3 class="color">1. Post the details of your dispute into our easy-to-use form</h3>
-                        <span>Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.</span>
+                        <img src="/static/images/leadership-team/beatrice-obrain.png" alt="img" class="img-responsive">
+                        <h3 class="color">Beatrice O'Brien</h3>
+                        <span>Founder / Chair / CEO</span>
+                        <p>
+                            Beatrice O’Brien brings immeasurable value to JusLaw, not just her passion for the Law and the Legal Industry but also her over 20 years of legal experience with Wall Street Firms, such as, Cadwalder Wickersham & Taft and with international firms in Australia and the UK. She has worked with high profile clients, such as, Warren Buffet and on high-profile cases, such as, the largest reorganization and restructuring cases in US, UK, and Australian corporate history. Beatrice is a graduate of Bond University the only Private Law School in Australia with a Law Degree and is a graduate of Harvard Law School Executive Program. She speaks fluent Hindi.  Beatrice leveraged her extensive experience to create the first of its kind marketplace revolutionizing the legal industry.
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-12 padding-leftright-null">
+                <div class="col-sm-6 padding-leftright-null">
                     <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/grid-images/compare-proposals-red.png" alt="img" class="img-responsive">
-                        <h3 class="color">2. Assess your options by comparing proposals</h3>
-                        <span>Review meditator’s background and experience, read reviews, and schedule consultation video chats or phone calls. All JusMediation mediators have been vetted prior to joining our network.</span>
+                        <img src="/static/images/leadership-team/beatrice-obrain.png" alt="img" class="img-responsive">
+                        <h3 class="color">Kimberly Palermo</h3>
+                        <span>Chief Operations-Marketing Officer</span>
+                        <p>
+                            Kim Palermo brings more than two decades of strategic marketing  and operations experience to JusLaw. She has led marketing acquisition for Fortune 1000 companies, like Johnson & Johnson & Comcast and has led teams that have developed industry-changing programming and approaches that have become industry standard and are utilized by the biggest healthcare companies in the world (Pfizer, J&J, Takeda). But Kim is no stranger to seed round venture, leading operations, growth and customer success for numerous SaaS and B2B subscription startups.  Kim has spent most of her career helping Founders take their vision and make it a sustainable and financially successful ongoing enterprise. Kim holds an MBA from The Wharton School of Business with dual majors in Marketing and Entrepreneurial Management and a JD from the University of Pennsylvania. She continues a close partnership with Wharton as a mentor for first time founders. Entrepreneurial. Rogue. Or better yet, high spirited! She’s been called a lot of things, but the name that JusLaw associates her with is “passionate.”
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-12 padding-leftright-null">
-                    <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/grid-images/hire-a-mediator-green.png" alt="img" class="img-responsive">
-                        <h3 class="color">3. Hire your mediator</h3>
-                        <span>The JusMediation platform will support you as you navigate the process and prepare for your mediation session(s).</span>
-                    </div>
-                </div>
-                <div class="col-sm-12 padding-leftright-null">
-                    <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/grid-images/settlement-red.png" alt="img" class="img-responsive">
-                        <h3 class="color">4. Drive to resolution in a faster, yet less costly manner</h3>
-                        <span>Shorten the time to resolution by using an easy to use, digital platform that streamlines the process, facilitates collaboration and negotiation. The JusMediation platform also creates billing transparency, houses all of your legal documents, and ensures all information stays private and secure from start to finish.</span>
-                    </div>
-                </div>
+                                    
             </div>
         </div>
     </div>
 </div>
+
+<% include!("footer.stpl"); %>

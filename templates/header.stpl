@@ -54,18 +54,13 @@
                                         <a href="/" class="active-item ajax">Home</a>
                                     </li>
                                     <li class="submenu">
-                                        <a href="javascript:void(0)">FAQs</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="/faqs" class="ajax">FAQs for clients</a></li>
-                                            <li><a href="/faqs-for-attorneys" class="ajax">FAQs for Attorneys</a></li>
-                                        </ul>
+                                        <a href="/about/" class="active-item ajax">About</a>
+                                    </li> 
+                                    <li class="submenu">
+                                        <a href="/for-lawyers/" class="active-item ajax">For lawyers</a>
                                     </li>
                                     <li class="submenu">
-                                        <a href="javascript:void(0)">Info</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="/for-lawyers" class="ajax">For Lawyers</a></li>
-                                            <li><a href="/faqs-for-mediators" class="ajax">For Mediators</a></li>
-                                        </ul>
+                                        <a href="/for-mediatiors/" class="active-item ajax">For mediatiors</a>
                                     </li>
                                 </ul>
                             </div> 
