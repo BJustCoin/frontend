@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-md-6 padding-leftright-null">
                                 <div class="">
-                                    <img src="/static/images/grid-images/match-with-a-mediator-green.png" />
+                                    <img src="/static/images/conference.png" />
                                 </div>
                             </div>
                         </div> 
@@ -45,7 +45,7 @@
             <div class="row team no-margin">
                 <div class="col-sm-12 padding-leftright-null">
                     <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/conference.png" alt="img" class="img-responsive">
+                        <img src="/static/images/grid-images/match-with-a-mediator-green.png" alt="img" class="img-responsive">
                         <h3 class="color">1. Post the details of your dispute into our easy-to-use form</h3>
                         <span>Our AI technology matches you with reputable mediators. Those mediators can respond directly to your post or you can reach out proactively to discuss your matter.</span>
                     </div>
