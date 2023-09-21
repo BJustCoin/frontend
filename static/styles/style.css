@@ -410,14 +410,15 @@ a.btn-pro:after {
   position: absolute;
   display: block;
   position: absolute;
-  right: -20px;
+  right: -30px;
   top: 1px;
   transition: right .4s ease;
   color: #527a99;
+  font-size: 30px;
 }
 
 a.btn-pro:hover:after {
-  right: -25px;
+  right: -45px;
   transition: right .4s ease;
 }
 
