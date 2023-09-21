@@ -9,7 +9,7 @@
             <div class="text last padding-topbottom-null">
                 <div class="row no-margin wrap-text" style="margin-top:30px">
                     <div class="col-md-12 padding-leftright-null">
-                        <div id="page-header" class="image">
+                        <div id="page-header" class="">
                             <div class="col-md-12 padding-leftright-null">
                                 <div style="padding-right:10px">
                                     <p class="heading left full margin-bottom-null">JusMediation was built with a belief that all individuals should have easy access to mediation as a way to 
