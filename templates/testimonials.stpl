@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row no-margin wrap-text padding-onlytop-lg padding-onlybottom-lg">
+        <div class="col-md-4 padding-leftright-null">
+            <div class="text small padding-top-null">
+                <h2 class="heading margin-bottom-extrasmall">See what your<br>costumer says<span class="color">.</span></h2>
+            </div>
+        </div>
+        <div class="col-md-8 padding-leftright-null">
+            <div class="row no-margin">
+                <section class="testimonials-carousel-single owl-carousel owl-theme owl-loaded">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="transform: translate3d(-2972px, 0px, 0px); transition: all 0.25s ease 0s; width: 5201px;">
+                            
+                            <div class="owl-item cloned" style="width: 743px; margin-right: 0px;">
+                                <div class="item padding-leftright-null">
+                                    <div class="text small overflow-hidden padding-top-null">
+                                        <div class="person">
+                                            <div class="description">
+                                                <em>Jason Stiehl</em>
+                                                <span>Partner at Loeb & Loeb LLP</span>
+                                            </div>
+                                        </div>
+                                        <blockquote>“JusMediation simplifies the mediation process and makes mediation a more accessible and navigatable process, using intuitive prompts based upon the learnings of lawyers, judges and administrators with decades of mediation experience.” </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 743px; margin-right: 0px;">
+                                <div class="item padding-leftright-null">
+                                    <div class="text small overflow-hidden padding-top-null">
+                                        <div class="person">
+                                            <div class="description">
+                                                <em>Krikor Markarian</em>
+                                                <span>Director, Jack Montclair Gourmet LLC</span>
+                                            </div>
+                                        </div>
+                                        <blockquote>“The JusMediation platform is easy to navigate and helps you resolve legal disputes faster than having to go to court. At first, I had questions about how my information would be safe and secure but the support team was quick & clear in explaining how the platform uses blockchain technology to ensure my documents are secure. All in all, a great experience. Keep up the good work, I’ll be using JusMediation again, and I highly recommend it.” </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 743px; margin-right: 0px;">
+                                <div class="item padding-leftright-null">
+                                    <div class="text small overflow-hidden padding-top-null">
+                                        <div class="person">
+                                            <div class="description">
+                                                <em>Jura Zibas</em>
+                                                <span>Mediator / Attorney</span>
+                                            </div>
+                                        </div>
+                                        <blockquote>“Finally a very easy to follow digital platform where I can run all of my mediations. Thank you” </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 743px; margin-right: 0px;">
+                                <div class="item padding-leftright-null">
+                                    <div class="text small overflow-hidden padding-top-null">
+                                        <div class="person">
+                                            <div class="description">
+                                                <em>Anastasiya Kryukova</em>
+                                                <span>NYU Mediation Clinic NYU School of Law Debevoise & Plimpton LLP</span>
+                                            </div>
+                                        </div>
+                                        <blockquote>“While in law school, I participated in the Beta for JusMediation. I found the platform was extremely user-friendly, intuitive, and made mediating easier and more accessible for all individuals involved - the parties as well as the mediators.\n\nThe JusMediation platform allows the mediation process to be executed virtually and seamlessly from start to finish, at a time convenient for all involved. People have busy schedules, and in today’s world, having the flexibility to participate in mediation sessions without the need to take off time from work or shift around other responsibilities is incredibly helpful.\n\nIn my experience, mediation is a great alternative to solve a variety of conflicts without having to go to court, and JusMediation makes this option even more flexible, accessible, and appealing.” </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="owl-controls">
+                            <div class="owl-nav">
+                                <div class="owl-prev" style="display: none;">prev</div>
+                                <div class="owl-next" style="display: none;">next</div>
+                            </div>
+                        <div class="owl-dots" style="display: none;"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

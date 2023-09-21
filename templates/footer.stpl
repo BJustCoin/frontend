@@ -20,6 +20,13 @@
                         <p> 
                             ‍<a href="tel:12122206580">+1 212 220 6580</a>
                             <br>
+                            <a href="/terms-and-conditions" class="ajax">
+                                TOC
+                            </a>
+                            <a href="/privacy-policy" class="ajax">
+                                Privacy Policy
+                            </a>
+                            <br> 
                             hello@jusmediation.com
                         </p>
                     </div>
@@ -46,11 +53,8 @@
         <script src="/static/scripts/jquery.magnific-popup.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false"></script>
         <script src="/static/scripts/jquery.scrollTo.min.js"></script>
-        <script src="/static/scripts/smooth.scroll.min.js"></script>
         <script src="/static/scripts/jquery.appear.js"></script>
         <script src="/static/scripts/jquery.countTo.js"></script>
-        <script src="/static/scripts/jquery.scrolly.js"></script>
-        <script src="/static/scripts/plugins-scroll.js"></script>
         <script src="/static/scripts/imagesloaded.min.js"></script>
         <script src="/static/scripts/pace.min.js"></script>
         <script src="/static/scripts/main.js"></script>

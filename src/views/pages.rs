@@ -12,11 +12,11 @@ use serde::{Serialize, Deserialize};
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {
     config.route("/", web::get().to(index_page));
-    config.route("/about", web::get().to(about_page));
+    //config.route("/about", web::get().to(about_page));
     config.route("/faqs", web::get().to(faqs_page));
     config.route("/faqs-for-attorneys", web::get().to(attorneys_faqs_page));
     config.route("/for-lawyers", web::get().to(for_lawyers_page));
-    config.route("/for-paralegals", web::get().to(for_paralegals_page));
+    config.route("/for-clients", web::get().to(for_clients_page));
     config.route("/terms-and-conditions", web::get().to(terms_page));
     config.route("/privacy-policy", web::get().to(policy_page));
 }
@@ -85,29 +85,8 @@ pub async fn index_page (
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn about_page (
-    req: HttpRequest
-) -> actix_web::Result<HttpResponse> {
-    let is_ajax = get_ajax(&req); 
-    #[derive(TemplateOnce)]
-    #[template(path = "about.stpl")]
-    struct DesctopAuthTemplate {
-        title:       String,
-        description: String,
-        is_ajax:     u8,
-    }
-    let body = DesctopAuthTemplate {
-        title:       "JusMediation | About".to_string(),
-        description: "JusMediation is an easy-to-use, app-enabled platform that allows you to find the right lawyer to meet your needs across a wide range of legal areas and industries from one-time consults to complex issues with ease and transparency from start to finish of your legal issues.".to_string(),
-        is_ajax:     is_ajax,
-    }
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-}
-
 pub async fn attorneys_faqs_page() -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)]
+    #[derive(TemplateOnce)] 
     #[template(path = "attorneys_faqs.stpl")]
     struct DesctopAuthTemplate;
     let body = DesctopAuthTemplate{}
@@ -136,7 +115,7 @@ pub async fn for_lawyers_page() -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn for_paralegals_page() -> actix_web::Result<HttpResponse> {
+pub async fn for_clients_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "for_paralegals.stpl")]
     struct DesctopAuthTemplate;
