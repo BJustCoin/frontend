@@ -17,6 +17,11 @@ pub fn pages_urls(config: &mut web::ServiceConfig) {
     config.route("/for-mediatiors", web::get().to(for_mediatiors_page));
     config.route("/terms-and-conditions", web::get().to(terms_page));
     config.route("/privacy-policy", web::get().to(policy_page));
+    config.route("/about/", web::get().to(about_page));
+    config.route("/for-lawyers/", web::get().to(for_lawyers_page));
+    config.route("/for-mediatiors/", web::get().to(for_mediatiors_page));
+    config.route("/terms-and-conditions/", web::get().to(terms_page));
+    config.route("/privacy-policy/", web::get().to(policy_page));
 }
 
 pub fn get_ajax(req: &HttpRequest) -> u8 {
