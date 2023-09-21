@@ -4303,10 +4303,6 @@ aside.left form .form-input span.form-button {
   }
 }
 
-#page-header.image {
-  text-align: right;
-}
-
 @media screen and (max-width: 991px) {
   #page-header.image {
     text-align: left;
