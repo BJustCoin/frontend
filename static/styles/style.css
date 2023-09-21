@@ -4294,7 +4294,7 @@ aside.left form .form-input span.form-button {
 }
 
 #page-header .text.small {
-  padding: 75px 25px;
+  padding: 0px 25px;
 }
 
 @media screen and (max-width: 480px) {
