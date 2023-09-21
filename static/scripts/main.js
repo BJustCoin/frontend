@@ -306,12 +306,12 @@ $(document).ready(function($) {
     /*-------------------------------------------------*/
     try {
         $(".testimonials-carousel-single").owlCarousel({
-            loop:true,
+            loop:true, 
             items:1,
             autoplay:true,
             autoplayHoverPause:false,
-            dots:false,
-            nav:false,
+            dots:true,
+            nav:true,
         });
         $(".post-gallery, .project-gallery").owlCarousel({
             center: true,
