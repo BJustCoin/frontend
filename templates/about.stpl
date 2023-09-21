@@ -37,29 +37,29 @@
         </div>
         <div class="col-md-8 padding-leftright-null">
             <div class="row team no-margin">
-
-                <div class="col-sm-6 padding-leftright-null">
-                    <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/leadership-team/beatrice-obrain.png" alt="img" class="img-responsive">
-                        <h3 class="color">Beatrice O'Brien</h3>
-                        <span>Founder / Chair / CEO</span>
-                        <p>
-                            Beatrice O’Brien brings immeasurable value to JusLaw, not just her passion for the Law and the Legal Industry but also her over 20 years of legal experience with Wall Street Firms, such as, Cadwalder Wickersham & Taft and with international firms in Australia and the UK. She has worked with high profile clients, such as, Warren Buffet and on high-profile cases, such as, the largest reorganization and restructuring cases in US, UK, and Australian corporate history. Beatrice is a graduate of Bond University the only Private Law School in Australia with a Law Degree and is a graduate of Harvard Law School Executive Program. She speaks fluent Hindi.  Beatrice leveraged her extensive experience to create the first of its kind marketplace revolutionizing the legal industry.
-                        </p>
-                    </div>
+                <div class="col-md-3 padding-leftright-null">
+                    <img src="/static/images/leadership-team/beatrice-obrain.png" alt="img" class="img-responsive">
                 </div>
-                <div class="col-sm-6 padding-leftright-null">
-                    <div class="person padding-onlybottom-md padding-md-bottom-null">
-                        <img src="/static/images/leadership-team/beatrice-obrain.png" alt="img" class="img-responsive">
-                        <h3 class="color">Kimberly Palermo</h3>
-                        <span>Chief Operations-Marketing Officer</span>
-                        <p>
-                            Kim Palermo brings more than two decades of strategic marketing  and operations experience to JusLaw. She has led marketing acquisition for Fortune 1000 companies, like Johnson & Johnson & Comcast and has led teams that have developed industry-changing programming and approaches that have become industry standard and are utilized by the biggest healthcare companies in the world (Pfizer, J&J, Takeda). But Kim is no stranger to seed round venture, leading operations, growth and customer success for numerous SaaS and B2B subscription startups.  Kim has spent most of her career helping Founders take their vision and make it a sustainable and financially successful ongoing enterprise. Kim holds an MBA from The Wharton School of Business with dual majors in Marketing and Entrepreneurial Management and a JD from the University of Pennsylvania. She continues a close partnership with Wharton as a mentor for first time founders. Entrepreneurial. Rogue. Or better yet, high spirited! She’s been called a lot of things, but the name that JusLaw associates her with is “passionate.”
-                        </p>
-                    </div>
+                <div class="col-md-9 padding-leftright-null">
+                    <h3 class="color">Beatrice O'Brien</h3>
+                    <span>Founder / Chair / CEO</span>
+                    <p>
+                        Beatrice O’Brien brings immeasurable value to JusLaw, not just her passion for the Law and the Legal Industry but also her over 20 years of legal experience with Wall Street Firms, such as, Cadwalder Wickersham & Taft and with international firms in Australia and the UK. She has worked with high profile clients, such as, Warren Buffet and on high-profile cases, such as, the largest reorganization and restructuring cases in US, UK, and Australian corporate history. Beatrice is a graduate of Bond University the only Private Law School in Australia with a Law Degree and is a graduate of Harvard Law School Executive Program. She speaks fluent Hindi.  Beatrice leveraged her extensive experience to create the first of its kind marketplace revolutionizing the legal industry.
+                    </p>
                 </div>
-                                    
             </div>
+            <div class="row team no-margin">
+                <div class="col-md-3 padding-leftright-null">
+                    <img src="/static/images/leadership-team/kimberly-palermo.png" alt="img" class="img-responsive">
+                </div>
+                <div class="col-md-9 padding-leftright-null">
+                    <h3 class="color">Kimberly Palermo</h3>
+                    <span>Chief Operations-Marketing Officer</span>
+                    <p>
+                        Kim Palermo brings more than two decades of strategic marketing  and operations experience to JusLaw. She has led marketing acquisition for Fortune 1000 companies, like Johnson & Johnson & Comcast and has led teams that have developed industry-changing programming and approaches that have become industry standard and are utilized by the biggest healthcare companies in the world (Pfizer, J&J, Takeda). But Kim is no stranger to seed round venture, leading operations, growth and customer success for numerous SaaS and B2B subscription startups.  Kim has spent most of her career helping Founders take their vision and make it a sustainable and financially successful ongoing enterprise. Kim holds an MBA from The Wharton School of Business with dual majors in Marketing and Entrepreneurial Management and a JD from the University of Pennsylvania. She continues a close partnership with Wharton as a mentor for first time founders. Entrepreneurial. Rogue. Or better yet, high spirited! She’s been called a lot of things, but the name that JusLaw associates her with is “passionate.”
+                    </p>
+                </div>
+            </div> 
         </div>
     </div>
 </div>
