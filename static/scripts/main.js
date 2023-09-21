@@ -311,7 +311,7 @@ $(document).ready(function($) {
             autoplay:true,
             autoplayHoverPause:false,
             dots:true,
-            nav:true,
+            nav:false,
         });
         $(".post-gallery, .project-gallery").owlCarousel({
             center: true,

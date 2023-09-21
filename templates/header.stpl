@@ -14,8 +14,8 @@
         <meta content="/static/images/logo.svg" property="twitter:image" />
         <meta property="og:type" content="website" />
         <meta content="summary_large_image" name="twitter:card" /> 
-        <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
-        <link href="/static/images/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="/static/images/icons/apple-touch-icon.png" rel="apple-touch-icon" />
 
         <title>Jusmediation | How It Works</title>
         <link rel="stylesheet" href="/static/styles/bootstrap/bootstrap.min.css">
