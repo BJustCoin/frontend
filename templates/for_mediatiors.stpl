@@ -5,9 +5,9 @@
         <div class="col-md-6 padding-leftright-null">
             <div id="flexslider" class="home">
                 <ul class="slides">
-                    <li style="background-image: url(&quot;/static/images/att1.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" class="flex-active-slide"></li>
-                    <li style="background-image: url(&quot;/static/images/att2.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class=""></li>
-                    <li style="background-image: url(&quot;/static/images/att3.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class=""></li>
+                    <li style="background-image: url(&quot;/static/images/med1.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" class="flex-active-slide"></li>
+                    <li style="background-image: url(&quot;/static/images/med2.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class=""></li>
+                    <li style="background-image: url(&quot;/static/images/med3.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class=""></li>
                 </ul>
             </div>
         </div>
@@ -23,20 +23,27 @@
 </div>
 
 
-<div class="container">
+<div class="container"> 
     <div class="row no-margin padding-lg">
         <div class="col-md-4 padding-leftright-null">
             <div class="text first padding-top-null">
                 <h2 class="heading margin-bottom-extrasmall">How It Works<span class="color">?</span></h2>
             </div>
-        </div>
+        </div> 
         <div class="col-md-8 padding-leftright-null">
             <div class="row team no-margin">
                 <div class="col-sm-12 padding-leftright-null">
                     <div class="person padding-onlybottom-md padding-md-bottom-null">
                         <img src="/static/images/grid-images/conference.png" alt="img" class="img-responsive">
                         <h3 class="color">Mediation made easy</h3>
-                        <span>JusMediation is the only patented blockchain platform that supports the mediation process from start to finish. Built for lawyers by lawyers it allows you to help your clients drive to quicker dispute resolution and reduces the administrative burden of mediation.</span>
+                        <span>Mediation made easy - Built to make mediation more accessible to clients, allowing for quicker and less costly dispute resoultion with or without a lawyer.</span>
+                    </div> 
+                </div>
+                <div class="col-sm-12 padding-leftright-null">
+                    <div class="person padding-onlybottom-md padding-md-bottom-null">
+                        <img src="/static/images/grid-images/grow-client-base-green.png" alt="img" class="img-responsive">
+                        <h3 class="color">Grow your client base</h3>
+                        <span>JusMediation is the only platform that connects you directly with potential clients. Clients can browse mediator profiles and can send a direct request for proposal, but mediators can also browse postings from potential clients and proactively reach out to engage them about their dispute. Communicating on the JusMediation platform is simple and easy. Clients can review your proposal and hire you in a few easy steps.</span>
                     </div> 
                 </div>
                 <div class="col-sm-12 padding-leftright-null">
@@ -58,7 +65,7 @@
                         <img src="/static/images/grid-images/private-breakout-rooms-red.png" alt="img" class="img-responsive">
                         <h3 class="color">Optimize and streamline the mediation process</h3>
                         <span>JusMediation streamlines the process, facilitates collaboration and negotiation with document sharing, video conferencing and private breakout rooms. It’s a digital platform, that can be accessed anytime, anyplace, it allows you to seamlessly invite witnesses and other 3rd parties as needed.</span>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
@@ -86,10 +93,10 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1" aria-expanded="false" style="height: 0px;">
                         <div class="panel-body">
-                            JusMediation is the only patented blockchain platform that supports the mediation process from start to finish. Built for lawyers by lawyers it allows you to help your clients drive to quicker dispute resolution and reduces the administrative burden of mediation.
+                            JusMediation is the only patented blockchain platform that supports the mediation process from start to finish. Built to make mediation more accessible to clients - allowing for quicker and less costly dispute resolution with or without the assistance of a lawyer.
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="heading2">
@@ -101,6 +108,8 @@
                     </div>
                     <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2" aria-expanded="false" style="height: 0px;">
                         <div class="panel-body">
+                            JusMediation is the only platform that connects you directly with potential clients.  Clients can browse mediator profiles and can send a direct request for proposal, but mediators can also browse postings from potential clients and proactively reach out to engage them about their dispute. Communicating on the JusMediation platform is simple and easy. Clients can review your proposal and hire you in a few easy steps.
+                            <br />
                             JusMediation shortens the time to resolution by streamlining the process, facilitating collaboration and negotiation.
                             <br />
                             The JusMediation platform provides an end-to-end solution for resolving disputes via mediation - from case set up and mediator selection through settlement agreement and filing.
@@ -137,12 +146,14 @@
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4" class="collapsed">
                                 How much does it cost to leverage the JusMediation platform to handle all of my clients’ mediations?
                             </a>
-                        </h4>
+                        </h4> 
                     </div>
                     <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4" aria-expanded="false" style="height: 0px;">
                         <div class="panel-body">
-                            JusMediation User Fee is $38 per user/month (billed annually) or $48 per user/monthly (billed monthly).  Sales tax may apply. Your monthly subscription rate depends on the number of active firm users you have added to your account.  No long-term contracts or setup fee is required.
+                            There is no fee for mediators to leverage the JusMediation platform when you are invited by a lawyer to a mediation.
                             <br /> 
+                            If you want to join the JusMediation to help you grow your practice and to support claimants who are not being represented by a lawyer through the mediation process, please subscribe to the JusMediation platform.  JusMediation User Fee is $38 per user/month (billed annually) or $48 per user/monthly (billed monthly).  Sales tax may apply. Your monthly subscription rate depends on the number of active firm users you have added to your account.  No long-term contracts or setup fee is required.
+                            <br />
                             No hidden fees – every JusMediation feature included
                             <br />
                             Safe & secure – only platform with patented blockchain technology
@@ -150,8 +161,6 @@
                             Accelerate resolution - An end-to-end solution for resolving disputes via mediation - from case set up and mediator selection through settlement agreement and filing.
                             <br />
                             Exceptional service for all – no tier-based service
-                            <br /><br />
-                            JusMediation Enterprise is a bespoke and entirely scalable dispute resolution solution. JusMediation Enterprise is a turnkey solution that can be white labeled for large firms, courts, and corporations. The platform can be configured for your particular needs.  Please contact us for pricing
                         </div>
                     </div>
                 </div>
