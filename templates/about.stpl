@@ -7,16 +7,15 @@
         </div>
         <div class="col-md-8 padding-leftright-null">
             <div class="text last padding-topbottom-null">
-                <p class="heading left full margin-bottom-null">JusMediation was built with a belief that all individuals should have easy access to mediation as a way to 
-                    resolve disputes more efficiently and cost effectively.
-                </p>
-
                 <div class="row no-margin wrap-text" style="margin-top:30px">
                     <div class="col-md-12 padding-leftright-null">
                         <div id="page-header" class="image">
                             <div class="col-md-6 padding-leftright-null">
                                 <div style="padding-right:10px">
-                                    <p class="heading right max full grey-dark">
+                                    <p class="heading left full margin-bottom-null">JusMediation was built with a belief that all individuals should have easy access to mediation as a way to 
+                                        resolve disputes more efficiently and cost effectively.
+                                    </p>
+                                    <p class="heading left full margin-bottom-null">
                                         JusMediation is an easy-to-use platform that can help you resolve disputes more quickly and less expensively.\n\nChoose from our roster of qualified mediators to handle your dispute on your terms, budget, and with transparency from start to finish.
                                     </p>
                                 </div>
