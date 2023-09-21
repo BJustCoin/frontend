@@ -2,7 +2,7 @@
     <div class="row no-margin padding-lg">
         <div class="col-md-4 padding-leftright-null">
             <div class="text first padding-top-null">
-                <h2 class="heading margin-bottom-extrasmall">How much does it cost<span class="color">.</span></h2>
+                <h2 class="heading margin-bottom-extrasmall">How much does it cost<span class="color">?</span></h2>
             </div>
         </div>
         <div class="col-md-8 padding-leftright-null">
@@ -18,7 +18,7 @@
                                                     <div class="price-title">Trial</div>
                                                     <div class="price-number">$0</div>
                                                     <div class="price-rate">For 6 months</div>
-                                                    <a href="#" class="btn-alt small shadow">Get Started</a>
+                                                    <a href="#" class="btn-alt small shadow">Get&nbsp;Started</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 padding-leftright-null">
@@ -26,15 +26,15 @@
                                                     <div class="price-title">Annual</div>
                                                     <div class="price-number">$456</div>
                                                     <div class="price-rate">per year</div>
-                                                    <a href="#" class="btn-alt small shadow">Get Started</a>
+                                                    <a href="#" class="btn-alt small shadow">Get&nbsp;Started</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 padding-leftright-null">
                                                 <div class="price margin-md-bottom">
                                                     <div class="price-title">Monthly</div>
                                                     <div class="price-number">$48</div>
-                                                    <div class="price-rate">per year</div>
-                                                    <a href="#" class="btn-alt small shadow">Get Started</a>
+                                                    <div class="price-rate">per month</div>
+                                                    <a href="#" class="btn-alt small shadow">Get&nbsp;Started</a>
                                                 </div>
                                             </div>
                                         </div>
