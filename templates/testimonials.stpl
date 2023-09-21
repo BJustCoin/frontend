@@ -11,7 +11,7 @@
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(-2972px, 0px, 0px); transition: all 0.25s ease 0s; width: 5201px;">
                             
-                            <div class="owl-item cloned" style="width: 743px; margin-right: 0px;">
+                            <div class="owl-item active" style="width: 743px; margin-right: 0px;">
                                 <div class="item padding-leftright-null">
                                     <div class="text small overflow-hidden padding-top-null">
                                         <div class="person">
