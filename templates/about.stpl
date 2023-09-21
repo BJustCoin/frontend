@@ -12,7 +12,7 @@
         </div> 
         <div class="col-md-6 padding-leftright-null">
             <div class="text small">
-                <div class="bg-img" style="background-image:url(/static/images/conference.png)"></div>
+                <img class="bg-img" src="/static/images/conference.png" />
             </div>
         </div>
     </div>
