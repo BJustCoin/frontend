@@ -14,12 +14,12 @@ pub fn pages_urls(config: &mut web::ServiceConfig) {
     config.route("/", web::get().to(index_page));
     config.route("/about", web::get().to(about_page));
     config.route("/for-lawyers", web::get().to(for_lawyers_page));
-    config.route("/for-mediatiors", web::get().to(for_mediatiors_page));
+    config.route("/for-mediators", web::get().to(for_mediators_page));
     config.route("/terms-and-conditions", web::get().to(terms_page));
     config.route("/privacy-policy", web::get().to(policy_page));
     config.route("/about/", web::get().to(about_page));
     config.route("/for-lawyers/", web::get().to(for_lawyers_page));
-    config.route("/for-mediatiors/", web::get().to(for_mediatiors_page));
+    config.route("/for-mediators/", web::get().to(for_mediators_page));
     config.route("/terms-and-conditions/", web::get().to(terms_page));
     config.route("/privacy-policy/", web::get().to(policy_page));
 }
@@ -108,9 +108,9 @@ pub async fn for_lawyers_page() -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn for_mediatiors_page() -> actix_web::Result<HttpResponse> {
+pub async fn for_mediators_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
-    #[template(path = "for_mediatiors.stpl")]
+    #[template(path = "for_mediators.stpl")]
     struct DesctopAuthTemplate;
     let body = DesctopAuthTemplate{}
     .render_once()

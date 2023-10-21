@@ -14,8 +14,8 @@
         <div class="col-md-6 padding-leftright-null">
             <div id="home-slider" class="secondary-background">
                 <div class="text">
-                    <h1 class="white margin-bottom">For Layers<span>.</span></h1>
-                    <p class="heading left grey-light">Mediation made easy for both you and your clients. JusMediation’s secure digital platform has you covered.</p>
+                    <h1 class="margin-bottom">For Lawyers.<span>.</span></h1>
+                    <p class="heading left">Mediation made easy for both you and your clients. JusMediation’s secure digital platform has you covered.</p>
                 </div>
             </div>
         </div>
@@ -86,7 +86,14 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1" aria-expanded="false" style="height: 0px;">
                         <div class="panel-body">
-                            JusMediation is the only patented blockchain platform that supports the mediation process from start to finish. Built for lawyers by lawyers it allows you to help your clients drive to quicker dispute resolution and reduces the administrative burden of mediation.
+                            JusMediation was built with a belief that all individuals should have easy
+                            access to mediation as a way to resolve disputes more efficiently and cost
+                            effectively.
+                            <br /><br />
+                            JusMediation is an easy-to-use platform that can help you resolve disputes
+                            more quickly and less expensively. You can choose from our roster of
+                            qualified mediators to handle your dispute on your terms, budget, and with
+                            transparency from start to finish.
                         </div>
                     </div>
                 </div>

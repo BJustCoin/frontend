@@ -20,10 +20,6 @@
 17.OWL
 18.Animations
 
--------------------------------------------------*/
-/*-------------------------------------------------
-=  Import Google Fonts */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i|Material+Icons");
 /*-------------------------------------------------*/
 /*-------------------------------------------------*/
 /* =  1.Reset
@@ -35,6 +31,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: "Arial", sans-serif;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -75,7 +72,7 @@ a:focus {
 /* =  2.General
 /*-------------------------------------------------*/
 body {
-  font: 100% "Roboto", sans-serif;
+  font: 100% "Arial", sans-serif;
   color: #000;
   background-color: #EEEEEE;
   -webkit-font-smoothing: antialiased;
@@ -227,7 +224,7 @@ h2.heading span, h3.heading span {
 }
 
 a {
-  color: #527a99;
+  color: #FFB800;
   text-decoration: none;
   transition: color .4s ease;
 }
@@ -244,7 +241,7 @@ a:hover {
 
 a.simple {
   text-decoration: none;
-  color: #527a99;
+  color: #FFB800;
   transition: opacity .4s ease;
   font-weight: 400;
 }
@@ -288,7 +285,7 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white !important;
   border-color: transparent;
   transition: all .4s ease;
@@ -317,7 +314,7 @@ a.btn-alt {
   margin-bottom: 35px;
   text-decoration: none !important;
   transition: all .4s ease;
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 @media screen and (max-width: 991px) {
@@ -343,7 +340,7 @@ a.btn-alt.no-margin-bottom {
 a.btn-alt.small {
   height: 36px;
   line-height: 36px;
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   transition: all .4s ease;
   font-size: 12px;
@@ -351,7 +348,7 @@ a.btn-alt.small {
 
 a.btn-alt.small:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
   transition: all .4s ease;
 }
 
@@ -361,18 +358,18 @@ a.btn-alt.small.white {
 
 a.btn-alt.small.white:hover {
   background-color: white;
-  color: #527a99 !important;
+  color: #FFB800 !important;
 }
 
 a.btn-alt.small.active {
   background-color: transparent;
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
 }
 
 a.btn-alt.small.active:hover {
-  background-color: #527a99;
-  border: 1px solid #527a99;
+  background-color: #FFB800;
+  border: 1px solid #FFB800;
   color: white;
 }
 
@@ -383,11 +380,11 @@ a.btn-alt.small.active.white {
 
 a.btn-alt.small.active.white:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
 }
 
 a.btn-alt.small.border {
-  border: 1px solid #527a99;
+  border: 1px solid #FFB800;
 }
 
 a.btn-alt i {
@@ -412,7 +409,7 @@ a.btn-pro:after {
   right: -30px;
   top: 1px;
   transition: right .4s ease;
-  color: #527a99;
+  color: #FFB800;
   font-size: 30px;
 }
 
@@ -428,7 +425,7 @@ a.btn-pro.white {
 a.btn-simple {
   font-size: 16px;
   line-height: 16px;
-  color: #527a99;
+  color: #FFB800;
   font-weight: 400;
   text-decoration: none;
   position: relative;
@@ -439,7 +436,7 @@ a.btn-simple {
 
 a.btn-simple:before {
   content: '';
-  background-color: #527a99;
+  background-color: #FFB800;
   border-radius: 2px;
   position: absolute;
   top: -1px;
@@ -485,8 +482,8 @@ a#btn-share {
 }
 
 a#btn-share:hover {
-  background-color: #527a99;
-  border-color: #527a99;
+  background-color: #FFB800;
+  border-color: #FFB800;
   color: white;
 }
 
@@ -567,11 +564,11 @@ p a {
 }
 
 .color-background {
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 .secondary-background {
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 .dark-background {
@@ -628,7 +625,7 @@ i.service.material {
   font-size: 30px;
   line-height: 60px;
   text-align: center;
-  color: #527a99;
+  color: #FFB800;
   display: inline-block;
 }
 
@@ -641,7 +638,7 @@ i.service.left {
 }
 
 i.service:hover {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -679,7 +676,7 @@ dl dt {
 }
 
 dl dd {
-  border-left: 2px solid #527a99;
+  border-left: 2px solid #FFB800;
   font-family: "Roboto", serif;
   padding-left: 20px;
   margin-bottom: 10px;
@@ -722,7 +719,7 @@ ul.styled li:before, ul.post li:before {
   position: absolute;
   content: "\f383";
   font-family: "Ionicons";
-  color: #527a99;
+  color: #FFB800;
   left: 0;
   top: 0;
 }
@@ -765,7 +762,7 @@ pre {
 }
 
 code {
-  color: #527a99;
+  color: #FFB800;
   background-color: #F6F6F6;
 }
 
@@ -781,7 +778,7 @@ blockquote, q {
   font-weight: 400;
   font-style: italic;
   margin: 50px 0;
-  border-left: 4px solid #527a99;
+  border-left: 4px solid #FFB800;
 }
 
 @media screen and (max-width: 480px) {
@@ -804,7 +801,7 @@ blockquote cite a, q cite a {
 }
 
 blockquote cite a:hover, q cite a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 textarea {
@@ -830,7 +827,7 @@ textarea {
   font-family: "Ionicons";
   position: absolute;
   display: block;
-  color: #527a99;
+  color: #FFB800;
   font-size: 60px;
   text-align: center;
   line-height: 100%;
@@ -869,7 +866,7 @@ textarea {
 
 .popup-youtube:hover:before, .popup-vimeo:hover:before {
   background-color: transparent;
-  color: #527a99;
+  color: #FFB800;
   opacity: .5;
   transition: all .4s ease;
 }
@@ -883,7 +880,7 @@ textarea {
 }
 
 .popup-youtube.black:hover:before, .popup-vimeo.black:hover:before {
-  background-color: #527a99;
+  background-color: #FFB800;
   transition: background-color .4s ease;
 }
 
@@ -981,7 +978,7 @@ textarea {
 .nav-tabs li a:hover, .nav-tabs li a:focus {
   border: none;
   border-radius: 2px;
-  color: #527a99;
+  color: #FFB800;
   background-color: transparent;
   transition: all .4s ease;
 }
@@ -1003,7 +1000,7 @@ textarea {
   border: none;
   border-radius: 2px;
   color: white;
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 .nav-tabs li.active a:focus {
@@ -1038,7 +1035,7 @@ textarea {
 }
 
 .nav-tabs.alt li.active a {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   opacity: 1;
   border-radius: 40px;
@@ -1089,7 +1086,7 @@ textarea {
   font-size: 24px;
   top: 14px;
   right: 0;
-  color: #527a99;
+  color: #FFB800;
 }
 
 .panel-group .panel .panel-heading h4.panel-title {
@@ -1111,7 +1108,7 @@ textarea {
 }
 
 .panel-group .panel .panel-heading h4.panel-title a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 .panel-group .panel .panel-body {
@@ -1126,12 +1123,12 @@ textarea {
 
 /* core classes */
 ::-moz-selection {
-  background: #527a99;
+  background: #FFB800;
   color: white;
 }
 
 ::selection {
-  background: #527a99;
+  background: #FFB800;
   color: white;
 }
 
@@ -1142,7 +1139,7 @@ textarea {
 
 /* class color: set font with secondary color */
 [class~="color"] {
-  color: #527a99 !important;
+  color: #FFB800 !important;
 }
 
 /* class black: set font with black color */
@@ -2098,7 +2095,7 @@ header nav.navbar #menu .menu-holder ul li a, header nav.navbar #sidemenu .menu-
 }
 
 header nav.navbar #menu .menu-holder ul li a:hover, header nav.navbar #sidemenu .menu-holder ul li a:hover, header nav.navbar #menu-classic .menu-holder ul li a:hover {
-  color: #527a99 !important;
+  color: #FFB800 !important;
 }
 
 header nav.navbar #menu .menu-holder ul li a.active, header nav.navbar #menu .menu-holder ul li a.active-item, header nav.navbar #sidemenu .menu-holder ul li a.active, header nav.navbar #sidemenu .menu-holder ul li a.active-item, header nav.navbar #menu-classic .menu-holder ul li a.active, header nav.navbar #menu-classic .menu-holder ul li a.active-item {
@@ -2162,7 +2159,7 @@ header nav.navbar #menu .menu-holder ul li.submenu ul.sub-menu li a, header nav.
 }
 
 header nav.navbar #menu .menu-holder ul li.submenu ul.sub-menu li a:hover, header nav.navbar #sidemenu .menu-holder ul li.submenu ul.sub-menu li a:hover, header nav.navbar #menu-classic .menu-holder ul li.submenu ul.sub-menu li a:hover {
-  color: #527a99 !important;
+  color: #FFB800 !important;
 }
 
 @media screen and (min-width: 991px) {
@@ -2313,10 +2310,10 @@ header nav.navbar #menu .menu-holder ul li.lang span.current a, header nav.navba
   header nav.navbar #menu .menu-holder ul li.lang span.current a, header nav.navbar #sidemenu .menu-holder ul li.lang span.current a, header nav.navbar #menu-classic .menu-holder ul li.lang span.current a {
     padding: 10px 0;
     margin-right: 16px;
-    color: #527a99;
+    color: #FFB800;
   }
   header nav.navbar #menu .menu-holder ul li.lang span.current a:hover, header nav.navbar #sidemenu .menu-holder ul li.lang span.current a:hover, header nav.navbar #menu-classic .menu-holder ul li.lang span.current a:hover {
-    color: #527a99;
+    color: #FFB800;
   }
 }
 
@@ -2411,7 +2408,7 @@ header nav.navbar #menu .menu-holder ul li.shop a.cart i, header nav.navbar #sid
 }
 
 header nav.navbar #menu .menu-holder ul li.shop a.cart span, header nav.navbar #sidemenu .menu-holder ul li.shop a.cart span, header nav.navbar #menu-classic .menu-holder ul li.shop a.cart span {
-  background-color: #527a99;
+  background-color: #FFB800;
   border-radius: 50%;
   background-clip: padding-box;
   width: 20px;
@@ -2494,7 +2491,7 @@ header nav.navbar #menu .menu-holder ul li.shop ul.cart-wrap .shopping-cart p, h
 
 header nav.navbar #menu .menu-holder ul li.shop ul.cart-wrap .shopping-cart p.total span, header nav.navbar #sidemenu .menu-holder ul li.shop ul.cart-wrap .shopping-cart p.total span, header nav.navbar #menu-classic .menu-holder ul li.shop ul.cart-wrap .shopping-cart p.total span {
   float: right;
-  color: #527a99;
+  color: #FFB800;
   font-weight: 400;
 }
 
@@ -2538,7 +2535,7 @@ header nav.navbar #menu .menu-holder button.close-menu, header nav.navbar #sidem
   margin: 0 auto;
   font-size: 100px;
   font-weight: 100;
-  color: #527a99;
+  color: #FFB800;
   width: 50px;
   height: 120px;
 }
@@ -2589,7 +2586,7 @@ header nav.navbar #menu .menu-holder button.close-menu, header nav.navbar #sidem
     line-height: 55px;
   }
   header nav.navbar #menu.open .menu-holder ul li a:hover, header nav.navbar #sidemenu.open .menu-holder ul li a:hover, header nav.navbar #menu-classic.open .menu-holder ul li a:hover {
-    color: #527a99;
+    color: #FFB800;
   }
   header nav.navbar #menu.open .menu-holder ul li.submenu, header nav.navbar #sidemenu.open .menu-holder ul li.submenu, header nav.navbar #menu-classic.open .menu-holder ul li.submenu {
     display: block;
@@ -2619,7 +2616,7 @@ header nav.navbar #menu .menu-holder button.close-menu, header nav.navbar #sidem
     transition: opacity .4s ease;
   }
   header nav.navbar #menu.open .menu-holder ul li.submenu ul.sub-menu li a, header nav.navbar #sidemenu.open .menu-holder ul li.submenu ul.sub-menu li a, header nav.navbar #menu-classic.open .menu-holder ul li.submenu ul.sub-menu li a {
-    color: #527a99;
+    color: #FFB800;
     font-size: 12px;
     line-height: 22px;
     text-transform: uppercase;
@@ -2702,7 +2699,7 @@ header nav.navbar #menu .menu-holder button.close-menu, header nav.navbar #sidem
     color: #F6F6F6;
   }
   header nav.navbar #menu.sidemenu .menu-holder ul li.submenu ul.sub-menu li a:hover, header nav.navbar #sidemenu.sidemenu .menu-holder ul li.submenu ul.sub-menu li a:hover, header nav.navbar #menu-classic.sidemenu .menu-holder ul li.submenu ul.sub-menu li a:hover {
-    color: #527a99 !important;
+    color: #FFB800 !important;
   }
 }
 
@@ -2808,7 +2805,7 @@ header nav.navbar #menu-classic {
     padding: 0;
   }
   header nav.navbar #menu-classic.open .menu-holder ul li.submenu ul.sub-menu.mega-sub-menu li div ul li a {
-    color: #527a99;
+    color: #FFB800;
   }
   header nav.navbar #menu-classic.open .menu-holder ul li.submenu:after {
     content: "\f3d6";
@@ -2824,14 +2821,14 @@ header nav.navbar #menu-classic {
     transition: all .4s ease;
   }
   header nav.navbar #menu-classic.open .menu-holder ul li.submenu.open > a {
-    color: #527a99;
+    color: #FFB800;
   }
   header nav.navbar #menu-classic.open .menu-holder ul li.submenu.open:after {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
     transition: all .4s ease;
-    color: #527a99;
+    color: #FFB800;
   }
   header nav.navbar #menu-classic.open .menu-holder ul li.submenu.open ul.sub-menu {
     display: block;
@@ -2961,7 +2958,7 @@ header nav.navbar .shop-mobile ul li.shop a.cart {
 }
 
 header nav.navbar .shop-mobile ul li.shop a.cart:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 header nav.navbar .shop-mobile ul li.shop a.cart i {
@@ -2969,7 +2966,7 @@ header nav.navbar .shop-mobile ul li.shop a.cart i {
 }
 
 header nav.navbar .shop-mobile ul li.shop a.cart span {
-  background-color: #527a99;
+  background-color: #FFB800;
   border-radius: 50%;
   background-clip: padding-box;
   width: 20px;
@@ -3014,7 +3011,7 @@ header nav.navbar #search-box button.close-search-box {
   margin: 0 auto;
   font-size: 100px;
   font-weight: 100;
-  color: #527a99;
+  color: #FFB800;
   width: 50px;
   height: 120px;
 }
@@ -3033,7 +3030,7 @@ header nav.navbar.white #menu .menu-holder ul li > a, header nav.navbar.white #s
 }
 
 header nav.navbar.white #menu .menu-holder ul li > a.active-item, header nav.navbar.white #sidemenu .menu-holder ul li > a.active-item, header nav.navbar.white #menu-classic .menu-holder ul li > a.active-item {
-  color: #527a99;
+  color: #FFB800;
   font-weight: 400;
 }
 
@@ -3043,7 +3040,7 @@ header nav.navbar.white #menu .menu-holder ul li.lang span.current a, header nav
 
 @media screen and (max-width: 991px) {
   header nav.navbar.white #menu .menu-holder ul li.lang span.current a, header nav.navbar.white #sidemenu .menu-holder ul li.lang span.current a, header nav.navbar.white #menu-classic .menu-holder ul li.lang span.current a {
-    color: #527a99;
+    color: #FFB800;
   }
 }
 
@@ -3052,7 +3049,7 @@ header nav.navbar.white #menu.open .menu-holder ul li > a, header nav.navbar.whi
 }
 
 header nav.navbar.white #menu.open .menu-holder ul li > a.active-item, header nav.navbar.white #sidemenu.open .menu-holder ul li > a.active-item, header nav.navbar.white #menu-classic.open .menu-holder ul li > a.active-item {
-  color: #527a99;
+  color: #FFB800;
   font-weight: 400;
 }
 
@@ -3069,7 +3066,7 @@ header nav.navbar.white #sidemenu.open .menu-holder ul li > a {
 }
 
 header nav.navbar.white #sidemenu.open .menu-holder ul li > a.active-item {
-  color: #527a99;
+  color: #FFB800;
   font-weight: 400;
 }
 
@@ -3173,7 +3170,7 @@ header nav.navbar.white #search-box .form-input i {
 
 #page-content .wrap-slider .popup-youtube:hover:before, #page-content .wrap-slider .popup-vimeo:hover:before {
   background-color: transparent;
-  color: #527a99;
+  color: #FFB800;
   opacity: .5;
   transition: all .4s ease;
 }
@@ -3372,12 +3369,12 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content #projects ul.filters li.is-checked, #page-content #projects-filters ul.filters li.is-checked, #page-content #masonry-filters ul.filters li.is-checked {
-  color: #527a99;
+  color: #FFB800;
   font-weight: 600;
 }
 
 #page-content #projects ul.filters li:hover, #page-content #projects-filters ul.filters li:hover, #page-content #masonry-filters ul.filters li:hover {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -3466,7 +3463,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content #projects .projects-items .single-item:hover .item h3, #page-content #projects .masonry-items .single-item:hover .item h3, #page-content #projects-filters .projects-items .single-item:hover .item h3, #page-content #projects-filters .masonry-items .single-item:hover .item h3, #page-content #masonry-filters .projects-items .single-item:hover .item h3, #page-content #masonry-filters .masonry-items .single-item:hover .item h3 {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -3510,7 +3507,7 @@ header nav.navbar.white #search-box .form-input i {
   height: 50px;
   line-height: 50px;
   font-size: 30px;
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   text-align: center;
   -webkit-transform: translate(5px, 0px);
@@ -3527,7 +3524,7 @@ header nav.navbar.white #search-box .form-input i {
 
 #page-content #projects .projects-items .single-item.shop .content span.price, #page-content #projects .masonry-items .single-item.shop .content span.price, #page-content #projects-filters .projects-items .single-item.shop .content span.price, #page-content #projects-filters .masonry-items .single-item.shop .content span.price, #page-content #masonry-filters .projects-items .single-item.shop .content span.price, #page-content #masonry-filters .masonry-items .single-item.shop .content span.price {
   float: right;
-  color: #527a99;
+  color: #FFB800;
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
 }
@@ -3616,7 +3613,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content .section-text a.btn-pro {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #page-content .section-text.half .col-md-6 {
@@ -3665,7 +3662,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content #news .single-news article span.meta {
-  color: #527a99;
+  color: #FFB800;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 26px;
@@ -3706,7 +3703,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content #news .single-news:hover article h3 {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -3725,7 +3722,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content #news .single-news.styled:hover article h3 {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -3795,7 +3792,7 @@ header nav.navbar.white #search-box .form-input i {
 }
 
 #page-content .team .person ul li a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #page-content .team .person:hover img {
@@ -4005,7 +4002,7 @@ aside.sidebar form .form-input span.form-button {
   text-transform: uppercase;
   line-height: 34px;
   color: white;
-  background-color: #527a99;
+  background-color: #FFB800;
   text-align: center;
   transition: all .4s ease;
   border-radius: 0 2px 2px 0;
@@ -4013,7 +4010,7 @@ aside.sidebar form .form-input span.form-button {
 
 aside.sidebar form .form-input span.form-button:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
   border-radius: 0 2px 2px 0;
   transition: all .4s ease;
 }
@@ -4077,7 +4074,7 @@ aside.sidebar ul.widget-categories li a {
 }
 
 aside.sidebar ul.widget-categories li a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 aside.sidebar ul.tagCloud li {
@@ -4100,16 +4097,16 @@ aside.sidebar ul.tagCloud li a {
 }
 
 aside.sidebar ul.tagCloud li a.popular {
-  color: #527a99;
+  color: #FFB800;
   letter-spacing: 0.5px;
-  border-color: #527a99;
+  border-color: #FFB800;
 }
 
 aside.sidebar ul.tagCloud li a:hover {
   color: white;
-  background-color: #527a99;
+  background-color: #FFB800;
   transition: all .4s ease;
-  border-color: #527a99;
+  border-color: #FFB800;
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -4272,7 +4269,7 @@ aside.left form .form-input span.form-button {
 
 #page-header span.post-meta {
   display: block;
-  color: #527a99;
+  color: #FFB800;
   font-family: "Roboto", sans-serif;
   font-size: 22px;
   line-height: 26px;
@@ -4565,7 +4562,7 @@ aside.left form .form-input span.form-button {
   height: 50px;
   float: left;
   color: white;
-  background-color: #527a99;
+  background-color: #FFB800;
   transition: -webkit-transform .4s ease;
   transition: transform .4s ease;
   transition: transform .4s ease, -webkit-transform .4s ease;
@@ -4616,7 +4613,7 @@ aside.left form .form-input span.form-button {
 }
 
 .content-section ul.services li:hover .icon-text p {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -4969,7 +4966,7 @@ aside.page-sidebar .widget-wrapper p {
   height: 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: #527a99;
+  color: #FFB800;
   font-size: 16px;
   line-height: 25px;
   overflow: hidden;
@@ -5268,7 +5265,7 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 .project-images .item .content .social ul li a {
-  background-color: #527a99;
+  background-color: #FFB800;
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -5342,7 +5339,7 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 #product-header span.product-cats a:hover, #product-header span.product-tags a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #product-header input[type="number"] {
@@ -5384,13 +5381,13 @@ aside.page-sidebar .widget-wrapper p {
   margin-bottom: 20px;
   text-decoration: none !important;
   transition: all .4s ease;
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 #product-header button.btn-alt.small {
   height: 36px;
   line-height: 36px;
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   transition: all .4s ease;
   font-size: 12px;
@@ -5398,7 +5395,7 @@ aside.page-sidebar .widget-wrapper p {
 
 #product-header button.btn-alt.small:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
   transition: all .4s ease;
 }
 
@@ -5408,18 +5405,18 @@ aside.page-sidebar .widget-wrapper p {
 
 #product-header button.btn-alt.small.white:hover {
   background-color: white;
-  color: #527a99 !important;
+  color: #FFB800 !important;
 }
 
 #product-header button.btn-alt.small.active {
   background-color: transparent;
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
 }
 
 #product-header button.btn-alt.small.active:hover {
-  background-color: #527a99;
-  border: 1px solid #527a99;
+  background-color: #FFB800;
+  border: 1px solid #FFB800;
   color: white;
 }
 
@@ -5430,11 +5427,11 @@ aside.page-sidebar .widget-wrapper p {
 
 #product-header button.btn-alt.small.active.white:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
 }
 
 #product-header button.btn-alt.small.border {
-  border: 1px solid #527a99;
+  border: 1px solid #FFB800;
 }
 
 #product-header button a#btn-share {
@@ -5462,7 +5459,7 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 #product-header .share-box a:hover {
-  color: #527a99;
+  color: #FFB800;
 }
 
 .nav-tabs.product li a {
@@ -5481,7 +5478,7 @@ aside.page-sidebar .widget-wrapper p {
 .nav-tabs.product li a:hover, .nav-tabs.product li a:focus {
   background-color: transparent;
   border-radius: 0;
-  color: #527a99;
+  color: #FFB800;
 }
 
 .nav-tabs.product li.active a {
@@ -5535,7 +5532,7 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 #contact-form label sup, #search-form label sup {
-  color: #527a99;
+  color: #FFB800;
   top: -0.1em;
 }
 
@@ -5599,8 +5596,8 @@ aside.page-sidebar .widget-wrapper p {
   text-transform: none;
   font-weight: 400;
   background-color: transparent;
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
   transition: all .4s ease;
   text-transform: uppercase;
   border-radius: 2px;
@@ -5615,7 +5612,7 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 #contact-form #submit-contact.btn-alt:hover, #search-form #submit-contact.btn-alt:hover {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   transition: all .4s ease;
 }
@@ -5630,19 +5627,19 @@ aside.page-sidebar .widget-wrapper p {
 
 #contact-form #submit-contact.btn-alt.white:hover, #search-form #submit-contact.btn-alt.white:hover {
   background-color: white;
-  color: #527a99 !important;
+  color: #FFB800 !important;
   transition: all .4s ease;
 }
 
 #contact-form #submit-contact.btn-alt.active, #search-form #submit-contact.btn-alt.active {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   transition: all .4s ease;
 }
 
 #contact-form #submit-contact.btn-alt.active:hover, #search-form #submit-contact.btn-alt.active:hover {
   background-color: transparent;
-  color: #527a99 !important;
+  color: #FFB800 !important;
   transition: all .4s ease;
 }
 
@@ -5680,19 +5677,19 @@ aside.page-sidebar .widget-wrapper p {
 }
 
 #contact-form.color ::-webkit-input-placeholder, #search-form.color ::-webkit-input-placeholder {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #contact-form.color :-moz-placeholder, #search-form.color :-moz-placeholder {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #contact-form.color ::-moz-placeholder, #search-form.color ::-moz-placeholder {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #contact-form.color :-ms-input-placeholder, #search-form.color :-ms-input-placeholder {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #contact-form.black ::-webkit-input-placeholder, #search-form.black ::-webkit-input-placeholder {
@@ -5773,7 +5770,7 @@ span.contact-info {
 }
 
 span.contact-info a em {
-  color: #527a99;
+  color: #FFB800;
   transition: color .4s ease;
 }
 
@@ -5913,8 +5910,8 @@ span.contact-info em {
   font-weight: 600;
   text-rendering: geometricPrecision;
   background-color: transparent;
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
   transition: all .4s ease;
   border-radius: 0px 40px 40px 0px;
   padding-right: 30px;
@@ -5935,7 +5932,7 @@ span.contact-info em {
 }
 
 #contact-newsletter #submit-newsletter.btn-alt:hover {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   transition: all .4s ease;
 }
@@ -5946,31 +5943,31 @@ span.contact-info em {
 
 #contact-newsletter #submit-newsletter.btn-alt.white:hover {
   background-color: white;
-  color: #527a99 !important;
+  color: #FFB800 !important;
   transition: all .4s ease;
 }
 
 #contact-newsletter #submit-newsletter.btn-alt.color {
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
 }
 
 #contact-newsletter #submit-newsletter.btn-alt.color.active {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white !important;
 }
 
 #contact-newsletter #submit-newsletter.btn-alt.color.active:hover {
   background-color: white;
-  color: #527a99 !important;
+  color: #FFB800 !important;
   border: 1px solid transparent;
-  border-left: 1px solid #527a99;
+  border-left: 1px solid #FFB800;
 }
 
 @media screen and (max-width: 410px) {
   #contact-newsletter #submit-newsletter.btn-alt.color.active:hover {
     background-color: transparent;
-    border: 1px solid #527a99;
+    border: 1px solid #FFB800;
   }
 }
 
@@ -6085,7 +6082,7 @@ footer ul.social li i, .footer ul.social li i {
 }
 
 footer ul.social li i:hover, .footer ul.social li i:hover {
-  color: #527a99;
+  color: #FFB800;
   transition: ease .4s color;
 }
 
@@ -6134,7 +6131,7 @@ footer #newsletter-form, .footer #newsletter-form {
 }
 
 #copy p a:hover {
-  color: #527a99;
+  color: #FFB800;
   -webkit-transform: color .4s ease;
       -ms-transform: color .4s ease;
           transform: color .4s ease;
@@ -6166,7 +6163,7 @@ footer #newsletter-form, .footer #newsletter-form {
 }
 
 #copy ul li a:hover {
-  color: #527a99;
+  color: #FFB800;
   -webkit-transform: color .4s ease;
       -ms-transform: color .4s ease;
           transform: color .4s ease;
@@ -6398,12 +6395,12 @@ img.shadow {
 #pricing .price a.btn-alt {
   margin: 30px 0 0 0;
   background-color: white;
-  border: 1px solid #527a99;
-  color: #527a99;
+  border: 1px solid #FFB800;
+  color: #FFB800;
 }
 
 #pricing .price a.btn-alt:hover {
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
 }
 
@@ -6413,19 +6410,19 @@ img.shadow {
 }
 
 #pricing .price.active .price-title, #pricing .price.active .price-number {
-  color: #527a99;
+  color: #FFB800;
 }
 
 #pricing .price.active a.btn-alt.small {
-  background-color: #527a99;
-  border-color: #527a99;
+  background-color: #FFB800;
+  border-color: #FFB800;
   color: white;
 }
 
 #pricing .price.active a.btn-alt.small:hover {
   background-color: white;
-  border-color: #527a99;
-  color: #527a99;
+  border-color: #FFB800;
+  color: #FFB800;
 }
 
 #pricing .col-md-4:nth-child(1).price {
@@ -6447,7 +6444,7 @@ img.shadow {
   height: 20px;
   display: block;
   float: left;
-  background-color: #527a99;
+  background-color: #FFB800;
 }
 
 .testimonials-carousel-single {
@@ -6467,7 +6464,7 @@ img.shadow {
 .testimonials-carousel-single .person .description em {
   display: block;
   font-size: 20px;
-  color: #527a99;
+  color: #FFB800;
   font-weight: 300;
 }
 
@@ -6574,7 +6571,7 @@ table {
 }
 
 table th {
-  background: #527a99;
+  background: #FFB800;
   color: white;
   text-align: left;
   padding: 15px !important;
@@ -6605,7 +6602,7 @@ table td {
 }
 
 .alert.alert-info {
-  border: 2px solid #527a99;
+  border: 2px solid #FFB800;
   background-color: transparent;
   color: #000;
 }
@@ -6673,8 +6670,8 @@ table td {
   height: 8px;
   width: 0;
   position: absolute;
-  background: #527a99;
-  background-color: #527a99;
+  background: #FFB800;
+  background-color: #FFB800;
   bottom: -8px;
   left: 0;
   border-radius: 8px;
@@ -6700,7 +6697,7 @@ table td {
 
 #skills.white ul.skill-list li span.label {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
 }
 
 .image-carousel .owl-controls {
@@ -6738,7 +6735,7 @@ table td {
 .image-carousel .owl-controls .owl-nav .owl-prev span, .image-carousel .owl-controls .owl-nav .owl-next span {
   height: 40px;
   width: 40px;
-  background-color: #527a99;
+  background-color: #FFB800;
   color: white;
   display: block;
   border-radius: 0 4px 4px 0;
@@ -6946,7 +6943,7 @@ ul.timeline li:hover .title h3 {
 }
 
 ul.timeline li:hover .title p {
-  color: #527a99 !important;
+  color: #FFB800 !important;
   transition: color .4s ease;
 }
 
@@ -6999,7 +6996,7 @@ ul.timeline li .title {
 
 ul.timeline li .title span {
   display: block;
-  color: #527a99;
+  color: #FFB800;
   font-size: 14px;
   line-height: 24px;
   font-weight: 300;
@@ -7013,7 +7010,7 @@ ul.timeline li .timeline-badge {
   margin-left: -9px;
   left: 50%;
   top: 36px;
-  background-color: #527a99;
+  background-color: #FFB800;
   display: block;
   border: 5px solid white;
   transition: all .4s ease;
@@ -7150,7 +7147,7 @@ ul.timeline li:nth-child(odd):hover .title {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   line-height: 33px;
-  color: #527a99;
+  color: #FFB800;
   background-color: transparent;
   text-align: center;
   transition: all .4s ease;
@@ -7159,7 +7156,7 @@ ul.timeline li:nth-child(odd):hover .title {
 
 #newsletter-form form .form-input span.form-button:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
   border-radius: 0 2px 2px 0;
   transition: all .4s ease;
 }
@@ -7264,7 +7261,7 @@ ul.timeline li:nth-child(odd):hover .title {
   text-transform: uppercase;
   line-height: 34px;
   color: white;
-  background-color: #527a99;
+  background-color: #FFB800;
   text-align: center;
   transition: all .4s ease;
   border-radius: 0 2px 2px 0;
@@ -7272,7 +7269,7 @@ ul.timeline li:nth-child(odd):hover .title {
 
 #header-searchform form .form-input span.form-button:hover {
   background-color: white;
-  color: #527a99;
+  color: #FFB800;
   border-radius: 0 2px 2px 0;
   transition: all .4s ease;
 }
@@ -7300,7 +7297,7 @@ ul.timeline li:nth-child(odd):hover .title {
 }
 
 #header-searchform form .form-input span.form-button-close:hover {
-  color: #527a99;
+  color: #FFB800;
   transition: all .4s ease;
 }
 
@@ -7417,7 +7414,7 @@ ul.timeline li:nth-child(odd):hover .title {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #527a99;
+  background-color: #FFB800;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -7455,7 +7452,7 @@ ul.timeline li:nth-child(odd):hover .title {
 /* =  16.Magnific popup
 /*-------------------------------------------------*/
 button.mfp-close {
-  background-color: #527a99 !important;
+  background-color: #FFB800 !important;
   color: white;
   transition: background-color .4s ease;
 }
@@ -7498,7 +7495,7 @@ button.mfp-close:hover {
   height: 12px;
   margin: 5px 7px;
   background: transparent;
-  border: 1px solid #527a99;
+  border: 1px solid #FFB800;
   border-radius: 50%;
   opacity: 1;
   display: block;
@@ -7507,7 +7504,7 @@ button.mfp-close:hover {
 }
 
 .owl-theme .owl-dots .owl-dot.active span {
-  background: #527a99;
+  background: #FFB800;
   opacity: 1;
 }
 
