@@ -54,6 +54,7 @@
                     </p>
                 </div>
             </div>
+            <!--
             <div class="row team no-margin">
                 <div class="col-md-4 padding-leftright-null">
                     <img src="/static/images/leadership-team/kimberly-palermo.png" alt="img" class="img-responsive">
@@ -89,6 +90,7 @@
                     </p>
                 </div>
             </div>
+            -->
             <div class="row team no-margin">
                 <div class="col-md-4 padding-leftright-null">
                     <img src="/static/images/leadership-team/jonathan-schwartz.png" alt="img" class="img-responsive">
