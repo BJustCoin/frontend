@@ -1,21 +1,4 @@
-
 <% include!("header.stpl"); %>   
 
-    <div class="row no-margin wrap-slider padding-leftright-null">
-        <div class="col-md-6 padding-leftright-null">
-            <div class="bg-img home error" style="background-image:url(/static/images/404.png)"></div>
-        </div>
-        <div class="col-md-6 padding-leftright-null">
-            <div id="home-slider" class="error secondary-background">
-                <div class="text">
-                    <h1 class="white margin-bottom-extrasmall">Jusmediation<span>.</span></h1>
-                    <p class="heading left grey-light margin-bottom">
-                        The page you were looking for doesn't exist.
-                    </p>
-                    <a href="/" class="btn-alt small white margin-null ajax">Home</a>
-                </div> 
-            </div>
-        </div>
-    </div>
 
 <% include!("footer.stpl"); %>

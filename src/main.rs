@@ -27,9 +27,9 @@ async fn main() -> std::io::Result<()> {
     let limit_backend = InMemoryBackend::builder().build();
 
     HttpServer::new(move || { 
-        let _files = Files::new("/static", "static/").show_files_listing();
+        let _files = Files::new("/assets", "assets/").show_files_listing();
         let limit_input = SimpleInputFunctionBuilder::new(Duration::from_secs(1), 5)
-            .real_ip_key() 
+            .real_ip_key()
             .build();
         let limit_middleware = RateLimiter::builder(limit_backend.clone(), limit_input)
             .add_headers()
@@ -41,8 +41,7 @@ async fn main() -> std::io::Result<()> {
             .service(_files)
             .configure(routes)
     }) 
-    .bind("69.167.186.207:9999")?   // prod
-    //.bind("69.167.186.207:9998")? // dev
+    .bind("67.220.95.91:9999")?   // prod
     .run()
     .await
 } 

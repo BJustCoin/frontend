@@ -11,15 +11,7 @@ use serde::{Serialize, Deserialize};
 
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {
-    config.route("/", web::get().to(index_page));
-    config.route("/about", web::get().to(about_page));
-    config.route("/for-lawyers", web::get().to(for_lawyers_page));
-    config.route("/for-mediators", web::get().to(for_mediators_page));
-    config.route("/terms-and-conditions", web::get().to(terms_page));
-    config.route("/privacy-policy", web::get().to(policy_page));
     config.route("/about/", web::get().to(about_page));
-    config.route("/for-lawyers/", web::get().to(for_lawyers_page));
-    config.route("/for-mediators/", web::get().to(for_mediators_page));
     config.route("/terms-and-conditions/", web::get().to(terms_page));
     config.route("/privacy-policy/", web::get().to(policy_page));
 }
@@ -67,52 +59,11 @@ pub async fn get_first_load_page (
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn index_page (
-    req: HttpRequest
-) -> actix_web::Result<HttpResponse> {
-    let is_ajax = get_ajax(&req); 
-    #[derive(TemplateOnce)]
-    #[template(path = "index.stpl")]
-    struct DesctopAuthTemplate {
-        title:       String,
-        description: String,
-        is_ajax:     u8,
-    }
-    let body = DesctopAuthTemplate {
-        title:       "JusMediation | How It Works".to_string(),
-        description: "JusMediation is an easy-to-use, app-enabled platform that allows you to find the right lawyer to meet your needs across a wide range of legal areas and industries from one-time consults to complex issues with ease and transparency from start to finish of your legal issues.".to_string(),
-        is_ajax:     is_ajax,
-    }
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-}
-
 pub async fn about_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "about.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-}
-
-pub async fn for_lawyers_page() -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)]
-    #[template(path = "for_lawyers.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-}
-
-pub async fn for_mediators_page() -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)]
-    #[template(path = "for_mediators.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
+    struct Template;
+    let body = Template{}
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
@@ -121,8 +72,8 @@ pub async fn for_mediators_page() -> actix_web::Result<HttpResponse> {
 pub async fn not_found_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "not_found.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
+    struct Template;
+    let body = Template{}
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
@@ -131,8 +82,8 @@ pub async fn not_found_page() -> actix_web::Result<HttpResponse> {
 pub async fn terms_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "terms.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
+    struct Template;
+    let body = Template{}
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
@@ -141,8 +92,8 @@ pub async fn terms_page() -> actix_web::Result<HttpResponse> {
 pub async fn policy_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "policy.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
+    struct Template;
+    let body = Template{}
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
