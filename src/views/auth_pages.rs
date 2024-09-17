@@ -10,8 +10,8 @@ use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
 
 
-pub fn admin_urls(config: &mut web::ServiceConfig) {
-    config.route("/auth/", web::get().to(auth_page));
+pub fn auth_urls(config: &mut web::ServiceConfig) {
+    config.route("/", web::get().to(auth_page));
     config.route("/signup/", web::get().to(signup_page));
 }
 
