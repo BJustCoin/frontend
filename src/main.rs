@@ -36,7 +36,7 @@ async fn main() -> std::io::Result<()> {
             .build();
 
         App::new()  
-            .wrap(limit_middleware) 
+            //.wrap(limit_middleware) 
             .default_service(web::route().to(not_found_page))
             .service(_files)
             .configure(routes)
