@@ -14,7 +14,9 @@
 	
 	<script src="/assets/js/amcharts.js"></script>
 	<script src="/assets/js/serial.js"></script>
+	<!--
 	<script src="/assets/js/amstock.js"></script>
+	-->
 	<script src="/assets/js/export.min.js"></script>
 	<script src="/assets/js/light.js"></script>
 	<script src="/assets/js/gauge.js" type="text/javascript"></script>
