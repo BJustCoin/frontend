@@ -1,152 +1,128 @@
-<div class="sidebar-wrapper">
-    <div>
-        <div class="logo-wrapper">BJustCoin dashboard
-            <div class="back-btn"><i data-feather="grid"></i></div>
-            <div class="toggle-sidebar icon-box-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
-        </div>
-        <nav class="sidebar-main">
-            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
-            <div id="sidebar-menu">
-                <ul class="sidebar-links" id="simple-bar">
-                    <li class="back-btn">
-                        <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
-                    </li>
-                    <li class="pin-title sidebar-list">
-                        <h6>Pinned</h6>
-                    </li>
-                    <hr>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Persons</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Companies</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Access roles</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Company staff</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Accounts</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Accounts (pending)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Vaults</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions (pre-approval)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions (action required)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions (undetermined)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions (manual)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Transactions (hold)</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Price lists</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Limits</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Triggered limits</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Crypto withdrawal limits</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Saved top-up cards</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Issues</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Limits</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Client compliance</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Card Product</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Exchange</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Reports</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="">
-                            <span>Administration</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-        </nav>
-    </div>
-</div>
+<aside class="main-sidebar">
+    <section class="sidebar position-relative">	
+	  	<div class="multinav">
+		  <div class="multinav-scroll" style="height: 100%;">	
+			  <ul class="sidebar-menu" data-widget="tree">	
+				<li class="treeview">
+				  <a href="#">
+					<i data-feather="monitor"></i><span>Dashboard</span>					  
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-right pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li>
+					  <a href="/admin_home/"><i class="ti-more"></i><span>Dashboard</span></a>
+					</li>
+					<li>
+					  <a href="/admin_home/"><i class="ti-more"></i><span>Dashboard 2</span></a>
+					</li>
+					<li>
+					  <a href="/support/"><i class="ti-more"></i><span>Support</span></a>
+					</li>
+				  </ul>
+				</li>				  
+				<li class="treeview">
+				  <a href="#">
+					<i data-feather="cpu"></i>
+					<span>Crypto</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-right pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li class="treeview">
+					  <a href="#">
+						<i class="ti-more"></i>
+						<span>Analyses</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-right pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu"> 
+						<li><a href="/transactions/"><i class="ti-more"></i>Transactions</a></li>
+						<li><a href="/gainers_losers/"><i class="ti-more"></i>Gainers/Losers</a></li>
+						<li><a href="/market/"><i class="ti-more"></i>Market</a></li>
+						<li><a href="/stats/"><i class="ti-more"></i>Stats</a></li>
+					  </ul>
+					</li> 
+					<li class="treeview">
+					  <a href="#">
+						<i class="ti-more"></i>
+						<span>ICO</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-right pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li><a href="/ico_distribution_countdown/"><i class="ti-more"></i>Countdown</a></li>
+						<li><a href="/ico_roadmap_timeline/"><i class="ti-more"></i>Timeline</a></li>
+						<li><a href="/ico_progress/"><i class="ti-more"></i>Progress</a></li>
+						<li><a href="/ico_details/"><i class="ti-more"></i>Details</a></li>
+						<li><a href="/ico_listing/"><i class="ti-more"></i>Listing</a></li>
+						<li><a href="/ico_filter/"><i class="ti-more"></i>ICO Filters</a></li>	
+					  </ul>
+					</li> 
+					
+					<li class="treeview">
+					  <a href="#">
+						<i class="ti-more"></i>
+						<span>Associates</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-right pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li><a href="/members_list/"><i class="ti-more"></i>List</a></li>
+					  </ul>
+					</li>
+					<li class="treeview">
+					  <a href="#">
+						<i class="ti-more"></i>
+						<span>Tickers</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-right pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li><a href="/tickers/"><i class="ti-more"></i>Ticker</a></li>
+						<li><a href="/tickers_live_pricing/"><i class="ti-more"></i>Live Prices</a></li>	
+					  </ul>
+					</li>
+					<li class="treeview">
+					  <a href="#">
+						<i class="ti-more"></i>
+						<span>Transactions</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-right pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li><a href="/transactions_tables/"><i class="ti-more"></i>Tables</a></li>
+						<li><a href="/transaction_search/"><i class="ti-more"></i>Search</a></li>	
+						<li><a href="/transaction_details/"><i class="ti-more"></i>Details</a></li>
+						<li><a href="/transactions_counter/"><i class="ti-more"></i>Counter</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				</li>
+			  </ul>
+			  
+			  <div class="sidebar-widgets">	
+				<div class="mx-25 mb-30 pb-20 side-bx bg-primary rounded20">
+					<div class="text-center">
+						<img src="/static/images/crypto-join.png" class="sideimg" alt="">
+						<h3 class="title-bx">Invest Now!</h3>
+						<a href="" class="text-white py-10 fs-16 mb-0">
+						Buy and Sell Coins<i class="mdi mdi-arrow-right"></i>
+						</a>
+					</div>
+				</div>  
+				<div class="copyright text-start m-25">
+				<p><strong class="d-block">Dashbord</strong> © <script>document.write(new Date().getFullYear())</script> All Rights Reserved</p>
+				</div>
+			  </div>
+		  </div>
+		</div>
+    </section>
+  </aside>

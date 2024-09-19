@@ -1,92 +1,98 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="tivo admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Tivo admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
-    <title>Login</title><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/assets/images/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/icofont.css">
+    <title>Dashboard | Auth</title>
+  
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="/assets/css/vendors_css.css">
+	  
+	<!-- Style-->  
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/skin_color.css">	
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/themify.css">
+</head>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/flag-icon.css">
+<body class="hold-transition theme-primary bg-img" style="background-image: url(/assets/images/auth-bg/bg-9.jpg)">
+	
+	<div class="container h-p100">
+		<div class="row align-items-center justify-content-md-center h-p100">	
+			
+			<div class="col-12">
+				<div class="row justify-content-center g-0">
+					<div class="col-lg-5 col-md-5 col-12">
+						<div class="bg-white rounded10 shadow-lg">
+							<div class="content-top-agile p-20 pb-0">
+								<h2 class="text-primary">Let's Get Started</h2>
+								<p class="mb-0">Sign in to continue to BJustCoin.</p>							
+							</div>
+							<div class="p-40">
+								<form action="index.html" method="post">
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Username">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
+											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+										</div>
+									</div>
+									  <div class="row">
+										<div class="col-6">
+										  <div class="checkbox">
+											<input type="checkbox" id="basic_checkbox_1">
+											<label for="basic_checkbox_1">Remember Me</label>
+										  </div>
+										</div>
+										<!-- /.col -->
+										<div class="col-6">
+										 <div class="fog-pwd text-end">
+											<a class="hover-warning"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+										  </div>
+										</div>
+										<!-- /.col -->
+										<div class="col-12 text-center">
+										  <a href="/" class="btn btn-danger mt-10">SIGN IN</a>
+										</div>
+										<!-- /.col -->
+									  </div>
+								</form>	
+								<div class="text-center">
+									<p class="mt-15 mb-0">Don't have an account? <a href="/signup/" class="text-warning ms-5">Sign Up</a></p>
+								</div>	
+							</div>						
+						</div>
+						<div class="text-center">
+						  <p class="mt-20 text-white">- Sign With -</p>
+						  <p class="gap-items-2 mb-20">
+							  <a class="btn btn-social-icon btn-round btn-facebook" href="#"><i class="fa fa-facebook"></i></a>
+							  <a class="btn btn-social-icon btn-round btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
+							  <a class="btn btn-social-icon btn-round btn-instagram" href="#"><i class="fa fa-instagram"></i></a>
+							</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/feather-icon.css">
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendors/bootstrap.css">
+	<!-- Vendor JS -->
+	<script src="/assets/js/vendors.min.js"></script>
+	<script src="/assets/js/chat-popup.js"></script>
+    <script src="/assets/js/feather.min.js"></script>	
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link id="color" rel="stylesheet" href="/assets/css/color-1.css" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
-  </head>
-  <body>
-    <!-- Loader starts-->
-    <div class="loader-wrapper">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"> </div>
-      <div class="dot"></div>
-    </div>
-    <!-- Loader ends-->
-    <!-- login page start-->
-    <div class="container-fluid p-0">
-      <div class="row m-0">
-        <div class="col-12 p-0">    
-          <div class="login-card">
-            <div>
-              <div><h3 class="text-center">BJustCoin dashboard</h3></div>
-              <div class="login-main"> 
-                <form class="theme-form">
-                  <h4 class="text-center">Sign in to account</h4>
-                  <p class="text-center">Enter your email & password to login</p>
-                  <div class="form-group">
-                    <label class="col-form-label">Email Address</label>
-                    <input class="form-control" type="email" required="" placeholder="Test@gmail.com">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label">Password</label>
-                    <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
-                      <div class="show-hide"><span class="show">                         </span></div>
-                    </div>
-                  </div>
-                  <div class="form-group mb-0">
-                    <div class="checkbox p-0">
-                      <input id="checkbox1" type="checkbox">
-                      <label class="text-muted" for="checkbox1">Remember password</label>
-                    </div><a class="link" href="#">Forgot password?</a>
-                    <div class="text-end mt-3">
-                      <button class="btn btn-primary btn-block w-100" type="submit">Sign in</button>
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-center">Don't have account?<a class="ms-2" href="/signup/">Create Account</a></p>
-                  <p class="mt-4 mb-0 text-center"><a class="ms-2" href="/admin_home/">admin view</a></p>
-                  <p class="mt-4 mb-0 text-center"><a class="ms-2" href="/user_home/">user view</a></p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <script src="/assets/js/jquery-3.6.0.min.js"></script>
-      <script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-      <script src="/assets/js/icons/feather-icon/feather.min.js"></script>
-      <script src="/assets/js/icons/feather-icon/feather-icon.js"></script>
-      <script src="/assets/js/config.js"></script>
-      <script src="/assets/js/script.js"></script>
-    </div>
-  </body>
+
+</body>
 </html>
