@@ -1,4 +1,45 @@
 <% include!("../header.stpl"); %>
 
-
+<section class="content">			
+			<div class="row">
+			  <div class="col-12">
+				  <div class="box">
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-3 col-12">
+								<div class="text-center">
+									<h1 class="text-bold count">325</h1>
+									<hr class="w-50 my-5 mx-auto b-3 border-warning">
+									<h5 class="mt-10">Transactions in last 24h</h5>
+								</div>
+							</div>
+							<div class="col-md-3 col-12">
+								<div class="text-center">
+									<h1 class="text-bold count">40</h1>
+									<hr class="w-50 my-5 mx-auto b-3 border-warning">
+									<h5 class="mt-10">Transactions per hour</h5>
+								</div>
+							</div>
+							<div class="col-md-3 col-12">
+								<div class="text-center">
+									<h1 class="text-bold count">150</h1>
+									<hr class="w-50 my-5 mx-auto b-3 border-warning">
+									<h5 class="mt-10">Largest Transactions</h5>
+								</div>
+							</div>
+							<div class="col-md-3 col-12">
+								<div class="text-center">
+									<h1 class="text-bold count">8</h1>
+									<hr class="w-50 my-5 mx-auto b-3 border-warning">
+									<h5 class="mt-10">Years of Experience</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+				  </div>
+			  </div>
+		  </div>	
+		</section>
+        
 <% include!("../footer.stpl"); %>

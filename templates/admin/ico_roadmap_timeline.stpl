@@ -1,4 +1,123 @@
 <% include!("../header.stpl"); %>
 
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- The time line -->
+            <ul class="timeline6">
+                <!-- timeline time label -->
+                <li class="time-label">
+                    <span class="bg-warning">
+                        15 Jan. 2017
+                    </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                    <i class="cc BTC bg-white"></i>
+
+                    <div class="timeline-item d-inline-block">
+                        <span class="time"><i class="fa fa-clock-o"></i> 11:48</span>
+
+                        <h3 class="timeline-header fs-24">BTC</h3>
+
+                        <div class="timeline-body">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <div class="timeline-footer text-start">
+                            <a href="#" class="btn btn-dark btn-sm">Read more</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="cc DASH bg-white"></i>
+
+                    <div class="timeline-item d-inline-block">
+                        <span class="time"><i class="fa fa-clock-o"></i> 11 mins ago</span>
+
+                        <h3 class="timeline-header fs-24">Crytop ICO</h3>
+
+                        <div class="timeline-body">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book.
+                        </div>
+                        <div class="timeline-footer text-start">
+                            <a href="#" class="btn btn-dark btn-sm">Read more</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="cc EMC-alt bg-white"></i>
+
+                    <div class="timeline-item d-inline-block">
+                        <span class="time"><i class="fa fa-clock-o"></i> 55 mins ago</span>
+
+                        <h3 class="timeline-header fs-24">Bitcoin launch</h3>
+
+                        <div class="timeline-body">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        </div>
+                        <div class="timeline-footer text-start">
+                            <a href="#" class="btn btn-dark btn-sm">Read more</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline time label -->
+                <li class="time-label">
+                    <span class="bg-warning">
+                        15 Nov. 2016
+                    </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                    <i class="cc HEAT bg-white"></i>
+
+                    <div class="timeline-item d-inline-block">
+                        <span class="time"><i class="fa fa-clock-o"></i> 8 days ago</span>
+
+                        <h3 class="timeline-header fs-24">Bitcoin Listed in Exchanges</h3>
+
+                        <div class="timeline-body">
+                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old.
+                        </div>
+                        <div class="timeline-footer text-start">
+                            <a href="#" class="btn btn-dark btn-sm">Read more</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="cc KMD bg-white"></i>
+
+                    <div class="timeline-item d-inline-block">
+                        <span class="time"><i class="fa fa-clock-o"></i> 18 days ago</span>
+
+                        <h3 class="timeline-header fs-24">Web Site</h3>
+
+                        <div class="timeline-body">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                            humour, or randomised words which don't look even slightly believable.
+                        </div>
+                        <div class="timeline-footer text-start">
+                            <a href="#" class="btn btn-dark btn-sm">Read more</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <li>
+                    <i class="fa fa-clock-o bg-warning text-white"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 <% include!("../footer.stpl"); %>

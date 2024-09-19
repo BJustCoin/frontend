@@ -1,4 +1,56 @@
 <% include!("../header.stpl"); %>
 
+<section class="content">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body text-center">
+                    <h1 class="page-header">
+                        <span class="text-bold">Crypto</span> The In Virtual <span class="text-bold">BitCoin</span>
+                    </h1>
+                    <p class="fs-18 mb-0">Buy now and get +30% extra bonus Minimum pre-sale amount 100 Crypto Coin.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-body">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-8 col-12">
+                            <h5 class="text-center">Ends Time:</h5>
+                            <div class="countdownv2_holder text-center mb-50 mt-20">
+                                <div class="clock"></div>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-warning">BUY TOKENS</a>
+                            </div>
+                            <h6 class="text-start mb-2">Midcap <span class="text-bold">in 489 days</span></h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar progress-bar-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span class="text-start pl-2">58$</span>
+                                </div>
+                            </div>
+                            <h6 class="text-end no-margin">Hardcap</h6>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <ul class="my-10 list-unstyled">
+                                <li>
+                                    <div class="fs-20 text-primary">Total Tokens: <span class="text-bold">123.0122</span></div>
+                                </li>
+
+                                <li class="py-35">
+                                    <div class="fs-20 text-danger">Tokens In Circulation: <span class="text-bold">5603.3011</span></div>
+                                </li>
+
+                                <li>
+                                    <div class="fs-20 text-warning">Token Price: <span class="text-bold">$1.0023</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <% include!("../footer.stpl"); %>

@@ -34,6 +34,9 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/transaction_details/", web::get().to(admin_transaction_details_page));
     config.route("/transactions_counter/", web::get().to(admin_transactions_counter_page));
     config.route("/support/", web::get().to(admin_support_page));
+
+    config.route("/invoice/", web::get().to(admin_invoice_page));
+    config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
 } 
 
 pub async fn admin_home_page() -> actix_web::Result<HttpResponse> {
@@ -240,6 +243,25 @@ pub async fn admin_transactions_counter_page() -> actix_web::Result<HttpResponse
 pub async fn admin_support_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/support.stpl")]
+    struct DesctopAuthTemplate;
+    let body = DesctopAuthTemplate{}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn admin_invoice_page() -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)] 
+    #[template(path = "admin/invoice.stpl")]
+    struct DesctopAuthTemplate;
+    let body = DesctopAuthTemplate{}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+pub async fn admin_invoices_list_page() -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)] 
+    #[template(path = "admin/invoices_list.stpl")]
     struct DesctopAuthTemplate;
     let body = DesctopAuthTemplate{}
     .render_once()

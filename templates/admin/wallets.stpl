@@ -1,4 +1,426 @@
 <% include!("../header.stpl"); %>
 
-
+<section class="content">
+			<div class="row">
+				<div class="col-lg-4 col-12">
+					<div class="box bg-primary">
+						<div class="box-body">
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="d-flex align-items-center">
+									<i class="cc BTC fs-24"></i>
+									<div>
+										<h4 class="mb-0">BTC Wallet</h4>
+									</div>
+								</div>
+								<div class="dropdown">
+									<a data-bs-toggle="dropdown" href="#" aria-expanded="false" class="hover-warning"><i class="ion-android-settings"></i></a>
+									<div class="dropdown-menu dropdown-menu-end">
+									  <a class="dropdown-item" href="#">Details</a>
+									  <a class="dropdown-item" href="#">Edit</a>
+									  <a class="dropdown-item" href="#">Delete</a>
+									</div>
+							  	</div>
+							</div>
+							<div class="mt-20 mb-5">
+							  <h3 class="my-0 fw-600"><span class="text-warning">15.12548</span> BTC</h3>
+							  <p class="mb-0">1,125.4 USD</p>
+							</div>
+						</div>
+						<div class="box-footer">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#" class="text-white hover-warning"><i class="fa fa-send-o me-5"></i>Send</a></li>
+								<li class="list-inline-item"><a href="#" class="text-white hover-warning"><i class="fa fa-money me-5"></i>Receive</a></li>
+								<li class="list-inline-item"><a href="#" class="text-white hover-warning"><i class="fa fa-download me-5"></i>Withdraw</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="box">
+						<div class="box-body">
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="d-flex align-items-center">
+									<i class="cc XRP fs-24"></i>
+									<div>
+										<h4 class="mb-0">Ripple Wallet</h4>
+									</div>
+								</div>
+								<div class="dropdown">
+									<a data-bs-toggle="dropdown" href="#" aria-expanded="false"><i class="ion-android-settings"></i></a>
+									<div class="dropdown-menu dropdown-menu-end">
+									  <a class="dropdown-item" href="#">Details</a>
+									  <a class="dropdown-item" href="#">Edit</a>
+									  <a class="dropdown-item" href="#">Delete</a>
+									</div>
+							  	</div>
+							</div>
+							<div class="mt-20 mb-5">
+							  <h3 class="my-0 fw-600"><span class="text-primary">15.12548</span> Ripple</h3>
+							  <p class="mb-0">1,125.4 USD</p>
+							</div>
+						</div>
+						<div class="box-footer">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#"><i class="fa fa-send-o me-5"></i>Send</a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-money me-5"></i>Receive</a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-download me-5"></i>Withdraw</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="box">
+						<div class="box-body">
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="d-flex align-items-center">
+									<i class="cc LTC fs-24"></i>
+									<div>
+										<h4 class="mb-0">Litecoin Wallet</h4>
+									</div>
+								</div>
+								<div class="dropdown">
+									<a data-bs-toggle="dropdown" href="#" aria-expanded="false"><i class="ion-android-settings"></i></a>
+									<div class="dropdown-menu dropdown-menu-end">
+									  <a class="dropdown-item" href="#">Details</a>
+									  <a class="dropdown-item" href="#">Edit</a>
+									  <a class="dropdown-item" href="#">Delete</a>
+									</div>
+							  	</div>
+							</div>
+							<div class="mt-20 mb-5">
+							  <h3 class="my-0 fw-600"><span class="text-primary">15.12548</span> Litecoin</h3>
+							  <p class="mb-0">1,125.4 USD</p>
+							</div>
+						</div>
+						<div class="box-footer">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#"><i class="fa fa-send-o me-5"></i>Send</a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-money me-5"></i>Receive</a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-download me-5"></i>Withdraw</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-12">
+					<div class="box">
+						<div class="box-header">
+							<h4 class="box-title">
+								Your Wallet
+							</h4>
+						</div>
+						<div class="box-body p-0">
+							<div>
+								<div class="d-flex bb-1 py-10 px-15">
+									<div><i class="cc BTC"></i></div>
+									<div>
+										<h4 class="mb-0">BTC Wallet</h4>
+										<p class="text-fade"><small>0.001 BTC ~ $ 875.86</small></p>
+										<div>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-primary mb-5"><i class="fa fa-paper-plane"></i> Send</button>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-info mb-5"><i class="fa fa-money"></i> Receive</button>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex bb-1 py-10 px-15">
+									<div><i class="cc DASH"></i></div>
+									<div>
+										<h4 class="mb-0">DASH Wallet</h4>
+										<p class="text-fade"><small>0.000000000DASH ~ $0.00</small></p>
+										<div>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-primary mb-5"><i class="fa fa-paper-plane"></i> Send</button>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-info mb-5"><i class="fa fa-money"></i> Receive</button>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex bb-1 py-10 px-15">
+									<div><i class="text-warning cc ETH"></i></div>
+									<div>
+										<h4 class="mb-0">Ethereum Wallet</h4>
+										<p class="text-fade"><small>0.00ETH ~ $0.00</small></p>
+										<div>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-primary mb-5"><i class="fa fa-paper-plane"></i> Send</button>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-info mb-5"><i class="fa fa-money"></i> Receive</button>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex bb-1 py-10 px-15">
+									<div><i class="cc LTC"></i></div>
+									<div>
+										<h4 class="mb-0">Litecoin Wallet</h4>
+										<p class="text-fade"><small>0.00LTC ~ $0.00</small></p>
+										<div>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-primary mb-5"><i class="fa fa-paper-plane"></i> Send</button>
+											<button type="button" class="waves-effect waves-light btn btn-outline btn-info mb-5"><i class="fa fa-money"></i> Receive</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box-footer p-0 bg-light">
+							<a href="#" class="d-block p-15 text-center"><i class="fa fa-plus"></i> Add New Wallet</a>
+						</div>
+					</div>
+				</div>				
+				<div class="col-xl-6 col-12">
+					<div class="box">
+						<div class="box-header with-border p-0">
+							<ul class="nav nav-tabs nav-fill das-tab" role="tablist">
+								<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tabid1" role="tab">Buy</a> </li>
+								<li class="nav-item"> <a class="nav-link sell-tab" data-toggle="tab" href="#tabid2" role="tab">Sell</a> </li>
+							</ul>
+						</div>
+					<div class="box-body">
+						<div class="tab-content">
+							<div class="tab-pane active" id="tabid1" role="tabpanel">
+								<h4 class="box-title mb-15">Currency</h4>
+								<div class="row bb-1 pb-15 mb-15">
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="coin-type" id="sell-1" checked="">
+											<label for="sell-1" class="sel-coin-type">
+												<i class="cc BTC me-0"></i> 
+												<span class="d-block mb-5">Bitcoin</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="coin-type" id="sell-2">
+											<label for="sell-2" class="sel-coin-type">
+												<i class="text-warning cc ETH me-0"></i> 
+												<span class="d-block mb-5">Ethereum</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="coin-type" id="sell-3">
+											<label for="sell-3" class="sel-coin-type">
+												<i class="cc LTC me-0"></i> 
+												<span class="d-block mb-5">Lite</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								
+								<h4 class="box-title mb-15">Payment Method</h4>
+								<div class="row bb-1 pb-15 mb-15">
+									<div class="col-xxxl-4 col-md-6 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="pay-type" id="pay-1" checked="">
+											<label for="pay-1" class="sel-coin-type">
+												<i class="fa fa-google-wallet"></i> 
+												<span class="d-block mb-5">Wallet</span>
+												<span class="d-block mb-0"><small>$209.00</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xxxl-4 col-md-6 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="pay-type" id="pay-2">
+											<label for="pay-2" class="sel-coin-type">
+												<i class="fa fa-bank"></i> 
+												<span class="d-block mb-5">USA Bank</span>
+												<span class="d-block mb-0"><small>**** **** 8907</small></span>
+											</label>
+										</div>
+									</div>									
+								</div>
+								
+								<h4 class="box-title mb-15">Amount</h4>
+								<div class="row">
+									<div class="col-12">
+										<div class="buy-input-block-content row">
+											<div class="buy-input-box col-md-5">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="899 USD">
+												</div>
+											</div>
+											<div class="col-md-2 text-center">
+												<i class="fa fa-exchange dir-icon"></i>
+											</div>
+											<div class="buy-input-box col-md-5">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="8 BTC">
+												</div>
+											</div>
+										</div>
+										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100">Buy Bitcoin</button>
+									</div>									
+								</div>
+							</div>
+							<div class="tab-pane" id="tabid2" role="tabpanel">
+								
+								<h4 class="box-title mb-15">Currency</h4>
+								<div class="row bb-1 pb-15 mb-15">
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="sell-coin-type" id="sell-4" checked="">
+											<label for="sell-4" class="sel-coin-type">
+												<i class="cc BTC me-0"></i> 
+												<span class="d-block mb-5">Bitcoin</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="sell-coin-type" id="sell-5">
+											<label for="sell-5" class="sel-coin-type">
+												<i class="text-warning cc ETH me-0"></i> 
+												<span class="d-block mb-5">Ethereum</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xl-4 col-md-4 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="sell-coin-type" id="sell-6">
+											<label for="sell-6" class="sel-coin-type">
+												<i class="cc LTC me-0"></i> 
+												<span class="d-block mb-5">Lite</span>
+												<small>@</small>
+												<span class="d-block mb-0"><small>8670.07</small></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								
+								<h4 class="box-title mb-15">Payment Method</h4>
+								<div class="row bb-1 pb-15 mb-15">
+									<div class="col-xxxl-4 col-md-6 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="sell-pay-type" id="pay-3" checked="">
+											<label for="pay-3" class="sel-coin-type">
+												<i class="fa fa-google-wallet"></i> 
+												<span class="d-block mb-5">Wallet</span>
+												<span class="d-block mb-0"><small>$209.00</small></span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xxxl-4 col-md-6 col-12">
+										<div class="sel-coin-type-outer">
+											<input type="radio" name="sell-pay-type" id="pay-4">
+											<label for="pay-4" class="sel-coin-type">
+												<i class="fa fa-bank"></i> 
+												<span class="d-block mb-5">USA Bank</span>
+												<span class="d-block mb-0"><small>**** **** 8907</small></span>
+											</label>
+										</div>
+									</div>									
+								</div>
+								
+								<h4 class="box-title mb-15">Amount</h4>
+								<div class="row">
+									<div class="col-12">
+										<div class="buy-input-block-content row">
+											<div class="buy-input-box col-md-5">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="899 USD">
+												</div>
+											</div>
+											<div class="col-md-2 text-center">
+												<i class="fa fa-exchange dir-icon"></i>
+											</div>
+											<div class="buy-input-box col-md-5">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="8 BTC">
+												</div>
+											</div>
+										</div>
+										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100">Sell Bitcoin</button>
+									</div>									
+								</div>
+							</div>
+						</div>
+					</div>
+				  </div>
+				</div>
+				
+				<div class="col-12 col-lg-4">
+					<div class="box box-body pull-up">
+						<div class="d-flex justify-content-between">
+						  <div class="p-0">
+							<div class="text-center">
+							  <a href="#"><i class="cc XRP me-5" title="XRP"></i></a>
+							</div>
+							<div>
+							  <h3 class="no-margin text-bold">Ripple</h3>
+							  <span>Real Estate</span>
+							</div>
+						  </div>
+						  <div>
+							<div>
+							  <p class="no-margin fw-600"><span class="text-warning">$5.0</span> / $1.0</p>
+							  <p class="no-margin">Sponsored</p>
+							</div>
+							<div class="mt-10">
+							  <p class="no-margin fw-600"><span class="text-warning">74%</span></p>
+							  <p class="no-margin">5d left</p>
+							</div>
+						  </div>
+						</div>
+					</div>			
+				</div>
+				<div class="col-12 col-lg-4">
+					<div class="box box-body pull-up">
+						<div class="d-flex justify-content-between">
+						  <div class="p-0">
+							<div class="text-center">
+							  <a href="#"><i class="text-warning cc EOS me-5" title="EOS"></i></a>
+							</div>
+							<div>
+							  <h3 class="no-margin text-bold">EOS</h3>
+							  <span>Exchange</span>
+							</div>
+						  </div>
+						  <div>
+							<div>
+							  <p class="no-margin fw-600"><span class="text-warning">$2.7</span> / $9.7</p>
+							  <p class="no-margin">Sponsored</p>
+							</div>
+							<div class="mt-10">
+							  <p class="no-margin fw-600"><span class="text-warning">87%</span></p>
+							  <p class="no-margin">5d left</p>
+							</div>
+						  </div>
+						</div>
+					</div>			
+				</div>
+				<div class="col-12 col-lg-4">
+					<div class="box box-body pull-up">
+						<div class="d-flex justify-content-between">
+						  <div class="p-0">
+							<div class="text-center">
+							  <a href="#"><i class="cc LSK me-5" title="LSK"></i></a>
+							</div>
+							<div>
+							  <h3 class="no-margin text-bold">Lisk</h3>
+							  <span>Trading</span>
+							</div>
+						  </div>
+						  <div>
+							<div>
+							  <p class="no-margin fw-600"><span class="text-warning">$7.9</span> / $7.0</p>
+							  <p class="no-margin">Sponsored</p>
+							</div>
+							<div class="mt-10">
+							  <p class="no-margin fw-600"><span class="text-warning">74%</span></p>
+							  <p class="no-margin">5d left</p>
+							</div>
+						  </div>
+					  </div>
+					</div>			
+				</div>
+			</div>
+		</section>
+        
 <% include!("../footer.stpl"); %>

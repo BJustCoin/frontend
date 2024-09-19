@@ -1,4 +1,439 @@
 <% include!("../header.stpl"); %>
 
 
+<section class="content">
+			<div class="row">
+			  	<div class="col-12">	
+					<div class="box">
+						<div class="box-header">
+							<h4 class="box-title">
+								Crypto Currency Live Price Tables
+							</h4>
+							<p class="subtitle">Minimum purchase is 100 Coins tokens. Get a bonus from 15% to 45% on every token purchase</p>
+						</div>
+						<div class="box-body">
+							<div class="table-responsive">
+								<table class="table no-margin">
+								  <thead>
+									<tr>
+									  <th>Symbol</th>
+									  <th>Name</th>
+									  <th>USD</th>
+									  <th>Change 1h</th>
+									  <th>Change 24h</th>
+									  <th>Change 7d</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><i class="cc BTC"></i></td>
+									  <td>Bitcoin</td>
+									  <td>41259</td>
+									  <td>0.7 %</td>
+									  <td>1.258 %</td>
+									  <td>53.74 %</td>
+									</tr>
+									<tr>
+									  <td><i class="cc ETH"></i></td>
+									  <td>Ethereum</td>
+									  <td>84596</td>
+									  <td>0.7 %</td>
+									  <td>1.258 %</td>
+									  <td>53.74 %</td>
+									</tr>
+									<tr>
+									  <td><i class="cc XRP"></i></td>
+									  <td>Ripple</td>
+									  <td>785</td>
+									  <td>0.7 %</td>
+									  <td>1.258 %</td>
+									  <td>53.74 %</td>
+									</tr>
+									<tr>
+									  <td><i class="cc LTC"></i></td>
+									  <td>Litecoin</td>
+									  <td>451.8</td>
+									  <td>0.7 %</td>
+									  <td>1.258 %</td>
+									  <td>53.74 %</td>
+									</tr>
+									<tr>
+									  <td><i class="cc XMR"></i></td>
+									  <td>Monero</td>
+									  <td>879.7</td>
+									  <td>0.7 %</td>
+									  <td>1.258 %</td>
+									  <td>53.74 %</td>
+									</tr>
+								  </tbody>
+								</table>
+							  </div>
+						</div>
+					</div>
+				  <div class="row">
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc XRP"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">XRP</h3>
+									  <h4 class="mb-0">Ripple</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div>USD</div>
+									<small class="fs-18">11.153</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>EUR</div>
+									<small class="fs-18">1.9232</small>
+								  </li>
+
+								  <li>
+									<div>GBP</div>
+									<small class="fs-18">1.8202</small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div>% 1h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>1.4</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>% 24h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>3.29</small>
+								  </li>
+
+								  <li>
+									<div>% 7d</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>54.77</small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc ETH"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">ETH</h3>
+									  <h4 class="mb-0">Ethereum</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">USD</div>
+									<small class="fs-18"><span class="text-black">2.153</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">EUR</div>
+									<small class="fs-18"><span class="text-black">3.9232</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">GBP</div>
+									<small class="fs-18"><span class="text-black">3.8202</span></small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 1h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>0.4</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 24h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>9.29</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">% 7d</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>50.77</span></small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc LTC"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">LTC</h3>
+									  <h4 class="mb-0">Litecoin</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div>USD</div>
+									<small class="fs-18">1.153</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>EUR</div>
+									<small class="fs-18">0.9232</small>
+								  </li>
+
+								  <li>
+									<div>GBP</div>
+									<small class="fs-18">0.8202</small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div>% 1h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>0.4</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>% 24h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>9.29</small>
+								  </li>
+
+								  <li>
+									<div>% 7d</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>50.77</small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc BTC"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">BTC</h3>
+									  <h4 class="mb-0">Bitcoin</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">USD</div>
+									<small class="fs-18"><span class="text-black">1.153</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">EUR</div>
+									<small class="fs-18"><span class="text-black">0.9232</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">GBP</div>
+									<small class="fs-18"><span class="text-black">0.8202</span></small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 1h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>0.4</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 24h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>9.29</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">% 7d</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>50.77</span></small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					 </div> 
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc ETH"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">ETH</h3>
+									  <h4 class="mb-0">Ethereum</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">USD</div>
+									<small class="fs-18"><span class="text-black">2.153</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">EUR</div>
+									<small class="fs-18"><span class="text-black">3.9232</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">GBP</div>
+									<small class="fs-18"><span class="text-black">3.8202</span></small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 1h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>0.4</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 24h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>9.29</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">% 7d</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>50.77</span></small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc XRP"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">XRP</h3>
+									  <h4 class="mb-0">Ripple</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div>USD</div>
+									<small class="fs-18">11.153</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>EUR</div>
+									<small class="fs-18">1.9232</small>
+								  </li>
+
+								  <li>
+									<div>GBP</div>
+									<small class="fs-18">1.8202</small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div>% 1h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>1.4</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>% 24h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>3.29</small>
+								  </li>
+
+								  <li>
+									<div>% 7d</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>54.77</small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc BTC"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">BTC</h3>
+									  <h4 class="mb-0">Bitcoin</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">USD</div>
+									<small class="fs-18"><span class="text-black">1.153</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">EUR</div>
+									<small class="fs-18"><span class="text-black">0.9232</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">GBP</div>
+									<small class="fs-18"><span class="text-black">0.8202</span></small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 1h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>0.4</span></small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div class="text-black">% 24h</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>9.29</span></small>
+								  </li>
+
+								  <li>
+									<div class="text-black">% 7d</div>
+									<small class="fs-18"><span class="text-black"><i class="fa fa-arrow-up pe-5"></i>50.77</span></small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					 </div>
+					<div class="col-md-6 col-lg-3 col-12">
+					  <div class="box pull-up">
+						  <div class="box-body text-center">
+							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
+								  <i class="cc LTC"></i>
+								  <div class="text-end">									  
+									  <h3 class="my-0 text-bold">LTC</h3>
+									  <h4 class="mb-0">Litecoin</h4>
+								  </div>
+							  </div>
+							  <ul class="flexbox flex-justified text-center mt-30 bb-1 border-gray pb-20">
+								  <li class="be-1 border-gray">
+									<div>USD</div>
+									<small class="fs-18">1.153</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>EUR</div>
+									<small class="fs-18">0.9232</small>
+								  </li>
+
+								  <li>
+									<div>GBP</div>
+									<small class="fs-18">0.8202</small>
+								  </li>
+							  </ul>
+							  <ul class="flexbox flex-justified text-center mt-20">
+								  <li class="be-1 border-gray">
+									<div>% 1h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>0.4</small>
+								  </li>
+
+								  <li class="be-1 border-gray">
+									<div>% 24h</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>9.29</small>
+								  </li>
+
+								  <li>
+									<div>% 7d</div>
+									<small class="fs-18"><i class="fa fa-arrow-up text-success pe-5"></i>50.77</small>
+								  </li>
+							  </ul>
+						  </div>
+					  </div>
+					</div>		
+				  </div>
+			  	</div>
+			</div>			
+		</section>
+        
 <% include!("../footer.stpl"); %>

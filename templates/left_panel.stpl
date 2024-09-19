@@ -43,7 +43,8 @@
 						<li><a href="/transactions/"><i class="ti-more"></i>Transactions</a></li>
 						<li><a href="/gainers_losers/"><i class="ti-more"></i>Gainers/Losers</a></li>
 						<li><a href="/market/"><i class="ti-more"></i>Market</a></li>
-						<li><a href="/stats/"><i class="ti-more"></i>Stats</a></li>
+						<li><a href="/invoice/"><i class="ti-more"></i>Invoice</a></li>
+						<li><a href="/invoices_list/"><i class="ti-more"></i>Invoices list</a></li>
 					  </ul>
 					</li> 
 					<li class="treeview">
@@ -85,7 +86,6 @@
 						</span>
 					  </a>
 					  <ul class="treeview-menu">
-						<li><a href="/tickers/"><i class="ti-more"></i>Ticker</a></li>
 						<li><a href="/tickers_live_pricing/"><i class="ti-more"></i>Live Prices</a></li>	
 					  </ul>
 					</li>

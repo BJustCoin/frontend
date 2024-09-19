@@ -1,4 +1,256 @@
 <% include!("../header.stpl"); %>
 
+<section class="content">
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="box pull-up">
+                <div class="box-body">
+                    <div class="media align-items-center p-0">
+                        <div class="text-center">
+                            <a href="#"><i class="cc BTC me-5" title="BTC"></i></a>
+                        </div>
+                        <div>
+                            <h3 class="no-margin text-bold">Bitcoin BTC</h3>
+                        </div>
+                    </div>
+                    <div class="flexbox align-items-center mt-5">
+                        <div>
+                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>BTC<span class="text-info">$0.04</span></p>
+                        </div>
+                        <div class="text-end">
+                            <p class="no-margin fw-600"><span class="text-success">+1.35%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer p-0 no-border">
+                    <div class="chart"><iframe class="chartjs-hidden-iframe"
+                            style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe><canvas
+                            id="chartjs1" class="h-80" style="display: block; width: 320px; height: 80px;" width="320" height="80"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="box pull-up">
+                <div class="box-body">
+                    <div class="media align-items-center p-0">
+                        <div class="text-center">
+                            <a href="#"><i class="cc LTC me-5" title="LTC"></i></a>
+                        </div>
+                        <div>
+                            <h3 class="no-margin text-bold">Litecoin LTC</h3>
+                        </div>
+                    </div>
+                    <div class="flexbox align-items-center mt-5">
+                        <div>
+                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>LTC<span class="text-info">$0.04</span></p>
+                        </div>
+                        <div class="text-end">
+                            <p class="no-margin fw-600"><span class="text-danger">-1.35%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer p-0 no-border">
+                    <div class="chart"><iframe class="chartjs-hidden-iframe"
+                            style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe><canvas
+                            id="chartjs2" class="h-80" style="display: block; width: 320px; height: 80px;" width="320" height="80"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="box pull-up">
+                <div class="box-body">
+                    <div class="media align-items-center p-0">
+                        <div class="text-center">
+                            <a href="#"><i class="cc NEO me-5" title="NEO"></i></a>
+                        </div>
+                        <div>
+                            <h3 class="no-margin text-bold">Neo NEO</h3>
+                        </div>
+                    </div>
+                    <div class="flexbox align-items-center mt-5">
+                        <div>
+                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>NEO<span class="text-info">$0.04</span></p>
+                        </div>
+                        <div class="text-end">
+                            <p class="no-margin fw-600"><span class="text-danger">-1.35%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer p-0 no-border">
+                    <div class="chart"><iframe class="chartjs-hidden-iframe"
+                            style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe><canvas
+                            id="chartjs3" class="h-80" style="display: block; width: 320px; height: 80px;" width="320" height="80"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="box pull-up">
+                <div class="box-body">
+                    <div class="media align-items-center p-0">
+                        <div class="text-center">
+                            <a href="#"><i class="cc DASH me-5" title="DASH"></i></a>
+                        </div>
+                        <div>
+                            <h3 class="no-margin text-bold">Dash DASH</h3>
+                        </div>
+                    </div>
+                    <div class="flexbox align-items-center mt-5">
+                        <div>
+                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>DASH<span class="text-info">$0.04</span></p>
+                        </div>
+                        <div class="text-end">
+                            <p class="no-margin fw-600"><span class="text-success">+1.35%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer p-0 no-border">
+                    <div class="chart"><iframe class="chartjs-hidden-iframe"
+                            style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe><canvas
+                            id="chartjs4" class="h-80" style="display: block; width: 320px; height: 80px;" width="320" height="80"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Block Details</h4>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered no-margin">
+                            <tbody>
+                                <tr>
+                                    <td>Blocks Mined</td>
+                                    <td>231</td>
+                                </tr>
+                                <tr>
+                                    <td>Time Between Blocks</td>
+                                    <td>15.46 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoins Mined</td>
+                                    <td>1,637.546780000 BTC</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Market Details</h4>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered no-margin">
+                            <tbody>
+                                <tr>
+                                    <td>Market Price</td>
+                                    <td>$19,234.37</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Trade Volume</td>
+                                    <td>$345,765,760.27</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Trade Volume</td>
+                                    <td>213,345.32893873 BTC</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Cost</h4>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered no-margin">
+                            <tbody>
+                                <tr>
+                                    <td>Total Miners Revenue (USD)</td>
+                                    <td>$164,727,645.97</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>% earned from transaction fees</td>
+                                    <td>13.07%</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>% of transaction volume</td>
+                                    <td>1.99%</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Cost per Transaction (USD)</td>
+                                    <td>$66.39</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Transaction Details</h4>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered no-margin">
+                            <tbody>
+                                <tr>
+                                    <td>Total Transaction Fees (BTC)</td>
+                                    <td>445.24635681 BTC</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Number of Transactions</td>
+                                    <td>320,151</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Output Volume (BTC)</td>
+                                    <td>4,543,040.43456788 BTC</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Estimated Transaction Volume (USD)</td>
+                                    <td>$34,758,121,076.66</td>
+                                    <td><a href="#" class="hover-warning">View Flow</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+    </div>
+</section>
 
 <% include!("../footer.stpl"); %>
