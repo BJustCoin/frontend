@@ -15,7 +15,9 @@
 	<link rel="stylesheet" href="/assets/css/vendors_css.css">
 	  
 	<!-- Style-->  
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/style3.css">
+  <link rel="stylesheet" href="/assets/css/style2.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/skin_color.css">	
 
 </head>
