@@ -14,12 +14,12 @@
                 <!-- /.timeline-label -->
                 <!-- timeline item -->
                 <li>
-                    <i class="cc BTC bg-white"></i>
+                    <i class="cc BJC bg-white"></i>
 
                     <div class="timeline-item d-inline-block">
                         <span class="time"><i class="fa fa-clock-o"></i> 11:48</span>
 
-                        <h3 class="timeline-header fs-24">BTC</h3>
+                        <h3 class="timeline-header fs-24">BJC</h3>
 
                         <div class="timeline-body">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.

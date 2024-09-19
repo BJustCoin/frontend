@@ -13,8 +13,8 @@
 							<div class="exchange-calculator">
 								<input type="text" class="form-control" name="coins-exchange" placeholder="" value="10.1548">                
 								<select class="coins-exchange select2-hidden-accessible" name="state" tabindex="-1" aria-hidden="true">
-								   <option value="BTC">BTC</option>
-								   <option value="BTC">Ethereum</option>
+								   <option value="BJC">BJC</option>
+								   <option value="Etherium">Ethereum</option>
 								   <option value="Ripple">Ripple</option>
 								   <option value="Ripple">Bitcoin Cash</option>
 								   <option value="Ripple">Cardano</option>
@@ -23,7 +23,7 @@
 								   <option value="Ripple">Stellar</option>
 								   <option value="Ripple">EOS</option>
 								   <option value="Ripple">NEM</option>
-								</select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 102px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-io-container"><span class="select2-selection__rendered" id="select2-state-io-container" title="BTC">BTC</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+								</select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 102px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-io-container"><span class="select2-selection__rendered" id="select2-state-io-container" title="BJC">BJC</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
 								<div class="equal"> = </div>
 								<input type="text" class="form-control" name="money-exchange" placeholder="" value="125.158">                
 								<select class="money-exchange select2-hidden-accessible" name="state" tabindex="-1" aria-hidden="true">
@@ -44,15 +44,15 @@
 					  <div class="box-body">
 						  <div class="media align-items-center p-0">
 							<div class="text-center">
-							  <a href="#"><i class="cc BTC me-5" title="BTC"></i></a>
+							  <a href="#"><i class="cc BJC me-5" title="BJC"></i></a>
 							</div>
 							<div>
-							  <h3 class="no-margin text-bold">Bitcoin BTC</h3>
+							  <h3 class="no-margin text-bold">Bitcoin BJC</h3>
 							</div>
 						  </div>
 						  <div class="flexbox align-items-center mt-5">
 							<div>
-							  <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>BTC<span class="text-info">$0.04</span></p>
+							  <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>BJC<span class="text-info">$0.04</span></p>
 							</div>
 							<div class="text-end">
 							  <p class="no-margin fw-600"><span class="text-success">+1.35%</span></p>
@@ -145,15 +145,15 @@
 				<div class="box box-body pull-up">
 				  <div class="media align-items-center p-0">
 					<div class="text-center">
-					  <a href="#"><i class="cc BTC me-5" title="BTC"></i></a>
+					  <a href="#"><i class="cc BJC me-5" title="BJC"></i></a>
 					</div>
 					<div>
-					  <h3 class="no-margin">Bitcoin BTC</h3>
+					  <h3 class="no-margin">Bitcoin BJC</h3>
 					</div>
 				  </div>
 				  <div class="flexbox align-items-center mt-25">
 					<div>
-					  <p class="no-margin">2.340000434 <span class="text-gray">BTC</span> <span class="text-info">$0.04</span></p>
+					  <p class="no-margin">2.340000434 <span class="text-gray">BJC</span> <span class="text-info">$0.04</span></p>
 					</div>
 					<div class="text-end">
 					  <p class="no-margin"><span class="text-success">+5.35%</span></p>

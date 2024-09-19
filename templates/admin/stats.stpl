@@ -7,15 +7,15 @@
                 <div class="box-body">
                     <div class="media align-items-center p-0">
                         <div class="text-center">
-                            <a href="#"><i class="cc BTC me-5" title="BTC"></i></a>
+                            <a href="#"><i class="cc BJC me-5" title="BJC"></i></a>
                         </div>
                         <div>
-                            <h3 class="no-margin text-bold">Bitcoin BTC</h3>
+                            <h3 class="no-margin text-bold">Bitcoin BJC</h3>
                         </div>
                     </div>
                     <div class="flexbox align-items-center mt-5">
                         <div>
-                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>BTC<span class="text-info">$0.04</span></p>
+                            <p class="no-margin fw-600"><span class="text-warning">0.00000434 </span>BJC<span class="text-info">$0.04</span></p>
                         </div>
                         <div class="text-end">
                             <p class="no-margin fw-600"><span class="text-success">+1.35%</span></p>
@@ -129,7 +129,7 @@
                                 </tr>
                                 <tr>
                                     <td>Bitcoins Mined</td>
-                                    <td>1,637.546780000 BTC</td>
+                                    <td>1,637.546780000 BJC</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,7 +160,7 @@
                                 </tr>
                                 <tr>
                                     <td>Trade Volume</td>
-                                    <td>213,345.32893873 BTC</td>
+                                    <td>213,345.32893873 BJC</td>
                                     <td><a href="#" class="hover-warning">View Flow</a></td>
                                 </tr>
                             </tbody>
@@ -222,8 +222,8 @@
                         <table class="table table-bordered no-margin">
                             <tbody>
                                 <tr>
-                                    <td>Total Transaction Fees (BTC)</td>
-                                    <td>445.24635681 BTC</td>
+                                    <td>Total Transaction Fees (BJC)</td>
+                                    <td>445.24635681 BJC</td>
                                     <td><a href="#" class="hover-warning">View Flow</a></td>
                                 </tr>
                                 <tr>
@@ -232,8 +232,8 @@
                                     <td><a href="#" class="hover-warning">View Flow</a></td>
                                 </tr>
                                 <tr>
-                                    <td>Total Output Volume (BTC)</td>
-                                    <td>4,543,040.43456788 BTC</td>
+                                    <td>Total Output Volume (BJC)</td>
+                                    <td>4,543,040.43456788 BJC</td>
                                     <td><a href="#" class="hover-warning">View Flow</a></td>
                                 </tr>
                                 <tr>

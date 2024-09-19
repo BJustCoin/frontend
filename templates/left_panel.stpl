@@ -110,17 +110,8 @@
 			  </ul>
 			  
 			  <div class="sidebar-widgets">	
-				<div class="mx-25 mb-30 pb-20 side-bx bg-primary rounded20">
-					<div class="text-center">
-						<img src="/static/images/crypto-join.png" class="sideimg" alt="">
-						<h3 class="title-bx">Invest Now!</h3>
-						<a href="" class="text-white py-10 fs-16 mb-0">
-						Buy and Sell Coins<i class="mdi mdi-arrow-right"></i>
-						</a>
-					</div>
-				</div>  
 				<div class="copyright text-start m-25">
-				<p><strong class="d-block">Dashbord</strong> © <script>document.write(new Date().getFullYear())</script> All Rights Reserved</p>
+					<p><strong class="d-block">Dashbord</strong> © <script>document.write(new Date().getFullYear())</script> All Rights Reserved</p>
 				</div>
 			  </div>
 		  </div>

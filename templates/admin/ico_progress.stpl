@@ -12,7 +12,7 @@
 										<div class="new-progress-wrap px-25">
 											<ul class="new-progress-line row list-unstyled mt-80 mb-50">
 											  <li class="col-2 done-1 bg-primary">
-												  <div class="history text-dark">87459 BTC raised</div>
+												  <div class="history text-dark">87459 BJC raised</div>
 												  <div class="scale text-dark">
 													 Round First
 												  </div>
@@ -25,31 +25,31 @@
 											  </li>
 											  <li class="col-2 done-3 bg-info">
 												  <div class="scale text-dark">
-													2600 BTC
+													2600 BJC
 												  </div>
 												  <div class="history text-dark">14% <div class="progress-badge badge badge-pill badge-success">bonus</div></div>
 											  </li>
 											  <li class="col-2 done-3 bg-info">
 												  <div class="history text-dark">15% <div class="progress-badge badge badge-pill badge-success">bonus</div></div>
 												  <div class="scale text-dark">
-													  3900 BTC
+													  3900 BJC
 												  </div>
 											  </li>
 											  <li class="col-2 current">
-												 <div class="filled bg-warning" style="width:66%;white-space: nowrap;z-index: 10;">5468 BTC</div>
+												 <div class="filled bg-warning" style="width:66%;white-space: nowrap;z-index: 10;">5468 BJC</div>
 												 <div class="progress bg-warning" style="right: 57%; display: none;"></div>
 												  <div class="history flash text-dark">7% <div class="progress-badge badge badge-pill badge-success">bonus</div></div>
 												  <div class="scale text-dark">
-													  7900 BTC
+													  7900 BJC
 												  </div>
 											  </li>
 											  <li class="col-2 done-6">
 												  <div class="scale text-dark">
-													19000 BTC
+													19000 BJC
 												  </div>
 												  <div class="history text-dark">Last-chance!</div>
 												  <div class="scale last text-dark">
-													32000 BTC
+													32000 BJC
 												  </div>
 											  </li>
 											</ul>

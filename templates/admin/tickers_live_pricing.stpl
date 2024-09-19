@@ -26,7 +26,7 @@
 								  </thead>
 								  <tbody>
 									<tr>
-									  <td><i class="cc BTC"></i></td>
+									  <td><i class="cc BJC"></i></td>
 									  <td>Bitcoin</td>
 									  <td>41259</td>
 									  <td>0.7 %</td>
@@ -210,9 +210,9 @@
 					  <div class="box pull-up">
 						  <div class="box-body text-center">
 							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
-								  <i class="cc BTC"></i>
+								  <i class="cc BJC"></i>
 								  <div class="text-end">									  
-									  <h3 class="my-0 text-bold">BTC</h3>
+									  <h3 class="my-0 text-bold">BJC</h3>
 									  <h4 class="mb-0">Bitcoin</h4>
 								  </div>
 							  </div>
@@ -345,9 +345,9 @@
 					  <div class="box pull-up">
 						  <div class="box-body text-center">
 							  <div class="d-flex justify-content-between bb-1 align-items-center pb-10">
-								  <i class="cc BTC"></i>
+								  <i class="cc BJC"></i>
 								  <div class="text-end">									  
-									  <h3 class="my-0 text-bold">BTC</h3>
+									  <h3 class="my-0 text-bold">BJC</h3>
 									  <h4 class="mb-0">Bitcoin</h4>
 								  </div>
 							  </div>

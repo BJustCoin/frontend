@@ -10,7 +10,7 @@
                             <div class="no-line-chart d-flex align-items-end justify-content-between">
                                 <div>
                                     <div class="top-icon d-flex align-items-center">
-                                        <i class="cc BTC" title="BTC"></i>
+                                        <i class="cc BJC" title="BJC"></i>
                                         <i class="cc BTS" title="BTS"></i>
                                         <i class="cc MTR" title="MTR"></i>
                                     </div>
@@ -62,7 +62,7 @@
             <div class="box">
                 <div class="box-body bb-1 d-lg-block d-none bbsr-0 bber-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="my-0"><span class="text-primary">ETH</span> / <span class="text-info">BTC</span></h3>
+                        <h3 class="my-0"><span class="text-primary">ETH</span> / <span class="text-info">BJC</span></h3>
                         <div>
                             <h5 class="mb-0"><span class="me-5">Last:</span></h5>
                             <h5 class="text-primary mb-0">0.03242000</h5>
@@ -77,7 +77,7 @@
                         </div>
                         <div>
                             <h5 class="mb-0"><span class="me-5">24V:</span></h5>
-                            <h5 class="text-info mb-0">1001.66 BTC</h5>
+                            <h5 class="text-info mb-0">1001.66 BJC</h5>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                             <thead>
                                 <tr>
                                     <th>Transaction Hash</th>
-                                    <th>BTC</th>
+                                    <th>BJC</th>
                                     <th>Time</th>
                                     <th>Miner Preference</th>
                                     <th>Status</th>
@@ -109,7 +109,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>1.0126281 BTC</td>
+                                    <td>1.0126281 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -123,7 +123,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>0.10522881 BTC</td>
+                                    <td>0.10522881 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -137,7 +137,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>0.40622033 BTC</td>
+                                    <td>0.40622033 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -151,7 +151,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>4.43670578 BTC</td>
+                                    <td>4.43670578 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -165,7 +165,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>22.01099978 BTC</td>
+                                    <td>22.01099978 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -179,7 +179,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>0.0024534 BTC</td>
+                                    <td>0.0024534 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
@@ -193,7 +193,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>0.00518486 BTC</td>
+                                    <td>0.00518486 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
                                     </td>
@@ -207,7 +207,7 @@
                                         </a>
                                         ...
                                     </td>
-                                    <td>0.0281818 BTC</td>
+                                    <td>0.0281818 BJC</td>
                                     <td>
                                         <time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
                                     </td>
@@ -276,9 +276,9 @@
                     <form class="dash-form">
                         <div class="form-group">
                             <select class="form-select">
-                                <option>BTC/USD</option>
-                                <option>BTC/EURO</option>
-                                <option>BTC/GBP</option>
+                                <option>BJC/USD</option>
+                                <option>BJC/EURO</option>
+                                <option>BJC/GBP</option>
                             </select>
                         </div>
                         <div class="row form-group">
@@ -355,7 +355,7 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <i class="cc BTC"></i>
+                                            <i class="cc BJC"></i>
                                             <span>Bitcoin</span>
                                         </div>
                                     </td>
@@ -368,7 +368,7 @@
                                         <small class="fw-300 mb-5">40%</small>
                                     </td>
                                     <td class="text-end">
-                                        <h5 class="my-0">$0.001 BTC</h5>
+                                        <h5 class="my-0">$0.001 BJC</h5>
                                     </td>
                                 </tr>
                                 <tr>
@@ -460,8 +460,8 @@
                 <div class="col-md-6 col-12">
                     <div class="box">
                         <div class="box-body text-center">
-                            <p class="text-primary">BTC BALANCE</p>
-                            <h3>124.53 <small>BTC</small></h3>
+                            <p class="text-primary">BJC BALANCE</p>
+                            <h3>124.53 <small>BJC</small></h3>
                             <div class="d-flex justify-content-center">
                                 <button type="button" class="btn btn-xs btn-dark me-10">SEND</button>
                                 <button type="button" class="btn btn-xs btn-danger">RECEIVE</button>
@@ -490,7 +490,7 @@
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="me-40">BCH/BTC</h5>
+                                    <h5 class="me-40">BCH/BJC</h5>
                                     <p class="text-danger">-2.24%</p>
                                 </div>
                                 <div class="d-flex justify-content-between">
@@ -598,7 +598,7 @@
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="me-40">BTC/USD</h5>
+                                    <h5 class="me-40">BJC/USD</h5>
                                     <p class="text-success">+3.15%</p>
                                 </div>
                                 <div class="d-flex justify-content-between">
@@ -706,7 +706,7 @@
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="me-40">BTC/USD</h5>
+                                    <h5 class="me-40">BJC/USD</h5>
                                     <p class="text-success">+3.00%</p>
                                 </div>
                                 <div class="d-flex justify-content-between">

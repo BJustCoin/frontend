@@ -14,12 +14,12 @@
                             </h5>
                         </div>
                         <div class="col-md-auto">
-                            <h5 class="text-bold text-end">0.35473875 BTC</h5>
+                            <h5 class="text-bold text-end">0.35473875 BJC</h5>
                         </div>
                     </div>
                     <div class="mt-30">
                         <span class="badge badge-xl badge-primary me-5 pull-left">45 Confirmation</span>
-                        <span class="badge badge-xl badge-success pull-right">1.124589756 BTC</span>
+                        <span class="badge badge-xl badge-success pull-right">1.124589756 BJC</span>
                     </div>
                 </div>
             </div>
@@ -77,15 +77,15 @@
                             <tbody>
                                 <tr>
                                     <td>Total Input</td>
-                                    <td>1.123456789 BTC</td>
+                                    <td>1.123456789 BJC</td>
                                 </tr>
                                 <tr>
                                     <td>Total Output</td>
-                                    <td>0.123456789 BTC</td>
+                                    <td>0.123456789 BJC</td>
                                 </tr>
                                 <tr>
                                     <td>Fees</td>
-                                    <td>0.987456321 BTC</td>
+                                    <td>0.987456321 BJC</td>
                                 </tr>
                                 <tr>
                                     <td>Fee per byte</td>
@@ -96,8 +96,8 @@
                                     <td>3,123.537 sat/WU</td>
                                 </tr>
                                 <tr>
-                                    <td>Estimated BTC Transacted</td>
-                                    <td>0.123456789 BTC</td>
+                                    <td>Estimated BJC Transacted</td>
+                                    <td>0.123456789 BJC</td>
                                 </tr>
                                 <tr>
                                     <td>Visualize</td>

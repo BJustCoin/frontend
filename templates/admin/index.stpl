@@ -6,7 +6,7 @@
             <div class="box">
                 <div class="box-body">
                     <div class="d-md-flex justify-content-between align-items-center d-inline-block">
-                        <h3 class="my-0">ETH/BTC</h3>
+                        <h3 class="my-0">ETH/BJC</h3>
                         <div>
                             <p class="mb-5 text-fade">Last Price</p>
                             <h4 class="mb-0"><span class="text-success">0.0000245</span> <span class="ms-5">$1.25</span></h4>
@@ -25,7 +25,7 @@
                         </div>
                         <div>
                             <p class="mb-5 text-fade">24h Total</p>
-                            <h4 class="mb-0"><span class="text-dark">142.00002154 BTC</span></h4>
+                            <h4 class="mb-0"><span class="text-dark">142.00002154 BJC</span></h4>
                         </div>
                     </div>
                 </div>
@@ -89,84 +89,84 @@
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -2.24%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.04886 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">20,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">20,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">REP<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">REP<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -2.57%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">20.12 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">45,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">45,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">EOS<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">EOS<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +1.54%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">4.755 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">65,123</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">65,123</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ZRX<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ZRX<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -1.33%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.26877 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">11,435</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">11,435</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ETH<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ETH<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +0.57%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">159.73 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,456</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,456</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">LTC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">LTC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +1.30%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">73.42 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">66,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">66,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ETC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ETC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -0.19%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">5.719 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">22,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">22,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
@@ -174,120 +174,120 @@
                             <div class="mx-20">
 
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +0.42%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">267.72 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">34,654</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">34,654</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">XRP<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">XRP<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -0.50%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.2974 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,345</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,345</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">BTC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">BJC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +3.15%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">5,497.49 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">56,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">56,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">REP<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">REP<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -2.52%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">20.13 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">23,569</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">23,569</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">EOS<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">EOS<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +1.58%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">4.757 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">78,879</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">78,879</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ZRX<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ZRX<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -2.07%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.268135 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">65,908</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">65,908</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ETH<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ETH<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +0.47%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">159.55 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,234</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">12,234</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">LTC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">LTC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +1.28%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">73.40 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">34,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">34,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">ETC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">ETC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -0.44%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">5.715 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">67,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">67,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +0.43%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">268.00 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">87,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">87,601</span><span>BJC</span></p>
                                 </div>
                             </div>
 
@@ -295,36 +295,36 @@
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">XRP<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">XRP<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -0.54%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.2970 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">13,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">13,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">BTC<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">BJC<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-success"> +3.00%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">5,490.01 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">43,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">43,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
                         <li class="be-1">
                             <div class="mx-20">
                                 <div class="d-flex justify-content-center">
-                                    <h6 class="fw-300 me-5">XLM<span class="px-5">|</span>BTC </h6>
+                                    <h6 class="fw-300 me-5">XLM<span class="px-5">|</span>BJC </h6>
                                     <h6 class="fw-300 text-danger"> -0.97%</h6>
                                 </div>
                                 <div class="d-block text-center">
                                     <h3 class=" fw-400 my-0">0.099065 <span>USD</span></h3>
-                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">23,601</span><span>BTC</span></p>
+                                    <p class="mb-0"><span class="fw-300">Volum</span><span class="px-5">23,601</span><span>BJC</span></p>
                                 </div>
                             </div>
                         </li>
@@ -448,8 +448,8 @@
                         <div class="row">
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Buy IOTA</h4>
-                                    <p class="mb-0">BTC Balance: 0.000000000</p>
+                                    <h4>Buy BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -458,19 +458,19 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
                                 </form>
                             </div>
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell IOTA</h4>
-                                    <p class="mb-0">IOTA Balance: 0.000000000</p>
+                                    <h4>Sell BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -479,13 +479,13 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
                                 </form>
                             </div>
                         </div>
@@ -494,8 +494,8 @@
                         <div class="row">
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Buy IOTA</h4>
-                                    <p class="mb-0">BTC Balance: 0.000000000</p>
+                                    <h4>Buy BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -504,19 +504,19 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
                                 </form>
                             </div>
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell IOTA</h4>
-                                    <p class="mb-0">IOTA Balance: 0.000000000</p>
+                                    <h4>Sell BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -525,13 +525,13 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
                                 </form>
                             </div>
                         </div>
@@ -540,8 +540,8 @@
                         <div class="row">
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Buy IOTA</h4>
-                                    <p class="mb-0">BTC Balance: 0.000000000</p>
+                                    <h4>Buy BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -550,19 +550,19 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
                                 </form>
                             </div>
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell IOTA</h4>
-                                    <p class="mb-0">IOTA Balance: 0.000000000</p>
+                                    <h4>Sell BJC</h4>
+                                    <p class="mb-0">BJC Balance: 0.000000000</p>
                                 </div>
                                 <form class="dash-form">
                                     <div class="input-group mb-10 mt-10">
@@ -571,13 +571,13 @@
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 IOTA">
+                                        <input type="number" class="form-control" placeholder="0 BJC">
                                     </div>
                                     <div class="input-group mb-10">
                                         <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BTC">
+                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
                                     </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell IOTA</button>
+                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
                                 </form>
                             </div>
                         </div>
