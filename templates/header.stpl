@@ -19,9 +19,9 @@
 <div class="wrapper">
 	<div id="loader"></div>
 	
-    <% include!("../navbar.stpl"); %>
+    <% include!("navbar.stpl"); %>
   
-    <% include!("../left_panel.stpl"); %>
+    <% include!("left_panel.stpl"); %>
 
   <div class="content-wrapper">
 	  <div class="container-full">
