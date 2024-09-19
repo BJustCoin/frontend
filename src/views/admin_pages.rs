@@ -37,6 +37,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 
     config.route("/invoice/", web::get().to(admin_invoice_page));
     config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
+    config.route("/exchange/", web::get().to(admin_exchange_page));
 } 
 
 pub async fn admin_home_page() -> actix_web::Result<HttpResponse> {
@@ -262,6 +263,16 @@ pub async fn admin_invoice_page() -> actix_web::Result<HttpResponse> {
 pub async fn admin_invoices_list_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/invoices_list.stpl")]
+    struct DesctopAuthTemplate;
+    let body = DesctopAuthTemplate{}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn admin_exchange_page() -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)] 
+    #[template(path = "admin/exchange.stpl")]
     struct DesctopAuthTemplate;
     let body = DesctopAuthTemplate{}
     .render_once()

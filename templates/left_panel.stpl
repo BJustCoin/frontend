@@ -61,7 +61,8 @@
 						<li><a href="/ico_progress/"><i class="ti-more"></i>Progress</a></li>
 						<li><a href="/ico_details/"><i class="ti-more"></i>Details</a></li>
 						<li><a href="/ico_listing/"><i class="ti-more"></i>Listing</a></li>
-						<li><a href="/ico_filter/"><i class="ti-more"></i>ICO Filters</a></li>	
+						<li><a href="/ico_filter/"><i class="ti-more"></i>ICO Filters</a></li>
+						<li><a href="/exchange/"><i class="ti-more"></i>Exchange</a></li>
 					  </ul>
 					</li> 
 					
