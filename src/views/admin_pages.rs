@@ -12,6 +12,7 @@ use serde::{Serialize, Deserialize};
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admin_home/", web::get().to(admin_home_page));
+    config.route("/admin_home2/", web::get().to(admin_home2_page));
     config.route("/profile/", web::get().to(admin_profile_page));
     config.route("/wallets/", web::get().to(admin_wallets_page));
     config.route("/setting/", web::get().to(admin_setting_page));
@@ -38,6 +39,15 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 pub async fn admin_home_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/index.stpl")]
+    struct DesctopAuthTemplate;
+    let body = DesctopAuthTemplate{}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+pub async fn admin_home2_page() -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)] 
+    #[template(path = "admin/index2.stpl")]
     struct DesctopAuthTemplate;
     let body = DesctopAuthTemplate{}
     .render_once()
