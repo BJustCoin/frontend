@@ -476,3 +476,76 @@ chart.addListener("dataUpdated", zoomChart);
 function zoomChart(){
     chart.zoomToDates(new Date(2021,9,20, 15), new Date(2021,10,3,12));
 }
+
+$(function () {
+
+  'use strict';
+	var clock = $('.clock').FlipClock(3600 * 24 *99, {
+		clockFace: 'DailyCounter',
+		countdown: true
+	}); 
+
+});
+
+
+$(function () {
+  'use strict';
+	  
+	var containerEl = document.querySelector('.ico-filter');
+	var mixer = mixitup(containerEl);
+
+	var container = document.querySelector('[data-ref="ico-filter"]');
+            var inputSearch = document.querySelector('[data-ref="input-search"]');
+            var keyupTimeout;
+
+            var mixer = mixitup(container, {
+                animation: {
+                    duration: 350
+                },
+                callbacks: {
+                    onMixClick: function() {
+
+                        if (this.matches('[data-filter]')) {
+                            inputSearch.value = '';
+                        }
+                    }
+                }
+            });
+
+            inputSearch.addEventListener('keyup', function() {
+                var searchValue;
+
+                if (inputSearch.value.length < 3) {
+                    searchValue = '';
+                } else {
+                    searchValue = inputSearch.value.toLowerCase().trim();
+                }
+
+                clearTimeout(keyupTimeout);
+
+                keyupTimeout = setTimeout(function() {
+                    filterByString(searchValue);
+                }, 350);
+            });
+
+            function filterByString(searchValue) {
+                if (searchValue) {
+                    mixer.filter('[class*="' + searchValue + '"]');
+                } else {
+                    mixer.filter('all');
+                }
+            }
+            var containerEl = document.querySelector('.ico-filter');
+            var radiosFilter = document.querySelector('.radios-filter');
+
+            var mixer = mixitup(containerEl);
+
+            radiosFilter.addEventListener('change', function() {
+                var checked = radiosFilter.querySelector(':checked');
+
+                var selector = checked ? checked.value : 'all';
+
+                mixer.filter(selector);
+            });
+	
+});

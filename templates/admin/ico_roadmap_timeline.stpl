@@ -8,7 +8,7 @@
                 <!-- timeline time label -->
                 <li class="time-label">
                     <span class="bg-warning">
-                        15 Jan. 2017
+                        22 Sep. 2024
                     </span>
                 </li>
                 <!-- /.timeline-label -->
@@ -56,7 +56,7 @@
                     <div class="timeline-item d-inline-block">
                         <span class="time"><i class="fa fa-clock-o"></i> 55 mins ago</span>
 
-                        <h3 class="timeline-header fs-24">Bitcoin launch</h3>
+                        <h3 class="timeline-header fs-24">BJustCoin launch</h3>
 
                         <div class="timeline-body">
                             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
@@ -70,7 +70,7 @@
                 <!-- timeline time label -->
                 <li class="time-label">
                     <span class="bg-warning">
-                        15 Nov. 2016
+                        15 Sep. 2024
                     </span>
                 </li>
                 <!-- /.timeline-label -->
@@ -81,7 +81,7 @@
                     <div class="timeline-item d-inline-block">
                         <span class="time"><i class="fa fa-clock-o"></i> 8 days ago</span>
 
-                        <h3 class="timeline-header fs-24">Bitcoin Listed in Exchanges</h3>
+                        <h3 class="timeline-header fs-24">BJustCoin Listed in Exchanges</h3>
 
                         <div class="timeline-body">
                             Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,

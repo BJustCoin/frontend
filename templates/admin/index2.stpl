@@ -111,7 +111,7 @@
                                     </td>
                                     <td>1.0126281 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:01Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>medium</td>
                                     <td><span class="label label-success">Confirmed</span></td>
@@ -125,7 +125,7 @@
                                     </td>
                                     <td>0.10522881 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:01Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-warning">Unconfirmed</span></td>
@@ -139,7 +139,7 @@
                                     </td>
                                     <td>0.40622033 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:01Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-success">Confirmed</span></td>
@@ -153,7 +153,7 @@
                                     </td>
                                     <td>4.43670578 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-danger">Canceled</span></td>
@@ -167,7 +167,7 @@
                                     </td>
                                     <td>22.01099978 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-danger">Canceled</span></td>
@@ -181,7 +181,7 @@
                                     </td>
                                     <td>0.0024534 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-warning">Unconfirmed</span></td>
@@ -195,7 +195,7 @@
                                     </td>
                                     <td>0.00518486 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:37:59Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
                                     </td>
                                     <td>medium</td>
                                     <td><span class="label label-success">Confirmed</span></td>
@@ -209,7 +209,7 @@
                                     </td>
                                     <td>0.0281818 BJC</td>
                                     <td>
-                                        <time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                        <time class="timeago" datetime="2024-02-01T13:37:58Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
                                     </td>
                                     <td>high</td>
                                     <td><span class="label label-danger">Canceled</span></td>
@@ -356,7 +356,7 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <i class="cc BJC"></i>
-                                            <span>Bitcoin</span>
+                                            <span>BJustCoin</span>
                                         </div>
                                     </td>
                                     <td>

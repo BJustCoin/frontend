@@ -10,7 +10,7 @@
                             <a href="#"><i class="cc BJC me-5" title="BJC"></i></a>
                         </div>
                         <div>
-                            <h3 class="no-margin text-bold">Bitcoin BJC</h3>
+                            <h3 class="no-margin text-bold">BJustCoin BJC</h3>
                         </div>
                     </div>
                     <div class="flexbox align-items-center mt-5">
@@ -128,7 +128,7 @@
                                     <td>15.46 minutes</td>
                                 </tr>
                                 <tr>
-                                    <td>Bitcoins Mined</td>
+                                    <td>BJustCoin Mined</td>
                                     <td>1,637.546780000 BJC</td>
                                 </tr>
                             </tbody>
