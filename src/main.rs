@@ -16,23 +16,23 @@ async fn main() -> std::io::Result<()> {
     use actix_files::Files;
     use std::time::Duration;
     //use actix_cors::Cors;
-    use actix_extensible_rate_limit::{
-        backend::{
-            SimpleInputFunctionBuilder,
-            memory::InMemoryBackend,
-        },
-        RateLimiter,
-    };
-    let limit_backend = InMemoryBackend::builder().build();
+    //use actix_extensible_rate_limit::{
+    //    backend::{
+    //        SimpleInputFunctionBuilder,
+    //        memory::InMemoryBackend,
+    //    },
+    //    RateLimiter,
+    //};
+    //let limit_backend = InMemoryBackend::builder().build();
 
     HttpServer::new(move || { 
         let _files = Files::new("/assets", "assets/").show_files_listing();
-        let limit_input = SimpleInputFunctionBuilder::new(Duration::from_secs(1), 5)
-            .real_ip_key()
-            .build();
-        let limit_middleware = RateLimiter::builder(limit_backend.clone(), limit_input)
-            .add_headers()
-            .build();
+        //let limit_input = SimpleInputFunctionBuilder::new(Duration::from_secs(1), 5)
+        //    .real_ip_key()
+        //    .build();
+        //let limit_middleware = RateLimiter::builder(limit_backend.clone(), limit_input)
+        //    .add_headers()
+        //    .build();
 
         App::new()  
             //.wrap(limit_middleware) 
