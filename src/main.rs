@@ -3,7 +3,6 @@ use actix_web::{
     HttpServer,
     web,
 };
-use actix_cors::Cors;
 
 mod views;
 mod routes;
@@ -16,7 +15,7 @@ async fn main() -> std::io::Result<()> {
     use crate::routes::routes;
     use actix_files::Files;
     use std::time::Duration;
-    use actix_cors::Cors;
+    //use actix_cors::Cors;
     use actix_extensible_rate_limit::{
         backend::{
             SimpleInputFunctionBuilder,
