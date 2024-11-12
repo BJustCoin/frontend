@@ -41,7 +41,7 @@ async fn main() -> std::io::Result<()> {
             .service(_files)
             .configure(routes)
     }) 
-    .bind("67.220.95.91:9999")?   // prod
+    .bind("69.167.186.207:9999")?   // prod
     .run()
     .await
 } 
