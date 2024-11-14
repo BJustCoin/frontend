@@ -36,23 +36,29 @@
 								<p class="mb-0">Register a new membership</p>							
 							</div>
 							<div class="p-40">
-								<form action="index.html" method="post">
+								<form>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Full Name">
+											<input type="text" name="first_name" class="form-control ps-15 bg-transparent" placeholder="First Name">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input type="text" name="last_name" class="form-control ps-15 bg-transparent" placeholder="Last Name">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
-											<input type="email" class="form-control ps-15 bg-transparent" placeholder="Email">
+											<input type="email" name="email" class="form-control ps-15 bg-transparent" placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+											<input type="password" name="password" class="form-control ps-15 bg-transparent" placeholder="Password">
 										</div>
 									</div>
 									<div class="form-group">
@@ -80,15 +86,16 @@
 								</div>
 							</div>
 						</div>								
-
+						<!--
 						<div class="text-center">
-						  <p class="mt-20 text-white">- Register With -</p>
+						  <p class="mt-20 text-white">- Sign With -</p>
 						  <p class="gap-items-2 mb-20">
 							  <a class="btn btn-social-icon btn-round btn-facebook" href="#"><i class="fa fa-facebook"></i></a>
 							  <a class="btn btn-social-icon btn-round btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
 							  <a class="btn btn-social-icon btn-round btn-instagram" href="#"><i class="fa fa-instagram"></i></a>
 							</p>	
 						</div>
+						-->
 					</div>
 				</div>
 			</div>			

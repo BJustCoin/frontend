@@ -2,9 +2,11 @@ use actix_web::{
     App,
     HttpServer,
     web,
+    cookie::Key,
 };
-
+use actix_session::{storage::CookieSessionStore, SessionMiddleware};
 mod views;
+mod utils;
 mod routes;
 mod errors;
 
@@ -15,27 +17,16 @@ async fn main() -> std::io::Result<()> {
     use crate::routes::routes;
     use actix_files::Files;
     use std::time::Duration;
-    //use actix_cors::Cors;
-    //use actix_extensible_rate_limit::{
-    //    backend::{
-    //        SimpleInputFunctionBuilder,
-    //        memory::InMemoryBackend,
-    //    },
-    //    RateLimiter,
-    //};
-    //let limit_backend = InMemoryBackend::builder().build();
+    let secret_key = Key::generate();
 
     HttpServer::new(move || { 
         let _files = Files::new("/assets", "assets/").show_files_listing();
-        //let limit_input = SimpleInputFunctionBuilder::new(Duration::from_secs(1), 5)
-        //    .real_ip_key()
-        //    .build();
-        //let limit_middleware = RateLimiter::builder(limit_backend.clone(), limit_input)
-        //    .add_headers()
-        //    .build();
-
-        App::new()  
-            //.wrap(limit_middleware) 
+        App::new()
+            .wrap(
+                SessionMiddleware::builder(CookieSessionStore::default(), secret_key.clone())
+                    .cookie_secure(false)
+                    .build(),
+            )
             .default_service(web::route().to(not_found_page))
             .service(_files)
             .configure(routes)

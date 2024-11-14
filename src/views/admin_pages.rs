@@ -8,6 +8,7 @@ use actix_web::{
 };
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
+use actix_session::Session;
 
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
@@ -40,7 +41,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/exchange/", web::get().to(admin_exchange_page));
 } 
 
-pub async fn admin_home_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_home_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/index.stpl")]
     struct DesctopAuthTemplate;
@@ -49,7 +50,7 @@ pub async fn admin_home_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_home2_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_home2_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/index2.stpl")]
     struct DesctopAuthTemplate;
@@ -58,7 +59,7 @@ pub async fn admin_home2_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_profile_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_profile_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/profile.stpl")]
     struct DesctopAuthTemplate;
@@ -67,7 +68,7 @@ pub async fn admin_profile_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_wallets_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_wallets_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/wallets.stpl")]
     struct DesctopAuthTemplate;
@@ -76,7 +77,7 @@ pub async fn admin_wallets_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_setting_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_setting_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/setting.stpl")]
     struct DesctopAuthTemplate;
@@ -85,7 +86,7 @@ pub async fn admin_setting_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_transactions_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/transactions.stpl")]
     struct DesctopAuthTemplate;
@@ -94,7 +95,7 @@ pub async fn admin_transactions_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_gainers_losers_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_gainers_losers_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/gainers_losers.stpl")]
     struct DesctopAuthTemplate;
@@ -103,7 +104,7 @@ pub async fn admin_gainers_losers_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_market_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_market_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/market.stpl")]
     struct DesctopAuthTemplate;
@@ -112,7 +113,7 @@ pub async fn admin_market_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_stats_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_stats_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/stats.stpl")]
     struct DesctopAuthTemplate;
@@ -121,7 +122,7 @@ pub async fn admin_stats_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_distribution_countdown_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_distribution_countdown_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_distribution_countdown.stpl")]
     struct DesctopAuthTemplate;
@@ -130,7 +131,7 @@ pub async fn admin_ico_distribution_countdown_page() -> actix_web::Result<HttpRe
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_roadmap_timeline_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_roadmap_timeline_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_roadmap_timeline.stpl")]
     struct DesctopAuthTemplate;
@@ -139,7 +140,7 @@ pub async fn admin_ico_roadmap_timeline_page() -> actix_web::Result<HttpResponse
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_progress_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_progress_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_progress.stpl")]
     struct DesctopAuthTemplate;
@@ -148,7 +149,7 @@ pub async fn admin_ico_progress_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_details_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_details_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_details.stpl")]
     struct DesctopAuthTemplate;
@@ -157,7 +158,7 @@ pub async fn admin_ico_details_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_listing_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_listing_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_listing.stpl")]
     struct DesctopAuthTemplate;
@@ -166,7 +167,7 @@ pub async fn admin_ico_listing_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_ico_filter_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_filter_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/ico_filter.stpl")]
     struct DesctopAuthTemplate;
@@ -175,7 +176,7 @@ pub async fn admin_ico_filter_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_members_list_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_members_list_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/members_list.stpl")]
     struct DesctopAuthTemplate;
@@ -187,7 +188,7 @@ pub async fn admin_members_list_page() -> actix_web::Result<HttpResponse> {
 
 
 
-pub async fn admin_tickers_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_tickers_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/tickers.stpl")]
     struct DesctopAuthTemplate;
@@ -196,7 +197,7 @@ pub async fn admin_tickers_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_tickers_live_pricing_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_tickers_live_pricing_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/tickers_live_pricing.stpl")]
     struct DesctopAuthTemplate;
@@ -205,7 +206,7 @@ pub async fn admin_tickers_live_pricing_page() -> actix_web::Result<HttpResponse
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_transactions_tables_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_tables_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/transactions_tables.stpl")]
     struct DesctopAuthTemplate;
@@ -214,7 +215,7 @@ pub async fn admin_transactions_tables_page() -> actix_web::Result<HttpResponse>
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_transaction_search_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_transaction_search_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/transaction_search.stpl")]
     struct DesctopAuthTemplate;
@@ -223,7 +224,7 @@ pub async fn admin_transaction_search_page() -> actix_web::Result<HttpResponse> 
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_transaction_details_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_transaction_details_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/transaction_details.stpl")]
     struct DesctopAuthTemplate;
@@ -232,7 +233,7 @@ pub async fn admin_transaction_details_page() -> actix_web::Result<HttpResponse>
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_transactions_counter_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_counter_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/transactions_counter.stpl")]
     struct DesctopAuthTemplate;
@@ -241,7 +242,7 @@ pub async fn admin_transactions_counter_page() -> actix_web::Result<HttpResponse
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_support_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_support_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/support.stpl")]
     struct DesctopAuthTemplate;
@@ -251,7 +252,7 @@ pub async fn admin_support_page() -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn admin_invoice_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_invoice_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/invoice.stpl")]
     struct DesctopAuthTemplate;
@@ -260,7 +261,7 @@ pub async fn admin_invoice_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn admin_invoices_list_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_invoices_list_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/invoices_list.stpl")]
     struct DesctopAuthTemplate;
@@ -270,7 +271,7 @@ pub async fn admin_invoices_list_page() -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn admin_exchange_page() -> actix_web::Result<HttpResponse> {
+pub async fn admin_exchange_page(session:&Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "admin/exchange.stpl")]
     struct DesctopAuthTemplate;
