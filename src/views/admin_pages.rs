@@ -13,6 +13,7 @@ use crate::utils::{
     get_current_user,
     is_signed_in,
 };
+use crate::views::AuthResp;
 
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
@@ -46,13 +47,27 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 } 
 
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)] 
-    #[template(path = "admin/index.stpl")]
-    struct DesctopAuthTemplate;
-    let body = DesctopAuthTemplate{}
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect();
+        if _request_user.perm > 59 {
+            #[derive(TemplateOnce)]
+            #[template(path = "admin/index.stpl")]
+            struct Template {
+                request_user: AuthResp,
+            }
+            let body = Template {
+                request_user: _request_user,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            crate::views::user_home_page(session).await
+        }
+    else {
+        crate::views::user_home_page(session).await
+    }
 }
 pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 

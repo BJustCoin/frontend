@@ -13,17 +13,35 @@ use crate::utils::{
     get_current_user,
     is_signed_in,
 };
+use crate::views::AuthResp;
+
 
 pub fn user_urls(config: &mut web::ServiceConfig) {
     config.route("/user_home/", web::get().to(user_home_page));
 }
 
-pub async fn user_home_page() -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)] 
-    #[template(path = "user/index.stpl")]
-    struct Template;
-    let body = Template{}
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+pub async fn user_home_page(session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect();
+        #[derive(TemplateOnce)]
+        #[template(path = "user/index.stpl")]
+        struct Template {
+            request_user: AuthResp,
+        }
+        let body = Template {
+            request_user: _request_user,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "user/index.stpl")]
+        struct Template {}
+        let body = Template {}
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
 }
