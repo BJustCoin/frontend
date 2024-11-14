@@ -65,6 +65,7 @@ pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse
         else {
             crate::views::user_home_page(session).await
         }
+    }
     else {
         crate::views::user_home_page(session).await
     }
