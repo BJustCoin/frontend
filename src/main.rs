@@ -14,7 +14,7 @@ async fn main() -> std::io::Result<()> {
     use crate::routes::routes;
     use actix_files::Files;
     use std::time::Duration;
-    let secret_key = Key::generate();
+    //let secret_key = Key::generate();
 
     HttpServer::new(move || { 
         let _files = Files::new("/assets", "assets/").show_files_listing();
