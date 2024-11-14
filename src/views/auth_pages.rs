@@ -16,7 +16,6 @@ use crate::utils::{
     NewUserForm,
 };
 use actix_session::Session;
-use crate::errors::AuthError;
 use crate::utils::request_post;
 
 

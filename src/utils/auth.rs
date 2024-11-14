@@ -4,7 +4,7 @@ use actix_web::{
   http::header::CONTENT_TYPE,
   HttpRequest,
 };
-use crate::{errors::AuthError, vars};
+use crate::vars;
 use crate::models::SessionUser;
 
 
@@ -17,13 +17,13 @@ pub fn hash_password(password: &str) -> String {
       //.map_err(|_| AuthError::AuthenticationError(String::from("Не удалось хэшировать пароль")))
 }
 
-pub fn verify(hash: &str, password: &str) -> Result<bool, AuthError> {
+pub fn verify(hash: &str, password: &str) -> bool {
   Verifier::default()
       .with_hash(hash)
       .with_password(password)
       .with_secret_key(vars::secret_key().as_str())
       .verify()
-      .map_err(|_| AuthError::AuthenticationError(String::from("Не удалось подтвердить пароль")))
+      //.map_err(|_| AuthError::AuthenticationError(String::from("Не удалось подтвердить пароль")))
 }
 
 pub fn is_json_request(req: &HttpRequest) -> bool {
@@ -49,15 +49,15 @@ pub fn set_current_user(session: &Session, user: &SessionUser) -> () {
     session.insert("user", serde_json::to_string(user).unwrap()).unwrap();
 }
  
-pub fn get_current_user(session: &Session) -> Result<SessionUser, AuthError> {
+pub fn get_current_user(session: &Session) -> Result<SessionUser, Error> {
     let msg = "Не удалось извлечь пользователя из сеанса";
 
     session
         .get::<String>("user")
-        .map_err(|_| AuthError::AuthenticationError(String::from(msg)))
+        .map_err(|_| Error(String::from(msg)))
         .unwrap() 
         .map_or(
-          Err(AuthError::AuthenticationError(String::from(msg))),
-          |user| serde_json::from_str(&user).or_else(|_| Err(AuthError::AuthenticationError(String::from(msg))))
+          Err(Error(String::from(msg))),
+          |user| serde_json::from_str(&user).or_else(|_| Err(Error(String::from(msg))))
         )
 }

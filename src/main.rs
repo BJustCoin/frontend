@@ -8,7 +8,6 @@ use actix_session::{storage::CookieSessionStore, SessionMiddleware};
 mod views;
 mod utils;
 mod routes;
-mod errors;
 
 use crate::views::not_found_page;
 
