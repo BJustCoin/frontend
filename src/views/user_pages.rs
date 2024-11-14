@@ -17,10 +17,10 @@ use crate::views::AuthResp;
 
 
 pub fn user_urls(config: &mut web::ServiceConfig) {
-    config.route("/user_home/", web::get().to(user_home_page));
+    config.route("/profile/", web::get().to(user_page));
 }
 
-pub async fn user_home_page(session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn user_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -37,7 +37,7 @@ pub async fn user_home_page(session: Session) -> actix_web::Result<HttpResponse>
     }
     else {
         #[derive(TemplateOnce)]
-        #[template(path = "user/index.stpl")]
+        #[template(path = "user/anon_index.stpl")]
         struct Template {}
         let body = Template {}
             .render_once()

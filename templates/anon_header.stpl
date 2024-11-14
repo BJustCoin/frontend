@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <title>Dashboard</title>
+	<link rel="stylesheet" href="/assets/css/vendors_css.css">
+	<link rel="stylesheet" href="/assets/css/style3.css">
+  <link rel="stylesheet" href="/assets/css/style2.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/skin_color.css">
+     
+  </head>
+
+<body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
+	
+<div class="wrapper">
+	<div id="loader"></div>
+        <% include!("anon_navbar.stpl"); %>
+        <% include!("anon_left_panel.stpl"); %>
+        <div class="content-wrapper">
+	        <div class="container-full">
