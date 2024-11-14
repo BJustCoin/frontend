@@ -41,11 +41,15 @@ pub async fn main_page(session: Session) -> actix_web::Result<HttpResponse> {
     else {
         #[derive(TemplateOnce)]
         #[template(path = "anon_mainpage.stpl")]
-        struct Template {}
-        let body = Template {}
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        struct Template {
+            types: String,
+        }
+        let body = Template {
+            types: "anon".to_string(),
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
 }
 
@@ -67,13 +71,17 @@ pub async fn about_page(session: Session) -> actix_web::Result<HttpResponse> {
     else {
         #[derive(TemplateOnce)]
         #[template(path = "anon_about.stpl")]
-        struct Template {}
-        let body = Template {}
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        struct Template {
+            types: String,
+        }
+        let body = Template {
+            types: "anon".to_string(),
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-}
+} 
 
 pub async fn not_found_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
@@ -93,11 +101,15 @@ pub async fn not_found_page(session: Session) -> actix_web::Result<HttpResponse>
     else {
         #[derive(TemplateOnce)]
         #[template(path = "anon_not_found.stpl")]
-        struct Template {}
-        let body = Template {}
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        struct Template {
+            types: String,
+        }
+        let body = Template {
+            types: "anon".to_string(),
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
 }
 
@@ -119,11 +131,15 @@ pub async fn terms_page(session: Session) -> actix_web::Result<HttpResponse> {
     else {
         #[derive(TemplateOnce)]
         #[template(path = "anon_terms.stpl")]
-        struct Template {}
-        let body = Template {}
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        struct Template {
+            types: String,
+        }
+        let body = Template {
+            types: "anon".to_string(),
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
 }
 
@@ -145,10 +161,14 @@ pub async fn policy_page(session: Session) -> actix_web::Result<HttpResponse> {
     else {
         #[derive(TemplateOnce)]
         #[template(path = "anon_policy.stpl")]
-        struct Template {}
-        let body = Template {}
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        struct Template {
+            types: String,
+        }
+        let body = Template {
+            types: "anon".to_string(),
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
 }
