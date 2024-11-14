@@ -30,22 +30,6 @@ pub fn get_token()-> Option<String> {
     }
 }
 
-pub fn is_authenticate()-> bool {
-    return web_local_storage_api::get_item("token").expect("E.").is_some();
-}  
-
-//pub fn set_token(token: String) {
-//    let local_token = web_local_storage_api::set_item("token", &token);
-//    if local_token.is_ok() {
-//        println!("local_token is_some!");
-//    }
-//}
-
-//pub fn remove_token() {
-//   let _r = web_local_storage_api::remove_item("token");
-//}
-
-
 async fn request<U, T> (
     url: String, 
     method: reqwest::Method, 
@@ -63,11 +47,11 @@ where
         .request(method, url)
         .header("Content-Type", "application/json");
 
-    if is_auth {
-        if let Some(token) = get_token(){
-            req = req.bearer_auth(token);
-        }
-    }
+    //if is_auth {
+    //    if let Some(token) = get_token(){
+    //        req = req.bearer_auth(token);
+    //    }
+    //}
 
     if allow_body { 
         req = req.json(body);
