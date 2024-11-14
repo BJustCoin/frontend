@@ -20,15 +20,15 @@ struct ReqResult<T> {
 }
 
 
-pub fn get_token()-> Option<String> {
-    let token = web_local_storage_api::get_item("token").expect("E.");
-    if token.is_some() {
-        return token;
-    }
-    else {
-        return None;
-    }
-}
+//pub fn get_token()-> Option<String> {
+//    let token = web_local_storage_api::get_item("token").expect("E.");
+//    if token.is_some() {
+//        return token;
+//    }
+//    else {
+//        return None;
+//    }
+//}
 
 async fn request<U, T> (
     url: String, 

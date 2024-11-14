@@ -47,7 +47,7 @@ pub struct NewUser {
     pub email:      String,
     pub password:   String,
 }
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct NewUser2 {
     pub first_name: String,
     pub last_name:  String,
@@ -56,9 +56,9 @@ pub struct NewUser2 {
 }
 
 pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
-    if get_current_user.is_some() {
-        return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
-    }
+    //if get_current_user.is_some() {
+    //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
+    //}
     let res = request_post::<LoginUser, AuthResp> (
         URL.to_owned() + &"/login/".to_string(),
         &l_data,
@@ -80,9 +80,9 @@ pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
     }
 }
 pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
-    if get_current_user.is_some() {
-        return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
-    }
+    //if get_current_user.is_some() {
+    //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
+    //}
     let r_data = LoginUser {
         email:    data.email.clone(),
         password: data.password.clone(),
