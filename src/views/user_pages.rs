@@ -8,14 +8,13 @@ use actix_web::{
 };
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
-use actix_session::Session;
 
 
 pub fn user_urls(config: &mut web::ServiceConfig) {
     config.route("/user_home/", web::get().to(user_home_page));
 }
 
-pub async fn user_home_page(session:&Session) -> actix_web::Result<HttpResponse> {
+pub async fn user_home_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "user/index.stpl")]
     struct Template;

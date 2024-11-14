@@ -14,7 +14,6 @@ use actix_web::{
     dev::ConnectionInfo,
 };
 use serde::{Deserialize, Serialize};
-use actix_session::Session;
 
 
 #[derive(Deserialize, Serialize)]

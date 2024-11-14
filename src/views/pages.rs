@@ -8,7 +8,6 @@ use actix_web::{
 };
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
-use actix_session::Session;
 
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {
@@ -42,7 +41,6 @@ pub async fn get_first_load_page (
     title:       String,
     description: String,
     uri:         String,
-    session:     &Session,
 ) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "first_load.stpl")]
@@ -61,7 +59,7 @@ pub async fn get_first_load_page (
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn about_page(session:&Session) -> actix_web::Result<HttpResponse> {
+pub async fn about_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "about.stpl")]
     struct Template;
@@ -71,7 +69,7 @@ pub async fn about_page(session:&Session) -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn not_found_page(session:&Session) -> actix_web::Result<HttpResponse> {
+pub async fn not_found_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "not_found.stpl")]
     struct Template;
@@ -81,7 +79,7 @@ pub async fn not_found_page(session:&Session) -> actix_web::Result<HttpResponse>
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn terms_page(session:&Session) -> actix_web::Result<HttpResponse> {
+pub async fn terms_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "terms.stpl")]
     struct Template;
@@ -91,7 +89,7 @@ pub async fn terms_page(session:&Session) -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
-pub async fn policy_page(session:&Session) -> actix_web::Result<HttpResponse> {
+pub async fn policy_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "policy.stpl")]
     struct Template;

@@ -11,11 +11,10 @@ use actix_web::{
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
 use crate::utils::{
-    is_signed_in,
+    get_current_user,
     verify,
     NewUserForm,
 };
-use actix_session::Session;
 use crate::utils::request_post;
 
 
@@ -56,14 +55,10 @@ pub struct NewUser2 {
     pub password:   String,
 }
 
-pub async fn login(data: Json<LoginUser>, session: &Session) -> Json<AuthResp> {
-    if is_signed_in(&session) {
+pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
+    if get_current_user.is_some() {
         return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
     }
-    let l_data = LoginUser {
-        email:    data.email.clone(),
-        password: data.password.clone(),
-    }; 
     let res = request_post::<LoginUser, AuthResp> (
         URL.to_owned() + &"/login/".to_string(),
         &l_data,
@@ -72,7 +67,7 @@ pub async fn login(data: Json<LoginUser>, session: &Session) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            set_current_user(&session, &l_data);
+            set_current_user(&user);
             Json(user)
         },
         Err(_) => Json(AuthResp {
@@ -84,8 +79,8 @@ pub async fn login(data: Json<LoginUser>, session: &Session) -> Json<AuthResp> {
         }),
     }
 }
-pub async fn signup(data: Json<NewUser>, session: &Session) -> Json<AuthResp> {
-    if is_signed_in(&session) {
+pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
+    if get_current_user.is_some() {
         return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
     }
     let r_data = LoginUser {
@@ -106,7 +101,7 @@ pub async fn signup(data: Json<NewUser>, session: &Session) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            set_current_user(&session, &r_data);
+            set_current_user(&user);
             Json(user)
         },
         Err(_) => Json(AuthResp {
@@ -119,7 +114,7 @@ pub async fn signup(data: Json<NewUser>, session: &Session) -> Json<AuthResp> {
     }
 }
 
-pub async fn auth_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn auth_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "auth/auth.stpl")]
     struct Template;
@@ -128,7 +123,7 @@ pub async fn auth_page(session: &Session) -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn signup_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn signup_page() -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "auth/signup.stpl")]
     struct Template;

@@ -1,30 +1,13 @@
 use argonautica::{Hasher, Verifier};
-use actix_session::Session;
 use actix_web::{
-  http::header::CONTENT_TYPE,
-  HttpRequest,
+    http::header::CONTENT_TYPE,
+    HttpRequest,
+    web::Json,
+    Error,
 };
 use crate::vars;
-use crate::models::SessionUser;
+use crate::views::AuthResp;
 
-
-pub fn hash_password(password: &str) -> String {
-  Hasher::default()
-      .with_password(password)
-      .with_secret_key(vars::secret_key().as_str())
-      .hash()
-      .expect("E.")
-      //.map_err(|_| AuthError::AuthenticationError(String::from("Не удалось хэшировать пароль")))
-}
-
-pub fn verify(hash: &str, password: &str) -> bool {
-  Verifier::default()
-      .with_hash(hash)
-      .with_password(password)
-      .with_secret_key(vars::secret_key().as_str())
-      .verify()
-      //.map_err(|_| AuthError::AuthenticationError(String::from("Не удалось подтвердить пароль")))
-}
 
 pub fn is_json_request(req: &HttpRequest) -> bool {
     req
@@ -36,28 +19,20 @@ pub fn is_json_request(req: &HttpRequest) -> bool {
       )
 }
 
-pub fn is_signed_in(session: &Session) -> bool {
-  match get_current_user(session) {
-      Ok(_) => true,
-      _ => false,
-  }
+#[derive(Serialize)]
+pub struct Info {
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+    pub password:   String,
 }
 
-pub fn set_current_user(session: &Session, user: &SessionUser) -> () {
-    // сериализация в строку подходит для этого случая,
-    // но двоичный код был бы предпочтительнее в производственных вариантах использования.
-    session.insert("user", serde_json::to_string(user).unwrap()).unwrap();
-}
- 
-pub fn get_current_user(session: &Session) -> Result<SessionUser, Error> {
-    let msg = "Не удалось извлечь пользователя из сеанса";
-
-    session
-        .get::<String>("user")
-        .map_err(|_| Error(String::from(msg)))
-        .unwrap() 
-        .map_or(
-          Err(Error(String::from(msg))),
-          |user| serde_json::from_str(&user).or_else(|_| Err(Error(String::from(msg))))
-        )
+pub fn set_current_user(data: &Json<AuthResp>) -> () {
+   let _unwrap: AuthResp = serde_json::from_str(&data).unwrap();
+   let id = _unwrap.id.to_string();
+   web_local_storage_api::set_item(id, data)?;
+} 
+  
+pub fn get_current_user(id: String) -> Option<AuthResp> {
+    web_local_storage_api::get_item(id)?;
 }

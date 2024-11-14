@@ -4,7 +4,6 @@ use actix_web::{
     web,
     cookie::Key,
 };
-use actix_session::{storage::CookieSessionStore, SessionMiddleware};
 mod views;
 mod utils;
 mod routes;
@@ -21,11 +20,6 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || { 
         let _files = Files::new("/assets", "assets/").show_files_listing();
         App::new()
-            .wrap(
-                SessionMiddleware::builder(CookieSessionStore::default(), secret_key.clone())
-                    .cookie_secure(false)
-                    .build(),
-            )
             .default_service(web::route().to(not_found_page))
             .service(_files)
             .configure(routes)
