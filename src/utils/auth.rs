@@ -12,7 +12,6 @@ use actix_session::Session;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SessionUser {
-    pub id:         i32,
     pub first_name: String,
     pub last_name:  String,
     pub email:      String,

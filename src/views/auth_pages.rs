@@ -13,6 +13,7 @@ use serde::{Serialize, Deserialize};
 use crate::utils::{
     get_current_user,
     NewUserForm,
+    is_signed_in,
 };
 use crate::utils::request_post;
 use actix_session::Session;
@@ -56,9 +57,9 @@ pub struct NewUser2 {
 }
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result<HttpResponse> {
-    //if get_current_user.is_some() {
-    //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
-    //}
+    if is_signed_in(&session) {
+        return crate::views::not_found_page(session).await;
+    } 
     let l_data = LoginUser {
         email:    data.email.clone(),
         password: data.password.clone(),
@@ -78,9 +79,9 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
     }
 }
 pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
-    //if get_current_user.is_some() {
-    //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
-    //}
+    if is_signed_in(&session) {
+        return crate::views::not_found_page(session).await;
+    }
     let r_data = LoginUser {
         email:    data.email.clone(),
         password: data.password.clone(),

@@ -9,6 +9,10 @@ use actix_web::{
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
 use actix_session::Session;
+use crate::utils::{
+    get_current_user,
+    is_signed_in,
+};
 
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
