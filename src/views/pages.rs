@@ -8,6 +8,7 @@ use actix_web::{
 };
 use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
+use actix_session::Session;
 
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {

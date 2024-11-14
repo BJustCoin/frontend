@@ -15,6 +15,7 @@ use crate::utils::{
     NewUserForm,
 };
 use crate::utils::request_post;
+use actix_session::Session;
 
 
 pub fn auth_urls(config: &mut web::ServiceConfig) {
@@ -54,7 +55,7 @@ pub struct NewUser2 {
     pub password:   String,
 }
 
-pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
+pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result<HttpResponse> {
     //if get_current_user.is_some() {
     //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
     //}
@@ -70,19 +71,13 @@ pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            crate::utils::set_current_user(Json(&user));
-            Json(user)
+            crate::utils::set_current_user(&session, &user);
+            crate::views::admin_exchange_page(session).await
         },
-        Err(_) => Json(AuthResp {
-            id:         0,
-            first_name: "".to_string(),
-            last_name:  "".to_string(),
-            email:      "".to_string(),
-            perm:       0,
-        }),
+        Err(_) => crate::views::not_found_page(session).await,
     }
 }
-pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
+pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
     //if get_current_user.is_some() {
     //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
     //}
@@ -104,20 +99,14 @@ pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            crate::utils::set_current_user(Json(&user));
-            Json(user)
+            crate::utils::set_current_user(&session, &user);
+            crate::views::admin_exchange_page(session).await
         },
-        Err(_) => Json(AuthResp {
-            id:         0,
-            first_name: "".to_string(),
-            last_name:  "".to_string(),
-            email:      "".to_string(),
-            perm:       0,
-        }),
+        Err(_) => crate::views::not_found_page(session).await,
     }
 }
 
-pub async fn auth_page() -> actix_web::Result<HttpResponse> {
+pub async fn auth_page(session: Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "auth/auth.stpl")]
     struct Template;
@@ -126,7 +115,7 @@ pub async fn auth_page() -> actix_web::Result<HttpResponse> {
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-pub async fn signup_page() -> actix_web::Result<HttpResponse> {
+pub async fn signup_page(session: Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "auth/signup.stpl")]
     struct Template;

@@ -1,4 +1,3 @@
-
 use actix_web::{
     http::header::CONTENT_TYPE,
     HttpRequest,
@@ -7,7 +6,18 @@ use actix_web::{
 };
 use crate::views::AuthResp;
 use serde::{Serialize, Deserialize};
+use crate::errors::AuthError;
+use actix_session::Session;
 
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct SessionUser {
+    pub id:         i32,
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+    pub perm:       i16,
+}
 
 pub fn is_json_request(req: &HttpRequest) -> bool {
     req
@@ -19,21 +29,26 @@ pub fn is_json_request(req: &HttpRequest) -> bool {
       )
 }
 
-#[derive(Serialize)]
-pub struct Info {
-    pub first_name: String,
-    pub last_name:  String,
-    pub email:      String,
-    pub password:   String,
+pub fn is_signed_in(session: &Session) -> bool {
+  match get_current_user(session) {
+      Ok(_) => true,
+      _ => false,
+  }
 }
 
-pub fn set_current_user(data: Json<&AuthResp>) -> () {
-   //let _unwrap: AuthResp = serde_json::from_str(&data).unwrap();
-   //let id = _unwrap.id.to_string();
-   //web_local_storage_api::set_item(id, data)?;
-} 
-  
-pub fn get_current_user(id: String) -> Option<AuthResp> {
-    //web_local_storage_api::get_item(id)?;
-    None
+pub fn set_current_user(session: &Session, user: &SessionUser) -> () {
+    session.insert("user", serde_json::to_string(user).unwrap()).unwrap();
+}
+ 
+pub fn get_current_user(session: &Session) -> Result<SessionUser, AuthError> {
+    let msg = "Error";
+
+    session
+        .get::<String>("user")
+        .map_err(|_| AuthError::AuthenticationError(String::from(msg)))
+        .unwrap() 
+        .map_or(
+          Err(AuthError::AuthenticationError(String::from(msg))),
+          |user| serde_json::from_str(&user).or_else(|_| Err(AuthError::AuthenticationError(String::from(msg))))
+        )
 }
