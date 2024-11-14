@@ -22,7 +22,7 @@ pub fn user_urls(config: &mut web::ServiceConfig) {
 
 pub async fn user_home_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect();
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "user/index.stpl")]
         struct Template {

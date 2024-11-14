@@ -48,7 +48,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect();
+        let _request_user = get_current_user(&session).expect("E.");
         if _request_user.perm > 59 {
             #[derive(TemplateOnce)]
             #[template(path = "admin/index.stpl")]
