@@ -27,7 +27,7 @@ pub struct Info {
     pub password:   String,
 }
 
-pub fn set_current_user(data: &Json<AuthResp>) -> () {
+pub fn set_current_user(data: Json<&AuthResp>) -> () {
    //let _unwrap: AuthResp = serde_json::from_str(&data).unwrap();
    //let id = _unwrap.id.to_string();
    //web_local_storage_api::set_item(id, data)?;

@@ -58,6 +58,10 @@ pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
     //if get_current_user.is_some() {
     //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("already authenteficated"));
     //}
+    let l_data = NewUser2 {
+        email:    data.email.clone(),
+        password: data.password.clone(),
+    }; 
     let res = request_post::<LoginUser, AuthResp> (
         URL.to_owned() + &"/login/".to_string(),
         &l_data,
