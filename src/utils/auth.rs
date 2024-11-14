@@ -8,7 +8,6 @@ use crate::views::AuthResp;
 use serde::{Serialize, Deserialize};
 use crate::errors::AuthError;
 use actix_session::Session;
-use crate::views::AuthResp;
 
 
 pub fn is_json_request(req: &HttpRequest) -> bool {
