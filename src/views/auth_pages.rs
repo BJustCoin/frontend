@@ -26,7 +26,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
 }
 
 pub const URL: &str = "http://69.167.186.207:9330";
-#[derive(Deserialize)]
+#[derive(Deserialize, Unwrap)]
 pub struct LoginUser {
     pub email:    String,
     pub password: String,
