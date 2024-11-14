@@ -6,8 +6,7 @@ use actix_web::{
 mod views;
 mod utils;
 mod routes;
-mod errors; 
-mod vars;
+mod errors;
 
 use crate::views::not_found_page;
 
