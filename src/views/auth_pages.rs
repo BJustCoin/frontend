@@ -12,7 +12,6 @@ use sailfish::TemplateOnce;
 use serde::{Serialize, Deserialize};
 use crate::utils::{
     get_current_user,
-    verify,
     NewUserForm,
 };
 use crate::utils::request_post;
@@ -67,7 +66,7 @@ pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            crate::utils::set_current_user(&user);
+            crate::utils::set_current_user(Json(&user));
             Json(user)
         },
         Err(_) => Json(AuthResp {
@@ -101,7 +100,7 @@ pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            crate::utils::set_current_user(&user);
+            crate::utils::set_current_user(Json(&user));
             Json(user)
         },
         Err(_) => Json(AuthResp {

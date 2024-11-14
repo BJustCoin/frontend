@@ -5,8 +5,8 @@ use actix_web::{
     web::Json,
     Error,
 };
-use crate::vars;
 use crate::views::AuthResp;
+use serde::{Serialize, Deserialize};
 
 
 pub fn is_json_request(req: &HttpRequest) -> bool {

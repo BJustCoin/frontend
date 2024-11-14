@@ -2,7 +2,6 @@ use actix_web::{
     App,
     HttpServer,
     web,
-    cookie::Key,
 };
 mod views;
 mod utils;
