@@ -8,15 +8,8 @@ use crate::views::AuthResp;
 use serde::{Serialize, Deserialize};
 use crate::errors::AuthError;
 use actix_session::Session;
+use crate::views::AuthResp;
 
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct SessionUser {
-    pub first_name: String,
-    pub last_name:  String,
-    pub email:      String,
-    pub perm:       i16,
-}
 
 pub fn is_json_request(req: &HttpRequest) -> bool {
     req
@@ -35,11 +28,11 @@ pub fn is_signed_in(session: &Session) -> bool {
   }
 }
 
-pub fn set_current_user(session: &Session, user: &SessionUser) -> () {
+pub fn set_current_user(session: &Session, user: &AuthResp) -> () {
     session.insert("user", serde_json::to_string(user).unwrap()).unwrap();
 }
  
-pub fn get_current_user(session: &Session) -> Result<SessionUser, AuthError> {
+pub fn get_current_user(session: &Session) -> Result<AuthResp, AuthError> {
     let msg = "Error";
 
     session
