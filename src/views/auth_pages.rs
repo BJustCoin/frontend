@@ -26,7 +26,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
 }
 
 pub const URL: &str = "http://69.167.186.207:9330";
-#[derive(Deserialize, Unwrap)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct LoginUser {
     pub email:    String,
     pub password: String,
@@ -67,7 +67,7 @@ pub async fn login(data: Json<LoginUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            set_current_user(&user);
+            crate::utils::set_current_user(&user);
             Json(user)
         },
         Err(_) => Json(AuthResp {
@@ -101,7 +101,7 @@ pub async fn signup(data: Json<NewUser>) -> Json<AuthResp> {
 
     match res {
         Ok(user) => {
-            set_current_user(&user);
+            crate::utils::set_current_user(&user);
             Json(user)
         },
         Err(_) => Json(AuthResp {
