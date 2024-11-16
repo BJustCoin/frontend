@@ -45,7 +45,7 @@ where
     let allow_body = method == reqwest::Method::POST || method == reqwest::Method::PUT;
     let mut req = reqwest::Client::new()
         .request(method, url)
-        .header("Content-Type", "application/json");
+        .header("Content-Type", "application/x-www-form-urlencoded");
 
     //if is_auth {
     //    if let Some(token) = get_token(){
@@ -109,7 +109,7 @@ where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     U: Serialize + std::fmt::Debug,
     //T: DeserializeOwned + 'static + Send,
-    //U: Serialize,
+    //U: Serialize, 
 {
     request(url, reqwest::Method::POST, body, is_auth).await
 }
