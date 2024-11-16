@@ -49,7 +49,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
-        #[derive(TemplateOnce)]
+        #[derive(TemplateOnce)] 
         #[template(path = "admin/index.stpl")]
         struct Template {
             request_user: AuthResp,
@@ -62,7 +62,8 @@ pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
+        //crate::views::auth_page(session).await
     }
 }
 pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpResponse> {
