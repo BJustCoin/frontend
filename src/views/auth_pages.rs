@@ -22,8 +22,8 @@ use actix_session::Session;
 pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/login/", web::get().to(auth_page));
     config.route("/signup/", web::get().to(signup_page));
-    config.route("/login/", web::get().to(login));
-    config.route("/signup/", web::get().to(signup));
+    config.route("/login/", web::post().to(login));
+    config.route("/signup/", web::post().to(signup));
 }
 
 pub const URL: &str = "https://back.justlaw.network";
