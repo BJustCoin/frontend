@@ -129,7 +129,7 @@
 				<div class="d-flex pt-5">
 					<div class="text-end me-10">
 						<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Hello</p>
-						<small class="fs-10 mb-0 text-uppercase text-mute"><%= request_user.first_name %> <%= request_user.last_name %></small>
+						<small class="fs-10 mb-0 text-uppercase text-mute"><% request_user.first_name %> <% request_user.last_name %></small>
 					</div>
 					<img src="/assets/images/avatar-1.png" class="avatar rounded-10 bg-primary-light h-40 w-40" alt="" />
 				</div>
