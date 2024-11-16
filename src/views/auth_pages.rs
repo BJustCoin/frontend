@@ -26,7 +26,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/signup/", web::get().to(signup));
 }
 
-pub const URL: &str = "http://69.167.186.207:9330";
+pub const URL: &str = "https://back.justlaw.network";
 #[derive(Serialize, Deserialize, Debug)]
 pub struct LoginUser {
     pub email:    String,
