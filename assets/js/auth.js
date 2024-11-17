@@ -27,6 +27,7 @@ on('body', 'click', '#logg', function() {
     }
   
     form_data = new FormData(form);
+    var json = JSON.stringify(form_data);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
     link.open( 'POST', "/login/", true );
@@ -41,7 +42,7 @@ on('body', 'click', '#logg', function() {
         response.style.display = "block";
         response.classList.add("error");
     }};
-    link.send(form_data);
+    link.send(json);
 });
 
 on('body', 'click', '#signup', function() {
