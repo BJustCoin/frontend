@@ -28,6 +28,7 @@ on('body', 'click', '#logg', function() {
   
     form_data = new FormData(form);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    link.setRequestHeader('Content-Type', 'application/json');
     link.open( 'POST', "/login/", true );
   
     link.onreadystatechange = function () {
