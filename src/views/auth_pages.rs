@@ -56,7 +56,7 @@ pub struct NewUser2 {
     pub password:   String,
 }
 
-pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result<HttpResponse> {
+pub async fn login(session: Session, data: LoginUser) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     } 

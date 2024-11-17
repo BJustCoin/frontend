@@ -30,7 +30,7 @@ on('body', 'click', '#logg', function() {
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
     link.open( 'POST', "/login/", true );
-    link.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    //link.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
