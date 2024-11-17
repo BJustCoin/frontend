@@ -64,9 +64,11 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
         email:    data.email.clone(),
         password: data.password.clone(),
     }; 
+    println!("email: {:?}", data.email.clone());
+    println!("password: {:?}", data.password.clone());
     let res = request_post::<LoginUser, AuthResp> (
         URL.to_owned() + &"/login/".to_string(),
-        &l_data,
+        &l_data, 
         false
     ).await;
 
