@@ -25,8 +25,10 @@ on('body', 'click', '#logg', function() {
     else {
       _this.disabled = true;
     }
-
-    json = {"email": form.querySelector("#id_email").value, "password": form.querySelector("#id_password").value};
+    form_data = new FormData(form);
+    object = {};
+    form_data.forEach((value, key) => object[key] = value);
+    json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
     link.open( 'POST', "/login/", true );
