@@ -53,9 +53,9 @@ where
     //    }
     //}
 
-    if allow_body { 
-        req = req.json(body);
-    }
+    //if allow_body { 
+    //    req = req.json(body);
+    //}
     println!("=============");
     println!("Req: {:?}", req);
     let res_resp = req.send().await;
