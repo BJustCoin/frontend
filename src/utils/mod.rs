@@ -18,6 +18,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
 pub struct NewUserForm {
+    pub id:         i32,
     pub first_name: String,
     pub last_name:  String,
     pub email:      String,
