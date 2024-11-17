@@ -36,7 +36,8 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-        window.location.href = "/"
+        //window.location.href = "/"
+        console.log(link.status)
     }
     else {
         _this.disabled = false;
