@@ -38,8 +38,6 @@ on('body', 'click', '#logg', function() {
         _this.disabled = false;
         response.style.display = "block";
         response.classList.add("error");
-        form.querySelector("#id_email").value = '';
-        form.querySelector("#id_email").value = '';
     }};
     link.send(form_data);
 });
@@ -60,12 +58,15 @@ on('body', 'click', '#signup', function() {
       return
     } else if (!form.querySelector("#id_password").value){
       form.querySelector("#id_password").style.border = "1px #FF0000 solid";
-      toast_error("Password is required!");
+      response.innerHTML = "Password is required!";
+      response.classList.add("error");
       return
     }
     else if (form.querySelector("#id_password").value != form.querySelector("#id_password2").value){
       form.querySelector("#id_password").style.border = "1px #FF0000 solid";
       form.querySelector("#id_password2").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Passwords don't match!";
+      response.classList.add("error");
       toast_error("passwords don't match!");
       return
     }
