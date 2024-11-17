@@ -34,7 +34,7 @@
 		
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">	
-			
+			<!--
 			<li class="btn-group d-md-inline-flex d-none">
               <a href="javascript:void(0)" title="skin Change" class="waves-effect skin-toggle waves-light">
 			  	<label class="switch">
@@ -45,7 +45,7 @@
 			  </a>
 				
             </li>
-			
+			-->
 			
 			<li class="btn-group d-lg-inline-flex d-none">
 				<a href="#" data-provide="fullscreen" class="waves-effect waves-light full-screen btn-warning-light" title="Full Screen">
