@@ -60,7 +60,6 @@ pub async fn login(session: Session, data: LoginUser) -> actix_web::Result<HttpR
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
-    let form = login_form(payload.borrow_mut()).await;
     let l_data = LoginUser {
         email:    data.email.clone(),
         password: data.password.clone(),
@@ -80,13 +79,6 @@ pub async fn login(session: Session, data: LoginUser) -> actix_web::Result<HttpR
     }
 }
 
-#[derive(Deserialize, Serialize)]
-pub struct NewUserForm {
-    pub first_name: String,
-    pub last_name:  String,
-    pub email:      String,
-    pub password:   String,
-}
 pub async fn signup(session: Session, data: NewUserForm) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
