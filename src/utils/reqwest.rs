@@ -45,9 +45,9 @@ where
     let allow_body = method == reqwest::Method::POST || method == reqwest::Method::PUT;
     let mut req = reqwest::Client::new()
         .request(method, url)
-        .header("Content-Type", "multipart/form-data");
+        //.header("Content-Type", "multipart/form-data");
 
-    //if is_auth {
+    //if is_auth { 
     //    if let Some(token) = get_token(){
     //        req = req.bearer_auth(token);
     //    }
