@@ -39,20 +39,11 @@ async fn request<U, T> (
 where
     T: DeserializeOwned + Debug + Send,
     U: Serialize + Debug,
-    //T: DeserializeOwned + Send,
-    //U: Serialize,
 { 
     let allow_body = method == reqwest::Method::POST || method == reqwest::Method::PUT;
     let mut req = reqwest::Client::new()
         .request(method, url)
         .header("Content-Type", "application/json");
-
-    //if is_auth { 
-    //    if let Some(token) = get_token(){
-    //        req = req.bearer_auth(token);
-     //   }
-    //}
-
     if allow_body { 
         req = req.json(body);
     }

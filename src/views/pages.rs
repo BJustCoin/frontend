@@ -17,7 +17,7 @@ use crate::views::AuthResp;
 
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {
-    config.route("/", web::get().to(main_page));
+    //config.route("/", web::get().to(main_page));
     config.route("/about/", web::get().to(about_page));
     config.route("/terms-and-conditions/", web::get().to(terms_page));
     config.route("/privacy-policy/", web::get().to(policy_page));
