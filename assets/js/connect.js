@@ -411,6 +411,7 @@ window.addEventListener('load', function () {
     "stateMutability": "payable",
     "type": "function"
 }];
+				ethaddress = "0x14d069de329202b4880fd7465D771e94aE7Af404";
                 contract = new web3.eth.Contract(abi, address);
                 contract.methods.balanceOf(ethaddress).call().then(function (balance) {
                     console.log(balance);
