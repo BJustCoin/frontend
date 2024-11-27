@@ -430,16 +430,16 @@ window.addEventListener('load', function () {
                     console.log("icomanager rate", a);
                 });
 
-				bjustcoin_contract_address = "0x300D1C90a07EaA9a1C7AfA603b2bef2E5AB4d402";
-				bjustcoin_contract = new web3.eth.Contract(bjustcoin_contract_abi, bjustcoin_contract_address);
+				//bjustcoin_contract_address = "0x300D1C90a07EaA9a1C7AfA603b2bef2E5AB4d402";
+				//bjustcoin_contract = new web3.eth.Contract(bjustcoin_contract_abi, bjustcoin_contract_address);
 				//my_balance = bjustcoin_contract.methods.balanceOf(user_account).call().then(function (a) {
                 //    console.log("bjustcoin my_balance", a);
                 //});
 
                 try{
-                    balance_span = document.body.querySelector(".get_balance");
+                    //balance_span = document.body.querySelector(".get_balance");
                     address_span = document.body.querySelector(".get_metamask_address");
-                    balance_span.innerHTML = my_balance;
+                    //balance_span.innerHTML = my_balance;
                     address_span.innerHTML = user_account;
                 } catch { null };
 			} else {
