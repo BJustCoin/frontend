@@ -413,9 +413,9 @@ window.addEventListener('load', function () {
 }];
 				ethaddress = "0x14d069de329202b4880fd7465D771e94aE7Af404";
                 contract = new web3.eth.Contract(abi, address);
-                contract.methods.balanceOf(ethaddress).call().then(function (balance) {
+                contract.methods.owner().call().then(function (balance) {
                     console.log(balance);
-                });
+                }); 
 
 				// get the user's accounts
 				web3.eth.getAccounts().then(function (accounts) {
