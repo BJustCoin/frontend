@@ -82,6 +82,9 @@ on('body', 'click', '#signup', function() {
     form.querySelector("#signup").setAttribute("disabled", "true");
   
     form_data = new FormData(form);
+    object = {};
+    form_data.forEach((value, key) => object[key] = value);
+    json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     link.open( 'POST', "/signup/", true );
   
@@ -95,5 +98,5 @@ on('body', 'click', '#signup', function() {
         response.innerHTML = "Error";
         response.classList.add("error");
     }};
-    link.send(form_data);
+    link.send(json);
 });
