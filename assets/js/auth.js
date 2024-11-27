@@ -1,21 +1,5 @@
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
 
-on('body', 'click', '.logout_hundler', function() {
-  link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' )
-  link.open( 'GET', "/logout/", true );
-  
-  link.onreadystatechange = function () {
-    if ( link.readyState == 4 && link.status == 200 ) {
-        window.location.href = "/";
-    }
-    else {
-        _this.disabled = false;
-        response.style.display = "block";
-        response.classList.add("error");
-    }};
-    link.send( null );
-});
-
 
 on('body', 'click', '#logg', function() {
     _this = this;
@@ -48,7 +32,7 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-        window.location.href = "/";
+        window.location.href = "/profile/";
     }
     else {
         _this.disabled = false;
@@ -103,7 +87,7 @@ on('body', 'click', '#signup', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-        window.location.href = "/";
+        window.location.href = "/profile/";
     }
     else {
         _this.disabled = false;
