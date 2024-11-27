@@ -414,6 +414,7 @@ window.addEventListener('load', function () {
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
 					console.log('Connected with MetaMask account: ' + accounts[0]);
+                    my_account = accounts[0];
 				});
                 contract_address = "0xAA4a64D4c1Bb5836F91E4e433226b8A9f8a01Faf";
 				contract = new web3.eth.Contract(contract_abi, contract_address);
@@ -432,7 +433,7 @@ window.addEventListener('load', function () {
 
 				//bjustcoin_contract_address = "0x300D1C90a07EaA9a1C7AfA603b2bef2E5AB4d402";
 				//bjustcoin_contract = new web3.eth.Contract(bjustcoin_contract_abi, bjustcoin_contract_address);
-				//my_balance = bjustcoin_contract.methods.balanceOf(user_account).call().then(function (a) {
+				//my_balance = bjustcoin_contract.methods.balanceOf(my_account).call().then(function (a) {
                 //    console.log("bjustcoin my_balance", a);
                 //});
 
@@ -440,7 +441,7 @@ window.addEventListener('load', function () {
                     //balance_span = document.body.querySelector(".get_balance");
                     address_span = document.body.querySelector(".get_metamask_address");
                     //balance_span.innerHTML = my_balance;
-                    address_span.innerHTML = user_account;
+                    address_span.innerHTML = my_account;
                 } catch { null };
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
