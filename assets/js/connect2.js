@@ -411,10 +411,12 @@ window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 				window.ethereum.enable();
+                my_account = "0x";
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
 					console.log('Connected with MetaMask account: ' + accounts[0]);
-                    my_account = accounts[0];
+                    address_span = document.body.querySelector(".get_metamask_address");
+                    address_span.innerHTML = accounts[0];
 				});
                 contract_address = "0xAA4a64D4c1Bb5836F91E4e433226b8A9f8a01Faf";
 				contract = new web3.eth.Contract(contract_abi, contract_address);
@@ -439,9 +441,7 @@ window.addEventListener('load', function () {
 
                 //try{
                     //balance_span = document.body.querySelector(".get_balance");
-                    address_span = document.body.querySelector(".get_metamask_address");
                     //balance_span.innerHTML = my_balance;
-                    address_span.innerHTML = my_account;
                 //} catch { null };
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
