@@ -437,12 +437,12 @@ window.addEventListener('load', function () {
                 //    console.log("bjustcoin my_balance", a);
                 //});
 
-                try{
+                //try{
                     //balance_span = document.body.querySelector(".get_balance");
                     address_span = document.body.querySelector(".get_metamask_address");
                     //balance_span.innerHTML = my_balance;
                     address_span.innerHTML = my_account;
-                } catch { null };
+                //} catch { null };
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}
