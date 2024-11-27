@@ -87,6 +87,7 @@ on('body', 'click', '#signup', function() {
     json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     link.open( 'POST', "/signup/", true );
+    link.setRequestHeader('Content-Type', 'application/json');
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
