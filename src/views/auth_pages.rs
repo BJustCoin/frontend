@@ -13,7 +13,7 @@ use serde::{Serialize, Deserialize};
 use crate::utils::{
     get_current_user,
     NewUserForm,
-    is_signed_in,
+    is_signed_in, 
 };
 use crate::utils::request_post;
 use actix_session::Session;
@@ -81,7 +81,7 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
     }
 }
 
-pub async fn signup(session: Session, data: Json<NewUserForm>) -> actix_web::Result<HttpResponse> {
+pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
