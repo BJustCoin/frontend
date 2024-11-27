@@ -9,23 +9,7 @@
                         <h3 class="my-0">ETH/BJC</h3>
                         <div>
                             <p class="mb-5 text-fade">Last Price</p>
-                            <h4 class="mb-0"><span class="text-success">0.0000245</span> <span class="ms-5">$1.25</span></h4>
-                        </div>
-                        <div class="d-lg-block d-none">
-                            <p class="mb-5 text-fade">24h Change</p>
-                            <h4 class="mb-0"><span class="text-success">0.0000045</span> <span class="ms-5 text-success">+0.25</span></h4>
-                        </div>
-                        <div class="d-lg-block d-none">
-                            <p class="mb-5 text-fade">24h High</p>
-                            <h4 class="mb-0"><span class="text-dark">0.0002154</span></h4>
-                        </div>
-                        <div class="d-lg-block d-none">
-                            <p class="mb-5 text-fade">24h Low</p>
-                            <h4 class="mb-0"><span class="text-danger">0.0001154</span></h4>
-                        </div>
-                        <div>
-                            <p class="mb-5 text-fade">24h Total</p>
-                            <h4 class="mb-0"><span class="text-dark">142.00002154 BJC</span></h4>
+                            <h4 class="mb-0"><span class="text-success">0.0000245</span> <span class="ms-5">$0.70</span></h4>
                         </div>
                     </div>
                 </div>
@@ -59,7 +43,7 @@
                         <div class="box-body">
                             <p class="fs-40 text-pink">
                                 <i class="fa fa-money text-muted me-5 mb-20"></i><br>
-                                <strong>987€</strong>
+                                <strong>0 BTC</strong>
                             </p>
                         </div>
                         <div class="box-body py-20 bg-light">
@@ -349,81 +333,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <td>10:26:41.119</td>
                                     <td class="text-success">0.0000001234</td>
                                     <td>7845</td>
                                 </tr>
-                                <tr>
-                                    <td>10:01:12.121</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>8459</td>
-                                </tr>
-                                <tr>
-                                    <td>09:24:42.212</td>
-                                    <td class="text-success">0.0000001234</td>
-                                    <td>12459</td>
-                                </tr>
-                                <tr>
-                                    <td>09:12:52.120</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>75496</td>
-                                </tr>
-                                <tr>
-                                    <td>08:26:41.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>1235</td>
-                                </tr>
-                                <tr>
-                                    <td>08:12:12.123</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>12596</td>
-                                </tr>
-                                <tr>
-                                    <td>08:10:12.159</td>
-                                    <td class="text-success">0.0000001234</td>
-                                    <td>54269</td>
-                                </tr>
-                                <tr>
-                                    <td>08:03:12.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>9653</td>
-                                </tr>
-                                <tr>
-                                    <td>07:26:41.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>1235</td>
-                                </tr>
-                                <tr>
-                                    <td>06:26:41.119</td>
-                                    <td class="text-success">0.0000001234</td>
-                                    <td>45216</td>
-                                </tr>
-                                <tr>
-                                    <td>05:26:41.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>17000</td>
-                                </tr>
-                                <tr>
-                                    <td>04:26:41.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>1200</td>
-                                </tr>
-                                <tr>
-                                    <td>10:26:41.119</td>
-                                    <td class="text-success">0.0000001234</td>
-                                    <td>7845</td>
-                                </tr>
-                                <tr>
-                                    <td>10:01:12.121</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>8459</td>
-                                </tr>
-                                <tr>
-                                    <td>10:26:41.119</td>
-                                    <td class="text-danger">0.00000009853</td>
-                                    <td>1236</td>
-                                </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>
@@ -431,21 +347,7 @@
             </div>
         </div>
         <div class="col-xl-8 col-12">
-            <div class="box">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#limit" role="tab">Limit</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#market" role="tab">Market</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#stoplimit" role="tab">Stop-Limit</a>
-                    </li>
-                </ul>
-                <div class="box-body tab-content">
-                    <div class="tab-pane fade active show" id="limit">
-                        <div class="row">
+                <div class="row">
                             <div class="col-xl-6 col-12">
                                 <div class="d-flex justify-content-between mt-15">
                                     <h4>Buy BJC</h4>
@@ -467,206 +369,6 @@
                                     <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
                                 </form>
                             </div>
-                            <div class="col-xl-6 col-12">
-                                <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell BJC</h4>
-                                    <p class="mb-0">BJC Balance: 0.000000000</p>
-                                </div>
-                                <form class="dash-form">
-                                    <div class="input-group mb-10 mt-10">
-                                        <span class="input-group-addon">Price</span>
-                                        <input type="number" class="form-control" placeholder="Bitcoin per 1">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 BJC">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
-                                    </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="market">
-                        <div class="row">
-                            <div class="col-xl-6 col-12">
-                                <div class="d-flex justify-content-between mt-15">
-                                    <h4>Buy BJC</h4>
-                                    <p class="mb-0">BJC Balance: 0.000000000</p>
-                                </div>
-                                <form class="dash-form">
-                                    <div class="input-group mb-10 mt-10">
-                                        <span class="input-group-addon">Price</span>
-                                        <input type="number" class="form-control" placeholder="Bitcoin per 1">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 BJC">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
-                                    </div>
-                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
-                                </form>
-                            </div>
-                            <div class="col-xl-6 col-12">
-                                <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell BJC</h4>
-                                    <p class="mb-0">BJC Balance: 0.000000000</p>
-                                </div>
-                                <form class="dash-form">
-                                    <div class="input-group mb-10 mt-10">
-                                        <span class="input-group-addon">Price</span>
-                                        <input type="number" class="form-control" placeholder="Bitcoin per 1">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 BJC">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
-                                    </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="stoplimit">
-                        <div class="row">
-                            <div class="col-xl-6 col-12">
-                                <div class="d-flex justify-content-between mt-15">
-                                    <h4>Buy BJC</h4>
-                                    <p class="mb-0">BJC Balance: 0.000000000</p>
-                                </div>
-                                <form class="dash-form">
-                                    <div class="input-group mb-10 mt-10">
-                                        <span class="input-group-addon">Price</span>
-                                        <input type="number" class="form-control" placeholder="Bitcoin per 1">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 BJC">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
-                                    </div>
-                                    <button type="submit" class="btn w-p100 btn-success mt-20">Buy BJC</button>
-                                </form>
-                            </div>
-                            <div class="col-xl-6 col-12">
-                                <div class="d-flex justify-content-between mt-15">
-                                    <h4>Sell BJC</h4>
-                                    <p class="mb-0">BJC Balance: 0.000000000</p>
-                                </div>
-                                <form class="dash-form">
-                                    <div class="input-group mb-10 mt-10">
-                                        <span class="input-group-addon">Price</span>
-                                        <input type="number" class="form-control" placeholder="Bitcoin per 1">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Amount</span>
-                                        <input type="number" class="form-control" placeholder="0 BJC">
-                                    </div>
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">Total</span>
-                                        <input type="text" class="form-control" placeholder="0.00000000 BJC">
-                                    </div>
-                                    <button type="submit" class="btn w-p100 btn-danger mt-20">Sell BJC</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-header with-border">
-                    <h4 class="box-title">Order Book BCN/BTN</h4>
-                </div>
-                <div class="box-body pt-0">
-                    <div class="table-responsive">
-                        <table class="table mb-0">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="text-center">Buying BCN</th>
-                                    <th colspan="2" class="text-center text-fade"><i class="fa fa-exchange"></i></th>
-                                    <th colspan="2" class="text-center">Selling BCN</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Sum(BCN)</th>
-                                    <th scope="col">Size</th>
-                                    <th scope="col">Bid</th>
-                                    <th scope="col">Ask</th>
-                                    <th scope="col">Size</th>
-                                    <th scope="col">Sum(BCN)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>103500</td>
-                                    <td>103475</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00001111</td>
-                                    <td>102458</td>
-                                    <td>103580</td>
-                                </tr>
-                                <tr>
-                                    <td>102356</td>
-                                    <td>102454</td>
-                                    <td class="text-success">0.00005161</td>
-                                    <td class="text-danger">0.00002354</td>
-                                    <td>125452</td>
-                                    <td>102356</td>
-                                </tr>
-                                <tr>
-                                    <td>102156</td>
-                                    <td>213589</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00002154</td>
-                                    <td>125400</td>
-                                    <td>102315</td>
-                                </tr>
-                                <tr>
-                                    <td>103500</td>
-                                    <td>103475</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00001111</td>
-                                    <td>102458</td>
-                                    <td>103500</td>
-                                </tr>
-                                <tr>
-                                    <td>103500</td>
-                                    <td>103475</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00008147</td>
-                                    <td>102458</td>
-                                    <td>103500</td>
-                                </tr>
-                                <tr>
-                                    <td>103500</td>
-                                    <td>103475</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00002154</td>
-                                    <td>102458</td>
-                                    <td>103500</td>
-                                </tr>
-                                <tr>
-                                    <td>103500</td>
-                                    <td>103475</td>
-                                    <td class="text-success">0.00002135</td>
-                                    <td class="text-danger">0.00002315</td>
-                                    <td>102458</td>
-                                    <td>103500</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>

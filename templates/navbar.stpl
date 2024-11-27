@@ -17,16 +17,7 @@
 			</li>
 			<li class="btn-group d-lg-inline-flex d-none">
 				<div class="app-menu">
-					<div class="search-bx mx-5">
-						<form>
-							<div class="input-group">
-							  <input type="search" class="form-control" placeholder="Search" aria-label="Search">
-							  <div class="input-group-append">
-								<button class="btn" type="submit" id="button-addon3"><i data-feather="search"></i></button>
-							  </div>
-							</div>
-						</form>
-					</div>
+					
 				</div>
 			</li>
 		</ul> 
@@ -51,14 +42,13 @@
 					<i data-feather="maximize"></i>
 			    </a>
 			</li>
-          <li class="dropdown user user-menu">
+          <li class="dropdown user user-menu"> 
             <a href="#" class="waves-effect waves-light dropdown-toggle w-auto l-h-12 bg-transparent py-0 no-shadow" data-bs-toggle="dropdown" title="User">
 				<div class="d-flex pt-5">
 					<div class="text-end me-10">
 						<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Hello</p>
 						<small class="fs-10 mb-0 text-uppercase text-mute"><%= request_user.first_name %> <%= request_user.last_name %></small>
 					</div>
-					<img src="/assets/images/avatar-1.png" class="avatar rounded-10 bg-primary-light h-40 w-40" alt="" />
 				</div>
             </a>
             <ul class="dropdown-menu animated flipInX">

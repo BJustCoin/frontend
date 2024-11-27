@@ -6,11 +6,6 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h4 class="box-title">Recent Transactions</h4>
-                    <ul class="box-controls pull-right">
-                        <li><a class="box-btn-close" href="#"></a></li>
-                        <li><a class="box-btn-slide" href="#"></a></li>
-                        <li><a class="box-btn-fullscreen" href="#"></a></li>
-                    </ul>
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
@@ -26,6 +21,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!---
                                 <tr>
                                     <td>
                                         <a href="#" class="hover-warning">87456</a>
@@ -36,50 +32,7 @@
                                     <td>1.859 BJC</td>
                                     <td>8754,573</td>
                                 </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87457</a>
-                                    </td>
-                                    <td>11&nbsp;minutes ago</td>
-                                    <td>1,789</td>
-                                    <td>8,745.154 BJC</td>
-                                    <td>0.458 BJC</td>
-                                    <td>745,027</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87458</a>
-                                    </td>
-                                    <td>25&nbsp;minutes ago</td>
-                                    <td>1,878</td>
-                                    <td>15,854.708 BJC</td>
-                                    <td>1.452 BJC</td>
-                                    <td>125,440</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87459</a>
-                                    </td>
-                                    <td>25&nbsp;minutes ago</td>
-                                    <td>1,787</td>
-                                    <td>15,745.855 BJC</td>
-                                    <td>1.745 BJC</td>
-                                    <td>985,484</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87460</a>
-                                    </td>
-                                    <td>42&nbsp;minutes ago</td>
-                                    <td>1,125</td>
-                                    <td>9,125.284 BJC</td>
-                                    <td>1.412 BJC</td>
-                                    <td>745,979</td>
-                                </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>
@@ -93,11 +46,6 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h4 class="box-title">Top Transactions</h4>
-                    <ul class="box-controls pull-right">
-                        <li><a class="box-btn-close" href="#"></a></li>
-                        <li><a class="box-btn-slide" href="#"></a></li>
-                        <li><a class="box-btn-fullscreen" href="#"></a></li>
-                    </ul>
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
@@ -113,6 +61,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <td>
                                         <a href="#" class="hover-warning">87456</a>
@@ -123,50 +72,7 @@
                                     <td>1.859 BJC</td>
                                     <td>8754,573</td>
                                 </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87457</a>
-                                    </td>
-                                    <td>11&nbsp;minutes ago</td>
-                                    <td>1,789</td>
-                                    <td>8,745.154 BJC</td>
-                                    <td>0.458 BJC</td>
-                                    <td>745,027</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87458</a>
-                                    </td>
-                                    <td>25&nbsp;minutes ago</td>
-                                    <td>1,878</td>
-                                    <td>15,854.708 BJC</td>
-                                    <td>1.452 BJC</td>
-                                    <td>125,440</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87459</a>
-                                    </td>
-                                    <td>25&nbsp;minutes ago</td>
-                                    <td>1,787</td>
-                                    <td>15,745.855 BJC</td>
-                                    <td>1.745 BJC</td>
-                                    <td>985,484</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">87460</a>
-                                    </td>
-                                    <td>42&nbsp;minutes ago</td>
-                                    <td>1,125</td>
-                                    <td>9,125.284 BJC</td>
-                                    <td>1.412 BJC</td>
-                                    <td>745,979</td>
-                                </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>
@@ -180,11 +86,6 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h4 class="box-title">Latest</h4>
-                    <ul class="box-controls pull-right">
-                        <li><a class="box-btn-close" href="#"></a></li>
-                        <li><a class="box-btn-slide" href="#"></a></li>
-                        <li><a class="box-btn-fullscreen" href="#"></a></li>
-                    </ul>
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
@@ -199,6 +100,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <td>
                                         <a href="#" class="hover-warning">
@@ -213,133 +115,7 @@
                                     <td>medium</td>
                                     <td><span class="label label-success">Confirmed</span></td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            565zxv4zxv4zv6z5xv4
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>0.654656456 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:38:01Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-warning">Unconfirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            546d54f6ds5g4ds6g46d5sg
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>1.745811565 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:38:01Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-success">Confirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            645z4sf56szf56dsf14s
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>2.564654564 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-danger">Canceled</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            564z564zfv56z4vz
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>8.645156+6 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-danger">Canceled</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            f41z5f61zf5v61456
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>0.56456464 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:38:00Z" title="2024-02-01 13:38 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-warning">Unconfirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            zf5v64zxf5v64zv56z
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>0.56415641645 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:37:59Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
-
-                                    </td>
-                                    <td>medium</td>
-                                    <td><span class="label label-success">Confirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            zv514zxv6zvzxv23z21vx
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>2.1651456146 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:37:59Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-success">Confirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            zv14561zx4v561zx4v6vz154z
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>2.1261461553156 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:37:58Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-success">Confirmed</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#" class="hover-warning">
-                                            zx1v5zx1vzx1456vz
-                                        </a>
-                                        ...
-                                    </td>
-                                    <td>1.156654561456 BJC</td>
-                                    <td>
-                                        <time class="timeago" datetime="2024-02-01T13:37:58Z" title="2024-02-01 13:37 GMT">2 minutes ago</time>
-                                    </td>
-                                    <td>high</td>
-                                    <td><span class="label label-danger">Canceled</span></td>
-                                </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>
