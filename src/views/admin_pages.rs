@@ -43,7 +43,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 
     config.route("/invoice/", web::get().to(admin_invoice_page));
     config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
-    config.route("/exchange/", web::get().to(admin_exchange_page));
+    config.route("/exchange/", web::get().to(exchange_page));
 } 
 
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
@@ -527,7 +527,7 @@ pub async fn admin_invoices_list_page(session: Session) -> actix_web::Result<Htt
     }
 }
 
-pub async fn admin_exchange_page(session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn exchange_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]

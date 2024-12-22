@@ -22,8 +22,7 @@
 
 </head>
 
-<body class="hold-transition theme-primary bg-img" style="background-image: url(/assets/images/bg-12.jpg)">
-	
+<body class="hold-transition theme-primary bg-img" style="background-color: #011113">
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">
 			
@@ -62,6 +61,11 @@
 											<input id="id_password2" type="password" class="form-control ps-15 bg-transparent" placeholder="Retype Password">
 										</div>
 									</div>
+									<div class="form-group hide">
+										<div class="input-group mb-3">
+											<input id="id_token" type="text" name="token" class="form-control ps-15 bg-transparent" placeholder="Verification code">
+										</div>
+									</div>
 									  <div class="row">
 										<div class="col-12">
 										  <div class="checkbox">
@@ -70,11 +74,15 @@
 										  </div>
 										</div>
 										<!-- /.col -->
+										<div class="col-12 text-center hide">
+										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
+										</div>
+										<div class="col-12 text-center hide">
+										  	<button id="signup" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">SIGN IN</button>
+										</div>
 										<div class="col-12 text-center">
 											<p class="api_response"></p>
-										  	<button id="signup" type="button" class="btn btn-info margin-top-10">SIGN IN</button>
 										</div>
-										<!-- /.col -->
 									  </div>
 								</form>				
 								<div class="text-center">

@@ -22,8 +22,10 @@ use actix_session::Session;
 pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/", web::get().to(auth_page));
     config.route("/signup/", web::get().to(signup_page));
+    config.route("/reset/", web::get().to(reset_page));
     config.route("/login/", web::post().to(login));
     config.route("/signup/", web::post().to(signup));
+    config.route("/invite/", web::post().to(invite));
 }
 
 pub const URL: &str = "https://back.justlaw.network";
@@ -55,6 +57,16 @@ pub struct NewUser2 {
     pub email:      String,
     pub password:   String,
 }
+#[derive(Deserialize, Serialize, Debug)]
+pub struct NewPassword {
+    pub password: String,
+}
+
+#[derive(Serialize, Debug)]
+pub struct EmailVerificationTokenMessage {
+    pub id: Option<String>,
+    pub email: String,
+}
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
@@ -64,8 +76,6 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
         email:    data.email.clone(),
         password: data.password.clone(),
     }; 
-    println!("email: {:?}", data.email.clone());
-    println!("password: {:?}", data.password.clone());
     let res = request_post::<LoginUser, AuthResp> (
         URL.to_owned() + &"/login/".to_string(),
         &l_data, 
@@ -75,9 +85,28 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_exchange_page(session).await
+            crate::views::exchange_page(session).await
         },
         Err(_) => crate::views::not_found_page(session).await,
+    }
+}
+pub async fn invite(session: Session, data: Json<EmailVerificationTokenMessage>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        return crate::views::not_found_page(session).await;
+    }
+    let l_data = EmailVerificationTokenMessage {
+        id:    None,
+        email: data.email.clone(),
+    }; 
+    let res = request_post::<EmailVerificationTokenMessage, AuthResp> (
+        URL.to_owned() + &"/invite/".to_string(),
+        &l_data, 
+        false
+    ).await;
+
+    match res {
+        Ok(user) => {Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+        Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
     }
 }
 
@@ -100,7 +129,28 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_exchange_page(session).await
+            crate::views::exchange_page(session).await
+        },
+        Err(_) => crate::views::not_found_page(session).await,
+    }
+}
+pub async fn reset(session: Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        return crate::views::not_found_page(session).await;
+    }
+    let l_data = NewPassword {
+        password: data.password.clone(),
+    }; 
+    let res = request_post::<NewPassword, AuthResp> (
+        URL.to_owned() + &"/reset/".to_string(),
+        &l_data,
+        false
+    ).await;
+
+    match res {
+        Ok(user) => {
+            crate::utils::set_current_user(&session, &user);
+            crate::views::exchange_page(session).await
         },
         Err(_) => crate::views::not_found_page(session).await,
     }
@@ -118,6 +168,15 @@ pub async fn auth_page(session: Session) -> actix_web::Result<HttpResponse> {
 pub async fn signup_page(session: Session) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)] 
     #[template(path = "auth/signup.stpl")]
+    struct Template;
+    let body = Template{}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+pub async fn reset_page(session: Session) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)] 
+    #[template(path = "auth/reset.stpl")]
     struct Template;
     let body = Template{}
     .render_once()
