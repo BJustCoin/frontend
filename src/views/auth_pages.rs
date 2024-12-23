@@ -62,7 +62,7 @@ pub struct NewPassword {
     pub password: String,
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct EmailVerificationTokenMessage {
     pub id: Option<String>,
     pub email: String,
