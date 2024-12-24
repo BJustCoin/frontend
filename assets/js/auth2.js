@@ -93,7 +93,6 @@ on('body', 'click', '#signup', function() {
       form.querySelector("#id_password2").style.border = "1px #FF0000 solid";
       response.innerHTML = "Passwords don't match!";
       response.classList.add("error");
-      toast_error("passwords don't match!");
       return
     }
 
@@ -162,7 +161,6 @@ on('body', 'click', '#reset', function() {
       form.querySelector("#id_password2").style.border = "1px #FF0000 solid";
       response.innerHTML = "Passwords don't match!";
       response.classList.add("error");
-      toast_error("passwords don't match!");
       return
     }
 

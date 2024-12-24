@@ -67,8 +67,12 @@ pub struct EmailVerificationTokenMessage {
     pub id: Option<String>,
     pub email: String,
 }
+#[derive(Deserialize, Serialize, Debug)]
+pub struct AuthResp {
+    pub status: i32,
+}
 
-pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result<HttpResponse> {
+pub async fn login(session: Session, data: Json<LoginUser>) -> AuthResp {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
@@ -84,10 +88,13 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> actix_web::Result
 
     match res {
         Ok(user) => {
+            if user.id == 0 {
+                return 500;
+            }
             crate::utils::set_current_user(&session, &user);
-            crate::views::exchange_page(session).await
+            return 200;
         },
-        Err(_) => crate::views::not_found_page(session).await,
+        Err(_) => 200,
     }
 }
 pub async fn invite(session: Session, data: Json<EmailVerificationTokenMessage>) -> actix_web::Result<HttpResponse> {
