@@ -68,11 +68,11 @@ pub struct EmailVerificationTokenMessage {
     pub email: String,
 }
 #[derive(Deserialize, Serialize, Debug)]
-pub struct AuthResp {
+pub struct Resp {
     pub status: i32,
 }
 
-pub async fn login(session: Session, data: Json<LoginUser>) -> AuthResp {
+pub async fn login(session: Session, data: Json<LoginUser>) -> i32 {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
