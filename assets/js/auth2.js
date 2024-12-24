@@ -46,7 +46,7 @@ on('body', 'click', '#logg', function() {
       };
       response.innerHTML = output;
       return;
-    }
+    } 
     form_data = new FormData(form);
     object = {};
     form_data.forEach((value, key) => object[key] = value);
@@ -58,7 +58,8 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-        window.location.href = "/profile/";
+      console.log(link.responseText);
+      window.location.href = "/profile/";
     }
     else {
         _this.disabled = false;
