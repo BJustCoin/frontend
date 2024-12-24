@@ -74,7 +74,9 @@ pub struct Resp {
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
-        return crate::views::not_found_page(session).await;
+        return Json(Resp {
+            status: 400,
+        });
     }
     let l_data = LoginUser {
         email:    data.email.clone(),
