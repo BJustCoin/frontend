@@ -58,7 +58,7 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      console.log(link.responseText);
+      console.log(link.responseText["status"]);
       window.location.href = "/profile/";
     }
     else {
