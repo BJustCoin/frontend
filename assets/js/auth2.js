@@ -58,7 +58,8 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      console.log(link.responseText["status"]);
+      status1 = JSON.parse(link.responseText)["status"];
+      console.log(status1); 
       window.location.href = "/profile/";
     }
     else {
