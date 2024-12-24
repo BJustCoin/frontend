@@ -72,7 +72,7 @@ pub struct Resp {
     pub status: i32,
 }
 
-pub async fn login(session: Session, data: Json<LoginUser>) -> i32 {
+pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
@@ -89,12 +89,18 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> i32 {
     match res {
         Ok(user) => {
             if user.id == 0 {
-                return 500;
+                return Json(Resp {
+                    status: 400,
+                });
             }
             crate::utils::set_current_user(&session, &user);
-            return 200;
+            return Json(Resp {
+                status: 200,
+            });
         },
-        Err(_) => 200,
+        Err(_) => Json(Resp {
+                    status: 400,
+                }),
     }
 }
 pub async fn invite(session: Session, data: Json<EmailVerificationTokenMessage>) -> actix_web::Result<HttpResponse> {
