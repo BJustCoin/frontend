@@ -61,13 +61,13 @@ pub struct NewPassword {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Resp {
-    pub status: i32,
+    pub status: String,
 }
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
         return Json(Resp {
-            status: 400,
+            status: "you not anon".to_string(),
         });
     }
     let l_data = LoginUser {
@@ -84,16 +84,17 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
         Ok(user) => {
             if user.id == 0 {
                 return Json(Resp {
-                    status: 400,
+                    status: "user not exists".to_string(),
                 });
             }
             crate::utils::set_current_user(&session, &user);
             return Json(Resp {
+                "ok!".to_string()
                 status: 200,
             });
         },
         Err(_) => Json(Resp {
-                    status: 400,
+                    status: "error".to_string(),
                 }),
     }
 }
