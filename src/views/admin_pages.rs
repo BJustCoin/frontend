@@ -335,7 +335,7 @@ pub async fn admin_ico_filter_page(session: Session) -> actix_web::Result<HttpRe
     }
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct AuthRespData {
     pub data:      Vec<AuthResp>,
     pub next_page: i64,
@@ -345,10 +345,10 @@ pub async fn admin_members_list_page(session: Session) -> actix_web::Result<Http
         let _request_user = get_current_user(&session).expect("E.");
         let object_list: Vec<AuthResp>;
         let next_page: i64;
-        let resp = crate::utils::request_get::<AuthRespData>(URL, false).await;
+        let resp = crate::utils::request_get::<AuthRespData>(URL.to_string(), false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = data;
+            (object_list, next_page) = (data.data, data.next);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
