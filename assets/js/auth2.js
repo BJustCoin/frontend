@@ -225,7 +225,18 @@ on('body', 'click', '#send_token', function() {
     _this = this;
     form = _this.parentElement.parentElement.parentElement;
     response = form.querySelector(".api_response");
-    if (!form.querySelector("#id_email").value){
+    if (!form.querySelector("#id_first_name").value){
+      form.querySelector("#id_first_name").style.border = "1px #FF0000 solid";
+      response.innerHTML = "First name is required!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_last_name").value){
+      form.querySelector("#id_last_name").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Last name is required!";
+      response.classList.add("error");
+      return
+    }
+    else if (!form.querySelector("#id_email").value){
       form.querySelector("#id_email").style.border = "1px #FF0000 solid";
       response.innerHTML = "Email is required!";
       response.classList.add("error");
@@ -251,6 +262,7 @@ on('body', 'click', '#send_token', function() {
     form.querySelector("#send_token").setAttribute("disabled", "true");
   
     form_data = new FormData(form);
+    form_data.append(form.querySelector("#id_first_name").value + " " + form.querySelector("#id_last_name").value)
     object = {};
     form_data.forEach((value, key) => object[key] = value);
     json = JSON.stringify(object);
@@ -274,5 +286,5 @@ on('body', 'click', '#send_token', function() {
 });
 
 on('body', 'input', '#id_email', function() {
-    document.body.querySelector("#send_token").parentElement.classList.remove("hide")
-});
+    document.body.querySelector("#send_token").parentElement.parentElement.previousElementSibling.classList.remove("hide")
+}); 

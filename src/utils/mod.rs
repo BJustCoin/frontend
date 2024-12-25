@@ -15,6 +15,7 @@ use actix_web::{
 };
 use serde::{Deserialize, Serialize};
 
+pub const URL: &str = "https://back.justlaw.network";
 
 #[derive(Deserialize, Serialize)]
 pub struct NewUserForm {
@@ -23,4 +24,26 @@ pub struct NewUserForm {
     pub last_name:  String,
     pub email:      String,
     pub password:   String,
+}
+
+pub fn get_page(req: &HttpRequest) -> i32 {
+    #[derive(Debug, Deserialize)]
+    struct Params {
+        pub page: Option<i32>,
+    }
+    let params_some = web::Query::<Params>::from_query(&req.query_string());
+    let page: i32;
+    if params_some.is_ok() {
+        let params = params_some.unwrap();
+        if params.page.is_some() {
+            page = params.page.unwrap();
+        }
+        else {
+            page = 1;
+        }
+    }
+    else {
+        page = 1;
+    }
+    page
 }

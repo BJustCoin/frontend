@@ -81,7 +81,7 @@
 										  	<button id="signup" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">SIGN IN</button>
 										</div>
 										<div class="col-12 text-center">
-											<p class="api_response"></p>
+											<p class="api_response" style="color:#F00000"></p>
 										</div>
 									  </div>
 								</form>				

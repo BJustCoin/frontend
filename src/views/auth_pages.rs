@@ -13,7 +13,8 @@ use serde::{Serialize, Deserialize};
 use crate::utils::{
     get_current_user,
     NewUserForm,
-    is_signed_in, 
+    is_signed_in,
+    URL,
 };
 use crate::utils::request_post;
 use actix_session::Session;
@@ -28,7 +29,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/invite/", web::post().to(invite));
 }
 
-pub const URL: &str = "https://back.justlaw.network";
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct LoginUser {
     pub email:    String,
@@ -42,7 +43,9 @@ pub struct AuthResp {
     pub last_name:  String,
     pub email:      String,
     pub perm:       i16,
-}
+    pub image:      Option<String>,
+    pub phone:      Option<String>,
+} 
 #[derive(Deserialize, Serialize)]
 pub struct NewUser {
     pub first_name: String,
@@ -62,11 +65,6 @@ pub struct NewPassword {
     pub password: String,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
-pub struct EmailVerificationTokenMessage {
-    pub id: Option<String>,
-    pub email: String,
-}
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Resp {
     pub status: i32,
@@ -105,19 +103,25 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
                 }),
     }
 }
-pub async fn invite(session: Session, data: Json<EmailVerificationTokenMessage>) -> actix_web::Result<HttpResponse> {
+
+#[derive(Deserialize, Serialize)]
+struct EmailUserReq {
+    name: String,
+    email: String,
+}
+pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
-    let l_data = EmailVerificationTokenMessage {
-        id:    None,
+    let l_data = EmailUserReq {
+        name:  data.name.clone(),
         email: data.email.clone(),
     }; 
-    let res = request_post::<EmailVerificationTokenMessage, AuthResp> (
+    let res = request_post::<EmailUserReq, AuthResp> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
         false
-    ).await;
+    ).await; 
 
     match res {
         Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),

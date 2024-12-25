@@ -67,11 +67,10 @@
 										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
 										</div>
 										<div class="col-12 text-center hide">
-											<p class="api_response"></p>
 										  	<button id="reset" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">Reset</button>
 										</div>
 										<div class="col-12 text-center">
-											<p class="api_response"></p>
+											<p class="api_response" style="color:#F00000"></p>
 										</div>
 									  </div>
 								</form>				

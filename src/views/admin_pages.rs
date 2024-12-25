@@ -12,12 +12,15 @@ use actix_session::Session;
 use crate::utils::{
     get_current_user,
     is_signed_in,
+    URL,
 };
 use crate::views::AuthResp;
 
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admin_home/", web::get().to(admin_home_page));
+    config.route("/users/", web::get().to(admin_members_list_page)); 
+
     config.route("/admin_home2/", web::get().to(admin_home2_page));
     config.route("/profile/", web::get().to(admin_profile_page));
     config.route("/wallets/", web::get().to(admin_wallets_page));
@@ -32,7 +35,6 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/ico_details/", web::get().to(admin_ico_details_page));
     config.route("/ico_listing/", web::get().to(admin_ico_listing_page));
     config.route("/ico_filter/", web::get().to(admin_ico_filter_page));
-    config.route("/members_list/", web::get().to(admin_members_list_page));
     config.route("/tickers/", web::get().to(admin_tickers_page));
     config.route("/tickers_live_pricing/", web::get().to(admin_tickers_live_pricing_page));
     config.route("/transactions_tables/", web::get().to(admin_transactions_tables_page));
@@ -332,16 +334,41 @@ pub async fn admin_ico_filter_page(session: Session) -> actix_web::Result<HttpRe
         crate::views::auth_page(session).await
     }
 }
+
+#[derive(Deserialize, Serialize)]
+pub struct AuthRespData {
+    pub data:      Vec<AuthResp>,
+    pub next_page: i64,
+}
 pub async fn admin_members_list_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let resp = crate::utils::request_get::<AuthRespData>(URL, false).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = data;
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
         #[derive(TemplateOnce)]
         #[template(path = "admin/members_list.stpl")]
         struct Template {
             request_user: AuthResp,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
         }
         let body = Template {
             request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

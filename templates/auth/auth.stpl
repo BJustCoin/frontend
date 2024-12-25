@@ -62,7 +62,7 @@
 										</div>
 										-->
 										<div class="col-12 text-center">
-											<p class="api_response"></p>
+											<p class="api_response" style="color:#F00000"></p>
 										  	<button type="button" style="background-color: #E8AA37;" class="btn mt-10" id="logg">SIGN IN</button>
 										</div>
 										<!-- /.col -->
