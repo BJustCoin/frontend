@@ -46,7 +46,7 @@ pub struct AuthResp {
     pub image:      Option<String>,
     pub phone:      Option<String>,
 } 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct NewUser {
     pub first_name: String,
     pub last_name:  String,
