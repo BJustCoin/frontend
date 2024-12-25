@@ -116,7 +116,8 @@ pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Re
         return crate::views::not_found_page(session).await;
     }
     let l_data = EmailUserReq2 {
-        name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
+        //name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
+        name:  "bbbb".to_string(),
         email: data.email.clone(),
     }; 
     let res = request_post::<EmailUserReq2, String> (
