@@ -348,7 +348,7 @@ pub async fn admin_members_list_page(session: Session) -> actix_web::Result<Http
         let resp = crate::utils::request_get::<AuthRespData>(URL.to_string(), false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next);
+            (object_list, next_page) = (data.data, data.next_page);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
