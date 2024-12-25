@@ -262,7 +262,6 @@ on('body', 'click', '#send_token', function() {
     form.querySelector("#send_token").setAttribute("disabled", "true");
   
     form_data = new FormData(form);
-    form_data.append(form.querySelector("#id_first_name").value + " " + form.querySelector("#id_last_name").value)
     object = {};
     form_data.forEach((value, key) => object[key] = value);
     json = JSON.stringify(object);

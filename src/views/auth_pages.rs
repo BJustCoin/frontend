@@ -106,15 +106,16 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct EmailUserReq {
-    name: String,
-    email: String,
+    first_name: String,
+    last_name:  String,
+    email:      String,
 }
 pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
     let l_data = EmailUserReq {
-        name:  data.name.clone(),
+        name:  data.first_name.clone() + &" ".to_string() + data.last_name.clone(),
         email: data.email.clone(),
     }; 
     let res = request_post::<EmailUserReq, AuthResp> (
