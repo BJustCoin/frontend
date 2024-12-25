@@ -285,5 +285,7 @@ on('body', 'click', '#send_token', function() {
 });
 
 on('body', 'input', '#id_email', function() {
-    document.body.querySelector("#send_token").parentElement.parentElement.previousElementSibling.classList.remove("hide")
-}); 
+    send_token = document.body.querySelector("#send_token").parentElement;
+    send_token.parentElement.previousElementSibling.classList.remove("hide");
+    send_token.classList.remove("hide");
+});  
