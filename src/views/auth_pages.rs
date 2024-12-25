@@ -45,7 +45,7 @@ pub struct AuthResp {
     pub perm:       i16,
     pub image:      Option<String>,
     pub phone:      Option<String>,
-} 
+}  
 #[derive(Deserialize, Serialize, Debug)]
 pub struct NewUser {
     pub first_name: String,
@@ -66,7 +66,7 @@ pub struct Resp {
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
-        return Json(Resp {
+        return Json(Resp { 
             status: "you not anon".to_string(),
         });
     }
