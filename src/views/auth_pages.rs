@@ -100,9 +100,11 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct EmailUserReq {
+    email:      String,
     first_name: String,
     last_name:  String,
-    email:      String,
+    password:   String,
+    token:      String,
 }
 #[derive(Deserialize, Serialize, Debug)]
 pub struct EmailUserReq2 {
