@@ -52,13 +52,7 @@ pub struct NewUser {
     pub last_name:  String,
     pub email:      String,
     pub password:   String,
-}
-#[derive(Deserialize, Serialize, Debug)]
-pub struct NewUser2 {
-    pub first_name: String,
-    pub last_name:  String,
-    pub email:      String,
-    pub password:   String,
+    pub token:      String,
 }
 #[derive(Deserialize, Serialize, Debug)]
 pub struct NewPassword {
@@ -139,13 +133,14 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
-    let l_data = NewUser2 {
+    let l_data = NewUser {
         first_name: data.first_name.clone(),
         last_name:  data.last_name.clone(),
         email:      data.email.clone(),
         password:   data.password.clone(),
-    }; 
-    let res = request_post::<NewUser2, AuthResp> (
+        token:      data.token.clone(),
+    };   
+    let res = request_post::<NewUser, AuthResp> (
         URL.to_owned() + &"/signup/".to_string(),
         &l_data,
         false
