@@ -89,8 +89,7 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
             }
             crate::utils::set_current_user(&session, &user);
             return Json(Resp {
-                "ok!".to_string()
-                status: 200,
+                status: "ok!".to_string(),
             });
         },
         Err(_) => Json(Resp {
