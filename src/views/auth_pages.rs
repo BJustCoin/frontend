@@ -67,8 +67,8 @@ pub struct Resp {
 pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
         return Json(Resp { 
-            status: "you not anon".to_string(),
-        });
+            status: "error".to_string(),
+        }); 
     }
     let l_data = LoginUser {
         email:    data.email.clone(),
@@ -84,7 +84,7 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
         Ok(user) => {
             if user.id == 0 {
                 return Json(Resp {
-                    status: "user not exists".to_string(),
+                    status: "error".to_string(),
                 });
             }
             crate::utils::set_current_user(&session, &user);
@@ -116,14 +116,13 @@ pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Re
         return crate::views::not_found_page(session).await;
     }
     let l_data = EmailUserReq2 {
-        //name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
-        name:  "bbbb".to_string(),
+        name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
         email: data.email.clone(),
     }; 
     let res = request_post::<EmailUserReq2, String> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
-        false 
+        false
     ).await; 
 
     match res {
