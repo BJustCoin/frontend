@@ -110,15 +110,20 @@ pub struct EmailUserReq {
     last_name:  String,
     email:      String,
 }
+#[derive(Deserialize, Serialize, Debug)]
+pub struct EmailUserReq2 {
+    name:  String,
+    email: String,
+}
 pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
-    let l_data = EmailUserReq {
+    let l_data = EmailUserReq2 {
         name:  data.first_name.clone() + &" ".to_string() + &data.last_name.clone(),
         email: data.email.clone(),
     }; 
-    let res = request_post::<EmailUserReq, AuthResp> (
+    let res = request_post::<EmailUserReq2, AuthResp> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
         false
