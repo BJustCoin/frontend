@@ -444,7 +444,6 @@ function post_id(_this, url) {
     block = _this.parentElement.parentElement.parentElement;
     form_data = new FormData();
     form_data.append("id", id);
-    json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
     link.open( 'POST', url, true );
