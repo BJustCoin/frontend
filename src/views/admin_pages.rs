@@ -103,7 +103,7 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
@@ -143,7 +143,7 @@ pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
@@ -183,7 +183,7 @@ pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
@@ -223,7 +223,7 @@ pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> acti
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 
@@ -402,7 +402,7 @@ pub async fn admin_home_page(session: &Session) -> actix_web::Result<HttpRespons
     }
     else {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
-        //crate::views::auth_page(session).await
+        //crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_home2_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -421,7 +421,7 @@ pub async fn admin_home2_page(session: &Session) -> actix_web::Result<HttpRespon
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_profile_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -440,7 +440,7 @@ pub async fn admin_profile_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_wallets_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -459,7 +459,7 @@ pub async fn admin_wallets_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_setting_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -478,7 +478,7 @@ pub async fn admin_setting_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_transactions_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -497,7 +497,7 @@ pub async fn admin_transactions_page(session: &Session) -> actix_web::Result<Htt
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_gainers_losers_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -516,7 +516,7 @@ pub async fn admin_gainers_losers_page(session: &Session) -> actix_web::Result<H
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_market_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -535,7 +535,7 @@ pub async fn admin_market_page(session: &Session) -> actix_web::Result<HttpRespo
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_stats_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -554,7 +554,7 @@ pub async fn admin_stats_page(session: &Session) -> actix_web::Result<HttpRespon
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_distribution_countdown_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -573,7 +573,7 @@ pub async fn admin_ico_distribution_countdown_page(session: &Session) -> actix_w
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_roadmap_timeline_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -592,7 +592,7 @@ pub async fn admin_ico_roadmap_timeline_page(session: &Session) -> actix_web::Re
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_progress_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -611,7 +611,7 @@ pub async fn admin_ico_progress_page(session: &Session) -> actix_web::Result<Htt
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -630,7 +630,7 @@ pub async fn admin_ico_details_page(session: &Session) -> actix_web::Result<Http
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_listing_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -649,7 +649,7 @@ pub async fn admin_ico_listing_page(session: &Session) -> actix_web::Result<Http
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_ico_filter_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -668,7 +668,7 @@ pub async fn admin_ico_filter_page(session: &Session) -> actix_web::Result<HttpR
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 
@@ -688,7 +688,7 @@ pub async fn admin_tickers_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_tickers_live_pricing_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -707,7 +707,7 @@ pub async fn admin_tickers_live_pricing_page(session: &Session) -> actix_web::Re
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_transactions_tables_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -726,7 +726,7 @@ pub async fn admin_transactions_tables_page(session: &Session) -> actix_web::Res
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_transaction_search_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -745,7 +745,7 @@ pub async fn admin_transaction_search_page(session: &Session) -> actix_web::Resu
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_transaction_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -764,7 +764,7 @@ pub async fn admin_transaction_details_page(session: &Session) -> actix_web::Res
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_transactions_counter_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -783,7 +783,7 @@ pub async fn admin_transactions_counter_page(session: &Session) -> actix_web::Re
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_support_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -802,7 +802,7 @@ pub async fn admin_support_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 
@@ -822,7 +822,7 @@ pub async fn admin_invoice_page(session: &Session) -> actix_web::Result<HttpResp
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 pub async fn admin_invoices_list_page(session: &Session) -> actix_web::Result<HttpResponse> {
@@ -841,7 +841,7 @@ pub async fn admin_invoices_list_page(session: &Session) -> actix_web::Result<Ht
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
 
@@ -861,6 +861,6 @@ pub async fn exchange_page(session: &Session) -> actix_web::Result<HttpResponse>
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
-        crate::views::auth_page(session).await
+        crate::views::auth_page(session.clone()).await
     }
 }
