@@ -19,7 +19,7 @@ use crate::views::AuthResp;
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admin_home/", web::get().to(admin_home_page));
-    config.route("/users/", web::get().to(admin_members_list_page)); 
+    config.route("/users/", web::get().to(admin_members_list_page));
 
     config.route("/admin_home2/", web::get().to(admin_home2_page));
     config.route("/profile/", web::get().to(admin_profile_page));
@@ -46,7 +46,41 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/invoice/", web::get().to(admin_invoice_page));
     config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
     config.route("/exchange/", web::get().to(exchange_page));
-} 
+
+    config.route("/block_user/{id}/", web::post().to(block_user));
+    //config.route("/unblock_user/{id}/", web::post().to(unblock_user));
+    //config.route("/block_admin/{id}/", web::post().to(block_admin));
+    //config.route("/unblock_admin/{id}/", web::post().to(unblock_admin));
+    //config.route("/create_admin/{id}/", web::post().to(create_admin));
+    //config.route("/drop_admin/{id}/", web::post().to(drop_admin));
+    //config.route("/create_can_buy/{id}/", web::post().to(create_can_buy));
+    //config.route("/delete_can_buy/{id}/", web::post().to(delete_can_buy));
+}
+
+
+#[derive(Deserialize, Serialize)]
+pub struct ItemId {
+    pub id:  i32,
+}
+pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = request_post::<ItemId, ()> (
+            URL.to_owned() + &"/block_user/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"))
+}
 
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
