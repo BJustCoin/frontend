@@ -58,7 +58,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 }
 
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct ItemId {
     pub id:  i32,
 }
