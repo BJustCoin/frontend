@@ -15,6 +15,7 @@ use crate::utils::{
     NewUserForm,
     is_signed_in,
     URL,
+    AuthResp2,
 };
 use crate::utils::request_post;
 use actix_session::Session;
@@ -159,7 +160,7 @@ pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result
             crate::utils::set_current_user(&session, &user);
             crate::views::exchange_page(session).await
         },
-        Err(_) => crate::views::not_found_page(session).await,
+        Err(_) => crate::views::not_found_page(session.clone()).await,
     }
 }
 pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
@@ -177,7 +178,7 @@ pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Res
             crate::utils::set_current_user(&session, &user);
             crate::views::exchange_page(session).await
         },
-        Err(_) => crate::views::not_found_page(session).await,
+        Err(_) => crate::views::not_found_page(session.clone()).await,
     }
 }
 
