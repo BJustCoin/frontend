@@ -23,13 +23,13 @@ pub fn pages_urls(config: &mut web::ServiceConfig) {
     config.route("/privacy-policy/", web::get().to(policy_page));
 }
 
-pub async fn main_page(session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
+pub async fn main_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
+        let _request_user = get_current_user(&req);
         #[derive(TemplateOnce)]
         #[template(path = "mainpage.stpl")]
         struct Template {
-            request_user: AuthResp,
+            request_user: AuthResp2,
         }
         let body = Template {
             request_user: _request_user,
@@ -53,13 +53,13 @@ pub async fn main_page(session: Session) -> actix_web::Result<HttpResponse> {
     }
 }
 
-pub async fn about_page(session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
+pub async fn about_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
+        let _request_user = get_current_user(&req);
         #[derive(TemplateOnce)]
         #[template(path = "about.stpl")]
         struct Template {
-            request_user: AuthResp,
+            request_user: AuthResp2,
         }
         let body = Template {
             request_user: _request_user,
@@ -83,13 +83,13 @@ pub async fn about_page(session: Session) -> actix_web::Result<HttpResponse> {
     }
 } 
 
-pub async fn not_found_page(session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
+pub async fn not_found_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
+        let _request_user = get_current_user(&req);
         #[derive(TemplateOnce)]
         #[template(path = "not_found.stpl")]
         struct Template {
-            request_user: AuthResp,
+            request_user: AuthResp2,
         }
         let body = Template {
             request_user: _request_user,
@@ -113,13 +113,13 @@ pub async fn not_found_page(session: Session) -> actix_web::Result<HttpResponse>
     }
 }
 
-pub async fn terms_page(session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
+pub async fn terms_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
+        let _request_user = get_current_user(&req);
         #[derive(TemplateOnce)]
         #[template(path = "terms.stpl")]
         struct Template {
-            request_user: AuthResp,
+            request_user: AuthResp2,
         }
         let body = Template {
             request_user: _request_user,
@@ -143,13 +143,13 @@ pub async fn terms_page(session: Session) -> actix_web::Result<HttpResponse> {
     }
 }
 
-pub async fn policy_page(session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
+pub async fn policy_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
+        let _request_user = get_current_user(&req);
         #[derive(TemplateOnce)]
         #[template(path = "policy.stpl")]
         struct Template {
-            request_user: AuthResp,
+            request_user: AuthResp2,
         }
         let body = Template {
             request_user: _request_user,

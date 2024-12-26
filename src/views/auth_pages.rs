@@ -45,7 +45,19 @@ pub struct AuthResp {
     pub perm:       i16,
     pub image:      Option<String>,
     pub phone:      Option<String>,
+}
+#[derive(Deserialize, Serialize, Debug)]
+pub struct AuthResp2 {
+    pub id:         i32,
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+    pub perm:       i16,
+    pub image:      Option<String>,
+    pub phone:      Option<String>,
+    pub uuid:       String,
 }  
+
 #[derive(Deserialize, Serialize, Debug)]
 pub struct NewUser {
     pub first_name: String,
@@ -64,8 +76,8 @@ pub struct Resp {
     pub status: String,
 }
 
-pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
-    if is_signed_in(&session) {
+pub async fn login(req: HttpRequest, data: Json<LoginUser>) -> Json<Resp> {
+    if is_signed_in(&req) {
         return Json(Resp { 
             status: "error".to_string(),
         }); 
@@ -74,10 +86,10 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
         email:    data.email.clone(),
         password: data.password.clone(),
     }; 
-    let res = request_post::<LoginUser, AuthResp> (
+    let res = request_post::<LoginUser, AuthResp2> (
         URL.to_owned() + &"/login/".to_string(),
         &l_data, 
-        false
+        "".to_string()
     ).await;
 
     match res {
@@ -111,10 +123,7 @@ pub struct EmailUserReq2 {
     name:  String,
     email: String,
 }
-pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        return crate::views::not_found_page(session).await;
-    }
+pub async fn invite(req: HttpRequest, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
     let l_data = EmailUserReq2 {
         name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
         email: data.email.clone(),
@@ -122,7 +131,7 @@ pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Re
     let res = request_post::<EmailUserReq2, String> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
-        false
+        "".to_string()
     ).await; 
 
     match res {
@@ -131,8 +140,8 @@ pub async fn invite(session: Session, data: Json<EmailUserReq>) -> actix_web::Re
     }
 }
 
-pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
+pub async fn signup(req: HttpRequest, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
         return crate::views::not_found_page(session).await;
     }
     let l_data = NewUser {
@@ -142,10 +151,10 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
         password:   data.password.clone(),
         token:      data.token.clone(),
     };   
-    let res = request_post::<NewUser, AuthResp> (
+    let res = request_post::<NewUser, AuthResp2> (
         URL.to_owned() + &"/signup/".to_string(),
         &l_data,
-        false
+        "".to_string()
     ).await;
 
     match res {
@@ -156,8 +165,8 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
         Err(_) => crate::views::not_found_page(session).await,
     }
 }
-pub async fn reset(session: Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
+pub async fn reset(req: HttpRequest, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&req) {
         return crate::views::not_found_page(session).await;
     }
     let l_data = NewPassword {
@@ -166,7 +175,7 @@ pub async fn reset(session: Session, data: Json<NewPassword>) -> actix_web::Resu
     let res = request_post::<NewPassword, AuthResp> (
         URL.to_owned() + &"/reset/".to_string(),
         &l_data,
-        false
+        "".to_string()
     ).await;
 
     match res {
