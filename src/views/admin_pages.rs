@@ -73,7 +73,7 @@ pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Resu
             false
         ).await;
 
-        match res {
+        return match res {
             Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
