@@ -15,7 +15,6 @@ use crate::utils::{
     NewUserForm,
     is_signed_in,
     URL,
-    AuthResp2,
 };
 use crate::utils::request_post;
 use actix_session::Session;

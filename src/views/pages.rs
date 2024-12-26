@@ -12,9 +12,8 @@ use actix_session::Session;
 use crate::utils::{
     get_current_user,
     is_signed_in,
-    AuthResp2,
 };
-use crate::views::AuthResp;
+use crate::views::{AuthResp, AuthResp2};
 
 
 pub fn pages_urls(config: &mut web::ServiceConfig) {
