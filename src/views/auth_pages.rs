@@ -147,7 +147,7 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
         email:      data.email.clone(),
         password:   data.password.clone(),
         token:      data.token.clone(),
-    };   
+    }; 
     let res = request_post::<NewUser, AuthResp2> (
         URL.to_owned() + &"/signup/".to_string(),
         &l_data,
