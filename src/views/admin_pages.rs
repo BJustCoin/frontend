@@ -63,8 +63,8 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct AuthRespData {
-    pub data:      Vec<AuthResp>,
-    pub next_page: i64,
+    pub data: Vec<AuthResp>,
+    pub next: i64, 
 }
 pub async fn users_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
@@ -76,7 +76,7 @@ pub async fn users_list_page(req: HttpRequest,session: Session) -> actix_web::Re
         let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next_page);
+            (object_list, next_page) = (data.data, data.next);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
@@ -116,7 +116,7 @@ pub async fn admins_list_page(req: HttpRequest,session: Session) -> actix_web::R
         let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next_page);
+            (object_list, next_page) = (data.data, data.next);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
@@ -156,7 +156,7 @@ pub async fn banned_users_list_page(req: HttpRequest,session: Session) -> actix_
         let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next_page);
+            (object_list, next_page) = (data.data, data.next);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
@@ -196,7 +196,7 @@ pub async fn banned_admins_list_page(req: HttpRequest,session: Session) -> actix
         let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next_page);
+            (object_list, next_page) = (data.data, data.next);
         }
         else {
             (object_list, next_page) = (Vec::new(), 0);
