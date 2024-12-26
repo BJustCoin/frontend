@@ -76,7 +76,7 @@ pub struct Resp {
     pub status: String,
 }
 
-pub async fn login(session: &Session, data: Json<LoginUser>) -> Json<Resp> {
+pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
         return Json(Resp { 
             status: "error".to_string(),
@@ -140,7 +140,7 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq>) -> actix_web::Re
     }
 }
 
-pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
+pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
     let l_data = NewUser {
         first_name: data.first_name.clone(),
         last_name:  data.last_name.clone(),
@@ -162,7 +162,7 @@ pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result
         Err(_) => crate::views::not_found_page(session.clone()).await,
     }
 }
-pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
+pub async fn reset(session: Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
     let l_data = NewPassword {
         password: data.password.clone(),
     }; 

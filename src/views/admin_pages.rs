@@ -385,7 +385,7 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
-pub async fn admin_home_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)] 
@@ -405,7 +405,7 @@ pub async fn admin_home_page(session: &Session) -> actix_web::Result<HttpRespons
         //crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_home2_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -424,7 +424,7 @@ pub async fn admin_home2_page(session: &Session) -> actix_web::Result<HttpRespon
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_profile_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_profile_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -443,7 +443,7 @@ pub async fn admin_profile_page(session: &Session) -> actix_web::Result<HttpResp
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_wallets_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_wallets_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -462,7 +462,7 @@ pub async fn admin_wallets_page(session: &Session) -> actix_web::Result<HttpResp
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_setting_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_setting_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -481,7 +481,7 @@ pub async fn admin_setting_page(session: &Session) -> actix_web::Result<HttpResp
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_transactions_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -500,7 +500,7 @@ pub async fn admin_transactions_page(session: &Session) -> actix_web::Result<Htt
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_gainers_losers_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_gainers_losers_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -519,7 +519,7 @@ pub async fn admin_gainers_losers_page(session: &Session) -> actix_web::Result<H
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_market_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_market_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -538,7 +538,7 @@ pub async fn admin_market_page(session: &Session) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_stats_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_stats_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -557,7 +557,7 @@ pub async fn admin_stats_page(session: &Session) -> actix_web::Result<HttpRespon
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_distribution_countdown_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_distribution_countdown_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -576,7 +576,7 @@ pub async fn admin_ico_distribution_countdown_page(session: &Session) -> actix_w
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_roadmap_timeline_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_roadmap_timeline_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -595,7 +595,7 @@ pub async fn admin_ico_roadmap_timeline_page(session: &Session) -> actix_web::Re
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_progress_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_progress_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -614,7 +614,7 @@ pub async fn admin_ico_progress_page(session: &Session) -> actix_web::Result<Htt
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_details_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -633,7 +633,7 @@ pub async fn admin_ico_details_page(session: &Session) -> actix_web::Result<Http
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_listing_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_listing_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -652,7 +652,7 @@ pub async fn admin_ico_listing_page(session: &Session) -> actix_web::Result<Http
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_ico_filter_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_ico_filter_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -672,7 +672,7 @@ pub async fn admin_ico_filter_page(session: &Session) -> actix_web::Result<HttpR
     }
 }
 
-pub async fn admin_tickers_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_tickers_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -691,7 +691,7 @@ pub async fn admin_tickers_page(session: &Session) -> actix_web::Result<HttpResp
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_tickers_live_pricing_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_tickers_live_pricing_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -710,7 +710,7 @@ pub async fn admin_tickers_live_pricing_page(session: &Session) -> actix_web::Re
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_transactions_tables_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_tables_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -729,7 +729,7 @@ pub async fn admin_transactions_tables_page(session: &Session) -> actix_web::Res
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_transaction_search_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_transaction_search_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -748,7 +748,7 @@ pub async fn admin_transaction_search_page(session: &Session) -> actix_web::Resu
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_transaction_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_transaction_details_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -767,7 +767,7 @@ pub async fn admin_transaction_details_page(session: &Session) -> actix_web::Res
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_transactions_counter_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_transactions_counter_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -786,7 +786,7 @@ pub async fn admin_transactions_counter_page(session: &Session) -> actix_web::Re
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_support_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_support_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -806,7 +806,7 @@ pub async fn admin_support_page(session: &Session) -> actix_web::Result<HttpResp
     }
 }
 
-pub async fn admin_invoice_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_invoice_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -825,7 +825,7 @@ pub async fn admin_invoice_page(session: &Session) -> actix_web::Result<HttpResp
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_invoices_list_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_invoices_list_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
@@ -845,7 +845,7 @@ pub async fn admin_invoices_list_page(session: &Session) -> actix_web::Result<Ht
     }
 }
 
-pub async fn exchange_page(session: &Session) -> actix_web::Result<HttpResponse> {
+pub async fn exchange_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
