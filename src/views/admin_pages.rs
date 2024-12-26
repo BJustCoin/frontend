@@ -67,7 +67,7 @@ pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Resu
         let l_data = ItemId {
             id: *id,
         }; 
-        let res = request_post::<ItemId, ()> (
+        let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
             &l_data, 
             false
