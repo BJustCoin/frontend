@@ -20,9 +20,9 @@ pub fn user_urls(config: &mut web::ServiceConfig) {
     config.route("/profile/", web::get().to(user_page));
 }
 
-pub async fn user_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn user_page(session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "user/index.stpl")]
         struct Template {

@@ -66,9 +66,9 @@ pub struct AuthRespData {
     pub data: Vec<AuthResp>,
     pub next: i64, 
 }
-pub async fn users_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -106,9 +106,9 @@ pub async fn users_list_page(req: HttpRequest,session: Session) -> actix_web::Re
         crate::views::auth_page(session).await
     }
 }
-pub async fn admins_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -146,9 +146,9 @@ pub async fn admins_list_page(req: HttpRequest,session: Session) -> actix_web::R
         crate::views::auth_page(session).await
     }
 }
-pub async fn banned_users_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -186,9 +186,9 @@ pub async fn banned_users_list_page(req: HttpRequest,session: Session) -> actix_
         crate::views::auth_page(session).await
     }
 }
-pub async fn banned_admins_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -232,12 +232,12 @@ pub async fn banned_admins_list_page(req: HttpRequest,session: Session) -> actix
 pub struct ItemId {
     pub id:  i32,
 }
-pub async fn block_user(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
-        }; 
+        };
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
             &l_data, 
@@ -251,12 +251,12 @@ pub async fn block_user(req: HttpRequest, data: Json<ItemId>) -> actix_web::Resu
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn unblock_user(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_user/".to_string(),
             &l_data, 
@@ -270,12 +270,12 @@ pub async fn unblock_user(req: HttpRequest, data: Json<ItemId>) -> actix_web::Re
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn block_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_admin/".to_string(),
             &l_data, 
@@ -289,12 +289,12 @@ pub async fn block_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Res
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn unblock_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_admin/".to_string(),
             &l_data, 
@@ -308,12 +308,12 @@ pub async fn unblock_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::R
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn create_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_admin/".to_string(),
             &l_data, 
@@ -327,12 +327,12 @@ pub async fn create_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Re
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn drop_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/drop_admin/".to_string(),
             &l_data, 
@@ -346,12 +346,12 @@ pub async fn drop_admin(req: HttpRequest, data: Json<ItemId>) -> actix_web::Resu
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn create_can_buy(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_can_buy/".to_string(),
             &l_data, 
@@ -365,12 +365,12 @@ pub async fn create_can_buy(req: HttpRequest, data: Json<ItemId>) -> actix_web::
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn delete_can_buy(req: HttpRequest, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         let l_data = ItemId {
             id: data.id,
         };
-        let _request_user = get_current_user(&req);
+        let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/delete_can_buy/".to_string(),
             &l_data, 
@@ -385,9 +385,9 @@ pub async fn delete_can_buy(req: HttpRequest, data: Json<ItemId>) -> actix_web::
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
-pub async fn admin_home_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_home_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)] 
         #[template(path = "admin/index.stpl")]
         struct Template {
@@ -405,9 +405,9 @@ pub async fn admin_home_page(req: HttpRequest) -> actix_web::Result<HttpResponse
         //crate::views::auth_page(session).await
     }
 }
-pub async fn admin_home2_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_home2_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/index2.stpl")]
         struct Template {
@@ -424,9 +424,9 @@ pub async fn admin_home2_page(req: HttpRequest) -> actix_web::Result<HttpRespons
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_profile_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_profile_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/profile.stpl")]
         struct Template {
@@ -443,9 +443,9 @@ pub async fn admin_profile_page(req: HttpRequest) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_wallets_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_wallets_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/wallets.stpl")]
         struct Template {
@@ -462,9 +462,9 @@ pub async fn admin_wallets_page(req: HttpRequest) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_setting_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_setting_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/setting.stpl")]
         struct Template {
@@ -481,9 +481,9 @@ pub async fn admin_setting_page(req: HttpRequest) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_transactions_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_transactions_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/transactions.stpl")]
         struct Template {
@@ -500,9 +500,9 @@ pub async fn admin_transactions_page(req: HttpRequest) -> actix_web::Result<Http
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_gainers_losers_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_gainers_losers_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/gainers_losers.stpl")]
         struct Template {
@@ -519,9 +519,9 @@ pub async fn admin_gainers_losers_page(req: HttpRequest) -> actix_web::Result<Ht
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_market_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_market_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/market.stpl")]
         struct Template {
@@ -538,9 +538,9 @@ pub async fn admin_market_page(req: HttpRequest) -> actix_web::Result<HttpRespon
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_stats_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_stats_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/stats.stpl")]
         struct Template {
@@ -557,9 +557,9 @@ pub async fn admin_stats_page(req: HttpRequest) -> actix_web::Result<HttpRespons
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_distribution_countdown_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_distribution_countdown_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_distribution_countdown.stpl")]
         struct Template {
@@ -576,9 +576,9 @@ pub async fn admin_ico_distribution_countdown_page(req: HttpRequest) -> actix_we
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_roadmap_timeline_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_roadmap_timeline_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_roadmap_timeline.stpl")]
         struct Template {
@@ -595,9 +595,9 @@ pub async fn admin_ico_roadmap_timeline_page(req: HttpRequest) -> actix_web::Res
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_progress_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_progress_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_progress.stpl")]
         struct Template {
@@ -614,9 +614,9 @@ pub async fn admin_ico_progress_page(req: HttpRequest) -> actix_web::Result<Http
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_details_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_details.stpl")]
         struct Template {
@@ -633,9 +633,9 @@ pub async fn admin_ico_details_page(req: HttpRequest) -> actix_web::Result<HttpR
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_listing_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_listing_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_listing.stpl")]
         struct Template {
@@ -652,9 +652,9 @@ pub async fn admin_ico_listing_page(req: HttpRequest) -> actix_web::Result<HttpR
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_ico_filter_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_ico_filter_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/ico_filter.stpl")]
         struct Template {
@@ -672,9 +672,9 @@ pub async fn admin_ico_filter_page(req: HttpRequest) -> actix_web::Result<HttpRe
     }
 }
 
-pub async fn admin_tickers_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_tickers_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/tickers.stpl")]
         struct Template {
@@ -691,9 +691,9 @@ pub async fn admin_tickers_page(req: HttpRequest) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_tickers_live_pricing_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_tickers_live_pricing_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/tickers_live_pricing.stpl")]
         struct Template {
@@ -710,9 +710,9 @@ pub async fn admin_tickers_live_pricing_page(req: HttpRequest) -> actix_web::Res
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_transactions_tables_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_transactions_tables_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/transactions_tables.stpl")]
         struct Template {
@@ -729,9 +729,9 @@ pub async fn admin_transactions_tables_page(req: HttpRequest) -> actix_web::Resu
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_transaction_search_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_transaction_search_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/transaction_search.stpl")]
         struct Template {
@@ -748,9 +748,9 @@ pub async fn admin_transaction_search_page(req: HttpRequest) -> actix_web::Resul
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_transaction_details_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_transaction_details_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/transaction_details.stpl")]
         struct Template {
@@ -767,9 +767,9 @@ pub async fn admin_transaction_details_page(req: HttpRequest) -> actix_web::Resu
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_transactions_counter_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_transactions_counter_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/transaction_counter.stpl")]
         struct Template {
@@ -786,9 +786,9 @@ pub async fn admin_transactions_counter_page(req: HttpRequest) -> actix_web::Res
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_support_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_support_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/support.stpl")]
         struct Template {
@@ -806,9 +806,9 @@ pub async fn admin_support_page(req: HttpRequest) -> actix_web::Result<HttpRespo
     }
 }
 
-pub async fn admin_invoice_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_invoice_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/invoice.stpl")]
         struct Template {
@@ -825,9 +825,9 @@ pub async fn admin_invoice_page(req: HttpRequest) -> actix_web::Result<HttpRespo
         crate::views::auth_page(session).await
     }
 }
-pub async fn admin_invoices_list_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn admin_invoices_list_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/invoices_list.stpl")]
         struct Template {
@@ -845,9 +845,9 @@ pub async fn admin_invoices_list_page(req: HttpRequest) -> actix_web::Result<Htt
     }
 }
 
-pub async fn exchange_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
-        let _request_user = get_current_user(&req);
+pub async fn exchange_page(session: &Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
         #[derive(TemplateOnce)]
         #[template(path = "admin/exchange.stpl")]
         struct Template {

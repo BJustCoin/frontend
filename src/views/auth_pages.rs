@@ -76,8 +76,8 @@ pub struct Resp {
     pub status: String,
 }
 
-pub async fn login(req: HttpRequest, data: Json<LoginUser>) -> Json<Resp> {
-    if is_signed_in(&req) {
+pub async fn login(session: &Session, data: Json<LoginUser>) -> Json<Resp> {
+    if is_signed_in(&session) {
         return Json(Resp { 
             status: "error".to_string(),
         }); 
@@ -140,8 +140,8 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq>) -> actix_web::Re
     }
 }
 
-pub async fn signup(req: HttpRequest, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
     let l_data = NewUser {
@@ -165,8 +165,8 @@ pub async fn signup(req: HttpRequest, data: Json<NewUser>) -> actix_web::Result<
         Err(_) => crate::views::not_found_page(session).await,
     }
 }
-pub async fn reset(req: HttpRequest, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&req) {
+pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
         return crate::views::not_found_page(session).await;
     }
     let l_data = NewPassword {
