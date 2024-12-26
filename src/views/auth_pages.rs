@@ -166,14 +166,14 @@ pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Res
     let l_data = NewPassword {
         password: data.password.clone(),
     }; 
-    let res = request_post::<NewPassword, AuthResp> (
+    let res = request_post::<NewPassword, AuthResp2> (
         URL.to_owned() + &"/reset/".to_string(),
         &l_data,
         "".to_string()
     ).await;
 
     match res {
-        Ok(user) => {
+        Ok(user) => { 
             crate::utils::set_current_user(&session, &user);
             crate::views::exchange_page(session).await
         },
