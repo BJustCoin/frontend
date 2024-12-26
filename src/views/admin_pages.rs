@@ -48,13 +48,13 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/exchange/", web::get().to(exchange_page));
 
     config.route("/block_user/{id}/", web::post().to(block_user));
-    //config.route("/unblock_user/{id}/", web::post().to(unblock_user));
-    //config.route("/block_admin/{id}/", web::post().to(block_admin));
-    //config.route("/unblock_admin/{id}/", web::post().to(unblock_admin));
-    //config.route("/create_admin/{id}/", web::post().to(create_admin));
-    //config.route("/drop_admin/{id}/", web::post().to(drop_admin));
-    //config.route("/create_can_buy/{id}/", web::post().to(create_can_buy));
-    //config.route("/delete_can_buy/{id}/", web::post().to(delete_can_buy));
+    config.route("/unblock_user/{id}/", web::post().to(unblock_user));
+    config.route("/block_admin/{id}/", web::post().to(block_admin));
+    config.route("/unblock_admin/{id}/", web::post().to(unblock_admin));
+    config.route("/create_admin/{id}/", web::post().to(create_admin));
+    config.route("/drop_admin/{id}/", web::post().to(drop_admin));
+    config.route("/create_can_buy/{id}/", web::post().to(create_can_buy));
+    config.route("/delete_can_buy/{id}/", web::post().to(delete_can_buy));
 }
 
 
@@ -69,6 +69,132 @@ pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Resu
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn unblock_user(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/unblock_user/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn block_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/block_admin/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn unblock_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/unblock_admin/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn create_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/create_admin/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn drop_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/drop_admin/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn create_can_buy(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/create_can_buy/".to_string(),
+            &l_data, 
+            false
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn delete_can_buy(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: *id,
+        }; 
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/delete_can_buy/".to_string(),
             &l_data, 
             false
         ).await;
@@ -373,12 +499,14 @@ pub struct AuthRespData {
     pub data:      Vec<AuthResp>,
     pub next_page: i64,
 }
-pub async fn admin_members_list_page(session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_members_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
-        let resp = crate::utils::request_get::<AuthRespData>(URL.to_string(), false).await;
+        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
             (object_list, next_page) = (data.data, data.next_page);
