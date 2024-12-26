@@ -3,6 +3,7 @@
 	  	<div class="multinav">
 		  <div class="multinav-scroll" style="height: 100%;">	
 			  <ul class="sidebar-menu" data-widget="tree">	
+				
 				<li class="treeview">
 				  <a href="#">
 					<i data-feather="monitor"></i><span>Dashboard</span>					  
@@ -18,7 +19,51 @@
 					  <a href="/support/"><i class="ti-more"></i><span>Support</span></a>
 					</li>
 				  </ul>
-				</li>				  
+				</li>
+				<% if request_user.perm == 60 { %>
+				<li class="treeview">
+				  <a href="#">
+					<i data-feather="monitor"></i><span>Users</span>					  
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-right pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li>
+					  <a href="/users/"><i class="ti-more"></i><span>Users</span></a>
+					</li>
+					<li>
+					  <a href="/admins/"><i class="ti-more"></i><span>Admins</span></a>
+					</li>
+					<li>
+					  <a href="/banned_users/"><i class="ti-more"></i><span>Banned users</span></a>
+					</li>
+					<li>
+					  <a href="/banned_admins/"><i class="ti-more"></i><span>Banned admins</span></a>
+					</li>
+				  </ul>
+				</li>
+				<% } %>
+
+				<% if request_user.perm == 10 { %>
+				<li class="treeview">
+				  <a href="#">
+					<i data-feather="monitor"></i><span>Users</span>					  
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-right pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li>
+					  <a href="/users/"><i class="ti-more"></i><span>Users</span></a>
+					</li>
+					<li>
+					  <a href="/banned_users/"><i class="ti-more"></i><span>Banned users</span></a>
+					</li>
+				  </ul>
+				</li>
+				<% } %>
+
 				<li class="treeview">
 				  <a href="#">
 					<i data-feather="cpu"></i>
