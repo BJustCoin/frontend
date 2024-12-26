@@ -77,9 +77,8 @@ pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Resu
             Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
     }
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"))
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
 pub async fn admin_home_page(session: Session) -> actix_web::Result<HttpResponse> {
