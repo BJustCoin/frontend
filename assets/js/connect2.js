@@ -442,7 +442,7 @@ function on(elSelector, eventName, selector, fn) {var element = document.querySe
 function post_id(_this, url) {
     id = _this.parentElement.getAttribute("data-pk");
     block = _this.parentElement.parentElement.parentElement;
-    object = {"id": id};
+    object = {"id": id*1};
     json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
