@@ -141,9 +141,6 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq>) -> actix_web::Re
 }
 
 pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        return crate::views::not_found_page(session).await;
-    }
     let l_data = NewUser {
         first_name: data.first_name.clone(),
         last_name:  data.last_name.clone(),
@@ -166,9 +163,6 @@ pub async fn signup(session: &Session, data: Json<NewUser>) -> actix_web::Result
     }
 }
 pub async fn reset(session: &Session, data: Json<NewPassword>) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        return crate::views::not_found_page(session).await;
-    }
     let l_data = NewPassword {
         password: data.password.clone(),
     }; 

@@ -73,7 +73,7 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
         let object_list: Vec<AuthResp>;
         let next_page: i64;
         let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid).await;
+        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
             (object_list, next_page) = (data.data, data.next);
@@ -113,7 +113,7 @@ pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::
         let object_list: Vec<AuthResp>;
         let next_page: i64;
         let url = URL.to_string() + &"/get_admins/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid).await;
+        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
             (object_list, next_page) = (data.data, data.next);
@@ -153,7 +153,7 @@ pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix
         let object_list: Vec<AuthResp>;
         let next_page: i64;
         let url = URL.to_string() + &"/get_banned_users/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid).await;
+        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
             (object_list, next_page) = (data.data, data.next);
@@ -193,7 +193,7 @@ pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> acti
         let object_list: Vec<AuthResp>;
         let next_page: i64;
         let url = URL.to_string() + &"/get_banned_admins/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid).await;
+        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
             (object_list, next_page) = (data.data, data.next);
