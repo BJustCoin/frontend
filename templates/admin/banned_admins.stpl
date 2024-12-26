@@ -38,21 +38,9 @@
                                         </p>    
                                     </td>
                                     <td>
-                                        <nav class="nav mt-2">
-                                            <% if object.perm == 1 { %>
-                                                <a class="nav-link create_can_buy" style="cursor: pointer">
-                                                    allow purchase
-                                                </a>
-                                            <% } else if object.perm == 2 { %>
-                                                <a class="nav-link delete_can_buy" style="cursor: pointer">
-                                                    prohibit purchase
-                                                </a>
-                                            <% } %>
-                                            <a class="nav-link create_block" style="cursor: pointer">
-                                                    Block user
-                                            </a>
-                                            <a class="nav-link create_admin" style="cursor: pointer">
-                                                    make an admin
+                                        <nav class="nav mt-2" data-pk="<%= object.id %>">
+                                            <a class="nav-link delete_admin_block" style="cursor: pointer">
+                                                    Unblock admin
                                             </a>
                                         </nav>
                                     </td>

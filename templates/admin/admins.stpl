@@ -1,0 +1,63 @@
+<% include!("../header.stpl"); %>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table id="example5" class="table table-hover">
+                            <thead class="d-none">
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for object in object_list { %>
+                                <tr>
+                                    <td class="w-60">
+                                        <a class="avatar avatar-lg status-success">
+                                            <!--
+                                            <img src="/assets/images/1.jpg" alt="...">
+                                            -->
+                                        </a>
+                                    </td>
+                                    <td class="w-300">
+                                        <p class="mb-0">
+                                            <strong><%= object.first_name %> <%= object.last_name %></strong>
+                                            <small class="sidetitle"><%= object.email %></small>
+                                        </p>
+                                        <p class="mb-0">
+                                            <% if object.phone.is_some() { %>
+                                                Phone: <%= object.phone.as_deref().unwrap() %>
+                                            <% } else { %>
+                                                Phone not exists
+                                            <% } %>
+                                        </p>    
+                                    </td>
+                                    <td>
+                                        <nav class="nav mt-2" data-pk="<%= object.id %>">
+                                            <a class="nav-link create_admin_block" style="cursor: pointer">
+                                                    Block admin
+                                            </a>
+                                            <a class="nav-link delete_admin" style="cursor: pointer">
+                                                    demote
+                                            </a>
+                                        </nav>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+<% include!("../footer.stpl"); %>

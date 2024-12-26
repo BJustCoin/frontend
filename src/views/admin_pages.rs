@@ -19,7 +19,10 @@ use crate::views::AuthResp;
 
 pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admin_home/", web::get().to(admin_home_page));
-    config.route("/users/", web::get().to(admin_members_list_page));
+    config.route("/users/", web::get().to(users_list_page));
+    config.route("/admins/", web::get().to(admins_list_page));
+    config.route("/banned_users/", web::get().to(banned_users_list_page));
+    config.route("/banned_admins/", web::get().to(banned_admins_list_page));
 
     config.route("/admin_home2/", web::get().to(admin_home2_page));
     config.route("/profile/", web::get().to(admin_profile_page));
@@ -47,7 +50,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
     config.route("/exchange/", web::get().to(exchange_page));
 
-    config.route("/block_user/{id}/", web::post().to(block_user));
+    config.route("/block_user/{id}/", web::post().to(block_user)); 
     config.route("/unblock_user/{id}/", web::post().to(unblock_user));
     config.route("/block_admin/{id}/", web::post().to(block_admin));
     config.route("/unblock_admin/{id}/", web::post().to(unblock_admin));
@@ -57,15 +60,181 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/delete_can_buy/{id}/", web::post().to(delete_can_buy));
 }
 
+#[derive(Deserialize, Serialize, Debug)]
+pub struct AuthRespData {
+    pub data:      Vec<AuthResp>,
+    pub next_page: i64,
+}
+pub async fn users_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next_page);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/users.stpl")]
+        struct Template {
+            request_user: AuthResp,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session).await
+    }
+}
+pub async fn admins_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_admins/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next_page);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/admins.stpl")]
+        struct Template {
+            request_user: AuthResp,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session).await
+    }
+}
+pub async fn banned_users_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_banned_users/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next_page);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/banned_users.stpl")]
+        struct Template {
+            request_user: AuthResp,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session).await
+    }
+}
+pub async fn banned_admins_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_banned_admins/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next_page);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/banned_admins.stpl")]
+        struct Template {
+            request_user: AuthResp,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session).await
+    }
+}
+
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct ItemId {
     pub id:  i32,
 }
-pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
@@ -80,10 +249,10 @@ pub async fn block_user(session: Session, id: web::Path<i32>) -> actix_web::Resu
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn unblock_user(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_user/".to_string(),
@@ -98,10 +267,10 @@ pub async fn unblock_user(session: Session, id: web::Path<i32>) -> actix_web::Re
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn block_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_admin/".to_string(),
@@ -116,10 +285,10 @@ pub async fn block_admin(session: Session, id: web::Path<i32>) -> actix_web::Res
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn unblock_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_admin/".to_string(),
@@ -134,10 +303,10 @@ pub async fn unblock_admin(session: Session, id: web::Path<i32>) -> actix_web::R
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn create_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_admin/".to_string(),
@@ -152,10 +321,10 @@ pub async fn create_admin(session: Session, id: web::Path<i32>) -> actix_web::Re
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn drop_admin(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/drop_admin/".to_string(),
@@ -170,10 +339,10 @@ pub async fn drop_admin(session: Session, id: web::Path<i32>) -> actix_web::Resu
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn create_can_buy(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_can_buy/".to_string(),
@@ -188,10 +357,10 @@ pub async fn create_can_buy(session: Session, id: web::Path<i32>) -> actix_web::
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
-pub async fn delete_can_buy(session: Session, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: *id,
+            id: id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/delete_can_buy/".to_string(),
@@ -493,54 +662,6 @@ pub async fn admin_ico_filter_page(session: Session) -> actix_web::Result<HttpRe
         crate::views::auth_page(session).await
     }
 }
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct AuthRespData {
-    pub data:      Vec<AuthResp>,
-    pub next_page: i64,
-}
-pub async fn admin_members_list_page(req: HttpRequest,session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
-        let _request_user = get_current_user(&session).expect("E.");
-        let page = crate::utils::get_page(&req);
-        let object_list: Vec<AuthResp>;
-        let next_page: i64;
-        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, false).await;
-        if resp.is_ok() { 
-            let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next_page);
-        }
-        else {
-            (object_list, next_page) = (Vec::new(), 0);
-        }
-        let mut list: Vec<AuthResp> = Vec::new();
-        for object in object_list.into_iter() {
-            list.push(object);
-        }
-
-        #[derive(TemplateOnce)]
-        #[template(path = "admin/members_list.stpl")]
-        struct Template {
-            request_user: AuthResp,
-            object_list:  Vec<AuthResp>,
-            next_page:    i64,
-        }
-        let body = Template {
-            request_user: _request_user,
-            object_list:  list,
-            next_page:    next_page,
-        }
-        .render_once()
-        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-    }
-    else {
-        crate::views::auth_page(session).await
-    }
-}
-
-
 
 pub async fn admin_tickers_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
