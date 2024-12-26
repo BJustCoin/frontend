@@ -78,7 +78,7 @@
 										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
 										</div>
 										<div class="col-12 text-center hide">
-										  	<button id="signup" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">SIGN IN</button>
+										  	<button id="signup" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">Create account</button>
 										</div>
 										<div class="col-12 text-center">
 											<p class="api_response" style="color:#F00000"></p>
@@ -86,7 +86,7 @@
 									  </div>
 								</form>				
 								<div class="text-center">
-									<p class="mt-15 mb-0">Already have an account?<a href="/" class="text-danger ms-5">Create account</a></p>
+									<p class="mt-15 mb-0">Already have an account?<a href="/" class="text-danger ms-5">Sign In</a></p>
 								</div>
 							</div>
 						</div>								
