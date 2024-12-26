@@ -234,7 +234,7 @@ pub struct ItemId {
 pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
@@ -252,7 +252,7 @@ pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Resu
 pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_user/".to_string(),
@@ -270,7 +270,7 @@ pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Re
 pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_admin/".to_string(),
@@ -288,7 +288,7 @@ pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Res
 pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_admin/".to_string(),
@@ -306,7 +306,7 @@ pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::R
 pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_admin/".to_string(),
@@ -324,7 +324,7 @@ pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Re
 pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/drop_admin/".to_string(),
@@ -342,7 +342,7 @@ pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Resu
 pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_can_buy/".to_string(),
@@ -360,7 +360,7 @@ pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
 pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
-            id: id,
+            id: data.id,
         }; 
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/delete_can_buy/".to_string(),
