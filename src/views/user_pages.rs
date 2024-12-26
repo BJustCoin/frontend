@@ -13,7 +13,7 @@ use crate::utils::{
     get_current_user,
     is_signed_in,
 };
-use crate::views::{AuthResp, AuthResp2},
+use crate::views::{AuthResp, AuthResp2};
 
 
 pub fn user_urls(config: &mut web::ServiceConfig) {
