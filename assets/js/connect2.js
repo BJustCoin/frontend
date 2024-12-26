@@ -442,10 +442,8 @@ function on(elSelector, eventName, selector, fn) {var element = document.querySe
 function post_id(_this, url) {
     id = _this.parentElement.getAttribute("data-pk");
     block = _this.parentElement.parentElement.parentElement;
-    form_data = new FormData(form);
+    form_data = new FormData();
     form_data.append("id", id);
-    object = {};
-    form_data.forEach((value, key) => object[key] = value);
     json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     
@@ -456,7 +454,7 @@ function post_id(_this, url) {
     if ( link.readyState == 4 && link.status == 200 ) {
       block.remove();
     }}
-    link.send(json);
+    link.send(form_data);
 };
 
 on('body', 'click', '.create_admin_block', function() {
