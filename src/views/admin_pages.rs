@@ -51,14 +51,14 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/invoices_list/", web::get().to(admin_invoices_list_page));
     config.route("/exchange/", web::get().to(exchange_page));
 
-    config.route("/block_user/{id}/", web::post().to(block_user)); 
-    config.route("/unblock_user/{id}/", web::post().to(unblock_user));
-    config.route("/block_admin/{id}/", web::post().to(block_admin));
-    config.route("/unblock_admin/{id}/", web::post().to(unblock_admin));
-    config.route("/create_admin/{id}/", web::post().to(create_admin));
-    config.route("/drop_admin/{id}/", web::post().to(drop_admin));
-    config.route("/create_can_buy/{id}/", web::post().to(create_can_buy));
-    config.route("/delete_can_buy/{id}/", web::post().to(delete_can_buy));
+    config.route("/block_user/", web::post().to(block_user)); 
+    config.route("/unblock_user/", web::post().to(unblock_user));
+    config.route("/block_admin/", web::post().to(block_admin));
+    config.route("/unblock_admin/", web::post().to(unblock_admin));
+    config.route("/create_admin/", web::post().to(create_admin));
+    config.route("/drop_admin/", web::post().to(drop_admin));
+    config.route("/create_can_buy/", web::post().to(create_can_buy));
+    config.route("/delete_can_buy/", web::post().to(delete_can_buy));
 }
 
 #[derive(Deserialize, Serialize, Debug)]
