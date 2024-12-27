@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
                     value = this.parentElement.querySelector(".number_of_tokens").value;
-                    buy_bjustcoin = contract.methods.buyICOToken().call().then(function (a) {
+                    buy_bjustcoin = contract.methods.buyTeamToken().call().then(function (a) {
                         console.log("buy_bjustcoin start", a);
                     });
                     console.log("buy value", value);
