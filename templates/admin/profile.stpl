@@ -10,7 +10,7 @@
                     <h3 class="profile-username text-center mb-0"><%= request_user.first_name %> <%= request_user.last_name %></h3>
 
                     <h4 class="text-center mt-0"><%= request_user.email %></h4>
-                    <h4 class="text-center mt-0">BTC: <span class="get_balance">0</span></h4>
+                    <h4 class="text-center mt-0">BJC: <span class="get_balance">0</span></h4>
                     <p class="text-center mt-0">Metamask: <span class="get_metamask_address"></span></p>
 
                     <div class="row">
