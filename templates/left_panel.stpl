@@ -82,22 +82,9 @@
 						</span>
 					  </a>
 					  <ul class="treeview-menu"> 
-						<li><a href="/transactions/"><i class="ti-more"></i>Transactions</a></li>
-						<li><a href="/gainers_losers/"><i class="ti-more"></i>Gainers/Losers</a></li>
+						<li><a href="https://etherscan.io/address/0x30C48aFA933737b04cE3BCc82fF51c3330F0461C#code" target="_blank" rel="noopener"><i class="ti-more"></i>Transactions</a></li>
 					  </ul>
 					</li> 
-					<li class="treeview">
-					  <a href="#">
-						<i class="ti-more"></i>
-						<span>Transactions</span>
-						<span class="pull-right-container">
-						  <i class="fa fa-angle-right pull-right"></i>
-						</span>
-					  </a>
-					  <ul class="treeview-menu">
-						<li><a href="/transactions_tables/"><i class="ti-more"></i>Tables</a></li>
-					  </ul>
-					</li>
 				  </ul>
 				</li>
 			  </ul>
