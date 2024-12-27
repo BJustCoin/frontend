@@ -29,6 +29,9 @@ window.addEventListener('load', function () {
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
+                team_token = contract.methods.teamToken().call().then(function (a) {
+                    console.log("team token", a);
+                });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
