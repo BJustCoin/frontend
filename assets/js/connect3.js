@@ -12,11 +12,6 @@ window.addEventListener('load', function () {
                 receiver = web3.eth.accounts.create();
                 
 				/// 
-				user_account = web3.eth.getAccounts().then(function (accounts) {
-					console.log('Connected with MetaMask account: ' + accounts[0]);
-                    address_span = document.body.querySelector(".get_metamask_address");
-                    address_span.innerHTML = accounts[0];
-				});
                 contract_address = "0xAA4a64D4c1Bb5836F91E4e433226b8A9f8a01Faf";
 				contract = new web3.eth.Contract(
                     contract_abi, 
@@ -30,6 +25,12 @@ window.addEventListener('load', function () {
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
+                user_account = web3.eth.getAccounts().then(function (accounts) {
+                    console.log('Connected with MetaMask account: ' + accounts[0]);
+                    address_span = document.body.querySelector(".get_metamask_address");
+                    address_span.innerHTML = accounts[0];
+                    defaultAccount = accounts[0];
+				);
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
@@ -40,7 +41,7 @@ window.addEventListener('load', function () {
                     console.log("buy_bjustcoin");
                     value = this.parentElement.querySelector(".number_of_tokens").value;
                     buy_bjustcoin = contract.methods.buyTeamToken().send({
-                        from: accounts[0],
+                        from: defaultAccount,
                         gas: 1000000,
                         gasPrice: '10000000000',
                     });
