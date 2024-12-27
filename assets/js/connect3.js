@@ -30,7 +30,7 @@ window.addEventListener('load', function () {
                     address_span = document.body.querySelector(".get_metamask_address");
                     address_span.innerHTML = accounts[0];
                     defaultAccount = accounts[0];
-				);
+                });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
