@@ -114,7 +114,7 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect2.js"></script>
+<script type="text/javascript" src="/assets/js/connect3.js"></script>
 
 <% include!("../footer.stpl"); %>
 
