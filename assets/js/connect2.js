@@ -27,6 +27,13 @@ window.addEventListener('load', function () {
 				rate = contract.methods.getRate().call().then(function (a) {
                     console.log("icomanager rate", a);
                 });
+
+                on('body', 'click', '.transfer_bjustcoin', function() {
+                    console.log("transfer_bjustcoin");
+                });
+                on('body', 'click', '.buy_bjustcoin', function() {
+                    console.log("buy_bjustcoin");
+                });
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}

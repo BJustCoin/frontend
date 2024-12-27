@@ -82,7 +82,7 @@
 						</span>
 					  </a>
 					  <ul class="treeview-menu"> 
-						<li><a href="https://etherscan.io/address/0x30C48aFA933737b04cE3BCc82fF51c3330F0461C#code" target="_blank" rel="noopener"><i class="ti-more"></i>Transactions</a></li>
+						<li><a href="https://etherscan.io/address/0x30C48aFA933737b04cE3BCc82fF51c3330F0461C" target="_blank" rel="noopener"><i class="ti-more"></i>Transactions</a></li>
 					  </ul>
 					</li> 
 				  </ul>

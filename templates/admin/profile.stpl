@@ -77,7 +77,7 @@
 
                         
                                 <% if request_user.perm == 2 { %>
-                                <h4 class="box-title mb-15">Buy Bjustcoin</h4>
+                                <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 								<div class="row">
 									<div class="col-12">
 										<div class="buy-input-block-content row">
