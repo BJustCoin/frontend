@@ -82,7 +82,7 @@
 									<div class="col-12">
 										<div class="buy-input-block-content row">
 												<div class="form-group">
-													<input type="text" class="form-control" placeholder="number of tokens">
+													<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
 												</div>
 										</div>
 										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
@@ -94,12 +94,14 @@
 									<div class="col-12">
 										<div class="buy-input-block-content row">
 											<div class="form-group">
-												<input type="number" class="form-control" placeholder="number of tokens">
+												<input type="number" class="form-control number_of_tokens" placeholder="number of tokens">
 											</div>
 										</div>
 										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin">Transfer</button>
 									</div>									
 								</div>
+                                <hr />
+                                <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 start_ico">Start ICO</button>
                                 <% } %>
                         <!-- /.col -->
                     </div>

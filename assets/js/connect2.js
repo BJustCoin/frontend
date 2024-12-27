@@ -30,50 +30,19 @@ window.addEventListener('load', function () {
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
+                    value = this.parentElement.querySelector(".number_of_tokens").value;
+                    console.log("transfer value", value);
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
+                    value = this.parentElement.querySelector(".number_of_tokens").value;
+                    console.log("buy value", value);
+                });
+                on('body', 'click', '.start_ico', function() {
+                    console.log("start_ico");
+                    
                 });
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}
-});
-
-function post_id(_this, url) {
-    id = _this.parentElement.getAttribute("data-pk");
-    block = _this.parentElement.parentElement.parentElement;
-    object = {"id": id*1};
-    json = JSON.stringify(object);
-    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    
-    link.open( 'POST', url, true );
-    link.setRequestHeader('Content-Type', 'application/json');
-  
-    link.onreadystatechange = function () {
-    if ( link.readyState == 4 && link.status == 200 ) {
-      block.remove();
-    }}
-    link.send(json);
-};
-
-on('body', 'click', '.create_admin_block', function() {
-    post_id(this, "/create_admin/");
-});
-on('body', 'click', '.create_block', function() {
-    post_id(this, "/block_user/");
-});
-on('body', 'click', '.delete_block', function() {
-    post_id(this, "/unblock_user/");
-});
-on('body', 'click', '.create_can_buy', function() {
-    post_id(this, "/create_can_buy/");
-});
-on('body', 'click', '.delete_can_buy', function() {
-    post_id(this, "/delete_can_buy/");
-});
-on('body', 'click', '.delete_admin', function() {
-    post_id(this, "/drop_admin/");
-});
-on('body', 'click', '.delete_admin_block', function() {
-    post_id(this, "/unblock_admin/");
 });
