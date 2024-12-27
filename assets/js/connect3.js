@@ -26,6 +26,7 @@ window.addEventListener('load', function () {
                         defaultGas: 5000000,
                     }
                 );
+                contract.config.ignoreGasPricing = true;
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
