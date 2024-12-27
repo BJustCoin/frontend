@@ -17,12 +17,6 @@ window.addEventListener('load', function () {
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
-				ico_stage = contract.methods.getICOStage().call().then(function (a) {
-                    console.log("icomanager ico_stage", a);
-                });
-				rate = contract.methods.getRate().call().then(function (a) {
-                    console.log("icomanager rate", a);
-                });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
