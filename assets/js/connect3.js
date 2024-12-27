@@ -9,35 +9,8 @@ window.addEventListener('load', function () {
 				window.ethereum.enable();
                 my_account = "0x";
 
-
-                console.log('sender balance:', web3.eth.getBalance("0x77F4cBeb30Dbf2886cF70F78781B0D7353Ad1F07"));
                 receiver = web3.eth.accounts.create();
-                web3.eth
-                    .sendTransaction({
-                        from: "0x77F4cBeb30Dbf2886cF70F78781B0D7353Ad1F07",
-                        to: receiver.address,
-                        value: 1,
-                    })
-                    .on('sending', sending => {
-                        console.log('Sending:', sending);
-                    })
-                    .on('sent', sent => {
-                        console.log('Sent:', sent);
-                    })
-                    .on('transactionHash', transactionHash => {
-                        console.log('Transaction Hash:', transactionHash);
-                    })
-                    .on('receipt', receipt => {
-                        console.log('Receipt:', receipt);
-                    })
-                    .on('confirmation', confirmation => {
-                        console.log('Confirmation:', confirmation);
-                        process.exit(0);
-                    })
-                    .on('error', error => {
-                        console.log('Error:', error);
-                        process.exit(1);
-                    });
+                
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
 					console.log('Connected with MetaMask account: ' + accounts[0]);
@@ -45,7 +18,14 @@ window.addEventListener('load', function () {
                     address_span.innerHTML = accounts[0];
 				});
                 contract_address = "0xAA4a64D4c1Bb5836F91E4e433226b8A9f8a01Faf";
-				contract = new web3.eth.Contract(contract_abi, contract_address);
+				contract = new web3.eth.Contract(
+                    contract_abi, 
+                    contract_address,
+                    {
+                        defaultGasPrice: '20000000000',
+                        defaultGas: 5000000,
+                    }
+                );
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
