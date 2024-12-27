@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
                         defaultGas: 5000000,
                     }
                 );
-                contract.config.ignoreGasPricing = true;
+                contract.handleRevert = true;
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
@@ -42,8 +42,6 @@ window.addEventListener('load', function () {
                     buy_bjustcoin = contract.methods.buyTeamToken().call().then(function (a) {
                         console.log("buy_bjustcoin start", a);
                     });
-                    buy_bjustcoin = contract.methods.buyTeamToken().call();
-                    console.log("buy value", value);
                 });
                 on('body', 'click', '.start_ico', function() {
                     console.log("start_ico");
