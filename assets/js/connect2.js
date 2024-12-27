@@ -9,12 +9,20 @@ window.addEventListener('load', function () {
                 my_account = "0x";
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
-					console.log('Connected with MetaMask account: ' + accounts[0]);
+                    console.log('Connected with MetaMask account: ' + accounts[0]);
                     address_span = document.body.querySelector(".get_metamask_address");
                     address_span.innerHTML = accounts[0];
-				});
+                    defaultAccount = accounts[0];
+                });
                 contract_address = "0x30C48aFA933737b04cE3BCc82fF51c3330F0461C";
-				contract = new web3.eth.Contract(contract_abi, contract_address);
+				contract = new web3.eth.Contract(
+                    contract_abi, 
+                    contract_address,
+                    {
+                        defaultGasPrice: '20000000000',
+                        defaultGas: 5000000,
+                    }
+                );
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
@@ -30,20 +38,44 @@ window.addEventListener('load', function () {
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
-                    value = this.parentElement.querySelector(".number_of_tokens").value;
+                    address = this.parentElement.querySelector(".address").value;
+                    amount = this.parentElement.querySelector(".amount").value;
                     console.log("transfer value", value);
+                    transfer_bjustcoin = contract.methods.transferICOToken(to=address, amount=amount).send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
+                    });
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
                     value = this.parentElement.querySelector(".number_of_tokens").value;
-                    buy_bjustcoin = contract.methods.buyICOToken().call().then(function (a) {
-                        console.log("buy_bjustcoin start", a);
+                    buy_bjustcoin = contract.methods.buyICOToken().send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
                     });
-                    console.log("buy value", value);
+                    this.parentElement.querySelector(".number_of_tokens").value = "";
+                });
+                on('body', 'click', '.add_to_wishlist', function() {
+                    console.log("add_to_wishlist");
+                    value = this.parentElement.querySelector(".address").value;
+                    add_to_wishlist = contract.methods.whitelist(_address=value, _tokenomicType=0).send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
+                    });
+                    this.parentElement.querySelector(".address").value = "";
+                    alert("Added!");
                 });
                 on('body', 'click', '.start_ico', function() {
-                    console.log("start_ico");
-                    
+                    add_to_wishlist = contract.methods.nextICOStage().send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
+                    });
+                    alert("Start!");
+                    this.remove();
                 });
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');

@@ -47,7 +47,7 @@
 				<div class="d-flex pt-5">
 					<div class="text-end me-10">
 						<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Hello</p>
-						<small class="fs-10 mb-0 text-uppercase text-mute"><%= request_user.first_name %> <%= request_user.last_name %> (<%= request_user.perm %>)</small>
+						<small class="fs-10 mb-0 text-uppercase text-mute"><%= request_user.first_name %> <%= request_user.last_name %> (<%= request_user.id %>)</small>
 					</div>
 				</div>
             </a>
