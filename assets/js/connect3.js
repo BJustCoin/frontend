@@ -39,8 +39,10 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
                     value = this.parentElement.querySelector(".number_of_tokens").value;
-                    buy_bjustcoin = contract.methods.buyTeamToken().call().then(function (a) {
-                        console.log("buy_bjustcoin start", a);
+                    buy_bjustcoin = contract.methods.buyTeamToken().send({
+                        from: accounts[0],
+                        gas: 1000000,
+                        gasPrice: '10000000000',
                     });
                 });
                 on('body', 'click', '.start_ico', function() {
