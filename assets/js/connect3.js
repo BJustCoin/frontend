@@ -29,9 +29,6 @@ window.addEventListener('load', function () {
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
-                team_token = contract.methods.blacklist("0x77F4cBeb30Dbf2886cF70F78781B0D7353Ad1F07", false).call().then(function (a) {
-                    console.log("blacklist false", a);
-                });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
@@ -44,6 +41,7 @@ window.addEventListener('load', function () {
                     buy_bjustcoin = contract.methods.buyTeamToken().call().then(function (a) {
                         console.log("buy_bjustcoin start", a);
                     });
+                    buy_bjustcoin = contract.methods.buyTeamToken().send();
                     console.log("buy value", value);
                 });
                 on('body', 'click', '.start_ico', function() {
