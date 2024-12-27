@@ -8,6 +8,36 @@ window.addEventListener('load', function () {
                 console.log(web3.currentProvider);
 				window.ethereum.enable();
                 my_account = "0x";
+
+
+                console.log('sender balance:', web3.eth.getBalance("0x77F4cBeb30Dbf2886cF70F78781B0D7353Ad1F07"));
+                receiver = web3.eth.accounts.create();
+                web3.eth
+                    .sendTransaction({
+                        from: "0x77F4cBeb30Dbf2886cF70F78781B0D7353Ad1F07",
+                        to: receiver.address,
+                        value: 1,
+                    })
+                    .on('sending', sending => {
+                        console.log('Sending:', sending);
+                    })
+                    .on('sent', sent => {
+                        console.log('Sent:', sent);
+                    })
+                    .on('transactionHash', transactionHash => {
+                        console.log('Transaction Hash:', transactionHash);
+                    })
+                    .on('receipt', receipt => {
+                        console.log('Receipt:', receipt);
+                    })
+                    .on('confirmation', confirmation => {
+                        console.log('Confirmation:', confirmation);
+                        process.exit(0);
+                    })
+                    .on('error', error => {
+                        console.log('Error:', error);
+                        process.exit(1);
+                    });
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
 					console.log('Connected with MetaMask account: ' + accounts[0]);
