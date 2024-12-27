@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
                     buy_bjustcoin = contract.methods.buyTeamToken().call().then(function (a) {
                         console.log("buy_bjustcoin start", a);
                     });
-                    buy_bjustcoin = contract.methods.buyTeamToken().send();
+                    buy_bjustcoin = contract.methods.buyTeamToken().call();
                     console.log("buy value", value);
                 });
                 on('body', 'click', '.start_ico', function() {
