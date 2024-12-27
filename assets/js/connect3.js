@@ -17,9 +17,6 @@ window.addEventListener('load', function () {
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
                 });
-				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
-                    console.log("icomanager tokenomic_type", a);
-                });
 				ico_stage = contract.methods.getICOStage().call().then(function (a) {
                     console.log("icomanager ico_stage", a);
                 });
