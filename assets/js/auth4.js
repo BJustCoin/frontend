@@ -261,7 +261,7 @@ on('body', 'click', '#send_token', function() {
 
     form.querySelector("#send_token").setAttribute("disabled", "true");
 
-    object = {
+    object = { 
       "name": "", 
       "email": form.querySelector("#id_email").value
     };
