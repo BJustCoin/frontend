@@ -293,5 +293,5 @@ on('body', 'click', '#send_token', function() {
 on('body', 'input', '#id_email', function() {
     send_token = document.body.querySelector("#send_token").parentElement;
     send_token.parentElement.classList.remove("hide");
-    send_token.classList.remove("hide");
+    document.body.querySelector("#id_token").parentElement.classList.remove("hide");
 });   
