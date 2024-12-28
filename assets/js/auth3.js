@@ -153,22 +153,6 @@ on('body', 'click', '#signup', function() {
     link.send(json);
 });
 
-on('body', 'click', '.logout_hundler', function() {
-			link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' )
-			link.open( 'GET', "/logout/", true );
-			
-			link.onreadystatechange = function () {
-				if ( link.readyState == 4 && link.status == 200 ) {
-					window.location.href = "/login/";
-				}
-				else {
-					_this.disabled = false;
-					response.style.display = "block";
-					response.classList.add("error");
-				}};
-				link.send( null );
-});
-
 on('body', 'click', '#reset', function() {
     _this = this;
     form = _this.parentElement.parentElement.parentElement;
