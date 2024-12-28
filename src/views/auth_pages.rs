@@ -127,9 +127,9 @@ pub struct EmailUserReq2 {
     name:  String,
     email: String,
 }
-pub async fn invite(req: HttpRequest, data: Json<EmailUserReq>) -> actix_web::Result<HttpResponse> {
+pub async fn invite(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::Result<HttpResponse> {
     let l_data = EmailUserReq2 {
-        name:  (data.first_name.clone() + &" ".to_string() + &data.last_name.clone()).to_string(),
+        name:  data.name.clone(),
         email: data.email.clone(),
     }; 
     let res = request_post::<EmailUserReq2, String> (

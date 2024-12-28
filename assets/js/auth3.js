@@ -260,10 +260,11 @@ on('body', 'click', '#send_token', function() {
     }
 
     form.querySelector("#send_token").setAttribute("disabled", "true");
-  
-    form_data = new FormData(form);
-    object = {};
-    form_data.forEach((value, key) => object[key] = value);
+
+    object = {
+      "name": "", 
+      "email": form.querySelector("#id_email").value
+    };
     json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     link.open( 'POST', "/invite/", true );
