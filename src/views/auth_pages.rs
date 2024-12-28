@@ -26,6 +26,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/reset/", web::get().to(reset_page));
     config.route("/login/", web::post().to(login));
     config.route("/signup/", web::post().to(signup));
+    config.route("/reset/", web::post().to(reset));
     config.route("/invite/", web::post().to(invite));
     config.route("/logout/", web::get().to(logout));
 }
@@ -178,7 +179,7 @@ pub async fn reset(session: Session, data: Json<NewPasswordJson>) -> actix_web::
         email:    data.email.clone(),
         password: data.password.clone(),
         token:    data.token.clone(),
-    };  
+    };   
     let res = request_post::<NewPasswordJson, AuthResp2> (
         URL.to_owned() + &"/reset/".to_string(),
         &l_data,
