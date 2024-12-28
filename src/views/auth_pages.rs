@@ -27,6 +27,12 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/login/", web::post().to(login));
     config.route("/signup/", web::post().to(signup));
     config.route("/invite/", web::post().to(invite));
+    config.route("/logout/", web::get().to(logout));
+}
+
+pub async fn logout_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    session.clear();
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
 
