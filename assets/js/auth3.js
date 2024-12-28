@@ -236,7 +236,7 @@ on('body', 'click', '#send_token', function() {
       response.classList.add("error");
       return
     }
-    else if (!form.querySelector("#id_passwoprd").value){
+    else if (!form.querySelector("#id_password").value){
       form.querySelector("#id_password").style.border = "1px #FF0000 solid";
       response.innerHTML = "Password is required";
       response.classList.add("error");
