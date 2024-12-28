@@ -163,6 +163,12 @@ on('body', 'click', '#reset', function() {
       response.classList.add("error");
       return
     }
+    else if (!form.querySelector("#id_email").value){
+      form.querySelector("#id_email").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Email is required!";
+      response.classList.add("error");
+      return
+    }
     else if (form.querySelector("#id_password").value != form.querySelector("#id_password2").value){
       form.querySelector("#id_password").style.border = "1px #FF0000 solid";
       form.querySelector("#id_password2").style.border = "1px #FF0000 solid";
@@ -177,11 +183,10 @@ on('body', 'click', '#reset', function() {
       response.classList.add("error");
       return
     }
-    else {
+    else { 
+      form.querySelector("#id_email").style.border = "unset";
       form.querySelector("#id_password").style.border = "unset";
       form.querySelector("#id_password2").style.border = "unset";
-      form.querySelector("#id_first_name").style.border = "unset";
-      form.querySelector("#id_last_name").style.border = "unset";
       form.querySelector("#id_token").style.border = "unset";
       this.disabled = true; 
       response.classList.remove("error");
@@ -196,9 +201,9 @@ on('body', 'click', '#reset', function() {
       response.innerHTML = output;
       response.classList.add("error");
       return;
-    }
+    } 
 
-    form.querySelector("#signup").setAttribute("disabled", "true");
+    form.querySelector("#reset").setAttribute("disabled", "true");
   
     form_data = new FormData(form);
     object = {};

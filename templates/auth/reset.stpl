@@ -72,10 +72,10 @@
 										<div class="col-12 text-center">
 											<p class="api_response" style="color:#F00000"></p>
 										</div>
-									  </div>
+									  </div> 
 								</form>				
 								<div class="text-center">
-									<p class="mt-15 mb-0">Already have an account?<a href="/" class="text-danger ms-5"> Sign In</a></p>
+									<p class="mt-15 mb-0">Don't have an account? <a href="/signup/" class="text-warning ms-5">Sign Up</a></p>
 								</div>
 							</div>
 						</div>								
@@ -100,6 +100,6 @@
 	<script src="/assets/js/vendors.min.js"></script>
 	<script src="/assets/js/chat-popup.js"></script>
     <script src="/assets/js/feather.min.js"></script>	
-	<script src="/assets/js/auth2.js"></script>
+	<script src="/assets/js/auth3.js"></script>
 </body>
 </html>
