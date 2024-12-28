@@ -170,7 +170,7 @@ pub struct NewPasswordJson {
     pub token:    String,
 }
 pub async fn reset(session: Session, data: Json<NewPasswordJson>) -> actix_web::Result<HttpResponse> {
-    let l_data = NewPassword {
+    let l_data = NewPasswordJson {
         email:    data.email.clone(),
         password: data.password.clone(),
         token:    data.token.clone(),
