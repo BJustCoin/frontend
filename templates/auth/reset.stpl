@@ -55,13 +55,13 @@
 											<input id="id_token" type="text" name="token" class="form-control ps-15 bg-transparent" placeholder="Verification code">
 										</div>
 									</div>
-									  <div class="row">
+									  
 										<div class="col-12">
 										  <div class="checkbox">
 											<input type="checkbox" id="basic_checkbox_1" >
 											<label for="basic_checkbox_1">I agree to the <a href="#" class="text-warning"><b>Terms</b></a></label>
 										  </div>
-										</div>
+										</div> 
 										<!-- /.col -->
 										<div class="col-12 text-center hide">
 										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
@@ -72,7 +72,7 @@
 										<div class="col-12 text-center">
 											<p class="api_response" style="color:#F00000"></p>
 										</div>
-									  </div> 
+									   
 								</form>				
 								<div class="text-center">
 									<p class="mt-15 mb-0">Don't have an account? <a href="/signup/" class="text-warning ms-5">Sign Up</a></p>
