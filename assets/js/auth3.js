@@ -242,12 +242,6 @@ on('body', 'click', '#send_token', function() {
       response.classList.add("error");
       return
     }
-    else if (!form.querySelector("#id_token").value){
-      form.querySelector("#id_token").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Code is required";
-      response.classList.add("error");
-      return
-    }
     else {
       form.querySelector("#id_email").style.border = "unset";
       this.disabled = true; 
