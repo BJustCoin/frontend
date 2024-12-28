@@ -35,6 +35,7 @@
 							</div>
 							<div class="p-40">
 								<form>
+									<div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<input id="id_email" type="email" name="email" class="form-control ps-15 bg-transparent" placeholder="Email">
@@ -62,17 +63,17 @@
 											<label for="basic_checkbox_1">I agree to the <a href="#" class="text-warning"><b>Terms</b></a></label>
 										  </div>
 										</div> 
-										<!-- /.col -->
+										<!-- /.col --> 
 										<div class="col-12 text-center hide">
 										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
 										</div>
 										<div class="col-12 text-center hide">
 										  	<button id="reset" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">Reset</button>
-										</div>
+										</div> 
 										<div class="col-12 text-center">
 											<p class="api_response" style="color:#F00000"></p>
 										</div>
-									   
+									<div>
 								</form>				
 								<div class="text-center">
 									<p class="mt-15 mb-0">Don't have an account? <a href="/signup/" class="text-warning ms-5">Sign Up</a></p>
