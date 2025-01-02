@@ -9,7 +9,7 @@ use actix_web::{
     web::Json,
 };
 use sailfish::TemplateOnce;
-use serde::{Serialize, Deserialize};
+use serde::{Serialize, Deserialize, Queryable};
 use crate::utils::{
     get_current_user,
     NewUserForm,

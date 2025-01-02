@@ -116,7 +116,7 @@
                                     </button>
                                 </div>
 
-                                <% else if request_user.perm == 1 { %>
+                                <% } else if request_user.perm == 1 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 								<div class="row">
 									<div class="col-12">
