@@ -9,7 +9,7 @@ use actix_web::{
     web::Json,
 };
 use sailfish::TemplateOnce;
-use serde::{Serialize, Deserialize, Queryable};
+use serde::{Serialize, Deserialize};
 use crate::utils::{
     get_current_user,
     NewUserForm,
@@ -55,7 +55,7 @@ pub struct UserWhiteList {
     pub token_type: i16,
 }
 
-#[derive(Deserialize, Serialize, Debug, Queryable)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct AuthResp {
     pub id:         i32,
     pub first_name: String,
@@ -68,7 +68,7 @@ pub struct AuthResp {
     pub white_list: Vec<UserWhiteList>,
 } 
 
-#[derive(Deserialize, Serialize, Debug, Queryable)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct AuthResp2 {
     pub id:         i32,
     pub first_name: String,
