@@ -43,7 +43,19 @@ pub struct LoginUser {
     pub password: String,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserWallet {
+    pub id:   i32,
+    pub link: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserWhiteList {
+    pub id:         i32,
+    pub token_type: i16,
+}
+
+#[derive(Deserialize, Serialize, Debug, Queryable)]
 pub struct AuthResp {
     pub id:         i32,
     pub first_name: String,
@@ -52,8 +64,11 @@ pub struct AuthResp {
     pub perm:       i16,
     pub image:      Option<String>,
     pub phone:      Option<String>,
-}
-#[derive(Deserialize, Serialize, Debug)]
+    pub wallets:    Vec<UserWallet>,
+    pub white_list: Vec<UserWhiteList>,
+} 
+
+#[derive(Deserialize, Serialize, Debug, Queryable)]
 pub struct AuthResp2 {
     pub id:         i32,
     pub first_name: String,
@@ -63,7 +78,9 @@ pub struct AuthResp2 {
     pub image:      Option<String>,
     pub phone:      Option<String>,
     pub uuid:       String,
-}  
+    pub wallets:    Vec<UserWallet>,
+    pub white_list: Vec<UserWhiteList>,
+} 
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct NewUser {

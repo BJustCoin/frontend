@@ -30,6 +30,9 @@ window.addEventListener('load', function () {
                     console.log("icomanager tokenomic_type", a);
                 });
 				ico_stage = contract.methods.getICOStage().call().then(function (a) {
+                    try {
+                        document.body.querySelector(".ico_stage").innerHTML = a;
+                    } catch { null }
                     console.log("icomanager ico_stage", a);
                 });
 				rate = contract.methods.getRate().call().then(function (a) {

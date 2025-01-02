@@ -59,6 +59,10 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/drop_admin/", web::post().to(drop_admin));
     config.route("/create_can_buy/", web::post().to(create_can_buy));
     config.route("/delete_can_buy/", web::post().to(delete_can_buy));
+    config.route("/create_wallet/", web::post().to(create_wallet));
+    config.route("/delete_wallet/", web::post().to(delete_wallet));
+    config.route("/create_white_list/", web::post().to(create_white_list));
+    config.route("/delete_white_list/", web::post().to(delete_white_list));
 }
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -345,7 +349,7 @@ pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Resu
         }
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
-}
+} 
 pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemId {
@@ -373,6 +377,96 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/delete_can_buy/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+
+#[derive(Serialize, Debug)]
+pub struct Wallet {
+    pub user_id: i32,
+    pub link:    String,
+}
+pub async fn create_wallet(session: Session, data: Json<Wallet>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = Wallet {
+            user_id: data.user_id,
+            link:    data.link,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<Wallet, ()> (
+            URL.to_owned() + &"/create_wallet/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn delete_wallet(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: data.id,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/delete_wallet/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+
+#[derive(Serialize, Debug)]
+pub struct WhiteList {
+    pub user_id:    i32,
+    pub token_type: i16,
+}
+pub async fn create_white_list(session: Session, data: Json<WhiteList>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = WhiteList {
+            user_id:    data.user_id,
+            token_type: data.token_type,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<WhiteList, ()> (
+            URL.to_owned() + &"/create_white_list/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn delete_white_list(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: data.id,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/delete_white_list/".to_string(),
             &l_data, 
             _request_user.uuid
         ).await;
