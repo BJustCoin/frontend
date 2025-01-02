@@ -389,7 +389,7 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Wallet {
     pub user_id: i32,
     pub link:    String,
@@ -398,7 +398,7 @@ pub async fn create_wallet(session: Session, data: Json<Wallet>) -> actix_web::R
     if is_signed_in(&session) {
         let l_data = Wallet {
             user_id: data.user_id,
-            link:    data.link,
+            link:    data.link.clone(),
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<Wallet, ()> (
@@ -434,7 +434,7 @@ pub async fn delete_wallet(session: Session, data: Json<ItemId>) -> actix_web::R
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct WhiteList {
     pub user_id:    i32,
     pub token_type: i16,
