@@ -41,19 +41,19 @@
                                     <td>  
                                         <nav class="nav mt-2" data-pk="<%= object.id %>">
                                             <select class="coins-exchange toggle_ico_white_list" data-id="<%= request_user.id %>" name="ico_types" tabindex="-1" aria-hidden="true">
-                                                <option value="0">Select ICO stage</option> 
-                                                <option value="1">Strategic</option>
-                                                <option value="2">Seed</option>
-                                                <option value="3">Private Sale</option>
-                                                <option value="4">IDO</option>
-                                                <option value="5">Public Sale</option>
-                                                <option value="6">Advisors</option>
-                                                <option value="7">Team</option>
-                                                <option value="8">Future Team</option>
-                                                <option value="9">Incetives</option>
-                                                <option value="10">Liquidity</option>
-                                                <option value="11">Ecosystem</option>
-                                                <option value="12">Loyalty</option>
+                                                <option data-stage="" value="0">Select ICO stage</option> 
+                                                <option data-stage="Strategic" value="1">Strategic</option> 
+                                                <option data-stage="Seed" value="2">Seed</option>
+                                                <option data-stage="Private Sale" value="3">Private Sale</option>
+                                                <option data-stage="IDO" value="4">IDO</option>
+                                                <option data-stage="Public Sale" value="5">Public Sale</option>
+                                                <option data-stage="Advisors" value="6">Advisors</option>
+                                                <option data-stage="Team" value="7">Team</option>
+                                                <option data-stage="Future Team" value="8">Future Team</option>
+                                                <option data-stage="Incetives" value="9">Incetives</option>
+                                                <option data-stage="Liquidity" value="10">Liquidity</option>
+                                                <option data-stage="Ecosystem" value="11">Ecosystem</option>
+                                                <option data-stage="Loyalty" value="12">Loyalty</option>
                                             </select>
                                             <a class="nav-link create_block" style="cursor: pointer">
                                                     Block user

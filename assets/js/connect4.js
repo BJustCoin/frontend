@@ -171,8 +171,14 @@ window.addEventListener('load', function () {
                     alert("Start!");
                     this.remove();
                 });
-                on('body', 'change', '.toggle_ico_white_list', function() {     
-                    alert("Changed!");
+                on('body', 'change', '.toggle_ico_white_list', function() {
+                    if (this.value == "") {
+                        return;
+                    }
+                    _name = this.parentElement.parentElement.parentElement.querySelector("strong");
+                    stage = this.getAttribute("data-stage");
+                    text = _name + " can buy tokens " + stage;
+                    alert(text);
                 });
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
