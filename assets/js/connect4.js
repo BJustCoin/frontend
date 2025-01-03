@@ -171,11 +171,11 @@ window.addEventListener('load', function () {
                     alert("Start!");
                     this.remove();
                 });
-                on('body', 'change', '.toggle_ico_white_list', function() {
-                    if (this.value == "") {
+                on('body', 'change', '.option_ico_white_list', function() {
+                    if (this.getAccounts("data-value") == "0") {
                         return;
                     }
-                    _name = this.parentElement.parentElement.parentElement.querySelector("strong");
+                    _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.getAttribute("data-stage");
                     text = _name + " can buy tokens " + stage;
                     alert(text);
