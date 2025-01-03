@@ -162,7 +162,7 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::R
     }
 }
 
-pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
+pub async fn signup(req: HttpRequest, session: Session, data: Json<NewUser>) -> actix_web::Result<HttpResponse> {
     let l_data = NewUser {
         first_name: data.first_name.clone(),
         last_name:  data.last_name.clone(),
@@ -179,7 +179,7 @@ pub async fn signup(session: Session, data: Json<NewUser>) -> actix_web::Result<
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_profile_page(session).await
+            crate::views::admin_profile_page(req, session).await
         },
         Err(_) => crate::views::admin_profile_page(session.clone()).await,
     }
@@ -191,7 +191,7 @@ pub struct NewPasswordJson {
     pub password: String,
     pub token:    String,
 }
-pub async fn reset(session: Session, data: Json<NewPasswordJson>) -> actix_web::Result<HttpResponse> {
+pub async fn reset(req: HttpRequest, session: Session, data: Json<NewPasswordJson>) -> actix_web::Result<HttpResponse> {
     let l_data = NewPasswordJson {
         email:    data.email.clone(),
         password: data.password.clone(),
@@ -206,7 +206,7 @@ pub async fn reset(session: Session, data: Json<NewPasswordJson>) -> actix_web::
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_profile_page(session).await
+            crate::views::admin_profile_page(req, session).await
         },
         Err(_) => crate::views::not_found_page(session.clone()).await,
     }
