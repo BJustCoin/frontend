@@ -116,12 +116,12 @@
 											<div class="form-group">
 												<input type="text" class="form-control address" placeholder="address">
 											</div>
-                                            <select class="coins-exchange select2-hidden-accessible user_id" name="user_id" tabindex="-1" aria-hidden="true">
+                                            <select class="coins-exchange user_id" name="user_id" tabindex="-1" aria-hidden="true">
                                                 <% for i in object_list.iter() { %>
                                                     <option value="<%= i.id %>"><%= i.first_name %> <%= i.last_name %> (<%= i.email %>)</option>
                                                 <% } %>
                                             </select> 
-                                            <select class="coins-exchange select2-hidden-accessible ico_stage" name="ico_types" tabindex="-1" aria-hidden="true">
+                                            <select class="coins-exchange ico_stage" name="ico_types" tabindex="-1" aria-hidden="true">
                                                 <option value="0">Select ICO stage</option>
                                                 <option value="1">Strategic</option>
                                                 <option value="2">Seed</option>

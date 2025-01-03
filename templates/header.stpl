@@ -13,7 +13,18 @@
   <link rel="stylesheet" href="/assets/css/style2.css">
   <link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/skin_color.css">
-     
+     <style>
+      .form-control, select {
+          background-color: #131a3b;
+          border-color: rgba(255, 255, 255, 0.2);
+          color: #ffffff;
+        }
+        .form-control:focus, select:focus {
+          border-color: rgba(255, 255, 255, 0.5);
+          background-color: #1b2656;
+          color: rgba(255, 255, 255, 0.6);
+        }
+     </style>
   </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">

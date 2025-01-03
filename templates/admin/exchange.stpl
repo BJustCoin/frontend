@@ -12,7 +12,7 @@
 						<div class="box-body">							
 							<div class="exchange-calculator">
 								<input type="text" class="form-control" name="coins-exchange" placeholder="" value="10.1548">                
-								<select class="coins-exchange select2-hidden-accessible" name="state" tabindex="-1" aria-hidden="true">
+								<select class="coins-exchange" name="state" tabindex="-1" aria-hidden="true">
 								   <option value="BJC">BJC</option>
 								   <option value="Etherium">Ethereum</option>
 								   <option value="Ripple">Ripple</option>
@@ -26,7 +26,7 @@
 								</select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 102px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-io-container"><span class="select2-selection__rendered" id="select2-state-io-container" title="BJC">BJC</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
 								<div class="equal"> = </div>
 								<input type="text" class="form-control" name="money-exchange" placeholder="" value="125.158">                
-								<select class="money-exchange select2-hidden-accessible" name="state" tabindex="-1" aria-hidden="true">
+								<select class="money-exchange" name="state" tabindex="-1" aria-hidden="true">
 								   <option value="USD">USD</option>
 								   <option value="EURO">EURO</option>
 								</select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 61px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-d9-container"><span class="select2-selection__rendered" id="select2-state-d9-container" title="USD">USD</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
