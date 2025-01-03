@@ -47,19 +47,19 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-12">
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label class="col-sm-2 col-form-label">First Name</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" disable="disable" value="<%= request_user.first_name %>" type="text" placeholder="Johon">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label class="col-sm-2 col-form-label">Last Name</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" disable="disable" value="<%= request_user.last_name %>" type="text" placeholder="Doe">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label class="col-sm-2 col-form-label">Email Adress</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" disable="disable" value="<%= request_user.email %>" type="email" placeholder="johone@dummy.com">
@@ -70,7 +70,7 @@
                         
                                 <% if request_user.perm == 2 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
-                                <div class="row buy_bjustcoin_section_default hide">
+                                <div class="buy_bjustcoin_section_default hide">
 									<div class="col-12">
 										<a target="_blank" href="https://forms.office.com/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__o5xN4NUQVZCOE81SkZVQlZJNkxMRUNYSVZWVllMVS4u&sharetoken=afAxxTaSKOWGBmJQZ3qc" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
                                             Buy tokens
@@ -84,7 +84,7 @@
                                     <% } %> 
                                 ">
 									<div class="col-12">
-										<div class="buy-input-block-content row">
+										<div class="buy-input-block-content">
 												<div class="form-group">
 													<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
 												</div>
@@ -96,7 +96,7 @@
                                 <h4 class="box-title mb-15">Transfer Bjustcoin</h4>
 								<div class="row">
 									<div class="col-12">
-										<div class="buy-input-block-content row">
+										<div class="buy-input-block-content">
                                             <div class="form-group">
 												<input type="text" class="form-control address" placeholder="Address">
 											</div>
@@ -112,16 +112,16 @@
                                 <h4 class="box-title mb-15 mt-15">Add to wishlist</h4>
 								<div class="row">
 									<div class="col-12">
-										<div class="buy-input-block-content row">
+										<div class="buy-input-block-content">
 											<div class="form-group">
 												<input type="text" class="form-control address" placeholder="address">
 											</div>
-                                            <select class="coins-exchange user_id" name="user_id" tabindex="-1" aria-hidden="true">
+                                            <select class="coins-exchange form-control user_id" name="user_id" tabindex="-1" aria-hidden="true">
                                                 <% for i in object_list.iter() { %>
                                                     <option value="<%= i.id %>"><%= i.first_name %> <%= i.last_name %> (<%= i.email %>)</option>
                                                 <% } %>
                                             </select> 
-                                            <select class="coins-exchange ico_stage" name="ico_types" tabindex="-1" aria-hidden="true">
+                                            <select class="coins-exchange form-control ico_stage" name="ico_types" tabindex="-1" aria-hidden="true">
                                                 <option value="0">Select ICO stage</option>
                                                 <option value="1">Strategic</option>
                                                 <option value="2">Seed</option>
@@ -141,7 +141,7 @@
 									</div>									
 								</div>
                                 <hr style="margin-top: 20px" />
-                                <div class="row">
+                                <div class="">
                                     <div class="ico_stage"></div>
                                     <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 start_ico">
                                         Start ICO
@@ -150,7 +150,7 @@
 
                                 <% } else if request_user.perm == 1 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
-								<div class="row">
+								<div class="">
 									<div class="col-12">
 										<a target="_blank" href="https://forms.office.com/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__o5xN4NUQVZCOE81SkZVQlZJNkxMRUNYSVZWVllMVS4u&sharetoken=afAxxTaSKOWGBmJQZ3qc" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
                                             Buy tokens

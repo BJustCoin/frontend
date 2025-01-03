@@ -171,6 +171,9 @@ window.addEventListener('load', function () {
                     alert("Start!");
                     this.remove();
                 });
+                on('body', 'click', '.toggle_ico_white_list', function() {     
+                    alert("Changed!");
+                });
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}
