@@ -379,8 +379,8 @@ pub async fn create_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_
 pub async fn delete_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemIdTypes {
-            id: data.id,
-            id: types.types,
+            id:    data.id,
+            types: data.types,
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemIdTypes, ()> (
