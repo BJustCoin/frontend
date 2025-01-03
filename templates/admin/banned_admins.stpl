@@ -11,19 +11,11 @@
                                 <tr>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <% for object in object_list { %>
                                 <tr>
-                                    <td class="w-60">
-                                        <a class="avatar avatar-lg status-success">
-                                            <!--
-                                            <img src="/assets/images/1.jpg" alt="...">
-                                            -->
-                                        </a>
-                                    </td>
                                     <td class="w-300">
                                         <p class="mb-0">
                                             <strong><%= object.first_name %> <%= object.last_name %></strong>
