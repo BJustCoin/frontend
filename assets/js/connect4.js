@@ -29,15 +29,84 @@ window.addEventListener('load', function () {
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
                 });
+
+                /// ico stage sections
 				ico_stage = contract.methods.getICOStage().call().then(function (a) {
                     try {
+                        buy_widget = document.body.querySelector(".buy_bjustcoin_section_active");
+                        if (buy_widget.classList.contains("white" + a)) {
+                            console.log("buy_bjustcoin_section_active showed");
+                            buy_widget.classList.remove("hide");
+                        }
+                        else {
+                            buy_widget.previousElementSibling.classList.remove("hide");
+                        }
+
+                        description = document.body.querySelector(".ico_stage");
+                        next_stage_btn = description.nextElementSibling;
+                        description.setAttribute("stage-type", a);
+
+                        if (a == 0) {
+                            description.innerHTML = "ICO has not started yet";
+                            next_stage_btn.innerHTML = "Start ICO";
+                        }
+                        else if (a == 1) {
+                            description.innerHTML = "The correct stage: Strategic";
+                            next_stage_btn.innerHTML = "Start ICO Seed";
+                        }
+                        else if (a == 2) {
+                            description.innerHTML = "The correct stage: Seed";
+                            next_stage_btn.innerHTML = "Start ICO Private Sale";
+                        }
+                        else if (a == 3) {
+                            description.innerHTML = "The correct stage: Private Sale";
+                            next_stage_btn.innerHTML = "Start ICO IDO";
+                        }
+                        else if (a == 4) {
+                            description.innerHTML = "The correct stage: IDO";
+                            next_stage_btn.innerHTML = "Start ICO Public Sale";
+                        }
+                        else if (a == 5) {
+                            description.innerHTML = "The correct stage: Public Sale";
+                            next_stage_btn.innerHTML = "Start ICO Advisors";
+                        }
+                        else if (a == 6) {
+                            description.innerHTML = "The correct stage: Advisors";
+                            next_stage_btn.innerHTML = "Start ICO Team";
+                        }
+                        else if (a == 7) {
+                            description.innerHTML = "The correct stage: Team";
+                            next_stage_btn.innerHTML = "Start ICO Future Team";
+                        }
+                        else if (a == 8) {
+                            description.innerHTML = "The correct stage: Future Team";
+                            next_stage_btn.innerHTML = "Start ICO Incetives";
+                        }
+                        else if (a == 9) {
+                            description.innerHTML = "The correct stage: Incetives";
+                            next_stage_btn.innerHTML = "Start ICO Liquidity";
+                        }
+                        else if (a == 10) {
+                            description.innerHTML = "The correct stage: Liquidity";
+                            next_stage_btn.innerHTML = "Start ICO Ecosystem";
+                        }
+                        else if (a == 11) {
+                            description.innerHTML = "The correct stage: Ecosystem";
+                            next_stage_btn.innerHTML = "Start ICO Loyalty";
+                        }
+                        else if (a == 12) {
+                            description.innerHTML = "The correct stage: Loyalty";
+                            next_stage_btn.innerHTML = "Close ICO";
+                        }
                         document.body.querySelector(".ico_stage").innerHTML = a;
                     } catch { null }
                     console.log("icomanager ico_stage", a);
                 });
+                // end ico stage sections 
+
 				rate = contract.methods.getRate().call().then(function (a) {
                     console.log("icomanager rate", a);
-                });
+                }); 
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
@@ -59,16 +128,38 @@ window.addEventListener('load', function () {
                         gasPrice: '10000000000',
                     });
                     this.parentElement.querySelector(".number_of_tokens").value = "";
-                });
-                on('body', 'click', '.add_to_wishlist', function() {
-                    console.log("add_to_wishlist");
-                    value = this.parentElement.querySelector(".address").value;
-                    add_to_wishlist = contract.methods.whitelist(_address=value, _tokenomicType=0).send({
+                }); 
+                on('body', 'click', '.add_to_whitelist', function() {
+                    console.log("add_to_whitelist");
+                    address = this.parentElement.querySelector(".address").value;
+                    user_id = this.parentElement.querySelector(".user_id").value;
+                    ico_stage = this.parentElement.querySelector(".ico_stage").value;
+                    add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=ico_stage).send({
                         from: defaultAccount,
                         gas: 1000000,
                         gasPrice: '10000000000',
                     });
+                    ////////
+                    object = {
+                        "user_id": user_id*1, 
+                        "link": address,
+                        "ico_stage": ico_stage*1, 
+                    };
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/create_wallet/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("add_to_whitelist send!!");
+                    }}
+                    link.send(json);
+                    /////
                     this.parentElement.querySelector(".address").value = "";
+                    this.parentElement.querySelector(".user_id").value = "";
+
                     alert("Added!");
                 });
                 on('body', 'click', '.start_ico', function() {
@@ -83,4 +174,43 @@ window.addEventListener('load', function () {
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}
+});
+
+function post_id(_this, url) {
+    id = _this.parentElement.getAttribute("data-pk");
+    block = _this.parentElement.parentElement.parentElement;
+    object = {"id": id*1};
+    json = JSON.stringify(object);
+    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    
+    link.open( 'POST', url, true );
+    link.setRequestHeader('Content-Type', 'application/json');
+  
+    link.onreadystatechange = function () {
+    if ( link.readyState == 4 && link.status == 200 ) {
+      block.remove();
+    }}
+    link.send(json);
+};
+
+on('body', 'click', '.create_admin_block', function() {
+    post_id(this, "/create_admin/");
+});
+on('body', 'click', '.create_block', function() {
+    post_id(this, "/block_user/");
+});
+on('body', 'click', '.delete_block', function() {
+    post_id(this, "/unblock_user/");
+});
+on('body', 'click', '.create_can_buy', function() {
+    post_id(this, "/create_can_buy/");
+});
+on('body', 'click', '.delete_can_buy', function() {
+    post_id(this, "/delete_can_buy/");
+});
+on('body', 'click', '.delete_admin', function() {
+    post_id(this, "/drop_admin/");
+});
+on('body', 'click', '.delete_admin_block', function() {
+    post_id(this, "/unblock_admin/");
 });

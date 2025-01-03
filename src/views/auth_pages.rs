@@ -69,7 +69,7 @@ pub struct AuthResp {
 } 
 
 #[derive(Deserialize, Serialize, Debug)]
-pub struct AuthResp2 {
+pub struct AuthResp2 { 
     pub id:         i32,
     pub first_name: String,
     pub last_name:  String,

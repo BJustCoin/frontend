@@ -40,15 +40,21 @@
                                     </td>
                                     <td> 
                                         <nav class="nav mt-2" data-pk="<%= object.id %>">
-                                            <% if object.perm == 1 { %>
-                                                <a class="nav-link create_can_buy" style="cursor: pointer">
-                                                    allow purchase
-                                                </a>
-                                            <% } else if object.perm == 2 { %>
-                                                <a class="nav-link delete_can_buy" style="cursor: pointer">
-                                                    prohibit purchase
-                                                </a>
-                                            <% } %>
+                                            <select class="coins-exchange select2-hidden-accessible toggle_ico_stage" data-id="<%= request_user.id %>" name="ico_types" tabindex="-1" aria-hidden="true">
+                                                <option value="0">Select ICO stage</option>
+                                                <option value="1">Strategic</option>
+                                                <option value="2">Seed</option>
+                                                <option value="3">Private Sale</option>
+                                                <option value="4">IDO</option>
+                                                <option value="5">Public Sale</option>
+                                                <option value="6">Advisors</option>
+                                                <option value="7">Team</option>
+                                                <option value="8">Future Team</option>
+                                                <option value="9">Incetives</option>
+                                                <option value="10">Liquidity</option>
+                                                <option value="11">Ecosystem</option>
+                                                <option value="12">Loyalty</option>
+                                            </select>
                                             <a class="nav-link create_block" style="cursor: pointer">
                                                     Block user
                                             </a>
@@ -70,4 +76,6 @@
     </div>
 </section>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="/assets/js/connect4.js"></script>
 <% include!("../footer.stpl"); %>

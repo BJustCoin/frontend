@@ -349,14 +349,21 @@ pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Resu
         }
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
-} 
-pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct ItemIdTypes {
+    pub id:    i32,
+    pub types: i32,
+}
+pub async fn create_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = ItemId {
+        let l_data = ItemIdTypes {
             id: data.id,
+            id: types.types,
         };
         let _request_user = get_current_user(&session).expect("E.");
-        let res = crate::utils::request_post::<ItemId, ()> (
+        let res = crate::utils::request_post::<ItemIdTypes, ()> (
             URL.to_owned() + &"/create_can_buy/".to_string(),
             &l_data, 
             _request_user.uuid
@@ -368,14 +375,15 @@ pub async fn create_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
         }
     }
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
-}
-pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+} 
+pub async fn delete_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = ItemId {
+        let l_data = ItemIdTypes {
             id: data.id,
+            id: types.types,
         };
         let _request_user = get_current_user(&session).expect("E.");
-        let res = crate::utils::request_post::<ItemId, ()> (
+        let res = crate::utils::request_post::<ItemIdTypes, ()> (
             URL.to_owned() + &"/delete_can_buy/".to_string(),
             &l_data, 
             _request_user.uuid
@@ -391,21 +399,23 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemId>) -> actix_web::
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Wallet {
-    pub user_id: i32,
-    pub link:    String,
-}
+    pub user_id:   i32,
+    pub link:      String,
+    pub ico_stage: i16,
+} 
 pub async fn create_wallet(session: Session, data: Json<Wallet>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = Wallet {
-            user_id: data.user_id,
-            link:    data.link.clone(),
+            user_id:   data.user_id,
+            link:      data.link.clone(),
+            ico_stage: data.ico_stage,
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<Wallet, ()> (
             URL.to_owned() + &"/create_wallet/".to_string(),
             &l_data, 
             _request_user.uuid
-        ).await;
+        ).await; 
 
         return match res {
             Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
@@ -521,13 +531,32 @@ pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpRespons
 pub async fn admin_profile_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        let object_list: Vec<AuthResp>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<AuthResp> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
         #[derive(TemplateOnce)]
         #[template(path = "admin/profile.stpl")]
         struct Template {
             request_user: AuthResp2,
+            object_list:  Vec<AuthResp>,
+            next_page:    i64,
         }
         let body = Template {
             request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
