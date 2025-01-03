@@ -359,8 +359,8 @@ pub struct ItemIdTypes {
 pub async fn create_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let l_data = ItemIdTypes {
-            id: data.id,
-            id: types.types,
+            id:    data.id,
+            types: data.types,
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<ItemIdTypes, ()> (
@@ -528,11 +528,12 @@ pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpRespons
         crate::views::auth_page(session.clone()).await
     }
 }
-pub async fn admin_profile_page(session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_profile_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         let object_list: Vec<AuthResp>;
         let next_page: i64;
+        let page = get_page(&req);
         let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
         let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 

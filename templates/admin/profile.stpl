@@ -80,7 +80,7 @@
 								<div class="
                                     row buy_bjustcoin_section_active hide
                                     <% for i in request_user.white_list.iter() { %>
-                                        white<%= i %> 
+                                        white<%= i.token_type %> 
                                     <% } %> 
                                 ">
 									<div class="col-12">
