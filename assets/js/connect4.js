@@ -171,7 +171,7 @@ window.addEventListener('load', function () {
                     alert("Start!");
                     this.remove();
                 });
-                on('body', 'click', '.toggle_ico_white_list', function() {     
+                on('body', 'change', '.toggle_ico_white_list', function() {     
                     alert("Changed!");
                 });
 			} else {
