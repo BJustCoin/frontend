@@ -22,8 +22,9 @@ function paginate(block) {
             var elem = document.createElement('span');
             elem.innerHTML = link_3.responseText;
             content = elem.querySelector(".is_paginate").innerHTML;
+            target_block = document.body.querySelector(".is_paginate");
             console.log("content", content);
-            block.insertAdjacentHTML('beforeend', content);
+            target_block.insertAdjacentHTML('beforeend', content);
             block.remove();
         }
     }
