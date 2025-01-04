@@ -180,8 +180,8 @@ window.addEventListener('load', function () {
                         return; 
                     }
                     _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
-                    stage = this.val;
-                    text = _name + " can buy tokens " + stage;
+                    stage = this.options[this.selectedIndex].text;
+                    text = _name + " can buy tokens: " + stage;
                     alert(text);
                 });
                 on('body', 'click', '.set_bjustcoin_rate', function() {
