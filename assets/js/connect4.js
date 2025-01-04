@@ -174,8 +174,8 @@ window.addEventListener('load', function () {
                     this.remove();
                 });
                 on('body', 'change', '.toggle_ico_white_list', function() {
-                    if (this.getAccounts("data-value") == "0") {
-                        return;
+                    if (this.getAttribute("data-value") == "0") {
+                        return; 
                     }
                     _name = this.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.val;
