@@ -112,8 +112,10 @@ window.addEventListener('load', function () {
                     console.log("transfer_bjustcoin");
                     address = this.parentElement.querySelector(".address").value;
                     amount = this.parentElement.querySelector(".amount").value;
+                    a = 10 ** 18;
+                    final_value = amount * a;
                     console.log("transfer value", value);
-                    transfer_bjustcoin = contract.methods.transferICOToken(to=address, amount=amount).send({
+                    transfer_bjustcoin = contract.methods.transferICOToken(to=address, amount=final_value).send({
                         from: defaultAccount,
                         gas: 1000000,
                         gasPrice: '10000000000',
@@ -177,7 +179,7 @@ window.addEventListener('load', function () {
                     if (this.getAttribute("data-value") == "0") {
                         return; 
                     }
-                    _name = this.parentElement.parentElement.querySelector("strong").innerHTML;
+                    _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.val;
                     text = _name + " can buy tokens " + stage;
                     alert(text);
