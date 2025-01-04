@@ -16,13 +16,15 @@ function paginate(block) {
     var link_3 = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     link_3.open('GET', location.protocol + "//" + location.host + block.getAttribute("data-link") + "&ajax=2", true);
     link_3.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
+ 
     link_3.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var elem = document.createElement('span');
             elem.innerHTML = link_3.responseText;
-            block.parentElement.insertAdjacentHTML('beforeend', elem.querySelector(".is_paginate").innerHTML)
-            block.remove()
+            content = elem.querySelector(".is_paginate").innerHTML;
+            console.log("content", content);
+            block.parentElement.insertAdjacentHTML('beforeend', content);
+            block.remove();
         }
     }
     link_3.send();
