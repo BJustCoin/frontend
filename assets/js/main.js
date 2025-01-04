@@ -23,7 +23,7 @@ function paginate(block) {
             elem.innerHTML = link_3.responseText;
             content = elem.querySelector(".is_paginate").innerHTML;
             console.log("content", content);
-            block.parentElement.insertAdjacentHTML('beforeend', content);
+            block.insertAdjacentHTML('beforeend', content);
             block.remove();
         }
     }
