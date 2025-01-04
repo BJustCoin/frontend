@@ -167,16 +167,16 @@ window.addEventListener('load', function () {
                         from: defaultAccount,
                         gas: 1000000,
                         gasPrice: '10000000000',
-                    });
+                    }); 
                     alert("Start!");
                     this.remove();
                 });
-                on('body', 'click', '.option_ico_white_list', function() {
+                on('body', 'change', '.toggle_ico_white_list', function() {
                     if (this.getAccounts("data-value") == "0") {
                         return;
                     }
-                    _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
-                    stage = this.getAttribute("data-stage");
+                    _name = this.parentElement.parentElement.querySelector("strong").innerHTML;
+                    stage = this.val;
                     text = _name + " can buy tokens " + stage;
                     alert(text);
                 });
