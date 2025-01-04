@@ -7,7 +7,7 @@
                 <div class="box-body">
                     <div class="table-responsive">
                         <table id="example5" class="table table-hover">
-                        <%= next_page %>
+
                             <thead class="d-none">
                                 <tr>
                                     <th>&nbsp;</th>
@@ -59,7 +59,7 @@
                                 <% } %>
                                 <% if next_page > 0 { %>
                                 <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
-                                    <img src="/static/images/preloader.gif">
+                                    
                                 </div>
                                 <% } %>
                             </tbody>

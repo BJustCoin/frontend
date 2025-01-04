@@ -65,6 +65,8 @@
                                     <input class="form-control" disable="disable" value="<%= request_user.email %>" type="email" placeholder="johone@dummy.com">
                                 </div>
                             </div>
+
+                            <hr style="margin-top: 20px" />
                         </div>
 
                         
@@ -142,6 +144,23 @@
 									</div>									
 								</div>
                                 <hr style="margin-top: 20px" />
+                                    <h4>Set the ratio of etherium to the dollar</h4>
+                                    <p>
+                                        find out the ETH/USD ratio - 
+                                        <a href="https://portfolioslab.com/symbol/ETH-USD" target="_blank" rel="nofollow">this</a>
+                                    </p>
+								<div class="row"> 
+									<div class="col-12">
+										<div class="buy-input-block-content">
+                                            <div class="form-group">
+												<input type="text" class="form-control value" placeholder="Enter the amount in dollars">
+											</div>
+										</div>
+										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 set_bjustcoin_rate">Set rate</button> 
+									</div>							
+								</div>
+                                <hr style="margin-top: 20px" />
+
                                 <div class="">
                                     <div class="ico_stage"></div>
                                     <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 start_ico">

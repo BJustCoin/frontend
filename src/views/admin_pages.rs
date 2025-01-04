@@ -70,13 +70,14 @@ pub struct AuthRespData {
     pub data: Vec<AuthResp>,
     pub next: i64, 
 }
+
 pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
-        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let url = URL.to_string() + &"/get_users/".to_string() + &page.to_string();
         let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
@@ -528,22 +529,32 @@ pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpRespons
         crate::views::auth_page(session.clone()).await
     }
 }
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct SmallUsers {
+    pub users: Vec<SmallUser>,
+} 
+#[derive(Deserialize, Serialize, Debug)]
+pub struct SmallUser {
+    pub id:         i32,
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+}
 pub async fn admin_profile_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
-        let object_list: Vec<AuthResp>;
-        let next_page: i64;
-        let page = crate::utils::get_page(&req);
-        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
-        let resp = crate::utils::request_get::<AuthRespData>(url, _request_user.uuid.clone()).await;
+        let object_list: Vec<SmallUser>;
+        let url = URL.to_string() + &"/get_small_users/".to_string();
+        let resp = crate::utils::request_get::<SmallUsers>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
-            (object_list, next_page) = (data.data, data.next);
+            object_list = data.users;
         }
         else {
-            (object_list, next_page) = (Vec::new(), 0);
+            object_list = Vec::new();
         }
-        let mut list: Vec<AuthResp> = Vec::new();
+        let mut list: Vec<SmallUser> = Vec::new();
         for object in object_list.into_iter() {
             list.push(object);
         }
@@ -551,13 +562,11 @@ pub async fn admin_profile_page(req: HttpRequest, session: Session) -> actix_web
         #[template(path = "admin/profile.stpl")]
         struct Template {
             request_user: AuthResp2,
-            object_list:  Vec<AuthResp>,
-            next_page:    i64,
+            object_list:  Vec<SmallUser>,
         }
         let body = Template {
             request_user: _request_user,
             object_list:  list,
-            next_page:    next_page,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

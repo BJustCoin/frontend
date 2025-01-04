@@ -118,6 +118,7 @@ window.addEventListener('load', function () {
                         gas: 1000000,
                         gasPrice: '10000000000',
                     });
+                    alert("Successfully!");
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
@@ -128,6 +129,7 @@ window.addEventListener('load', function () {
                         gasPrice: '10000000000',
                     });
                     this.parentElement.querySelector(".number_of_tokens").value = "";
+                    alert("Successfully!");
                 }); 
                 on('body', 'click', '.add_to_whitelist', function() {
                     console.log("add_to_whitelist");
@@ -180,6 +182,18 @@ window.addEventListener('load', function () {
                     text = _name + " can buy tokens " + stage;
                     alert(text);
                 });
+                on('body', 'click', '.set_bjustcoin_rate', function() {
+                    console.log("set_bjustcoin_rate");
+                    value = this.parentElement.querySelector(".value").value;
+                    format_value = value*100;
+                    buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
+                    });
+                    this.parentElement.querySelector(".value").value = "";
+                    alert("Rate added!");
+                }); 
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			}
