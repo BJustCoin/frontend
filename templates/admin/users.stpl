@@ -14,9 +14,9 @@
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="is_paginate">
                                 <% for object in object_list { %>
-                                <tr>
+                                <tr> 
                                     <td class="w-300">
                                         <p class="mb-0">
                                             <strong><%= object.first_name %> <%= object.last_name %></strong>
@@ -56,6 +56,11 @@
                                         </nav>
                                     </td>
                                 </tr>
+                                <% } %>
+                                <% if next_page > 0 { %>
+                                <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
+                                    <img src="/static/images/preloader.gif">
+                                </div>
                                 <% } %>
                             </tbody>
                         </table>
