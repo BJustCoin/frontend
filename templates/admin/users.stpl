@@ -32,21 +32,6 @@
                                     </td>
                                     <td>  
                                         <nav class="nav mt-2" data-pk="<%= object.id %>">
-                                            <select class="coins-exchange toggle_ico_white_list" data-id="<%= request_user.id %>" name="ico_types" tabindex="-1" aria-hidden="true">
-                                                <option class="option_ico_white_list" data-stage="" value="0">Select ICO stage</option> 
-                                                <option class="option_ico_white_list" data-stage="Strategic" value="1">Strategic</option> 
-                                                <option class="option_ico_white_list" data-stage="Seed" value="2">Seed</option>
-                                                <option class="option_ico_white_list" data-stage="Private Sale" value="3">Private Sale</option>
-                                                <option class="option_ico_white_list" data-stage="IDO" value="4">IDO</option>
-                                                <option class="option_ico_white_list" data-stage="Public Sale" value="5">Public Sale</option>
-                                                <option class="option_ico_white_list" data-stage="Advisors" value="6">Advisors</option>
-                                                <option class="option_ico_white_list" data-stage="Team" value="7">Team</option>
-                                                <option class="option_ico_white_list" data-stage="Future Team" value="8">Future Team</option>
-                                                <option class="option_ico_white_list" data-stage="Incetives" value="9">Incetives</option>
-                                                <option class="option_ico_white_list" data-stage="Liquidity" value="10">Liquidity</option>
-                                                <option class="option_ico_white_list" data-stage="Ecosystem" value="11">Ecosystem</option>
-                                                <option class="option_ico_white_list" data-stage="Loyalty" value="12">Loyalty</option>
-                                            </select>
                                             <a class="nav-link create_block" style="cursor: pointer">
                                                     Block user
                                             </a>

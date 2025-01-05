@@ -182,6 +182,13 @@ window.addEventListener('load', function () {
                     _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.options[this.selectedIndex].text;
                     text = _name + " can buy tokens: " + stage;
+                    
+                    add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
+                        from: defaultAccount,
+                        gas: 1000000,
+                        gasPrice: '10000000000',
+                    });
+
                     alert(text);
                 });
                 on('body', 'click', '.set_bjustcoin_rate', function() {
@@ -218,11 +225,14 @@ function post_id(_this, url) {
     link.send(json);
 };
 
-on('body', 'click', '.create_admin_block', function() {
+on('body', 'click', '.create_admin', function() {
     post_id(this, "/create_admin/");
 });
 on('body', 'click', '.create_block', function() {
     post_id(this, "/block_user/");
+});
+on('body', 'click', '.create_admin_block', function() {
+    post_id(this, "/create_admin_block/");
 });
 on('body', 'click', '.delete_block', function() {
     post_id(this, "/unblock_user/");
