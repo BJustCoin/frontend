@@ -1,0 +1,70 @@
+<% include!("../header.stpl"); %>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <div class="table-responsive">
+                    <h1>Suggest items</h1>
+                        <table id="example5" class="table table-hover">
+                            <thead class="d-none">
+                                <tr>
+                                    <th>Full name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Mobile</th>
+                                    <th>Address</th>
+                                    <th>Is agree</th>
+                                </tr>
+                            </thead> 
+                            <tbody class="is_paginate">
+                                <% for object in object_list { %>
+                                <tr> 
+                                    <td>  
+                                        <p class="mb-0">
+                                            <a target="_blank" rel="nofollow" href="/user_logs/?page=1&id=<%= creator.id %>">
+                                                <%= object.first_name %>
+                                                <% if object.middle_name.is_some() { %>
+                                                    <%= object.middle_name.as_deref().unwrap() %> 
+                                                <% } %>
+                                                <%= object.last_name %>
+                                            </a>
+                                        </p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.email %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.phone %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.mobile %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.address %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.is_agree %></p>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                <% if next_page > 0 { %>
+                                <div class="load centered m-1 next_page_list" data-link="/suggest_items/?page=<%= next_page %>">
+                                    
+                                </div>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="/assets/js/connect4.js"></script>
+<% include!("../footer.stpl"); %>

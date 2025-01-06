@@ -105,6 +105,21 @@
 											<div class="form-group">
 												<input type="number" class="form-control amount" placeholder="Amount">
 											</div>
+                                            <select class="coins-exchange form-control ico_stage mt-15" name="ico_types" tabindex="-1" aria-hidden="true">
+                                                <option value="0">Select ICO stage</option>
+                                                <option value="1">Strategic</option>
+                                                <option value="2">Seed</option>
+                                                <option value="3">Private Sale</option>
+                                                <option value="4">IDO</option>
+                                                <option value="5">Public Sale</option>
+                                                <option value="6">Advisors</option>
+                                                <option value="7">Team</option>
+                                                <option value="8">Future Team</option>
+                                                <option value="9">Incetives</option>
+                                                <option value="10">Liquidity</option>
+                                                <option value="11">Ecosystem</option>
+                                                <option value="12">Loyalty</option>
+                                            </select>
 										</div>
 										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin">Transfer</button>
 									</div>									
@@ -147,7 +162,7 @@
                                     <h4>Set the ratio of etherium to the dollar</h4>
                                     <p>
                                         find out the ETH/USD ratio - 
-                                        <a href="https://portfolioslab.com/symbol/ETH-USD" target="_blank" rel="nofollow">this</a>
+                                        <a href="https://etherscan.io/" target="_blank" rel="nofollow">this</a>
                                     </p>
 								<div class="row"> 
 									<div class="col-12">
@@ -172,10 +187,10 @@
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 								<div class="">
 									<div class="col-12">
-										<a target="_blank" href="https://forms.office.com/r/tUAnFiAPRD" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
+										<a href="/create_suggest_item/" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
                                             Buy tokens
                                         </a>
-									</div>									
+									</div>							
 								</div>
                                 <% } %>
                         <!-- /.col -->

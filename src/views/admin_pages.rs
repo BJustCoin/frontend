@@ -181,11 +181,13 @@ pub async fn user_logs_page(req: HttpRequest, session: Session) -> actix_web::Re
             request_user: AuthResp2,
             object_list:  Vec<LogData>,
             next_page:    i64,
+            id:           i32,
         }
         let body = Template {
             request_user: _request_user,
             object_list:  list,
             next_page:    next_page,
+            id:           id,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -686,7 +688,7 @@ pub struct NewSuggestJson {
     pub middle_name: String,
     pub last_name:   String,
     pub email:       String,
-    pub phone:       String,
+    pub phone:       String, 
     pub mobile:      String,
     pub is_agree:    bool,
     pub address:     String,

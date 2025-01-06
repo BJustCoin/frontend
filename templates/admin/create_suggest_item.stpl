@@ -1,0 +1,150 @@
+<% include!("../header.stpl"); %>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <h1>Create Suggest item</h1>
+                        <form>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-form-label">First Name (<span class="color:#F00000"></span>)</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_first_name" name="first_name" value="<%= request_user.first_name %>" type="text" placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-form-label">Middle Name</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_middle_name" name="middle_name" type="text" placeholder="Middle name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Last Name (<span class="color:#F00000"></span>)</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_last_name" name="last_name" value="<%= request_user.last_name %>" type="text" placeholder="Last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Email Adress</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_email" name="email" value="<%= request_user.email %>" type="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Phone Number (<span class="color:#F00000"></span>)</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_phone" type="text" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Mobile Number (<span classtype="text" placeholder="Mobile Number">
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_mobile" type="text" name="mobile" placeholder="Mobile Number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Wallet address (<span class="color:#F00000"></span>)</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_wallet" type="text" name="address" placeholder="Wallet address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Do you agree to the terms and conditions and confirm that you meet the investment requirements? (<span class="color:#F00000"></span>)</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="id_is_agree" type="checkbox" name="is_agree">
+                                </div>
+                            </div>
+
+
+                            <button type="button" 
+                                    class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin"
+                                    id="create_suggest_item"
+                            >
+                                Create
+                            </button>
+                            <div class="api_response" style="color: #F00000"></div>
+                        </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
+on('body', 'click', '#create_suggest_item', function() {
+    _this = this;
+    form = _this.parentElement;
+    response = form.querySelector(".api_response");
+    
+    if (!form.querySelector("#id_first_name").value){
+      form.querySelector("#id_first_name").style.border = "1px #FF0000 solid";
+      response.innerHTML = "First name is required!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_last_name").value){
+      form.querySelector("#id_last_name").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Last name is required!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_email").value){
+      form.querySelector("#id_email").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Input email!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_phone").value){
+      form.querySelector("#id_phone").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Phone is required!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_mobile").value){
+      form.querySelector("#id_mobile").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Input mobile phone!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_wallet").value){
+      form.querySelector("#id_wallet").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Waller address is required!";
+      response.classList.add("error");
+      return
+    } else if (!form.querySelector("#id_is_agree").checked){
+      form.querySelector("#id_mobile").style.border = "1px #FF0000 solid";
+      response.innerHTML = "Agree to the terms and conditions is required!";
+      response.classList.add("error");
+      return
+    }
+    else {
+      _this.disabled = true;
+    }
+
+    form_data = new FormData(form);
+    object = {};
+    form_data.forEach((value, key) => object[key] = value);
+    json = JSON.stringify(object);
+    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    
+    link.open( 'POST', "/create_suggest_item/", true );
+    link.setRequestHeader('Content-Type', 'application/json');
+  
+    link.onreadystatechange = function () {
+    if ( link.readyState == 4 && link.status == 200 ) {
+      status1 = JSON.parse(link.responseText)["status"];
+      console.log(status1);
+      if (status1 != "error") {
+        window.location.href = "/profile/";
+      } 
+      else {
+        response.innerHTML = "Uncnown error";
+      }
+    }
+    else {
+        _this.disabled = false;
+        response.style.display = "block";
+        response.classList.add("error");
+    }};
+    link.send(json);
+});
+</script>
+<% include!("../footer.stpl"); %>

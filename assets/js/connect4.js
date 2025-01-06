@@ -112,15 +112,48 @@ window.addEventListener('load', function () {
                     console.log("transfer_bjustcoin");
                     address = this.parentElement.querySelector(".address").value;
                     amount = this.parentElement.querySelector(".amount").value;
+                    ico_stage = this.parentElement.querySelector(".ico_stage").value;
                     a = 10 ** 18;
                     final_value = amount * a;
                     console.log("transfer value", value);
-                    transfer_bjustcoin = contract.methods.transferICOToken(to=address, amount=final_value).send({
-                        from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
-                    });
-                    alert("Successfully!");
+                    if (ico_stage == 1) {
+                        contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 2) {
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 3) {
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 4) {
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 5) {
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 6) {
+                        contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 7) {
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 8) {
+                        contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 9) {
+                        contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 10) {
+                        contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 11) {
+                        contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+                    else if (ico_stage == 12) {
+                        contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                    }
+
+                        alert("Successfully!");
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
