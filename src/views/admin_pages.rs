@@ -104,7 +104,7 @@ pub struct LogData {
     pub target:  Option<SmallUser>,
     pub created: chrono::NaiveDateTime,
 } 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct LogRespData {
     pub data: Vec<LogData>,
     pub next: i64,
@@ -210,7 +210,7 @@ pub struct SuggestItem {
     pub address:     String,
     pub created:     chrono::NaiveDateTime,
 } 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct SuggestRespData {
     pub data: Vec<SuggestItem>,
     pub next: i64,
