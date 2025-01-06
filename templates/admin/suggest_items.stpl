@@ -23,13 +23,7 @@
                                 <tr> 
                                     <td>  
                                         <p class="mb-0">
-                                            <a target="_blank" rel="nofollow" href="/user_logs/?page=1&id=<%= creator.id %>">
-                                                <%= object.first_name %>
-                                                <% if object.middle_name.is_some() { %>
-                                                    <%= object.middle_name.as_deref().unwrap() %> 
-                                                <% } %>
-                                                <%= object.last_name %>
-                                            </a>
+                                            <%= object.first_name %> <%= object.middle_name %> <%= object.last_name %>
                                         </p>
                                     </td>
                                     <td>  
