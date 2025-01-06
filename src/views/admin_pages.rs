@@ -215,7 +215,7 @@ pub struct SuggestRespData {
     pub data: Vec<SuggestItem>,
     pub next: i64,
 }
-pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn suggest_items_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
@@ -762,13 +762,7 @@ pub async fn admin_home2_page(session: Session) -> actix_web::Result<HttpRespons
 pub struct SmallUsers {
     pub users: Vec<SmallUser>,
 } 
-#[derive(Deserialize, Serialize, Debug)]
-pub struct SmallUser {
-    pub id:         i32,
-    pub first_name: String,
-    pub last_name:  String,
-    pub email:      String,
-}
+
 pub async fn admin_profile_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
