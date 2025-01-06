@@ -211,6 +211,7 @@ pub struct SuggestItem {
     pub is_agree:    bool,
     pub address:     String,
     pub created:     chrono::NaiveDateTime,
+    pub tokens:      String,
 } 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct SuggestRespData {
