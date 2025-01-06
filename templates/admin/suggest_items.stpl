@@ -6,7 +6,7 @@
             <div class="box">
                 <div class="box-body">
                     <div class="table-responsive">
-                    <h1>Suggest items</h1>
+                    <h1>Application for Token purchase</h1> 
                         <table id="example5" class="table table-hover">
                             <thead class="">
                                 <tr>

@@ -32,6 +32,7 @@
                                         <p class="mb-0">
                                             <% if object.target.is_some() { %>
                                                 <% let target = object.target.unwrap(); %>
+                                                <%= target.first_name %> <%= target.last_name %>
                                             <% } %>
                                         </p>  
                                     </td>
