@@ -1,5 +1,11 @@
 <% include!("../header.stpl"); %>
+<style>
 
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative;
+    opacity: 1;
+}
+</style>
 <section class="content">
     <div class="row">
         <div class="col-12">
@@ -56,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-form-label">Do you agree to the terms and conditions and confirm that you meet the investment requirements? (<span class="color:#F00000"></span>)</label>
+                                <label class="col-form-label" for="id_is_agree" >Do you agree to the terms and conditions and confirm that you meet the investment requirements? (<span class="color:#F00000"></span>)</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" id="id_is_agree" type="checkbox" name="is_agree">
                                 </div>
@@ -121,7 +127,7 @@ on('body', 'click', '#create_suggest_item', function() {
       response.classList.add("error");
       return
     } else if (!form.querySelector("#id_is_agree").checked){
-      form.querySelector("#id_mobile").style.border = "1px #FF0000 solid";
+      form.querySelector("#id_is_agree").style.border = "1px #FF0000 solid";
       response.innerHTML = "Agree to the terms and conditions is required!";
       response.classList.add("error");
       return
