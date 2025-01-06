@@ -691,7 +691,7 @@ pub struct NewSuggestJson {
     pub email:       String,
     pub phone:       String, 
     pub mobile:      String,
-    pub is_agree:    bool,
+    pub is_agree:    String,
     pub address:     String,
 }
 pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -> actix_web::Result<HttpResponse> {
@@ -703,7 +703,7 @@ pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -
             email:       data.email.clone(),
             phone:       data.phone.clone(),
             mobile:      data.mobile.clone(),
-            is_agree:    data.is_agree,
+            is_agree:    data.is_agree.clone(),
             address:     data.address.clone(),
         };
         let _request_user = get_current_user(&session).expect("E.");

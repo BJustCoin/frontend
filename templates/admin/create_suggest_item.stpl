@@ -64,7 +64,7 @@
                             <div class="form-group">
                                 <label class="col-form-label" for="id_is_agree" >Do you agree to the terms and conditions and confirm that you meet the investment requirements? (<span class="color:#F00000"></span>)</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" id="id_is_agree" type="checkbox" name="is_agree">
+                                    <input id="id_is_agree" type="checkbox" name="is_agree">
                                 </div>
                             </div>
 
