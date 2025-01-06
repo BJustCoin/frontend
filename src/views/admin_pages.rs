@@ -197,7 +197,7 @@ pub async fn user_logs_page(req: HttpRequest, session: Session) -> actix_web::Re
 }
 
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct SuggestItem {
     pub id:          i32,
     pub first_name:  String,
