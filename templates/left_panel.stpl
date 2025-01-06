@@ -18,6 +18,13 @@
 					<li>
 					  <a href="/support/"><i class="ti-more"></i><span>Support</span></a>
 					</li>
+
+					<li>
+					  <a href="/terms-and-conditions/"><i class="ti-more"></i><span>Terms and Conditions</span></a>
+					</li>
+					<li>
+					  <a href="/privacy-policy/"><i class="ti-more"></i><span>Privacy policy</span></a>
+					</li>
 				  </ul>
 				</li>
 				<% if request_user.perm == 60 { %>
@@ -40,6 +47,15 @@
 					</li>
 					<li>
 					  <a href="/banned_admins/"><i class="ti-more"></i><span>Banned admins</span></a>
+					</li>
+					<li>
+					  <a href="/banned_admins/"><i class="ti-more"></i><span>Banned admins</span></a>
+					</li>
+					<li>
+					  <a href="/logs/"><i class="ti-more"></i><span>Logs</span></a>
+					</li>
+					<li>
+					  <a href="/suggest_items/"><i class="ti-more"></i><span>Suggest items</span></a>
 					</li>
 				  </ul>
 				</li>

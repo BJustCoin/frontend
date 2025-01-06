@@ -24,6 +24,10 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admins/", web::get().to(admins_list_page));
     config.route("/banned_users/", web::get().to(banned_users_list_page));
     config.route("/banned_admins/", web::get().to(banned_admins_list_page));
+    config.route("/logs/", web::get().to(logs_page));
+    config.route("/user_logs/", web::get().to(user_logs_page));
+    config.route("/suggest_items/", web::get().to(suggest_items_page));
+    config.route("/create_suggest_item/", web::get().to(create_suggest_item_page));
 
     config.route("/admin_home2/", web::get().to(admin_home2_page));
     config.route("/profile/", web::get().to(admin_profile_page));
@@ -63,6 +67,193 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/delete_wallet/", web::post().to(delete_wallet));
     config.route("/create_white_list/", web::post().to(create_white_list));
     config.route("/delete_white_list/", web::post().to(delete_white_list));
+    config.route("/create_suggest_item/", web::post().to(create_suggest_item));
+}
+
+pub async fn create_suggest_item_page(session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/create_suggest_item.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+        }
+        let body = Template {
+            request_user: _request_user,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct SmallUser {
+    pub id:         i32,
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+}
+#[derive(Debug, Deserialize, Serialize)]
+pub struct LogData {
+    pub user:    SmallUser,
+    pub text:    String,
+    pub target:  Option<SmallUser>,
+    pub created: chrono::NaiveDateTime,
+} 
+#[derive(Deserialize, Serialize)]
+pub struct LogRespData {
+    pub data: Vec<LogData>,
+    pub next: i64,
+}
+pub async fn logs_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<LogData>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_logs/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<LogRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<LogData> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/logs.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<LogData>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
+}
+
+pub async fn user_logs_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let id = crate::utils::get_id(&req);
+        let object_list: Vec<LogData>;
+        let next_page: i64;
+        let url = URL.to_string() 
+            + &"/get_user_logs/?page=".to_string() 
+            + &page.to_string()
+            + &"&id=".to_string() 
+            + &id.to_string();
+        let resp = crate::utils::request_get::<LogRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<LogData> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/user_logs.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<LogData>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
+}
+
+
+#[derive(Deserialize, Serialize)]
+pub struct SuggestItem {
+    pub id:          i32,
+    pub first_name:  String,
+    pub middle_name: String,
+    pub last_name:   String,
+    pub email:       String,
+    pub phone:       String,
+    pub mobile:      String,
+    pub is_agree:    bool,
+    pub address:     String,
+    pub created:     chrono::NaiveDateTime,
+} 
+#[derive(Deserialize, Serialize)]
+pub struct SuggestRespData {
+    pub data: Vec<SuggestItem>,
+    pub next: i64,
+}
+pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<SuggestItem>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<SuggestRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<SuggestItem> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/suggest_items.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<SuggestItem>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -70,7 +261,6 @@ pub struct AuthRespData {
     pub data: Vec<AuthResp>,
     pub next: i64, 
 }
-
 pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
@@ -250,7 +440,7 @@ pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Resu
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -269,7 +459,7 @@ pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Re
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -288,7 +478,7 @@ pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Res
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -307,7 +497,7 @@ pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::R
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -326,7 +516,7 @@ pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Re
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -345,7 +535,7 @@ pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Resu
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -371,7 +561,7 @@ pub async fn create_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -391,7 +581,7 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -438,7 +628,7 @@ pub async fn delete_wallet(session: Session, data: Json<ItemId>) -> actix_web::R
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }
@@ -483,7 +673,45 @@ pub async fn delete_white_list(session: Session, data: Json<ItemId>) -> actix_we
         ).await;
 
         return match res {
-            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NewSuggestJson {
+    pub first_name:  String,
+    pub middle_name: String,
+    pub last_name:   String,
+    pub email:       String,
+    pub phone:       String,
+    pub mobile:      String,
+    pub is_agree:    bool,
+    pub address:     String,
+}
+pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = NewSuggestJson {
+            first_name:  data.first_name.clone(),
+            middle_name: data.middle_name.clone(),
+            last_name:   data.last_name.clone(),
+            email:       data.email.clone(),
+            phone:       data.phone.clone(),
+            mobile:      data.mobile.clone(),
+            is_agree:    data.is_agree,
+            address:     data.address.clone(),
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<NewSuggestJson, ()> (
+            URL.to_owned() + &"/create_suggest_item/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
             Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
         }
     }

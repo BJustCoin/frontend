@@ -17,6 +17,12 @@
 					<li>
 					  <a href="/support/"><i class="ti-more"></i><span>Support</span></a>
 					</li>
+					<li>
+					  <a href="/terms-and-conditions/"><i class="ti-more"></i><span>Terms and Conditions</span></a>
+					</li>
+					<li>
+					  <a href="/privacy-policy/"><i class="ti-more"></i><span>Privacy policy</span></a>
+					</li>
 				  </ul>
 				</li>				  
 				<li class="treeview">
