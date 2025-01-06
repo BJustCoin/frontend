@@ -15,6 +15,7 @@
                                     <th>Phone</th>
                                     <th>Mobile</th>
                                     <th>Address</th>
+                                    <th>Tokens</th>
                                     <th>Is agree</th>
                                 </tr>
                             </thead> 
@@ -37,6 +38,9 @@
                                     </td>
                                     <td>  
                                         <p class="mb-0"><%= object.address %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.tokens %></p>
                                     </td>
                                     <td>  
                                         <p class="mb-0"><%= object.is_agree %></p>
