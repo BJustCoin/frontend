@@ -224,7 +224,7 @@ pub async fn suggest_items_page(req: HttpRequest, session: Session) -> actix_web
         let page = crate::utils::get_page(&req);
         let object_list: Vec<SuggestItem>;
         let next_page: i64;
-        let url = URL.to_string() + &"/get_users/?page=".to_string() + &page.to_string();
+        let url = URL.to_string() + &"/get_suggest_items/?page=".to_string() + &page.to_string();
         let resp = crate::utils::request_get::<SuggestRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
@@ -693,6 +693,7 @@ pub struct NewSuggestJson {
     pub mobile:      String,
     pub is_agree:    String,
     pub address:     String,
+    pub tokens:      String,
 }
 pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
@@ -705,6 +706,7 @@ pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -
             mobile:      data.mobile.clone(),
             is_agree:    data.is_agree.clone(),
             address:     data.address.clone(),
+            tokens:      data.tokens.clone(),
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<NewSuggestJson, ()> (
