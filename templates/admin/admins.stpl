@@ -8,7 +8,7 @@
                     <div class="table-responsive">
                         <h1>Admins</h1>
                         <table id="example5" class="table table-hover">
-                            <thead class="d-none">
+                            <thead class="">
                                 <tr>
                                     <th>Admin</th>
                                     <th>Action</th>
