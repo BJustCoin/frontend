@@ -54,7 +54,7 @@ function scrolled(_block) {
         console.log(box);
         if (box.classList.contains("next_page_list")) {
             console.log("next_page_list exists!");
-            inViewport = elementInViewport(box);
+            inViewport = elementInViewport(_block);
             if (inViewport) {
                 console.log("elementInViewport!");
               box.classList.remove("next_page_list");
