@@ -21,8 +21,8 @@ window.addEventListener('load', function () {
                     contract_abi, 
                     contract_address,
                     {
-                        defaultGasPrice: gasPrice,
-                        defaultGas: gas,
+                        //defaultGasPrice: gasPrice,
+                        //defaultGas: gas,
                     }
                 );
                 owner = contract.methods.owner().call().then(function (a) {
