@@ -31,4 +31,4 @@ function paginate(block) {
     link_3.send();
 };
 
-scrolled(document.body.querySelector(".container-full"));
+scrolled(document.body.querySelector(".is_paginate"));
