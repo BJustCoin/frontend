@@ -46,9 +46,14 @@
                                 </tr>
                                 <% } %>
                                 <% if next_page > 0 { %>
-                                <div class="load centered m-1 next_page_list" data-link="/logs/?page=<%= next_page %>">
-                                    
-                                </div>
+                                <tr class="w-300 load centered m-1 next_page_list" data-link="/logs/?page=<%= next_page %>">
+                                    <td>
+                                        <img src="/assets/images/preloader.gif">
+                                    </td>
+                                    <td>
+                                        <img src="/assets/images/preloader.gif">
+                                    </td>
+                                </tr>
                                 <% } %>
                             </tbody>
                         </table>
