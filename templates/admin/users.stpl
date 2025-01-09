@@ -52,7 +52,8 @@ function scrolled(_block) {
     try {
         box = _block.querySelector('.next_page_list');
         console.log(box);
-        if (box && box.classList.contains("next_page_list")) {
+        if (box.classList.contains("next_page_list")) {
+            console.log("next_page_list exists!");
             inViewport = elementInViewport(box);
             if (inViewport) {
                 console.log("elementInViewport!");
