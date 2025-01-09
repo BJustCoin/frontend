@@ -34,15 +34,15 @@ window.addEventListener('load', function () {
 
                 /// ico stage sections
 				ico_stage = contract.methods.getICOStage().call().then(function (a) {
-                    try {
-                        buy_widget = document.body.querySelector(".buy_bjustcoin_section_active");
-                        if (buy_widget.classList.contains("white" + a)) {
-                            console.log("buy_bjustcoin_section_active showed");
-                            buy_widget.classList.remove("hide");
-                        }
-                        else {
-                            buy_widget.previousElementSibling.classList.remove("hide");
-                        }
+                    try { 
+                        //buy_widget = document.body.querySelector(".buy_bjustcoin_section_active");
+                        //if (buy_widget.classList.contains("white" + a)) {
+                        //    console.log("buy_bjustcoin_section_active showed");
+                        //    buy_widget.classList.remove("hide");
+                        //}
+                        //else {
+                        //    buy_widget.previousElementSibling.classList.remove("hide");
+                        //}
 
                         description = document.body.querySelector(".ico_stage");
                         next_stage_btn = description.nextElementSibling;
