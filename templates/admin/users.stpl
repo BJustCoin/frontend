@@ -1,21 +1,37 @@
 <% include!("../header.stpl"); %>
 
+
 <section class="content">
     <div class="row">
         <div class="col-12">
             <div class="box">
                 <div class="box-body">
-                    
-                        <h1>Users</h1>
-                        <div class="row">
-                            <div class="col-md-7"><strong>User</strong></div>
-                            <div class="col-md-5"><strong>Action</strong></div>
-                        </div>
-                        <div class="is_paginate">
-                            <% for object in object_list { %>
-                                <div class="row">
-                                    <div class="col-md-7"><strong><%= object.first_name %> <%= object.last_name %> (<%= object.email %>)</strong></div>
-                                    <div class="col-md-5">
+                    <div class="table-responsive">
+                        <h1>Admins</h1>
+                        <table id="example5" class="table table-hover">
+                            <thead class="">
+                                <tr>
+                                    <th>Admin</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for object in object_list { %>
+                                <tr>
+                                    <td class="w-300">
+                                        <p class="mb-0">
+                                            <strong><%= object.first_name %> <%= object.last_name %></strong>
+                                            <small class="sidetitle"><%= object.email %></small>
+                                        </p>
+                                        <p class="mb-0">
+                                            <% if object.phone.is_some() { %>
+                                                Phone: <%= object.phone.as_deref().unwrap() %>
+                                            <% } else { %>
+                                                Phone not exists
+                                            <% } %>
+                                        </p>    
+                                    </td>
+                                    <td>
                                         <nav class="nav mt-2" data-pk="<%= object.id %>">
                                             <a class="nav-link create_block" style="cursor: pointer">
                                                     Block user
@@ -24,16 +40,20 @@
                                                     make an admin
                                             </a>
                                         </nav>
-                                    </div>
-                                </div>
-                            <% } %>
-                            <% if next_page > 0 { %>
-                                <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
-                                    <img src="/assets/images/preloader.gif">
-                                </div>
-                            <% } %>
-                        </div>
-                    
+                                    </td>
+                                </tr>
+                                <% } %>
+                                <tr>
+                                    <td class="w-300 load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
+                                        <img src="/assets/images/preloader.gif">
+                                    </td>
+                                    <td>
+                                        <img src="/assets/images/preloader.gif">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -41,6 +61,7 @@
         </div>
     </div>
 </section>
+
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="/assets/js/connect4.js"></script>
