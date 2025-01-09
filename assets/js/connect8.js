@@ -54,11 +54,11 @@ window.addEventListener('load', function () {
                             next_stage_btn.innerHTML = "Start ICO";
                         }
                         else if (a == 1) {
-                            description.innerHTML = "The correct stage: Strategic";
-                            next_stage_btn.innerHTML = "Start ICO Seed";
+                            description.innerHTML = "The correct stage: Seed";
+                            next_stage_btn.innerHTML = "Start ICO Private Sale";
                         }
                         else if (a == 2) {
-                            description.innerHTML = "The correct stage: Seed";
+                            description.innerHTML = "The correct stage: Strategic";
                             next_stage_btn.innerHTML = "Start ICO Private Sale";
                         }
                         else if (a == 3) {
