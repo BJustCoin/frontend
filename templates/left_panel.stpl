@@ -49,13 +49,10 @@
 					  <a href="/banned_admins/"><i class="ti-more"></i><span>Banned admins</span></a>
 					</li>
 					<li>
-					  <a href="/banned_admins/"><i class="ti-more"></i><span>Banned admins</span></a>
-					</li>
-					<li>
 					  <a href="/logs/"><i class="ti-more"></i><span>Logs</span></a>
 					</li>
 					<li>
-					  <a href="/suggest_items/"><i class="ti-more"></i><span>Suggest items</span></a>
+					  <a href="/suggest_items/"><i class="ti-more"></i><span>Applications for purchase</span></a>
 					</li>
 				  </ul>
 				</li>

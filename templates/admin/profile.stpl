@@ -68,19 +68,18 @@
 
                             <hr style="margin-top: 20px" />
                         </div>
-
-                        
+     
                                 <% if request_user.perm == 2 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
                                 <div class="buy_bjustcoin_section_default hide">
 									<div class="col-12">
-										<a target="_blank" href="https://forms.office.com/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__o5xN4NUQVZCOE81SkZVQlZJNkxMRUNYSVZWVllMVS4u&sharetoken=afAxxTaSKOWGBmJQZ3qc" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
+										<a href="/create_suggest_item/">
                                             Buy tokens
                                         </a>
 									</div> 					
 								</div> 
 								<div class="
-                                    row buy_bjustcoin_section_active hide
+                                    row buy_bjustcoin_section_active
                                     <% for i in request_user.white_list.iter() { %>
                                         white<%= i.token_type %> 
                                     <% } %> 
@@ -126,7 +125,7 @@
 								</div>
 
                                 <hr style="margin-top: 20px" />
-                                <h4 class="box-title mb-15 mt-15">Add to wishlist</h4>
+                                <h4 class="box-title mb-15 mt-15">Add to White List (Purchasers)</h4>
 								<div class="row">
 									<div class="col-12">
 										<div class="buy-input-block-content">

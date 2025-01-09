@@ -73,10 +73,10 @@
 
 
                             <button type="button" 
-                                    class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin"
+                                    class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100"
                                     id="create_suggest_item"
                             >
-                                Create
+                                Submit
                             </button>
                             <div class="api_response" style="color: #F00000"></div>
                         </form>
@@ -131,7 +131,7 @@ on('body', 'click', '#create_suggest_item', function() {
       return
     } else if (!form.querySelector("#id_is_agree").checked){
       form.querySelector("#id_is_agree").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Agree to the terms and conditions is required!";
+      response.innerHTML = "Agreement is required!";
       response.classList.add("error");
       return
     }
@@ -150,14 +150,7 @@ on('body', 'click', '#create_suggest_item', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      status1 = JSON.parse(link.responseText)["status"];
-      console.log(status1);
-      if (status1 != "error") {
         window.location.href = "/profile/";
-      } 
-      else {
-        response.innerHTML = "Uncnown error";
-      }
     }
     else {
         _this.disabled = false;

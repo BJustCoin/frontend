@@ -11,12 +11,13 @@
                             <thead class="">
                                 <tr>
                                     <th>Full name</th>
-                                    <th>Email</th>
+                                    <th>Email</th> 
                                     <th>Phone</th>
                                     <th>Mobile</th>
-                                    <th>Address</th>
+                                    <th>Wallet address</th>
                                     <th>Tokens</th>
-                                    <th>Is agree</th>
+                                    <th>Agreement</th>
+                                    <th>Created</th>
                                 </tr>
                             </thead> 
                             <tbody class="is_paginate">
@@ -43,7 +44,16 @@
                                         <p class="mb-0"><%= object.tokens %></p>
                                     </td>
                                     <td>  
-                                        <p class="mb-0"><%= object.is_agree %></p>
+                                        <p class="mb-0">
+                                            <% if object.is_agree { %>
+                                                Yes
+                                            <% } else { %>
+                                                No
+                                            <% } %>
+                                        </p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0"><%= object.created.format("%d-%m-%Y in %H:%M").to_string() %></p>
                                     </td>
                                 </tr>
                                 <% } %>

@@ -43,10 +43,13 @@
                                     </td>
                                 </tr>
                                 <% } %>
-                                <% if next_page > 0 { %>
-                                <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
-                                    
-                                </div>
+                                    <% if next_page > 0 { %>
+                                    <tr class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>"> 
+                                        <td class="w-300">
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
                                 <% } %>
                             </tbody>
                         </table>

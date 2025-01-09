@@ -115,7 +115,7 @@ window.addEventListener('load', function () {
                     ico_stage = this.parentElement.querySelector(".ico_stage").value;
                     a = 10 ** 18;
                     final_value = amount * a;
-                    console.log("transfer value", value);
+                    console.log("transfer value", final_value);
                     if (ico_stage == 1) {
                         contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
                     }
@@ -171,7 +171,11 @@ window.addEventListener('load', function () {
                     address = this.parentElement.querySelector(".address").value;
                     user_id = this.parentElement.querySelector(".user_id").value;
                     ico_stage = this.parentElement.querySelector(".ico_stage").value;
-                    add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=ico_stage).send({
+                    add_to_wishlist = contract.methods.whitelist(
+                        _address=address, 
+                        _tokenomicType=ico_stage,
+                        _isWhitelisting=true
+                    ).send({
                         from: defaultAccount,
                         gas: 1000000,
                         gasPrice: '10000000000',
