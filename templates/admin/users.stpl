@@ -7,31 +7,15 @@
                 <div class="box-body">
                     <div class="table-responsive">
                         <h1>Users</h1>
-                        <table id="example5" class="table table-hover">
-
-                            <thead class="">
-                                <tr>
-                                    <th>User</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="is_paginate">
-                                <% for object in object_list { %>
-                                <tr> 
-                                    <td class="w-300">
-                                        <p class="mb-0">
-                                            <strong><%= object.first_name %> <%= object.last_name %></strong>
-                                            <small class="sidetitle"><%= object.email %></small>
-                                        </p>
-                                        <p class="mb-0">
-                                            <% if object.phone.is_some() { %>
-                                                Phone: <%= object.phone.as_deref().unwrap() %>
-                                            <% } else { %>
-                                                Phone not exists
-                                            <% } %>
-                                        </p>    
-                                    </td>
-                                    <td>  
+                        <div class="row">
+                            <div class="col-md-7"><strong>User</strong></div>
+                            <div class="col-md-5"><strong>Action</strong></div>
+                        </div>
+                        <div class="is_paginate">
+                            <% for object in object_list { %>
+                                <div class="row">
+                                    <div class="col-md-7"><strong><%= object.first_name %> <%= object.last_name %> (<%= object.email %>)</strong></div>
+                                    <div class="col-md-5">
                                         <nav class="nav mt-2" data-pk="<%= object.id %>">
                                             <a class="nav-link create_block" style="cursor: pointer">
                                                     Block user
@@ -40,21 +24,15 @@
                                                     make an admin
                                             </a>
                                         </nav>
-                                    </td>
-                                </tr> 
-                                <% } %>
-                                    <% if next_page > 0 { %>
-                                    <tr class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>"> 
-                                        <td class="w-300">
-                                            <img src="/assets/images/preloader.gif">
-                                        </td>
-                                        <td>
-                                            <img src="/assets/images/preloader.gif">
-                                        </td>
-                                    </tr>
-                                <% } %>
-                            </tbody>
-                        </table>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if next_page_number > 0 { %>
+                                <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
+                                    <img src="/static/images/preloader.gif">
+                                </div>
+                            <% } %>
+                        </div>
                     </div>
                 </div>
                 <!-- /.box-body -->
