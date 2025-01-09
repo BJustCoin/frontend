@@ -4,7 +4,7 @@ function scrolled(_block) {
     //try {
         box = _block.querySelector('.next_page_list');
         if (box && box.classList.contains("next_page_list")) {
-            inViewport = elementInViewport(box);
+            inViewport = elementInViewport(_block);
             if (inViewport) {
               box.classList.remove("next_page_list");
               paginate(box);
