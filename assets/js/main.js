@@ -1,7 +1,7 @@
 function elementInViewport(el){var bounds = el.getBoundingClientRect();return ((bounds.top + bounds.height > 0) && (window.innerHeight - bounds.top > 0));}
 
 function scrolled(_block) {
-    try {
+    //try {
         box = _block.querySelector('.next_page_list');
         if (box && box.classList.contains("next_page_list")) {
             inViewport = elementInViewport(box);
@@ -10,7 +10,7 @@ function scrolled(_block) {
               paginate(box);
             }
         };
-    } catch {return}
+    //} catch {return}
 };
 function paginate(block) {
     var link_3 = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
