@@ -2,6 +2,8 @@ contract_abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"
 
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
 
+const gasPrice = '50000000000';
+const gas = 1500000;
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
@@ -19,8 +21,8 @@ window.addEventListener('load', function () {
                     contract_abi, 
                     contract_address,
                     {
-                        defaultGasPrice: '20000000000',
-                        defaultGas: 5000000,
+                        defaultGasPrice: gasPrice,
+                        defaultGas: gas,
                     }
                 );
                 owner = contract.methods.owner().call().then(function (a) {
@@ -117,40 +119,40 @@ window.addEventListener('load', function () {
                     final_value = amount * a;
                     console.log("transfer value", final_value);
                     if (ico_stage == 1) {
-                        contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 2) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 3) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 4) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 5) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 6) {
-                        contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 7) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 8) {
-                        contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 9) {
-                        contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 10) {
-                        contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 11) {
-                        contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
                     else if (ico_stage == 12) {
-                        contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,gas: 1000000,gasPrice: '10000000000',});
+                        contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
                     }
 
                         alert("Successfully!");
@@ -160,8 +162,8 @@ window.addEventListener('load', function () {
                     value = this.parentElement.querySelector(".number_of_tokens").value;
                     buy_bjustcoin = contract.methods.buyICOToken().send({
                         from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
+                        gas: gas,
+                        gasPrice: gasPrice,
                     });
                     this.parentElement.querySelector(".number_of_tokens").value = "";
                     alert("Successfully!");
@@ -177,8 +179,8 @@ window.addEventListener('load', function () {
                         _isWhitelisting=true
                     ).send({
                         from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
+                        gas: gas,
+                        gasPrice: gasPrice,
                     });
                     ////////
                     object = {
@@ -206,8 +208,8 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.start_ico', function() {
                     add_to_wishlist = contract.methods.nextICOStage().send({
                         from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
+                        gas: gas,
+                        gasPrice: gasPrice,
                     }); 
                     alert("Start!");
                     this.remove();
@@ -222,8 +224,8 @@ window.addEventListener('load', function () {
                     
                     add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
                         from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
+                        gas: gas,
+                        gasPrice: gasPrice,
                     });
 
                     alert(text);
@@ -234,8 +236,8 @@ window.addEventListener('load', function () {
                     format_value = value*100;
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
-                        gas: 1000000,
-                        gasPrice: '10000000000',
+                        gas: gas,
+                        gasPrice: gasPrice,
                     });
                     this.parentElement.querySelector(".value").value = "";
                     alert("Rate added!");
