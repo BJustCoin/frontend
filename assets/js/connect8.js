@@ -47,6 +47,7 @@ window.addEventListener('load', function () {
                         description = document.body.querySelector(".ico_stage");
                         next_stage_btn = description.nextElementSibling;
                         description.setAttribute("stage-type", a);
+                        console.log(a);
 
                         if (a == 0) {
                             description.innerHTML = "ICO has not started yet";
