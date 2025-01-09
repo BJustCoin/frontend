@@ -46,10 +46,10 @@
                                     <% if next_page > 0 { %>
                                     <tr class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>"> 
                                         <td class="w-300">
-                                            <img src="/static/images/preloader.gif">
+                                            <img src="/assets/images/preloader.gif">
                                         </td>
                                         <td>
-                                            <img src="/static/images/preloader.gif">
+                                            <img src="/assets/images/preloader.gif">
                                         </td>
                                     </tr>
                                 <% } %>
