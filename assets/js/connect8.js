@@ -45,7 +45,7 @@ window.addEventListener('load', function () {
                         //}
 
                         description = document.body.querySelector(".ico_stage");
-                        next_stage_btn = description.nextElementSibling;
+                        next_stage_btn = document.body.querySelector(".start_ico");
                         description.setAttribute("stage-type", a);
                         console.log(a);
 
