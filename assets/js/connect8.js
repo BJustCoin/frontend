@@ -34,7 +34,7 @@ window.addEventListener('load', function () {
 
                 /// ico stage sections
 				ico_stage = contract.methods.getICOStage().call().then(function (a) {
-                    try { 
+                    //try { 
                         //buy_widget = document.body.querySelector(".buy_bjustcoin_section_active");
                         //if (buy_widget.classList.contains("white" + a)) {
                         //    console.log("buy_bjustcoin_section_active showed");
@@ -102,7 +102,7 @@ window.addEventListener('load', function () {
                             next_stage_btn.innerHTML = "Close ICO";
                         }
                         document.body.querySelector(".ico_stage").innerHTML = a;
-                    } catch { null }
+                    //} catch { null }
                     console.log("icomanager ico_stage", a);
                 });
                 // end ico stage sections 
