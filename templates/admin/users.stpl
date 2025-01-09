@@ -29,7 +29,7 @@
                             <% } %>
                             <% if next_page > 0 { %>
                                 <div class="load centered m-1 next_page_list" data-link="/users/?page=<%= next_page %>">
-                                    <img src="/static/images/preloader.gif">
+                                    <img src="/assets/images/preloader.gif">
                                 </div>
                             <% } %>
                         </div>
