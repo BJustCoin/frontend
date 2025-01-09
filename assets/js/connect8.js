@@ -208,8 +208,8 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.start_ico', function() {
                     add_to_wishlist = contract.methods.nextICOStage().send({
                         from: defaultAccount,
-                        gas: gas,
-                        gasPrice: gasPrice,
+                        //gas: gas,
+                        //gasPrice: gasPrice,
                     }); 
                     alert("Start!");
                     this.remove();
