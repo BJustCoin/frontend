@@ -341,6 +341,11 @@ window.addEventListener('load', function () {
                     alert("Start!");
                     this.remove();
                 });
+
+                on('body', 'click', '.withdraw_money', function() {
+                    add_to_wishlist = contract.methods.withdraw().send(); 
+                });
+
                 on('body', 'change', '.toggle_ico_white_list', function() {
                     if (this.getAttribute("data-value") == "0") {
                         return; 

@@ -274,6 +274,13 @@
                                     </button> 
                                 </div>
 
+                                <div class="">
+                                    <div class="ico_stage_description"></div>
+                                    <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 withdraw_money">
+                                        Withdraw money
+                                    </button> 
+                                </div>
+
                                 <% } else if request_user.perm == 1 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 								<div class="">
@@ -295,7 +302,7 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect17.js"></script>
+<script type="text/javascript" src="/assets/js/connect18.js"></script>
 
 <% include!("../footer.stpl"); %>
 
