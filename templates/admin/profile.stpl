@@ -69,7 +69,7 @@
                             <hr style="margin-top: 20px" />
                         </div>
      
-                                <% if request_user.perm == 2 { %>
+                                <% if request_user.perm == 1 { %>
                                     
                                     
                                     <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
