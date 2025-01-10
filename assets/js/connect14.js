@@ -213,6 +213,7 @@ window.addEventListener('load', function () {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
                             value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 2) {
