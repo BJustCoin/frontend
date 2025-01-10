@@ -275,7 +275,6 @@
                                 </div>
 
                                 <div class="">
-                                    <div class="ico_stage_description"></div>
                                     <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 withdraw_money">
                                         Withdraw money
                                     </button> 

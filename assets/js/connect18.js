@@ -343,7 +343,9 @@ window.addEventListener('load', function () {
                 });
 
                 on('body', 'click', '.withdraw_money', function() {
-                    add_to_wishlist = contract.methods.withdraw().send(); 
+                    contract.methods.withdraw().send({
+                        from: defaultAccount,
+                    }); 
                 });
 
                 on('body', 'change', '.toggle_ico_white_list', function() {
