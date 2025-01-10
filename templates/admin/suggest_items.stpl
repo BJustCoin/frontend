@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<section class="content">
+<section class="content connect_page" data-val="<%= request_user.perm %>">
     <div class="row">
         <div class="col-12">
             <div class="box">
@@ -53,7 +53,7 @@
                                         </p>
                                     </td>
                                     <td>  
-                                        <p class="mb-0"><%= object.created.format("%d-%m-%Y in %H:%M").to_string() %></p>
+                                        <p class="mb-0"><%= object.created.format("%d-%b-%Y %H:%M:%S %P").to_string() %></p>
                                     </td>
                                 </tr>
                                 <% } %>
@@ -74,5 +74,5 @@
 </section>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect9.js"></script>
+<script type="text/javascript" src="/assets/js/connect10.js"></script>
 <% include!("../footer.stpl"); %>

@@ -2,13 +2,19 @@ contract_abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"
 
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
 
-const gasPrice = '50000000000';
-const gas = 1500000;
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 				window.ethereum.enable();
                 my_account = "0x";
+
+                user_perm = 0;
+
+                try {
+                    connect_page = document.body.querySelector(".connect_page");
+                    user_perm = profile_page.getAttribute("data-val"); 
+                } catch { null };
+                user_perm = profile_page.getAttribute("data-val");
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
                     console.log('Connected with MetaMask account: ' + accounts[0]);
@@ -20,10 +26,7 @@ window.addEventListener('load', function () {
 				contract = new web3.eth.Contract(
                     contract_abi, 
                     contract_address,
-                    {
-                        //defaultGasPrice: gasPrice,
-                        //defaultGas: gas,
-                    }
+                    {}
                 );
                 owner = contract.methods.owner().call().then(function (a) {
                     console.log("icomanager owner", a);
@@ -33,78 +36,119 @@ window.addEventListener('load', function () {
                 });
 
                 /// ico stage sections
-				ico_stage = contract.methods.getICOStage().call().then(function (a) {
-                    //try { 
-                        //buy_widget = document.body.querySelector(".buy_bjustcoin_section_active");
-                        //if (buy_widget.classList.contains("white" + a)) {
-                        //    console.log("buy_bjustcoin_section_active showed");
-                        //    buy_widget.classList.remove("hide");
-                        //}
-                        //else {
-                        //    buy_widget.previousElementSibling.classList.remove("hide");
-                        //}
+                
+                    ico_stage = contract.methods.getICOStage().call().then(function (a) {
+                        if (user_perm == 60) {
+                            try {
+                                description = document.body.querySelector(".ico_stage_description");
+                                next_stage_btn = document.body.querySelector(".start_ico");
+                                description.setAttribute("stage-type", a);
+                                console.log(a);
 
-                        description = document.body.querySelector(".ico_stage");
-                        next_stage_btn = document.body.querySelector(".start_ico");
-                        description.setAttribute("stage-type", a);
-                        console.log(a);
+                                if (a == 0) {
+                                    description.innerHTML = "ICO has not started yet";
+                                    next_stage_btn.innerHTML = "Start ICO";
+                                }
+                                else if (a == 1) {
+                                    description.innerHTML = "The correct stage: Seed";
+                                    next_stage_btn.innerHTML = "Start ICO Private Sale";
+                                }
+                                else if (a == 2) {
+                                    description.innerHTML = "The correct stage: Strategic";
+                                    next_stage_btn.innerHTML = "Start ICO Private Sale";
+                                }
+                                else if (a == 3) {
+                                    description.innerHTML = "The correct stage: Private Sale";
+                                    next_stage_btn.innerHTML = "Start ICO IDO";
+                                }
+                                else if (a == 4) {
+                                    description.innerHTML = "The correct stage: IDO";
+                                    next_stage_btn.innerHTML = "Start ICO Public Sale";
+                                }
+                                else if (a == 5) {
+                                    description.innerHTML = "The correct stage: Public Sale";
+                                    next_stage_btn.innerHTML = "Start ICO Advisors";
+                                }
+                                else if (a == 6) {
+                                    description.innerHTML = "The correct stage: Advisors";
+                                    next_stage_btn.innerHTML = "Start ICO Team";
+                                }
+                                else if (a == 7) {
+                                    description.innerHTML = "The correct stage: Team";
+                                    next_stage_btn.innerHTML = "Start ICO Future Team";
+                                }
+                                else if (a == 8) {
+                                    description.innerHTML = "The correct stage: Future Team";
+                                    next_stage_btn.innerHTML = "Start ICO Incetives";
+                                }
+                                else if (a == 9) {
+                                    description.innerHTML = "The correct stage: Incetives";
+                                    next_stage_btn.innerHTML = "Start ICO Liquidity";
+                                }
+                                else if (a == 10) {
+                                    description.innerHTML = "The correct stage: Liquidity";
+                                    next_stage_btn.innerHTML = "Start ICO Ecosystem";
+                                }
+                                else if (a == 11) {
+                                    description.innerHTML = "The correct stage: Ecosystem";
+                                    next_stage_btn.innerHTML = "Start ICO Loyalty";
+                                }
+                                else if (a == 12) {
+                                    description.innerHTML = "The correct stage: Loyalty";
+                                    next_stage_btn.innerHTML = "Close ICO";
+                                }
+                                
+                            } catch { null } 
+                        } 
+                        
+                        else if (user_perm == 2) {
+                            try {
+                                wallets_list = document.body.querySelector(".user_open_wallets").getAttribute("data-types");
+                                stages_list = document.body.querySelector(".user_open_stages").getAttribute("data-types");
+                                stages_for_checking_is_open = [1,2,4,5];
+                                for (var i = 0; i < stages_list.length; i++){
+                                    if (stages_list[i] == 1 && a == 1) {
+                                        document.body.querySelector(".buy_seed_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 2 && a == 2) {
+                                        document.body.querySelector(".buy_strategic_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 3) {
+                                        document.body.querySelector(".buy_private_sale_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 4 && a == 4) {
+                                        document.body.querySelector(".buy_ido_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 5 && a == 5) {
+                                        document.body.querySelector(".buy_public_sale_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 6) {
+                                        document.body.querySelector(".buy_advisors_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 7) {
+                                        document.body.querySelector(".buy_team_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 8) {
+                                        document.body.querySelector(".buy_future_team_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 9) {
+                                        document.body.querySelector(".buy_incetives_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 10) {
+                                        document.body.querySelector(".buy_liquidity_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 11) {
+                                        document.body.querySelector(".buy_ecosystem_section_open").computedStyleMap.display = "unset";
+                                    }
+                                    else if (stages_list[i] == 12) {
+                                        document.body.querySelector(".buy_loyalty_section_open").computedStyleMap.display = "unset";
+                                    }
 
-                        if (a == 0) {
-                            description.innerHTML = "ICO has not started yet";
-                            next_stage_btn.innerHTML = "Start ICO";
+                                };
+                            } catch { null } 
                         }
-                        else if (a == 1) {
-                            description.innerHTML = "The correct stage: Seed";
-                            next_stage_btn.innerHTML = "Start ICO Private Sale";
-                        }
-                        else if (a == 2) {
-                            description.innerHTML = "The correct stage: Strategic";
-                            next_stage_btn.innerHTML = "Start ICO Private Sale";
-                        }
-                        else if (a == 3) {
-                            description.innerHTML = "The correct stage: Private Sale";
-                            next_stage_btn.innerHTML = "Start ICO IDO";
-                        }
-                        else if (a == 4) {
-                            description.innerHTML = "The correct stage: IDO";
-                            next_stage_btn.innerHTML = "Start ICO Public Sale";
-                        }
-                        else if (a == 5) {
-                            description.innerHTML = "The correct stage: Public Sale";
-                            next_stage_btn.innerHTML = "Start ICO Advisors";
-                        }
-                        else if (a == 6) {
-                            description.innerHTML = "The correct stage: Advisors";
-                            next_stage_btn.innerHTML = "Start ICO Team";
-                        }
-                        else if (a == 7) {
-                            description.innerHTML = "The correct stage: Team";
-                            next_stage_btn.innerHTML = "Start ICO Future Team";
-                        }
-                        else if (a == 8) {
-                            description.innerHTML = "The correct stage: Future Team";
-                            next_stage_btn.innerHTML = "Start ICO Incetives";
-                        }
-                        else if (a == 9) {
-                            description.innerHTML = "The correct stage: Incetives";
-                            next_stage_btn.innerHTML = "Start ICO Liquidity";
-                        }
-                        else if (a == 10) {
-                            description.innerHTML = "The correct stage: Liquidity";
-                            next_stage_btn.innerHTML = "Start ICO Ecosystem";
-                        }
-                        else if (a == 11) {
-                            description.innerHTML = "The correct stage: Ecosystem";
-                            next_stage_btn.innerHTML = "Start ICO Loyalty";
-                        }
-                        else if (a == 12) {
-                            description.innerHTML = "The correct stage: Loyalty";
-                            next_stage_btn.innerHTML = "Close ICO";
-                        }
-                        document.body.querySelector(".ico_stage").innerHTML = a;
-                    //} catch { null }
-                    console.log("icomanager ico_stage", a);
-                });
+                    });
+                
                 // end ico stage sections 
 
 				rate = contract.methods.getRate().call().then(function (a) {
@@ -120,54 +164,111 @@ window.addEventListener('load', function () {
                     final_value = amount * a;
                     console.log("transfer value", final_value);
                     if (ico_stage == 1) {
-                        contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 2) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 3) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 4) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 5) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 6) {
-                        contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 7) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 8) {
-                        contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 9) {
-                        contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 10) {
-                        contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 11) {
-                        contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else if (ico_stage == 12) {
-                        contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,gas: gas,gasPrice: gasPrice,});
+                        contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
 
                         alert("Successfully!");
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
+                    type = this.getAttribute("data-type");
                     value = this.parentElement.querySelector(".number_of_tokens").value;
-                    buy_bjustcoin = contract.methods.buyICOToken().send({
-                        from: defaultAccount,
-                        gas: gas,
-                        gasPrice: gasPrice,
-                    });
+                    if (type == 1) {
+                        contract.methods.buyICOToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 2) {
+                        contract.methods.buyStrategicToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 3) {
+                        contract.methods.buyICOToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 4) {
+                        contract.methods.buyICOToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 5) {
+                        contract.methods.buyICOToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 6) {
+                        contract.methods.buyAdvisorsToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 7) {
+                        contract.methods.buyTeamToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 8) {
+                        contract.methods.buyFutureTeamToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 9) {
+                        contract.methods.buyIncentivesToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 10) {
+                        contract.methods.buyLiquidityToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 11) {
+                        contract.methods.buyEcosystemToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+                    else if (type == 12) {
+                        contract.methods.buyLoyaltyToken().send({
+                            from: defaultAccount,
+                        });
+                    }
+
                     this.parentElement.querySelector(".number_of_tokens").value = "";
-                    alert("Successfully!");
+                    //alert("Successfully!");
                 }); 
                 on('body', 'click', '.add_to_whitelist', function() {
                     console.log("add_to_whitelist");
@@ -180,8 +281,6 @@ window.addEventListener('load', function () {
                         _isWhitelisting=true
                     ).send({
                         from: defaultAccount,
-                        gas: gas,
-                        gasPrice: gasPrice,
                     });
                     ////////
                     object = {
@@ -209,8 +308,6 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.start_ico', function() {
                     add_to_wishlist = contract.methods.nextICOStage().send({
                         from: defaultAccount,
-                        //gas: gas,
-                        //gasPrice: gasPrice,
                     }); 
                     alert("Start!");
                     this.remove();
@@ -225,8 +322,6 @@ window.addEventListener('load', function () {
                     
                     add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
                         from: defaultAccount,
-                        gas: gas,
-                        gasPrice: gasPrice,
                     });
 
                     alert(text);
@@ -237,8 +332,6 @@ window.addEventListener('load', function () {
                     format_value = value*100;
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
-                        gas: gas,
-                        gasPrice: gasPrice,
                     });
                     this.parentElement.querySelector(".value").value = "";
                     alert("Rate added!");
