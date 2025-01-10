@@ -50,51 +50,51 @@ window.addEventListener('load', function () {
                                     next_stage_btn.innerHTML = "Start ICO";
                                 }
                                 else if (a == 1) {
-                                    description.innerHTML = "The correct stage: Seed";
+                                    description.innerHTML = "Stage: Seed";
                                     next_stage_btn.innerHTML = "Start ICO Private Sale";
                                 }
                                 else if (a == 2) {
-                                    description.innerHTML = "The correct stage: Strategic";
+                                    description.innerHTML = "Stage: Strategic";
                                     next_stage_btn.innerHTML = "Start ICO Private Sale";
                                 }
                                 else if (a == 3) {
-                                    description.innerHTML = "The correct stage: Private Sale";
+                                    description.innerHTML = "Stage: Private Sale";
                                     next_stage_btn.innerHTML = "Start ICO IDO";
                                 }
                                 else if (a == 4) {
-                                    description.innerHTML = "The correct stage: IDO";
+                                    description.innerHTML = "Stage: IDO";
                                     next_stage_btn.innerHTML = "Start ICO Public Sale";
                                 }
                                 else if (a == 5) {
-                                    description.innerHTML = "The correct stage: Public Sale";
+                                    description.innerHTML = "Stage: Public Sale";
                                     next_stage_btn.innerHTML = "Start ICO Advisors";
                                 }
                                 else if (a == 6) {
-                                    description.innerHTML = "The correct stage: Advisors";
+                                    description.innerHTML = "Stage: Advisors";
                                     next_stage_btn.innerHTML = "Start ICO Team";
                                 }
                                 else if (a == 7) {
-                                    description.innerHTML = "The correct stage: Team";
+                                    description.innerHTML = "Stage: Team";
                                     next_stage_btn.innerHTML = "Start ICO Future Team";
                                 }
                                 else if (a == 8) {
-                                    description.innerHTML = "The correct stage: Future Team";
+                                    description.innerHTML = "Stage: Future Team";
                                     next_stage_btn.innerHTML = "Start ICO Incetives";
                                 }
                                 else if (a == 9) {
-                                    description.innerHTML = "The correct stage: Incetives";
+                                    description.innerHTML = "Stage: Incetives";
                                     next_stage_btn.innerHTML = "Start ICO Liquidity";
                                 }
                                 else if (a == 10) {
-                                    description.innerHTML = "The correct stage: Liquidity";
+                                    description.innerHTML = "Stage: Liquidity";
                                     next_stage_btn.innerHTML = "Start ICO Ecosystem";
                                 }
                                 else if (a == 11) {
-                                    description.innerHTML = "The correct stage: Ecosystem";
+                                    description.innerHTML = "Stage: Ecosystem";
                                     next_stage_btn.innerHTML = "Start ICO Loyalty";
                                 }
                                 else if (a == 12) {
-                                    description.innerHTML = "The correct stage: Loyalty";
+                                    description.innerHTML = "Stage: Loyalty";
                                     next_stage_btn.innerHTML = "Close ICO";
                                 }
                                 
