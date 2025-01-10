@@ -92,7 +92,7 @@
 			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
 		</div>
 	</div> 
-<button type="button" data-type="1" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
+<button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
 
 <div class="col-12 buy_strategic_section_open" style="display:none">
 	<div class="buy-input-block-content">
@@ -100,7 +100,7 @@
 			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
 		</div>
 	</div> 
-<button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
+<button type="button" data-type="1" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
 
 <div class="col-12 buy_private_sale_section_open" style="display:none">
 	<div class="buy-input-block-content">
