@@ -205,10 +205,14 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
                     type = this.getAttribute("data-type");
-                    value = this.parentElement.querySelector(".number_of_tokens").value;
+                    amount = this.parentElement.querySelector(".number_of_tokens").value;
+                    /a = 10 ** 18;
+                    //final_value = amount * a;
+                    console.log("ico stage", type);
                     if (type == 1) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
+                            value: amount,
                         });
                     }
                     else if (type == 2) {
