@@ -305,8 +305,8 @@ window.addEventListener('load', function () {
                     val = ico_stage - 1;
                     console.log("current ico stage for white_list", val);
                     add_to_wishlist = contract.methods.whitelist(
-                        _address=address, 
-                        _tokenomicType=ico_stage,
+                        _address=address,
+                        _tokenomicType=val,
                         _isWhitelisting=true
                     ).send({
                         from: defaultAccount,
