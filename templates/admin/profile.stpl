@@ -74,8 +74,8 @@
                                     
                                     <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 
-<span class="user_open_stages" style="display:none" data-types="[<%= for i in request_user.white_list.iter() { %><%=i.token_type %>,<% } %>]"></span>
-<span class="user_open_wallets" style="display:none" data-types="[<%= for i in <%= request_user.wallets.iter() { %><%=i.link %>,<% } %>]"></span>
+<span class="user_open_stages" style="display:none" data-types="[<% for i in request_user.white_list.iter() { %><%=i.token_type %>,<% } %>]"></span>
+<span class="user_open_wallets" style="display:none" data-types="[<% for i in <%= request_user.wallets.iter() { %><%=i.link %>,<% } %>]"></span>
                                 
 <span class="buy_bjustcoin_section_default" style="display:none">
     <div>
