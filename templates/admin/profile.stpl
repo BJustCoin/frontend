@@ -86,7 +86,7 @@
 </span>
 
 						
-<div class="col-12 buy_seed_section_open" style="display:none">
+<div class="col-12 buy_seed_section_open">
 	<div class="buy-input-block-content">
 		<div class="form-group">
 			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
