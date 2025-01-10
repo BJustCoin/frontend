@@ -12,9 +12,9 @@ window.addEventListener('load', function () {
 
                 try {
                     connect_page = document.body.querySelector(".connect_page");
-                    user_perm = profile_page.getAttribute("data-val"); 
+                    user_perm = connect_page.getAttribute("data-val"); 
                 } catch { null };
-                user_perm = profile_page.getAttribute("data-val");
+                user_perm = connect_page.getAttribute("data-val");
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
                     console.log('Connected with MetaMask account: ' + accounts[0]);
