@@ -74,5 +74,5 @@
 </section>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect14.js"></script>
+<script type="text/javascript" src="/assets/js/connect15.js"></script>
 <% include!("../footer.stpl"); %>

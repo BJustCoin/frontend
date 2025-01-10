@@ -209,66 +209,88 @@ window.addEventListener('load', function () {
                     a = 10 ** 18;
                     final_value = amount * a;
                     console.log("ico stage", type);
-                    if (type == 1) { 
-                        contract.methods.buyICOToken().send({
+                    if (type == 1) {
+                        contract.methods.buyStrategicToken().send({
                             from: defaultAccount,
                             value: final_value,
                             gasLimit: 310000,
                         });
                     }
                     else if (type == 2) {
-                        contract.methods.buyStrategicToken().send({
-                            from: defaultAccount,
+                        contract.methods.buyICOToken().send({
+                           from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 3) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 4) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 5) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 6) {
                         contract.methods.buyAdvisorsToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 7) {
                         contract.methods.buyTeamToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 8) {
                         contract.methods.buyFutureTeamToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 9) {
                         contract.methods.buyIncentivesToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 10) {
                         contract.methods.buyLiquidityToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 11) {
                         contract.methods.buyEcosystemToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
                     else if (type == 12) {
                         contract.methods.buyLoyaltyToken().send({
                             from: defaultAccount,
+                            value: final_value,
+                            gasLimit: 310000,
                         });
                     }
 
@@ -279,7 +301,9 @@ window.addEventListener('load', function () {
                     console.log("add_to_whitelist");
                     address = this.parentElement.querySelector(".address").value;
                     user_id = this.parentElement.querySelector(".user_id").value;
-                    ico_stage = this.parentElement.querySelector(".ico_stage").value;
+                    ico_stage = this.parentElement.querySelector(".ico_stage").value*1;
+                    val = ico_stage - 1;
+                    console.log("current ico stage for white_list", val);
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address, 
                         _tokenomicType=ico_stage,
