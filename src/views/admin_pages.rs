@@ -439,9 +439,9 @@ pub struct SendMailJson {
 }
 pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = ItemId {
-            id: data.id,
-        };
+        //let l_data = ItemId {
+        //    id: data.id,
+        //};
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<SendMailJson, ()> (
             URL.to_owned() + &"/send_mail/".to_string(),
