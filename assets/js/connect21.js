@@ -444,6 +444,7 @@ window.addEventListener('load', function () {
                     value = this.parentElement.querySelector(".value").value;
                     a = 10 ** 8;
                     format_value = value*a;
+                    console.log("format_value ", format_value);
 
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
