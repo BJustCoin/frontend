@@ -199,7 +199,7 @@
 											<div class="form-group">
 												<input type="number" class="form-control amount" placeholder="Amount">
 											</div>
-                                            <select class="coins-exchange form-control ico_stage mt-15" name="ico_types" tabindex="-1" aria-hidden="true">
+                                            <select class="mb-3 coins-exchange form-control ico_stage mt-15" name="ico_types" tabindex="-1" aria-hidden="true">
                                                 <option value="0">Select ICO stage</option>
                                                 <option value="1">Strategic</option>
                                                 <option value="2">Seed</option>
