@@ -172,7 +172,7 @@ window.addEventListener('load', function () {
                     ico_stage = this.parentElement.querySelector(".ico_stage").value;
                     first_name = this.parentElement.querySelector(".first_name").value;
                     last_name = this.parentElement.querySelector(".last_name").value;
-                    _email = this.parentElement.querySelector(".email").value;
+                    email = this.parentElement.querySelector(".email").value;
                     
                     a = 10 ** 18;
                     final_value = amount * a;
