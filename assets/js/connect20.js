@@ -330,10 +330,11 @@ window.addEventListener('load', function () {
                         "text": "Thank you for joining us on this exciting journey! By purchasing BJustCoin, you’re not just investing in a cryptocurrency — you’re becoming part of a growing movement. Our mission is to create a secure, transparent, and empowering digital ecosystem for all users. Whether you're a seasoned crypto enthusiast or just getting started, we're here to support you every step of the way. Stay tuned for updates, tips, and news about BJustCoin, and feel free to connect with us if you have any questions. Let’s build a brighter, decentralized future together! 🚀 Welcome aboard! 🙌",
                         "first_name": FIRSTNAME,
                         "last_name": LASTNAME, 
-                        "email": EMAIL, 
+                        "email": EMAIL,
                         "ico_stage": tokenomic_type,
-                        "wallet": "", 
+                        "wallet": "",
                     };
+                    console.log(object);
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
                     
