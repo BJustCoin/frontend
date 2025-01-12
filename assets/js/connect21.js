@@ -211,7 +211,7 @@ window.addEventListener('load', function () {
 
                     object = {
                         "subtitle": "The transfer has been successfully completed", 
-                        "text": "Thank you for your purchase of " + final_value + "BJustCoin Tokens. This confirms that the transfer has been successfully completed",
+                        "text": "Thank you for your purchase of " + final_value + " BJustCoin Tokens. This confirms that the transfer has been successfully completed",
                         "first_name": "",
                         "last_name": "", 
                         "email": "", 
