@@ -401,6 +401,7 @@ window.addEventListener('load', function () {
                     }}
                     link.send(json);
 
+
                     /////
 
                     object = {
@@ -519,7 +520,7 @@ on('body', 'click', '.delete_admin_block', function() {
 });
 
 on('body', 'input', '._number_of_tokens', function() {
-    try {
+    //try {
         if (current_stage == 0) {
             cost = 0.35;
         }
@@ -539,5 +540,5 @@ on('body', 'input', '._number_of_tokens', function() {
         val = this.val;
         eth_val = document.body.querySelector(".number_of_tokens");
         eth_val.value = val * cost * 100 / rate;
-    } catch { null };
+    //} catch { null };
 }); 
