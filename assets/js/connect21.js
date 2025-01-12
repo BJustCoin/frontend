@@ -39,7 +39,6 @@ window.addEventListener('load', function () {
                 });
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
-                    tokenomic_type = a;
                 });
 
                 /// ico stage sections
@@ -160,7 +159,7 @@ window.addEventListener('load', function () {
 
 				rate = contract.methods.getRate().call().then(function (a) {
                     console.log("icomanager rate", a);
-                }); 
+                });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
                     console.log("transfer_bjustcoin");
@@ -207,16 +206,16 @@ window.addEventListener('load', function () {
                         contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
                     else {
-                        return;
+                        return; 
                     }
 
                     object = {
-                        "subtitle": "Your application for the purchase of BJustCoin has been approved", 
-                        "text": "Your application for the purchase of BJustCoin has been approved",
+                        "subtitle": "The transfer has been successfully completed", 
+                        "text": "Thank you for your purchase of " + final_value + "BJustCoin Tokens. This confirms that the transfer has been successfully completed",
                         "first_name": "",
                         "last_name": "", 
                         "email": "", 
-                        "ico_stage": tokenomic_type,
+                        "ico_stage": ico_stage,
                         "wallet": address,
                     };
                     json = JSON.stringify(object);
@@ -331,7 +330,7 @@ window.addEventListener('load', function () {
                         "first_name": FIRSTNAME,
                         "last_name": LASTNAME, 
                         "email": EMAIL,
-                        "ico_stage": tokenomic_type,
+                        "ico_stage": type,
                         "wallet": "",
                     };
                     console.log(object);
@@ -390,7 +389,7 @@ window.addEventListener('load', function () {
                         "first_name": "",
                         "last_name": "", 
                         "email": "", 
-                        "ico_stage": tokenomic_type,
+                        "ico_stage": ico_stage*1,
                         "wallet": wallet, 
                     };
                     json = JSON.stringify(object);
@@ -443,7 +442,7 @@ window.addEventListener('load', function () {
                 on('body', 'click', '.set_bjustcoin_rate', function() {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
-                    a = 10 ** 6;
+                    a = 10 ** 8;
                     format_value = value*a;
 
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
