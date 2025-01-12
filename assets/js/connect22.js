@@ -539,6 +539,9 @@ on('body', 'input', '._number_of_tokens', function() {
         rate = current_rate;
         val = this.val;
         eth_val = document.body.querySelector(".number_of_tokens");
+        console.log("val", val);
+        console.log("cost", cost);
+        console.log("rate", rate);
         eth_val.value = val * cost * 100 / rate;
     //} catch { null };
 }); 
