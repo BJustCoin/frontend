@@ -537,7 +537,7 @@ on('body', 'input', '._number_of_tokens', function() {
             cost = 0.75;
         }
         rate = current_rate;
-        val = this.val;
+        val = this.value;
         eth_val = document.body.querySelector(".number_of_tokens");
         console.log("val", val);
         console.log("cost", cost);
