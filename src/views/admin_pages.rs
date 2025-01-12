@@ -436,6 +436,7 @@ pub struct SendMailJson {
     pub email:      String,
     pub id:         i32,
     pub ico_stage:  i16,
+    pub wallet:     String,
 }
 pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
