@@ -162,7 +162,7 @@ window.addEventListener('load', function () {
 
 				rate = contract.methods.getRate().call().then(function (a) {
                     console.log("icomanager rate", a);
-                    current_rate = a;
+                    current_rate = Number(a);
                 });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
