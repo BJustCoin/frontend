@@ -89,7 +89,7 @@
 <div class="col-12 buy_seed_section_open">
 	<div class="buy-input-block-content">
 		<div class="form-group">
-			<input type="text" class="form-control _number_of_tokens" placeholder="Number of BJustCoin tokens">
+			<input type="text" class="form-control _number_of_tokens" placeholder="Enter number of BJustCoin tokens (BJC)">
 		</div>
         <div class="form-group">
 			<input type="text" class="form-control number_of_tokens" placeholder="ETH">
