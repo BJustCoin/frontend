@@ -215,7 +215,7 @@ window.addEventListener('load', function () {
                         "first_name": "",
                         "last_name": "", 
                         "email": "", 
-                        "ico_stage": ico_stage,
+                        "ico_stage": ico_stage*1,
                         "wallet": address,
                     };
                     json = JSON.stringify(object);
@@ -390,7 +390,7 @@ window.addEventListener('load', function () {
                         "last_name": "", 
                         "email": "", 
                         "ico_stage": ico_stage*1,
-                        "wallet": wallet, 
+                        "wallet": address, 
                     };
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
