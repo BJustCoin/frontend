@@ -179,54 +179,39 @@ window.addEventListener('load', function () {
                     console.log("transfer value", final_value);
                     if (ico_stage == 1) {
                         contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.35;
                     }
                     else if (ico_stage == 2) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.45;
                     }
                     else if (ico_stage == 3) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.45;
                     }
                     else if (ico_stage == 4) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.55;
                     }
                     else if (ico_stage == 5) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.65;
                     }
                     else if (ico_stage == 6) {
                         contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 7) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 8) {
                         contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 9) {
                         contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 10) {
                         contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 11) {
                         contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
                     }
                     else if (ico_stage == 12) {
                         contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        cost = 0.75;
-                    }
-                    else {
-                        return; 
                     }
 
                     object = {
