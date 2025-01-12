@@ -439,7 +439,7 @@ pub struct SendMailJson {
 }
 pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = ItemId {
+        let l_data = SendMailJson {
             subtitle: data.subtitle.clone(),
             text: data.text.clone(),
             first_name: data.first_name.clone(),
