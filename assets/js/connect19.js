@@ -7,14 +7,13 @@ const FIRSTNAME = get_user_info.getAttribute("first-name");
 const LASTNAME = get_user_info.getAttribute("last-name");
 const EMAIL = get_user_info.getAttribute("email");
 const ID = get_user_info.getAttribute("id");
-
-
+tokenomic_type = 0;
+ 
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 				window.ethereum.enable();
                 my_account = "0x";
-
                 user_perm = 0;
 
                 try {
@@ -40,6 +39,7 @@ window.addEventListener('load', function () {
                 });
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
+                    tokenomic_type = a;
                 });
 
                 /// ico stage sections
@@ -301,6 +301,27 @@ window.addEventListener('load', function () {
                         });
                     }
 
+                    object = {
+                        "subtitle": "Welcome to the BJustCoin community! 🎉", 
+                        "text": "Thank you for joining us on this exciting journey! By purchasing BJustCoin, you’re not just investing in a cryptocurrency — you’re becoming part of a growing movement. Our mission is to create a secure, transparent, and empowering digital ecosystem for all users. Whether you're a seasoned crypto enthusiast or just getting started, we're here to support you every step of the way. Stay tuned for updates, tips, and news about BJustCoin, and feel free to connect with us if you have any questions. Let’s build a brighter, decentralized future together! 🚀 Welcome aboard! 🙌",
+                        "first_name": FIRSTNAME,
+                        "last_name": LASTNAME, 
+                        "email": EMAIL, 
+                        "ico_stage": tokenomic_type,
+                        "wallet": "", 
+                    };
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/send_mail/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("email send!!");
+                    }}
+                    link.send(json);
+
                     this.parentElement.querySelector(".number_of_tokens").value = "";
                     //alert("Successfully!");
                 }); 
@@ -335,7 +356,32 @@ window.addEventListener('load', function () {
                         console.log("add_to_whitelist send!!");
                     }}
                     link.send(json);
+
                     /////
+
+                    object = {
+                        "subtitle": "Your application for the purchase of BJustCoin has been approved", 
+                        "text": "Your application for the purchase of BJustCoin has been approved",
+                        "first_name": "",
+                        "last_name": "", 
+                        "email": "", 
+                        "ico_stage": tokenomic_type,
+                        "wallet": wallet, 
+                    };
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/send_mail/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("email send!!");
+                    }}
+                    link.send(json);
+                    
+                    ////
+
                     this.parentElement.querySelector(".address").value = "";
                     this.parentElement.querySelector(".user_id").value = "";
 

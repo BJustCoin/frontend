@@ -434,7 +434,6 @@ pub struct SendMailJson {
     pub first_name: String,
     pub last_name:  String,
     pub email:      String,
-    pub id:         i32,
     pub ico_stage:  i16,
     pub wallet:     String,
 }
