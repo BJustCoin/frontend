@@ -68,6 +68,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/create_white_list/", web::post().to(create_white_list));
     config.route("/delete_white_list/", web::post().to(delete_white_list));
     config.route("/create_suggest_item/", web::post().to(create_suggest_item));
+    config.route("/send_mail/", web::post().to(send_mail));
 }
 
 pub async fn create_suggest_item_page(session: Session) -> actix_web::Result<HttpResponse> {
@@ -425,6 +426,36 @@ pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> acti
     }
 }
 
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct SendMailJson {
+    pub subtitle:   String,
+    pub text:       String,
+    pub first_name: String,
+    pub last_name:  String,
+    pub email:      String,
+    pub id:         i32,
+    pub ico_stage:  i16,
+}
+pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: data.id,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<SendMailJson, ()> (
+            URL.to_owned() + &"/send_mail/".to_string(),
+            &data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct ItemId {

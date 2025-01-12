@@ -41,13 +41,21 @@
 				<a href="#" data-provide="fullscreen" class="waves-effect waves-light full-screen btn-warning-light" title="Full Screen">
 					<i data-feather="maximize"></i>
 			    </a>
-			</li>
+			</li> 
           <li class="dropdown user user-menu"> 
             <a href="#" class="waves-effect waves-light dropdown-toggle w-auto l-h-12 bg-transparent py-0 no-shadow" data-bs-toggle="dropdown" title="User">
 				<div class="d-flex pt-5">
 					<div class="text-end me-10">
 						<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Hello</p>
-						<small class="fs-10 mb-0 text-uppercase text-mute"><%= request_user.first_name %> <%= request_user.last_name %></small>
+						<small 
+							class="get_user_info fs-10 mb-0 text-uppercase text-mute"
+							first-name="<%= request_user.first_name %>"
+							last-name="<%= request_user.last_name %>"
+							email="<%= request_user.email %>"
+							id="<%= request_user.id %>"
+						>
+							<%= request_user.first_name %> <%= request_user.last_name %>
+						</small>
 					</div>
 				</div>
             </a>

@@ -2,6 +2,13 @@ contract_abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"
 
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
 
+get_user_info = document.body.querySelector(".get_user_info");
+const FIRSTNAME = get_user_info.getAttribute("first-name");
+const LASTNAME = get_user_info.getAttribute("last-name");
+const EMAIL = get_user_info.getAttribute("email");
+const ID = get_user_info.getAttribute("id");
+
+
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
@@ -361,16 +368,17 @@ window.addEventListener('load', function () {
                     });
 
                     alert(text);
-                });
+                })
                 on('body', 'click', '.set_bjustcoin_rate', function() {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
-                    format_value = value*100;
+                    a = 10 ** 6;
+                    format_value = value*a;
+
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
                     });
                     this.parentElement.querySelector(".value").value = "";
-                    alert("Rate added!");
                 }); 
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');

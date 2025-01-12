@@ -92,7 +92,7 @@
 			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
 		</div> 
 	</div> 
-<button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
+<button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Seed Tokens</button>
 
 <div class="col-12 buy_strategic_section_open" style="display:none">
 	<div class="buy-input-block-content">
@@ -278,7 +278,7 @@
                                     <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 withdraw_money">
                                         Withdraw money
                                     </button> 
-                                </div>
+                                </div> 
 
                                 <% } else if request_user.perm == 1 { %>
                                 <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
