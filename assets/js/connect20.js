@@ -206,8 +206,32 @@ window.addEventListener('load', function () {
                     else if (ico_stage == 12) {
                         contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
                     }
+                    else {
+                        return;
+                    }
 
-                        alert("Successfully!");
+                    object = {
+                        "subtitle": "Your application for the purchase of BJustCoin has been approved", 
+                        "text": "Your application for the purchase of BJustCoin has been approved",
+                        "first_name": "",
+                        "last_name": "", 
+                        "email": "", 
+                        "ico_stage": tokenomic_type,
+                        "wallet": address,
+                    };
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/send_mail/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("email send!!");
+                    }}
+                    link.send(json);
+
+                    alert("Successfully!");
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");

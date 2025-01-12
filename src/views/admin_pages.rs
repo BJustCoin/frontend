@@ -447,12 +447,11 @@ pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web:
             email: data.email.clone(),
             ico_stage: data.ico_stage,
             wallet: data.wallet.clone(),
-            
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<SendMailJson, ()> (
             URL.to_owned() + &"/send_mail/".to_string(),
-            &l_data, 
+            &l_data,
             _request_user.uuid
         ).await;
 
