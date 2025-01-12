@@ -236,7 +236,7 @@ window.addEventListener('load', function () {
                     console.log("buy_bjustcoin");
                     type = this.getAttribute("data-type");
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
-                    a = 10 ** 18;
+                    a = 10 ** 18; 
                     final_value = amount * a;
                     console.log("ico stage", type);
                     if (type == 1) {
@@ -330,7 +330,7 @@ window.addEventListener('load', function () {
                         "first_name": FIRSTNAME,
                         "last_name": LASTNAME, 
                         "email": EMAIL,
-                        "ico_stage": type,
+                        "ico_stage": type*1,
                         "wallet": "",
                     };
                     console.log(object);
