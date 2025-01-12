@@ -89,7 +89,10 @@
 <div class="col-12 buy_seed_section_open">
 	<div class="buy-input-block-content">
 		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
+			<input type="text" class="form-control _number_of_tokens" placeholder="Number of BJustCoin tokens">
+		</div>
+        <div class="form-group">
+			<input type="text" class="form-control number_of_tokens" placeholder="ETH">
 		</div> 
 	</div> 
 <button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Seed Tokens</button>
@@ -210,7 +213,17 @@
                                                 <option value="10">Liquidity</option>
                                                 <option value="11">Ecosystem</option>
                                                 <option value="12">Loyalty</option>
-                                            </select>
+                                            </select> 
+
+                                            <div class="form-group">
+												<input type="text" class="form-control first_name" placeholder="User First Name">
+											</div>
+                                            <div class="form-group">
+												<input type="text" class="form-control last_name" placeholder="User Last Name">
+											</div>
+                                            <div class="form-group">
+												<input type="text" class="form-control email" placeholder="User Email">
+											</div>
 										</div>
 										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin">Transfer</button>
 									</div>									
@@ -301,7 +314,7 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect21.js"></script>
+<script type="text/javascript" src="/assets/js/connect22.js"></script>
 
 <% include!("../footer.stpl"); %>
 

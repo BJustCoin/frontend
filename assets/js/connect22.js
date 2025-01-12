@@ -7,7 +7,9 @@ const FIRSTNAME = get_user_info.getAttribute("first-name");
 const LASTNAME = get_user_info.getAttribute("last-name");
 const EMAIL = get_user_info.getAttribute("email");
 const ID = get_user_info.getAttribute("id");
+current_stage = 0;
 tokenomic_type = 0;
+current_rate = 0;
  
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
@@ -39,6 +41,7 @@ window.addEventListener('load', function () {
                 });
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
+                    current_stage = Number(a);
                 });
 
                 /// ico stage sections
@@ -159,6 +162,7 @@ window.addEventListener('load', function () {
 
 				rate = contract.methods.getRate().call().then(function (a) {
                     console.log("icomanager rate", a);
+                    current_rate = a;
                 });
 
                 on('body', 'click', '.transfer_bjustcoin', function() {
@@ -166,44 +170,60 @@ window.addEventListener('load', function () {
                     address = this.parentElement.querySelector(".address").value;
                     amount = this.parentElement.querySelector(".amount").value;
                     ico_stage = this.parentElement.querySelector(".ico_stage").value;
+                    first_name = this.parentElement.querySelector(".first_name").value;
+                    last_name = this.parentElement.querySelector(".last_name").value;
+                    _email = this.parentElement.querySelector(".email").value;
+                    
                     a = 10 ** 18;
                     final_value = amount * a;
                     console.log("transfer value", final_value);
                     if (ico_stage == 1) {
                         contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.35;
                     }
                     else if (ico_stage == 2) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.45;
                     }
                     else if (ico_stage == 3) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.45;
                     }
                     else if (ico_stage == 4) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.55;
                     }
                     else if (ico_stage == 5) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.65;
                     }
                     else if (ico_stage == 6) {
                         contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 7) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 8) {
                         contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 9) {
                         contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 10) {
                         contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 11) {
                         contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else if (ico_stage == 12) {
                         contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        cost = 0.75;
                     }
                     else {
                         return; 
@@ -212,11 +232,11 @@ window.addEventListener('load', function () {
                     object = {
                         "subtitle": "The transfer has been successfully completed", 
                         "text": "Thank you for your purchase of " + final_value + " BJustCoin Tokens. This confirms that the transfer has been successfully completed",
-                        "first_name": "",
-                        "last_name": "", 
-                        "email": "", 
+                        "first_name": first_name,
+                        "last_name": last_name, 
+                        "email": email, 
                         "ico_stage": ico_stage*1,
-                        "wallet": address,
+                        "wallet": "",
                     };
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
@@ -453,7 +473,7 @@ window.addEventListener('load', function () {
                 }); 
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
-			}
+			} 
 });
 
 function post_id(_this, url) {
@@ -497,3 +517,27 @@ on('body', 'click', '.delete_admin', function() {
 on('body', 'click', '.delete_admin_block', function() {
     post_id(this, "/unblock_admin/");
 });
+
+on('body', 'input', '._number_of_tokens', function() {
+    try {
+        if (current_stage == 0) {
+            cost = 0.35;
+        }
+        else if (current_stage == 1) {
+            cost = 0.45;
+        }
+        else if (current_stage == 2) {
+            cost = 0.55;
+        }
+        else if (current_stage == 3) {
+            cost = 0.65;
+        }
+        else {
+            cost = 0.75;
+        }
+        rate = current_rate;
+        val = this.val;
+        eth_val = document.body.querySelector(".number_of_tokens");
+        eth_val.value = val * cost * 100 / rate;
+    } catch { null };
+}); 
