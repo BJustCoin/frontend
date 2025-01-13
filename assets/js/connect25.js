@@ -268,6 +268,13 @@ window.addEventListener('load', function () {
                     link.send(json);
                     ///
                     alert("Successfully!");
+
+                    this.parentElement.querySelector(".address").value = "";
+                    this.parentElement.querySelector(".amount").value = "";
+                    this.parentElement.querySelector(".ico_stage").value = "0";
+                    this.parentElement.querySelector(".first_name").value = "";
+                    this.parentElement.querySelector(".last_name").value = "";
+                    this.parentElement.querySelector(".email").value = "";
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
