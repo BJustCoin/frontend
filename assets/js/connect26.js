@@ -280,7 +280,7 @@ window.addEventListener('load', function () {
                     console.log("buy_bjustcoin");
                     type = this.getAttribute("data-type");
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
-                    amount2 = this.parentElement.querySelector(".number_of_tokens").value;
+                    amount2 = this.parentElement.querySelector("._number_of_tokens").value;
                     a = 10 ** 18; 
                     final_value = amount * a;
                     console.log("ico stage", type);
