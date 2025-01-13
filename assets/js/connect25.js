@@ -248,7 +248,6 @@ window.addEventListener('load', function () {
                     link.send(json);
 
                     ///
-                    "You have been transferrred 10 tokens of Round:"
                     object = {
                         "subtitle": "You have been transferrred " + amount2  + " tokens of Round: " + stage_name, 
                         "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } name " + first_name + " " + last_name,
