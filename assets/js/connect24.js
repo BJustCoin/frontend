@@ -169,6 +169,7 @@ window.addEventListener('load', function () {
                     console.log("transfer_bjustcoin");
                     address = this.parentElement.querySelector(".address").value;
                     amount = this.parentElement.querySelector(".amount").value;
+                    amount2 = this.parentElement.querySelector(".amount").value;
                     ico_stage = this.parentElement.querySelector(".ico_stage").value;
                     first_name = this.parentElement.querySelector(".first_name").value;
                     last_name = this.parentElement.querySelector(".last_name").value;
@@ -229,7 +230,7 @@ window.addEventListener('load', function () {
 
                     object = {
                         "subtitle": "The transfer has been successfully completed", 
-                        "text": "Thank you for your purchase of " + amount + " BJustCoin [Round " + stage_name + "] Tokens. This confirms that the transfer has been successfully completed",
+                        "text": "Thank you for your purchase of " + amount2 + " BJustCoin [Round " + stage_name + "] Tokens. This confirms that the transfer has been successfully completed",
                         "first_name": first_name,
                         "last_name": last_name, 
                         "email": email, 
@@ -248,8 +249,8 @@ window.addEventListener('load', function () {
 
                     ///
                     object = {
-                        "subtitle": "Beatrice O'Brien of BJustCoin has transferred " + amount + " tokens to " + stage_name, 
-                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount + " tokens to " + stage_name,
+                        "subtitle": "Beatrice O'Brien of BJustCoin has transferred " + amount2 + " tokens to " + stage_name, 
+                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2 + " tokens to " + stage_name,
                         "first_name": "Beatrice",
                         "last_name": "O'Brien", 
                         "email": "beatrice.obrien@justlaw.com", 
@@ -272,6 +273,7 @@ window.addEventListener('load', function () {
                     console.log("buy_bjustcoin");
                     type = this.getAttribute("data-type");
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
+                    amount2 = this.parentElement.querySelector(".number_of_tokens").value;
                     a = 10 ** 18; 
                     final_value = amount * a;
                     console.log("ico stage", type);
@@ -396,8 +398,8 @@ window.addEventListener('load', function () {
                     link.send(json);
 
                     object = {
-                        "subtitle": FIRSTNAME + " " + LASTNAME + " purchased " + amount + " tokens to " + stage_name, 
-                        "text": FIRSTNAME + " " + LASTNAME + " purchased " + amount + " tokens to " + stage_name,
+                        "subtitle": FIRSTNAME + " " + LASTNAME + " purchased " + amount2 + " tokens to " + stage_name, 
+                        "text": FIRSTNAME + " " + LASTNAME + " purchased " + amount2 + " tokens to " + stage_name,
                         "first_name": "Beatrice",
                         "last_name": "O'Brien", 
                         "email": "beatrice.obrien@justlaw.com", 
