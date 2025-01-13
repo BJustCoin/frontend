@@ -248,10 +248,10 @@ window.addEventListener('load', function () {
                     link.send(json);
 
                     ///
-                    "Beatrice O'Brien of BJustCoin has transferred 100 tokens of {Round: Strategic} to {wallet address} and name"
+                    "You have been transferrred 10 tokens of Round:"
                     object = {
-                        "subtitle": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } and name " + first_name + " " + last_name, 
-                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } and name " + first_name + " " + last_name,
+                        "subtitle": "You have been transferrred " + amount2  + " tokens of Round: " + stage_name, 
+                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } name " + first_name + " " + last_name,
                         "first_name": "Beatrice",
                         "last_name": "O'Brien", 
                         "email": "beatrice.obrien@justlaw.com", 
