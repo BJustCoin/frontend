@@ -177,51 +177,62 @@ window.addEventListener('load', function () {
                     a = 10 ** 18;
                     final_value = amount * a;
                     console.log("transfer value", final_value);
+                    stage_name = "";
                     if (ico_stage == 1) {
                         contract.methods.transferStrategicToken(to=address, amount=final_value).send({from: defaultAccount,});
-                    }
+                        stage_name = "Strategic";
+                    } 
                     else if (ico_stage == 2) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Seed";
                     }
                     else if (ico_stage == 3) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Private Sale";
                     }
                     else if (ico_stage == 4) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "IDO";
                     }
                     else if (ico_stage == 5) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Public Sale";
                     }
                     else if (ico_stage == 6) {
                         contract.methods.transferAdvisorsToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Advisors";
                     }
                     else if (ico_stage == 7) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Team";
                     }
                     else if (ico_stage == 8) {
                         contract.methods.transferFutureTeamToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Future Team";
                     }
                     else if (ico_stage == 9) {
                         contract.methods.transferIncetivesToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Incetives";
                     }
                     else if (ico_stage == 10) {
                         contract.methods.transferLiquidityToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Liquidity";
                     }
                     else if (ico_stage == 11) {
                         contract.methods.transferEcosystemToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Ecosystem";
                     }
                     else if (ico_stage == 12) {
                         contract.methods.transferLoyaltyToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        stage_name = "Loyalty";
                     }
 
                     object = {
                         "subtitle": "The transfer has been successfully completed", 
-                        "text": "Thank you for your purchase of " + amount + " BJustCoin Tokens. This confirms that the transfer has been successfully completed",
+                        "text": "Thank you for your purchase of " + amount + " BJustCoin [Round " + stage_name + "] Tokens. This confirms that the transfer has been successfully completed",
                         "first_name": first_name,
                         "last_name": last_name, 
                         "email": email, 
-                        "ico_stage": ico_stage*1,
-                        "wallet": "",
                     };
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
@@ -235,6 +246,26 @@ window.addEventListener('load', function () {
                     }}
                     link.send(json);
 
+                    ///
+                    object = {
+                        "subtitle": "Beatrice O'Brien of BJustCoin has transferred " + amount + " tokens to " + stage_name, 
+                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount + " tokens to " + stage_name,
+                        "first_name": "Beatrice",
+                        "last_name": "O'Brien", 
+                        "email": "beatrice.obrien@justlaw.com", 
+                    }; 
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/send_mail/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("email send!!");
+                    }}
+                    link.send(json);
+                    ///
                     alert("Successfully!");
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
@@ -244,12 +275,15 @@ window.addEventListener('load', function () {
                     a = 10 ** 18; 
                     final_value = amount * a;
                     console.log("ico stage", type);
+                    stage_name = "";
+
                     if (type == 1) {
                         contract.methods.buyStrategicToken().send({
                             from: defaultAccount,
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Strategic";
                     }
                     else if (type == 2) {
                         contract.methods.buyICOToken().send({
@@ -257,6 +291,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Seed";
                     }
                     else if (type == 3) {
                         contract.methods.buyICOToken().send({
@@ -264,6 +299,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Private Sale";
                     }
                     else if (type == 4) {
                         contract.methods.buyICOToken().send({
@@ -271,6 +307,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "IDO";
                     }
                     else if (type == 5) {
                         contract.methods.buyICOToken().send({
@@ -278,6 +315,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Public Sale";
                     }
                     else if (type == 6) {
                         contract.methods.buyAdvisorsToken().send({
@@ -285,6 +323,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Advisors";
                     }
                     else if (type == 7) {
                         contract.methods.buyTeamToken().send({
@@ -292,6 +331,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Team";
                     }
                     else if (type == 8) {
                         contract.methods.buyFutureTeamToken().send({
@@ -299,6 +339,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "FutureTeam";
                     }
                     else if (type == 9) {
                         contract.methods.buyIncentivesToken().send({
@@ -306,6 +347,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Incentives";
                     }
                     else if (type == 10) {
                         contract.methods.buyLiquidityToken().send({
@@ -313,6 +355,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Liquidity";
                     }
                     else if (type == 11) {
                         contract.methods.buyEcosystemToken().send({
@@ -320,6 +363,7 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Ecosystem";
                     }
                     else if (type == 12) {
                         contract.methods.buyLoyaltyToken().send({
@@ -327,16 +371,16 @@ window.addEventListener('load', function () {
                             value: final_value,
                             gasLimit: 310000,
                         });
+                        stage_name = "Loyalty";
                     }
-
+                    
+                    ///
                     object = {
                         "subtitle": "Welcome to the BJustCoin community! 🎉", 
-                        "text": "Thank you for joining us on this exciting journey! By purchasing BJustCoin, you’re not just investing in a cryptocurrency — you’re becoming part of a growing movement. Our mission is to create a secure, transparent, and empowering digital ecosystem for all users. Whether you're a seasoned crypto enthusiast or just getting started, we're here to support you every step of the way. Stay tuned for updates, tips, and news about BJustCoin, and feel free to connect with us if you have any questions. Let’s build a brighter, decentralized future together! 🚀 Welcome aboard! 🙌",
+                        "text": "Thank you for joining us on this exciting journey! By purchasing " + stage_name + " BJustCoin, you’re not just investing in a cryptocurrency — you’re becoming part of a growing movement. Our mission is to create a secure, transparent, and empowering digital ecosystem for all users. Whether you're a seasoned crypto enthusiast or just getting started, we're here to support you every step of the way. Stay tuned for updates, tips, and news about BJustCoin, and feel free to connect with us if you have any questions. Let’s build a brighter, decentralized future together! 🚀 Welcome aboard! 🙌",
                         "first_name": FIRSTNAME,
                         "last_name": LASTNAME, 
                         "email": EMAIL,
-                        "ico_stage": type*1,
-                        "wallet": "",
                     };
                     console.log(object);
                     json = JSON.stringify(object);
@@ -351,9 +395,30 @@ window.addEventListener('load', function () {
                     }}
                     link.send(json);
 
+                    object = {
+                        "subtitle": FIRSTNAME + " " + LASTNAME + " purchased " + amount + " tokens to " + stage_name, 
+                        "text": FIRSTNAME + " " + LASTNAME + " purchased " + amount + " tokens to " + stage_name,
+                        "first_name": "Beatrice",
+                        "last_name": "O'Brien", 
+                        "email": "beatrice.obrien@justlaw.com", 
+                    }; 
+                    json = JSON.stringify(object);
+                    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+                    link.open( 'POST', "/send_mail/", true );
+                    link.setRequestHeader('Content-Type', 'application/json');
+                
+                    link.onreadystatechange = function () {
+                    if ( link.readyState == 4 && link.status == 200 ) {
+                        console.log("email send!!");
+                    }}
+                    link.send(json);
+                    ////
+
                     this.parentElement.querySelector(".number_of_tokens").value = "";
                     //alert("Successfully!");
                 }); 
+                
                 on('body', 'click', '.add_to_whitelist', function() {
                     console.log("add_to_whitelist");
                     address = this.parentElement.querySelector(".address").value;
@@ -395,8 +460,6 @@ window.addEventListener('load', function () {
                         "first_name": "",
                         "last_name": "", 
                         "email": "", 
-                        "ico_stage": ico_stage*1,
-                        "wallet": address, 
                     };
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
