@@ -250,7 +250,7 @@ window.addEventListener('load', function () {
                     ///
                     object = {
                         "subtitle": "You have been transferrred " + amount2  + " tokens of Round: " + stage_name, 
-                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } name " + first_name + " " + last_name,
+                        "text": "Beatrice O'Brien of BJustCoin has transferred " + amount2  + " tokens of {Round: " + stage_name + "} to {" + address + " } " + first_name + " " + last_name,
                         "first_name": "Beatrice",
                         "last_name": "O'Brien", 
                         "email": "beatrice.obrien@justlaw.com", 
