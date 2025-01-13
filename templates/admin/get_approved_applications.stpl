@@ -1,5 +1,11 @@
 <% include!("../header.stpl"); %>
-
+<style>
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative;
+    opacity: 1;
+    left:0;
+}
+</style>
 <section class="content connect_page" data-val="<%= request_user.perm %>">
     <div class="row">
         <div class="col-12">

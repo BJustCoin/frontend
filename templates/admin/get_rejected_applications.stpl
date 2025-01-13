@@ -1,5 +1,11 @@
 <% include!("../header.stpl"); %>
-
+<style>
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative;
+    opacity: 1;
+    left:0;
+}
+</style>
 <section class="content connect_page" data-val="<%= request_user.perm %>">
     <div class="row">
         <div class="col-12">
@@ -77,6 +83,9 @@
             <!-- /.box -->
         </div>
     </div>
+</section>
+
+<section style="position:absolute;bottom:0;left:0;right:0;color:background-color:#12161f;border-top: 1px solid grey">
 </section>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
