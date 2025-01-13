@@ -85,6 +85,17 @@
     </div>
 </section>
 
+<section style="position:sticky;bottom:0;left:0;right:0;color:background-color:#12161f;border-top: 1px solid grey">
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" disabled class="mr-5 waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_approved_list">Approved list</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" disabled class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_reject_list">Reject list</button>
+        </div>
+    </div>
+</section>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="/assets/js/connect23.js"></script>
 <% include!("../footer.stpl"); %>
