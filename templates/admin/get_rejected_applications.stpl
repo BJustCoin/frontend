@@ -86,6 +86,10 @@
 </section>
 
 <section style="position:sticky;bottom:0;left:0;right:0;color:background-color:#12161f;border-top: 1px solid grey">
+    <div style="text-align: right">
+        <button type="button" disabled class="mr-5 waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_approved_list">Approved list</button>
+        <button type="button" disabled class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_reject_list">Reject list</button>
+    </div>
 </section>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
