@@ -26,7 +26,12 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/banned_admins/", web::get().to(banned_admins_list_page));
     config.route("/logs/", web::get().to(logs_page));
     config.route("/user_logs/", web::get().to(user_logs_page));
-    config.route("/suggest_items/", web::get().to(suggest_items_page));
+
+    config.route("/get_new_applications/", web::get().to(get_new_applications));
+    config.route("/get_approved_applications/", web::get().to(get_approved_applications));
+    config.route("/get_rejected_applications/", web::get().to(get_rejected_applications));
+    config.route("/reject_white_lists/", web::post().to(reject_white_lists));
+    config.route("/approve_white_lists/", web::post().to(approve_white_lists));
     config.route("/create_suggest_item/", web::get().to(create_suggest_item_page));
 
     config.route("/admin_home2/", web::get().to(admin_home2_page));
@@ -69,6 +74,58 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/delete_white_list/", web::post().to(delete_white_list));
     config.route("/create_suggest_item/", web::post().to(create_suggest_item));
     config.route("/send_mail/", web::post().to(send_mail));
+}
+
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct ApplicationsJson {
+    pub users:       Vec<ApplicationJson>,
+    pub token_type:  i16,
+}
+#[derive(Debug, Deserialize, Serialize)]
+pub struct ApplicationJson {
+    pub id:          i32,
+    pub first_name:  String,
+    pub middle_name: String,
+    pub last_name:   String,
+    pub email:       String,
+    pub address:     String,
+}
+#[derive(Debug, Deserialize, Serialize)]
+pub struct ApplicationIdsJson {
+    pub ids: Vec<i32>,
+} 
+pub async fn approve_white_lists(session: Session, data: Json<ApplicationsJson>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<ApplicationsJson, ()> (
+            URL.to_owned() + &"/approve_white_lists/".to_string(),
+            &data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn reject_white_lists(session: Session, data: Json<ApplicationIdsJson>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let res = crate::utils::request_post::<ApplicationIdsJson, ()> (
+            URL.to_owned() + &"/reject_white_lists/".to_string(),
+            &data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
 pub async fn create_suggest_item_page(session: Session) -> actix_web::Result<HttpResponse> {
@@ -219,13 +276,13 @@ pub struct SuggestRespData {
     pub data: Vec<SuggestItem>,
     pub next: i64,
 }
-pub async fn suggest_items_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn get_new_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         let page = crate::utils::get_page(&req);
         let object_list: Vec<SuggestItem>;
         let next_page: i64;
-        let url = URL.to_string() + &"/get_suggest_items/?page=".to_string() + &page.to_string();
+        let url = URL.to_string() + &"/get_new_applications/?page=".to_string() + &page.to_string();
         let resp = crate::utils::request_get::<SuggestRespData>(url, _request_user.uuid.clone()).await;
         if resp.is_ok() { 
             let data = resp.expect("E.");
@@ -239,8 +296,88 @@ pub async fn suggest_items_page(req: HttpRequest, session: Session) -> actix_web
             list.push(object);
         }
 
-        #[derive(TemplateOnce)]
-        #[template(path = "admin/suggest_items.stpl")]
+        #[derive(TemplateOnce)] 
+        #[template(path = "admin/get_new_applications.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<SuggestItem>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
+}
+pub async fn get_approved_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<SuggestItem>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_approved_applications/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<SuggestRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<SuggestItem> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)] 
+        #[template(path = "admin/get_approved_applications.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<SuggestItem>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::auth_page(session.clone()).await
+    }
+}
+pub async fn get_rejected_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let _request_user = get_current_user(&session).expect("E.");
+        let page = crate::utils::get_page(&req);
+        let object_list: Vec<SuggestItem>;
+        let next_page: i64;
+        let url = URL.to_string() + &"/get_rejected_applications/?page=".to_string() + &page.to_string();
+        let resp = crate::utils::request_get::<SuggestRespData>(url, _request_user.uuid.clone()).await;
+        if resp.is_ok() { 
+            let data = resp.expect("E.");
+            (object_list, next_page) = (data.data, data.next);
+        }
+        else {
+            (object_list, next_page) = (Vec::new(), 0);
+        }
+        let mut list: Vec<SuggestItem> = Vec::new();
+        for object in object_list.into_iter() {
+            list.push(object);
+        }
+
+        #[derive(TemplateOnce)] 
+        #[template(path = "admin/get_rejected_applications.stpl")]
         struct Template {
             request_user: AuthResp2,
             object_list:  Vec<SuggestItem>,
@@ -434,8 +571,6 @@ pub struct SendMailJson {
     pub first_name: String,
     pub last_name:  String,
     pub email:      String,
-    pub ico_stage:  i16,
-    pub wallet:     String,
 }
 pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
@@ -445,8 +580,6 @@ pub async fn send_mail(session: Session, data: Json<SendMailJson>) -> actix_web:
             first_name: data.first_name.clone(),
             last_name: data.last_name.clone(),
             email: data.email.clone(),
-            ico_stage: data.ico_stage,
-            wallet: data.wallet.clone(),
         };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<SendMailJson, ()> (

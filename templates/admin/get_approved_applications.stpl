@@ -1,0 +1,84 @@
+<% include!("../header.stpl"); %>
+
+<section class="content connect_page" data-val="<%= request_user.perm %>">
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <div class="table-responsive">
+                    <h1>Application for Token purchase (Approved)</h1> 
+                        <table id="example5" class="table table-hover">
+                            <thead class="">
+                                <tr>
+                                    <th>Full name</th>
+                                    <th>Email</th> 
+                                    <th>Phone</th>
+                                    <th>Mobile</th>
+                                    <th>Wallet address</th>
+                                    <th>Tokens</th>
+                                    <th>Agreement</th>
+                                    <th>Created</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead> 
+                            <tbody class="is_paginate">
+                                <% for object in object_list { %>
+                                <tr> 
+                                    <td>  
+                                        <p class="mb-0">
+                                            <span class="first_name"><%= object.first_name %><span> 
+                                            <%= object.middle_name %> 
+                                            <span class="last_name"><%= object.last_name %><span>
+                                        </p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 email"><%= object.email %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 phone"><%= object.phone %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 mobile"><%= object.mobile %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 addresss"><%= object.address %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 tokens"><%= object.tokens %></p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 is_agree">
+                                            <% if object.is_agree { %>
+                                                Yes
+                                            <% } else { %>
+                                                No
+                                            <% } %>
+                                        </p>
+                                    </td>
+                                    <td>  
+                                        <p class="mb-0 created"><%= object.created.format("%d-%b-%Y %H:%M:%S %P").to_string() %></p>
+                                    </td>
+                                    <td>  
+                                        <input class="id_action" type="checkbox" name="is_agree">
+                                    </td>
+                                </tr>
+                                <% } %>
+                                <% if next_page > 0 { %>
+                                <div class="load centered m-1 next_page_list" data-link="/get_approved_applications/?page=<%= next_page %>">
+                                    
+                                </div>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="/assets/js/connect22.js"></script>
+<% include!("../footer.stpl"); %>
