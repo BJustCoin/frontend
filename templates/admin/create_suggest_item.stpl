@@ -62,10 +62,10 @@
                                     <input class="form-control" id="id_tokens" type="text" name="tokens" placeholder="Number of tokens">
                                 </div>
                             </div>
-                            <p>The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual</p>
                             <div class="form-group">
                                 <label class="col-form-label" for="id_is_agree">
                                     Do you agree to the terms and conditions and confirm that you meet the investment requirements? 
+                                    The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual
                                     (<span style="color:#F00000">*</span>)</label>
                                 <div class="col-sm-10">
                                     <input id="id_is_agree" type="checkbox" name="is_agree">
