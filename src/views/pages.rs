@@ -20,7 +20,6 @@ pub fn pages_urls(config: &mut web::ServiceConfig) {
     config.route("/about/", web::get().to(about_page));
     config.route("/terms-and-conditions/", web::get().to(terms_page));
     config.route("/privacy-policy/", web::get().to(policy_page));
-    config.route("/subscribe/", web::post().to(subscribe));
 }
 
 pub async fn main_page(session: Session) -> actix_web::Result<HttpResponse> {
@@ -171,21 +170,4 @@ pub async fn policy_page(session: Session) -> actix_web::Result<HttpResponse> {
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct SendSubscribeMailJson {
-    pub email: String,
-}
-pub async fn subscribe(session: Session, data: Json<SendSubscribeMailJson>) -> actix_web::Result<HttpResponse> {
-    let res = crate::utils::request_post::<SendSubscribeMailJson, ()> (
-        URL.to_owned() + &"/subscribe/".to_string(),
-        &data,
-        "".to_string()
-    ).await;
-    return match res {
-        Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
-        Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
-    }
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }

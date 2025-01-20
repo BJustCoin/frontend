@@ -74,6 +74,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/delete_white_list/", web::post().to(delete_white_list));
     config.route("/create_suggest_item/", web::post().to(create_suggest_item));
     config.route("/send_mail/", web::post().to(send_mail));
+    config.route("/subscribe/", web::post().to(subscribe));
 }
 
 
@@ -561,6 +562,23 @@ pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> acti
     else {
         crate::views::auth_page(session.clone()).await
     }
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct SendSubscribeMailJson {
+    pub email: String,
+}
+pub async fn subscribe(session: Session, data: Json<SendSubscribeMailJson>) -> actix_web::Result<HttpResponse> {
+    let res = crate::utils::request_post::<SendSubscribeMailJson, ()> (
+        URL.to_owned() + &"/subscribe/".to_string(),
+        &data,
+        "".to_string()
+    ).await;
+    return match res {
+        Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+        Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+    };
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
 }
 
 
