@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label" for="id_is_agree">
-                                    The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual
+                                    The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual.
                                     Do you agree to the terms and conditions and confirm that you meet the investment requirements? 
                                     
                                     (<span style="color:#F00000">*</span>)</label>
