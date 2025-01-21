@@ -6,11 +6,8 @@
     left:0;
 }
 .question-card {
-	width: 920px;
 	padding: 20px;
-	border: 2px solid #E0E0E0;
-	border-radius: 4px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	border: 1px solid rgba(255, 255, 255, 0.35);
 }
 .question-text {
 	line-height: 20px;
