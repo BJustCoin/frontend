@@ -602,7 +602,7 @@ on('body', 'input', '._number_of_tokens', function() {
         eth_val.value = val * cost * 100 / rate;
 
         value = this.value*1;
-        btn = this.parentElement.parentElement.querySelector("button");
+        btn = this.parentElement.parentElement.parentElement.querySelector("button");
         if (value*cost > 1000000) {
             btn.setAttribute("disabled", "disabled");
         }
