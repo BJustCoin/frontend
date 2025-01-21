@@ -272,8 +272,6 @@ window.addEventListener('load', function () {
                     }}
                     link.send(json);
                     ///
-                    alert("Successfully!");
-
                     this.parentElement.querySelector(".address").value = "";
                     this.parentElement.querySelector(".amount").value = "";
                     this.parentElement.querySelector(".ico_stage").value = "0";
@@ -291,7 +289,7 @@ window.addEventListener('load', function () {
                     console.log("ico stage", type);
                     stage_name = "";
 
-                    if (type == 1) {
+                    if (type == 1) { 
                         contract.methods.buyStrategicToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -601,9 +599,15 @@ on('body', 'input', '._number_of_tokens', function() {
         rate = current_rate;
         val = this.value;
         eth_val = document.body.querySelector(".number_of_tokens");
-        console.log("val", val);
-        console.log("cost", cost);
-        console.log("rate", rate);
         eth_val.value = val * cost * 100 / rate;
+
+        value = this.value*1;
+        btn = this.parentElement.parentElement.querySelector("button");
+        if (value*cost > 1000000) {
+            btn.setAttribute("disabled", "disabled");
+        }
+        else {
+            btn.removeAttribute("disabled");
+        }
     //} catch { null };
 }); 
