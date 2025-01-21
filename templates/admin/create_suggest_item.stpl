@@ -1,10 +1,98 @@
 <% include!("../header.stpl"); %>
 <style>
-
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     position: relative;
     opacity: 1;
     left:0;
+}
+.question-card {
+	width: 920px;
+	padding: 20px;
+	border: 2px solid #E0E0E0;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.question-text {
+	line-height: 20px;
+	font-size: 14px;
+}
+.bottom-row {
+	margin-top: 20px;
+	height: 40px;
+	line-height: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.question-number {
+	font-size: 16px;
+	font-weight: 500;
+	color: #939393;
+}
+.confirm-container {
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	user-select: none;
+}
+.confirm-text {
+	color: #2196F3;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.confirm-text.confirmed {
+	transition: all 0.15s ease;
+	display: none;
+}
+.confirm-checkbox {
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: relative;
+}
+.confirm-container input[type="checkbox"] {
+	visibility: hidden;
+}
+input[type="checkbox"] ~ .confirm-checkbox .nice-checkbox {
+	display: block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #2196F3;
+	border-radius: 4px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	cursor: pointer;	
+	transition: all 0.15s ease;
+}
+input[type="checkbox"]:checked ~ .confirm-checkbox .nice-checkbox {
+	border-color: #00B868;
+}
+input[type="checkbox"]:checked ~ .confirm-text {
+	display: none;
+}
+input[type="checkbox"]:checked ~ .confirm-text.confirmed {
+	color: #00B868;
+	display: block;
+}
+.checkmark-image {
+	display: block;
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.15s ease;
+}
+input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
+	opacity: 1;
+	visibility: visible;
 }
 </style>
 <section class="content">
@@ -62,14 +150,33 @@
                                     <input class="form-control" id="id_tokens" type="text" name="tokens" placeholder="Number of tokens">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-form-label" for="id_is_agree">
+
+                            <div class="question-card">
+                                <div class="question-text">
                                     The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual.
-                                    Do you agree to the terms and conditions and confirm that you meet the investment requirements? 
-                                    
-                                    (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
-                                    <input id="id_is_agree" type="checkbox" name="is_agree">
+                                    Do you agree to the terms and conditions and confirm that you meet the investment requirements?
+                                </div>
+                                <div class="bottom-row">
+                                    <div class="question-number"></div>
+                                    <label class="confirm-container">
+                                        <input id="id_is_agree" type="checkbox" name="is_agree">
+                                        <div class="confirm-text">Click to confirm</div>
+                                        <div class="confirm-text confirmed">Confirmed</div>
+                                        
+                                        <div class="confirm-checkbox">
+                                            <div class="nice-checkbox" for="checkbox">
+                                                <svg class="checkmark-image" width="24" height="24">
+                                                    <path
+                                                        stroke="#00B868"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        fill="none"
+                                                        d="M6,12 l4,4 l8,-8"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
 
@@ -83,9 +190,7 @@
                             <div class="api_response" style="color: #F00000"></div>
                         </form>
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
     </div>
 </section>
@@ -95,6 +200,7 @@ on('body', 'click', '#create_suggest_item', function() {
     _this = this;
     form = _this.parentElement;
     response = form.querySelector(".api_response");
+    form.querySelector(".question-card").style.border = "unset";
     
     if (!form.querySelector("#id_first_name").value){
       form.querySelector("#id_first_name").style.border = "1px #FF0000 solid";
@@ -132,7 +238,7 @@ on('body', 'click', '#create_suggest_item', function() {
       response.classList.add("error");
       return
     } else if (!form.querySelector("#id_is_agree").checked){
-      form.querySelector("#id_is_agree").style.border = "1px #FF0000 solid";
+      form.querySelector(".question-card").style.border = "1px #FF0000 solid";
       response.innerHTML = "Agreement is required!";
       response.classList.add("error");
       return

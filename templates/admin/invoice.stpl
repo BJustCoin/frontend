@@ -18,7 +18,6 @@
 				</div>	
 			  </div>
 			</div>
-			<!-- /.col -->
 		  </div>
 		  <div class="row invoice-info">
 			<div class="col-md-6 invoice-col">
@@ -29,7 +28,6 @@
 				<strong>Phone: (00) 123-456-7890 &nbsp;&nbsp;&nbsp;&nbsp; Email: info@example.com</strong>  
 			  </address>
 			</div>
-			<!-- /.col -->
 			<div class="col-md-6 invoice-col text-end">
 			  <strong>To</strong>
 			  <address>
@@ -38,7 +36,6 @@
 				<strong>Phone: (00) 789-456-1230 &nbsp;&nbsp;&nbsp;&nbsp; Email: conatct@example.com</strong>
 			  </address>
 			</div>
-			<!-- /.col -->
 			<div class="col-sm-12 invoice-col mb-15">
 				<div class="invoice-details row no-margin">
 				  <div class="col-md-6 col-lg-3"><b>Invoice </b>#0154879</div>
@@ -47,7 +44,6 @@
 				  <div class="col-md-6 col-lg-3"><b>Account:</b> 00215487541296</div>
 				</div>
 			</div>
-		  <!-- /.col -->
 		  </div>
 		  <div class="row">
 			<div class="col-12 table-responsive">
@@ -96,7 +92,6 @@
 				</tbody>
 			  </table>
 			</div>
-			<!-- /.col -->
 		  </div>
 		  <div class="row">
 			<div class="col-12 text-end">
@@ -110,9 +105,8 @@
 				<div class="total-payment">
 					<h3><b>Total :</b> $4,349.00</h3>
 				</div>
-
+				
 			</div>
-			<!-- /.col -->
 		  </div>
 		  <div class="row no-print">
 			<div class="col-12">

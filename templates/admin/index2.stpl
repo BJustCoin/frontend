@@ -243,14 +243,12 @@
                                 <li><a class="box-btn-fullscreen" href="#"></a></li>
                             </ul>
                         </div>
-                        <!-- /.box-header -->
                         <div class="box-body px-0 pt-0 pb-15">
                             <div class="chart">
                                 <div id="chartdiv31" class="h-300"></div>
                             </div>
 
                         </div>
-                        <!-- /.box-body -->
                     </div>
                 </div>
             </div>

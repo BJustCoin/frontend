@@ -3,16 +3,13 @@
 <section class="content">
     <div class="row">
         <div class="col-12">
-            <!-- The time line -->
-            <ul class="timeline6">
-                <!-- timeline time label -->
+            <ul class="timeline6">                
                 <li class="time-label">
                     <span class="bg-warning">
                         22 Sep. 2024
                     </span>
                 </li>
-                <!-- /.timeline-label -->
-                <!-- timeline item -->
+
                 <li>
                     <i class="cc BJC bg-white"></i>
 
@@ -29,8 +26,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- END timeline item -->
-                <!-- timeline item -->
+
                 <li>
                     <i class="cc DASH bg-white"></i>
 
@@ -48,8 +44,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- END timeline item -->
-                <!-- timeline item -->
+
                 <li>
                     <i class="cc EMC-alt bg-white"></i>
 
@@ -66,15 +61,13 @@
                         </div>
                     </div>
                 </li>
-                <!-- END timeline item -->
-                <!-- timeline time label -->
+
                 <li class="time-label">
                     <span class="bg-warning">
                         15 Sep. 2024
                     </span>
                 </li>
-                <!-- /.timeline-label -->
-                <!-- timeline item -->
+
                 <li>
                     <i class="cc HEAT bg-white"></i>
 
@@ -92,8 +85,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- END timeline item -->
-                <!-- timeline item -->
+
                 <li>
                     <i class="cc KMD bg-white"></i>
 
@@ -111,7 +103,6 @@
                         </div>
                     </div>
                 </li>
-                <!-- END timeline item -->
                 <li>
                     <i class="fa fa-clock-o bg-warning text-white"></i>
                 </li>
