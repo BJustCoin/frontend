@@ -158,8 +158,8 @@ input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
                                     <div class="question-number"></div>
                                     <label class="confirm-container">
                                         <input id="id_is_agree" type="checkbox" name="is_agree">
-                                        <div class="confirm-text">Click to confirm</div>
-                                        <div class="confirm-text confirmed">Confirmed</div>
+                                        <div class="confirm-text">Click to agree</div>
+                                        <div class="confirm-text confirmed">Agreed</div>
                                         
                                         <div class="confirm-checkbox">
                                             <div class="nice-checkbox" for="checkbox">
