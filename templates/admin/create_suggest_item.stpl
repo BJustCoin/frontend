@@ -38,7 +38,6 @@
 	user-select: none;
 }
 .confirm-text {
-	color: #2196F3;
 	font-size: 16px;
 	font-weight: 500;
 	cursor: pointer;
@@ -60,7 +59,6 @@ input[type="checkbox"] ~ .confirm-checkbox .nice-checkbox {
 	display: block;
 	width: 24px;
 	height: 24px;
-	border: 2px solid #2196F3;
 	border-radius: 4px;
 	position: absolute;
 	top: 0;
@@ -70,6 +68,7 @@ input[type="checkbox"] ~ .confirm-checkbox .nice-checkbox {
 	margin: auto;
 	cursor: pointer;	
 	transition: all 0.15s ease;
+    border: 2px solid rgba(255, 255, 255, 0.35);
 }
 input[type="checkbox"]:checked ~ .confirm-checkbox .nice-checkbox {
 	border-color: #00B868;
@@ -104,54 +103,54 @@ input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
                         <form>
                             <div class="form-group">
                                 <label class="col-form-label">First Name (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_first_name" name="first_name" value="<%= request_user.first_name %>" type="text" placeholder="First name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Middle Name</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_middle_name" name="middle_name" type="text" placeholder="Middle name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Last Name (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_last_name" name="last_name" value="<%= request_user.last_name %>" type="text" placeholder="Last name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Email Adress (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_email" name="email" value="<%= request_user.email %>" type="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Phone Number (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" name="phone" id="id_phone" type="text" placeholder="Phone Number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Mobile Number (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_mobile" type="text" name="mobile" placeholder="Mobile Number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Wallet address (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_wallet" type="text" name="address" placeholder="Wallet address">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Number of tokens (<span style="color:#F00000">*</span>)</label>
-                                <div class="col-sm-10">
+                                <div class="">
                                     <input class="form-control" id="id_tokens" type="text" name="tokens" placeholder="Number of tokens">
                                 </div>
                             </div>
 
-                            <div class="question-card">
+                            <div class="form-group question-card">
                                 <div class="question-text">
                                     The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual.
                                     Do you agree to the terms and conditions and confirm that you meet the investment requirements?
