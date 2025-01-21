@@ -8,6 +8,7 @@
 .question-card {
 	padding: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.35);
+    margin-top: 30px;
 }
 .question-text {
 	line-height: 20px;
@@ -150,7 +151,8 @@ input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
                             <div class="form-group question-card">
                                 <div class="question-text">
                                     The purchase of ICO tokens is capped at a maximum of USD 100,000 per individual.
-                                    Do you agree to the terms and conditions and confirm that you meet the investment requirements?
+                                    Do you agree to the terms and conditions and confirm that you meet the investment requirements? 
+                                    (<span style="color:#F00000">*</span>)
                                 </div>
                                 <div class="bottom-row">
                                     <div class="question-number"></div>
