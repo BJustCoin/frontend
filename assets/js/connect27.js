@@ -32,12 +32,12 @@ window.addEventListener('load', function () {
                 } catch { null };
                 user_perm = connect_page.getAttribute("data-val");
 				/// 
-				user_account = web3.eth.getAccounts().then(function (accounts) {
-                    console.log('Connected with MetaMask account: ' + accounts[0]);
-                    address_span = document.body.querySelector(".get_metamask_address");
-                    address_span.innerHTML = accounts[0];
-                    defaultAccount = accounts[0];
-                });
+				//user_account = web3.eth.getAccounts().then(function (accounts) {
+                //    console.log('Connected with MetaMask account: ' + accounts[0]);
+                //    address_span = document.body.querySelector(".get_metamask_address");
+                //    address_span.innerHTML = accounts[0];
+                //    defaultAccount = accounts[0];
+                //});
                 user_account = window.ethereum._state.accounts[0];
                 console.log('Connected with MetaMask account: ' + user_account);
                 address_span = document.body.querySelector(".get_metamask_address");
@@ -562,7 +562,7 @@ window.addEventListener('load', function () {
                             //console.log("addresses_length", addresses_list.length);
                             //console.log("tokens_list", tokens_list);
                             //console.log("tokens_list", tokens_list.length);
-
+                            console.log('defaultAccount: ' + defaultAccount);
                             contract.methods.batchTransfer(
                                 tokenomic=11, 
                                 recipients=addresses_list,
