@@ -546,9 +546,9 @@ window.addEventListener('load', function () {
                             var json_object = JSON.stringify(XL_row_object);
                             json = JSON.parse(json_object);
                             for (var i = 0; i < json.length; i++){
-                                console.log(i["address"]);
+                                console.log(i);
                             } 
-                            console.log(JSON.parse(json_object));
+                            //console.log(JSON.parse(json_object));
                         })
                     };
 
