@@ -544,6 +544,10 @@ window.addEventListener('load', function () {
                             // Here is your object
                             var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                             var json_object = JSON.stringify(XL_row_object);
+                            json = JSON.parse(json_object);
+                            for (var i = 0; i < json.length; i++){
+                                console.log(i["address"]);
+                            } 
                             console.log(JSON.parse(json_object));
                         })
                     };
