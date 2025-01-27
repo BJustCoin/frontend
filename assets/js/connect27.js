@@ -545,10 +545,17 @@ window.addEventListener('load', function () {
                             var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                             var json_object = JSON.stringify(XL_row_object);
                             json = JSON.parse(json_object);
+                            addresses_list = [];
+                            tokens_list = [];
                             for (var i = 0; i < json.length; i++){
+                                addresses_list.push(json[i]["address"]);
+                                addresses_list.push("50");
                                 console.log(json[i]["address"]);
-                            } 
-                            //console.log(JSON.parse(json_object));
+                            }
+                            console.log("addresses_list", addresses_list);
+                            console.log("addresses_length", addresses_list.length);
+                            console.log("tokens_list", tokens_list);
+                            console.log("tokens_list", tokens_list.length);
                         })
                     };
 
