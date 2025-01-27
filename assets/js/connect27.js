@@ -34,7 +34,8 @@ window.addEventListener('load', function () {
                     address_span.innerHTML = accounts[0];
                     defaultAccount = accounts[0];
                 });
-                contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
+                contract_address = "0x3A838115A6e8B31195940009de603Fd4ACA47bd3";
+                //contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
 				contract = new web3.eth.Contract(
                     contract_abi, 
                     contract_address,
