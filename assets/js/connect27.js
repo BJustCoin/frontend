@@ -17,13 +17,13 @@ current_rate = 0;
  
 window.addEventListener('load', function () { 
 			if (typeof window.ethereum !== 'undefined') {
-				//web3 = new Web3(window.ethereum);
+				web3 = new Web3(window.ethereum);
                 //web3 = new Web3("https://polygon-amoy.g.alchemy.com/v2/mvwmdGNWLNGfoX7enXIcwkvM5vbYt5py");
 
 				window.ethereum.enable();
                 console.log("window.ethereum", window.ethereum);
                 console.log("web3", web3);
-                web3 = new Web3("https://polygon-amoy.drpc.org");
+                //web3 = new Web3("https://polygon-amoy.drpc.org");
 
                 console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
 
