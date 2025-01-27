@@ -549,8 +549,7 @@ window.addEventListener('load', function () {
                             tokens_list = [];
                             for (var i = 0; i < json.length; i++){
                                 addresses_list.push(json[i]["address"]);
-                                addresses_list.push("50");
-                                console.log(json[i]["address"]);
+                                tokens_list.push("50");
                             }
                             console.log("addresses_list", addresses_list);
                             console.log("addresses_length", addresses_list.length);
