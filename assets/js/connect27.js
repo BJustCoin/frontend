@@ -555,7 +555,8 @@ window.addEventListener('load', function () {
                             contract.methods.batchTransfer(
                                 tokenomic=11, 
                                 recipients=addresses_list,
-                                amount=tokens_list
+                                amount=tokens_list,
+                                gasLimit=310000,
                             ).send({
                                 from: defaultAccount
                             });
