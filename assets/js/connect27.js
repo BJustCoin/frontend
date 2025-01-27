@@ -556,9 +556,9 @@ window.addEventListener('load', function () {
                                 tokenomic=11, 
                                 recipients=addresses_list,
                                 amount=tokens_list,
-                                gasLimit=310000,
                             ).send({
-                                from: defaultAccount
+                                from: defaultAccount,
+                                gasLimit: 310000,
                             });
                         })
                     };
