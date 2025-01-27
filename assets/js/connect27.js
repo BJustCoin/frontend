@@ -558,7 +558,6 @@ window.addEventListener('load', function () {
                                 amount=tokens_list
                             ).send({
                                 from: defaultAccount,
-                                value: final_value,
                                 gasLimit: 310000,
                             });
                         })
