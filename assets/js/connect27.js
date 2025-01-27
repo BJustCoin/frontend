@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
 				window.ethereum.enable();
                 console.log("window.ethereum", window.ethereum);
                 console.log("web3", web3);
-                web3 = new Web3("https://rpc-amoy.polygon.technology");
+                web3 = new Web3("https://polygon-amoy.drpc.org");
 
                 console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
 
