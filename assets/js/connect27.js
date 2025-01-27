@@ -39,6 +39,10 @@ window.addEventListener('load', function () {
                     defaultAccount = accounts[0];
                 });
                 user_account = window.ethereum._state.accounts[0];
+                console.log('Connected with MetaMask account: ' + user_account);
+                address_span = document.body.querySelector(".get_metamask_address");
+                address_span.innerHTML = user_account;
+                defaultAccount = user_account;
 
                 contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
 				contract = new web3.eth.Contract(
