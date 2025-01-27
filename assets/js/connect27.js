@@ -21,7 +21,6 @@ window.addEventListener('load', function () {
 				window.ethereum.enable();
                 my_account = "0x";
                 user_perm = 0;
-
                 try {
                     connect_page = document.body.querySelector(".connect_page");
                     user_perm = connect_page.getAttribute("data-val"); 
@@ -34,10 +33,9 @@ window.addEventListener('load', function () {
                     address_span.innerHTML = accounts[0];
                     defaultAccount = accounts[0];
                 });
-                //contract_address = "0x3A838115A6e8B31195940009de603Fd4ACA47bd3";
                 contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
 				contract = new web3.eth.Contract(
-                    contract_abi, 
+                    contract_abi,
                     contract_address,
                     {}
                 );
@@ -558,7 +556,11 @@ window.addEventListener('load', function () {
                                 tokenomic=11, 
                                 recipients=addresses_list,
                                 amount=tokens_list
-                            ).send({from: defaultAccount,});
+                            ).send({
+                                from: defaultAccount,
+                                value: final_value,
+                                gasLimit: 310000,
+                            });
                         })
                     };
 
