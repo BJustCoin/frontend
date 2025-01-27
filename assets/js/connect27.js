@@ -556,7 +556,7 @@ window.addEventListener('load', function () {
                     };
                 };
                 function handleFileSelect(evt) {
-                    var files = evt.target.files; // FileList object
+                    var files = evt.files; // FileList object
                     var xl2json = new ExcelToJSON();
                     xl2json.parseExcel(files[0]);
                 };
