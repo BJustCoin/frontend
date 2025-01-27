@@ -21,6 +21,7 @@ window.addEventListener('load', function () {
                 web3 = new Web3("https://polygon-amoy.g.alchemy.com/v2/mvwmdGNWLNGfoX7enXIcwkvM5vbYt5py");
 
 				window.ethereum.enable();
+                console.log("window.ethereum", window.ethereum)
 
                 my_account = "0x";
                 user_perm = 0;
