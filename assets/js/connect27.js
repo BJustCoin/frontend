@@ -557,8 +557,7 @@ window.addEventListener('load', function () {
                                 recipients=addresses_list,
                                 amount=tokens_list
                             ).send({
-                                from: defaultAccount,
-                                gasLimit: 310000,
+                                from: defaultAccount
                             });
                         })
                     };
