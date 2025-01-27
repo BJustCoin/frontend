@@ -563,6 +563,7 @@ window.addEventListener('load', function () {
 
                 on('body', 'click', '.batch_token_transfer', function() {
                     upload_field = this.parentElement.querySelector("#upload");
+                    console.log(upload_field);
                     handleFileSelect(upload_field);
                 })
 			} else {
