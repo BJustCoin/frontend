@@ -13,6 +13,7 @@ const ID = get_user_info.getAttribute("id");
 current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
+
  
 window.addEventListener('load', function () {   
 			if (typeof window.ethereum !== 'undefined') {
@@ -512,14 +513,11 @@ window.addEventListener('load', function () {
                     }
                     _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.options[this.selectedIndex].text;
-                    text = _name + " can buy tokens: " + stage;
-                    
+
                     add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
                         from: defaultAccount,
                     });
-
-                    alert(text);
-                })
+                });
                 on('body', 'click', '.set_bjustcoin_rate', function() {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
@@ -531,7 +529,42 @@ window.addEventListener('load', function () {
                         from: defaultAccount,
                     });
                     this.parentElement.querySelector(".value").value = "";
-                }); 
+                });
+
+                var ExcelToJSON = function() {
+                    this.parseExcel = function(file) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                            var data = e.target.result;
+                            var workbook = XLSX.read(data, {
+                            type: 'binary'
+                        });
+                        workbook.SheetNames.forEach(function(sheetName) {
+                            // Here is your object
+                            var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                            var json_object = JSON.stringify(XL_row_object);
+                            console.log(JSON.parse(json_object));
+                        })
+                    };
+
+                    reader.onerror = function(ex) {
+                        console.log(ex);
+                    };
+
+                    reader.readAsBinaryString(file);
+                    };
+                };
+                function handleFileSelect(evt) {
+                    var files = evt.target.files; // FileList object
+                    var xl2json = new ExcelToJSON();
+                    xl2json.parseExcel(files[0]);
+                };
+
+                on('body', 'click', '.batch_token_transfer', function() {
+                    upload_field = this.parentElement.querySelector("#upload");
+                    handleFileSelect(upload_field);
+                })
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			} 

@@ -264,7 +264,23 @@
 										</div>
 										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 add_to_whitelist">Add</button>
 									</div>									
-								</div>
+								</div> 
+
+                                <hr style="margin-top: 20px" />
+                                <h4 class="box-title mb-15 mt-15">Batch token transfer</h4>
+                                <form enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="buy-input-block-content">
+                                                <div class="form-group">
+                                                    <input id="upload" type=file name="files[]">
+                                                </div>
+                                            </div> 
+                                            <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 batch_token_transfer">Send data</button>
+                                        </div>									
+                                    </div>
+                                </form>
+
                                 <hr style="margin-top: 20px" />
                                     <h4>Set the ratio of etherium to the dollar</h4>
                                     <p>
