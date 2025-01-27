@@ -23,7 +23,9 @@ window.addEventListener('load', function () {
 				window.ethereum.enable();
                 console.log("window.ethereum", window.ethereum);
                 console.log("web3", web3);
+                web3.eth.Contract.defaultAccount
 
+                console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
                 my_account = "0x";
                 user_perm = 0;
                 try {
@@ -50,6 +52,7 @@ window.addEventListener('load', function () {
                     contract_address,
                     {}
                 );
+                console.log("contract.defaultAccount", contract.defaultAccount);
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
                     current_stage = Number(a);
@@ -529,7 +532,7 @@ window.addEventListener('load', function () {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
                     a = 10 ** 8;
-                    format_value = value*a;
+                    format_value = value*a; 
                     console.log("format_value ", format_value);
 
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
