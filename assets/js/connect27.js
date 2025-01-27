@@ -23,9 +23,9 @@ window.addEventListener('load', function () {
 				window.ethereum.enable();
                 console.log("window.ethereum", window.ethereum);
                 console.log("web3", web3);
-                web3.eth.Contract.defaultAccount
 
                 console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
+
                 my_account = "0x";
                 user_perm = 0;
                 try {
