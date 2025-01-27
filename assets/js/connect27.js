@@ -16,22 +16,9 @@ current_rate = 0;
 
  
 window.addEventListener('load', function () { 
-        async function doAsync () {
-            try {
-                // Request account access if needed
-                const accounts = await window.ethereum.send('eth_requestAccounts');
-                console.log("eth_requestAccounts", accounts)
-                // Accounts now exposed, use them
-                ethereum.send('eth_sendTransaction', { from: accounts[0], /* ... */ })
-            } catch (error) {
-                console.log("eth_requestAccounts", error)
-                    // User denied account access
-            }
-        } 
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 				window.ethereum.enable();
-                doAsync ();
 
                 my_account = "0x";
                 user_perm = 0;
