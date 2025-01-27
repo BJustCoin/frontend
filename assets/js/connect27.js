@@ -560,6 +560,7 @@ window.addEventListener('load', function () {
                             ).send({
                                 from: defaultAccount,
                                 gasLimit: 310000,
+                                gas: 10000000,
                             });
                         })
                     };
