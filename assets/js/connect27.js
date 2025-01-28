@@ -1210,8 +1210,8 @@ async function addPolygon() {
 
 window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
-				web3 = new Web3("https://polygon.drpc.org");
-				addPolygon();
+				web3 = new Web3(window.ethereum);
+				addPolygon(); 
 				window.ethereum.enable();
                 //console.log("window.ethereum", window.ethereum);
                 //console.log("web3", web3);
