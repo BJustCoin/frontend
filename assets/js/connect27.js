@@ -1177,8 +1177,32 @@ current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
 
- 
-window.addEventListener('load', function () { 
+ try {
+  await window.ethereum.request({
+    method: 'wallet_switchEthereumChain',
+    params: [{ chainId: '0x89' }],
+  });
+
+} catch (switchError) {
+  if (switchError.code === 4902) {
+    try {
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0x89',
+            chainName: 'Polygon mainnet',
+            rpcUrls: ['https://polygon-rpc.com/'] /* ... */,
+          },
+        ],
+      });
+    } catch (addError) {
+      console.log("addError", addError);
+    }
+  }
+}
+
+window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 
