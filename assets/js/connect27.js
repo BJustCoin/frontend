@@ -1178,6 +1178,7 @@ tokenomic_type = 0;
 current_rate = 0;
 
 async function addPolygon() {
+	console.log("addPolygon worked");
  try {
   await window.ethereum.request({
     method: 'wallet_switchEthereumChain',
