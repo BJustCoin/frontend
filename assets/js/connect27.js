@@ -19,14 +19,12 @@ current_rate = 0;
 window.addEventListener('load', function () { 
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
-                //web3 = new Web3("https://polygon-amoy.g.alchemy.com/v2/mvwmdGNWLNGfoX7enXIcwkvM5vbYt5py");
 
 				window.ethereum.enable();
-                console.log("window.ethereum", window.ethereum);
-                console.log("web3", web3);
-                //web3 = new Web3("https://polygon-amoy.drpc.org");
+                //console.log("window.ethereum", window.ethereum);
+                //console.log("web3", web3);
 
-                console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
+                //console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
 
 
                 my_account = "0x";
@@ -50,7 +48,7 @@ window.addEventListener('load', function () {
                 defaultAccount = user_account;
                 web3.eth.defaultAccount = user_account;
 
-                contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
+                contract_address = "0xE17d400fEEAa360ac84eBeeCd61f6f16A14b0789";
 				contract = new web3.eth.Contract(
                     contract_abi,
                     contract_address,
