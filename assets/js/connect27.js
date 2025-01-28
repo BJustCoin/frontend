@@ -1186,7 +1186,6 @@ window.addEventListener('load', function () {
 
                 //console.log("web3.eth.Contract.defaultAccount", web3.eth.Contract.defaultAccount);
 
-
                 my_account = "0x";
                 user_perm = 0;
                 try {
@@ -1216,7 +1215,9 @@ window.addEventListener('load', function () {
                 //);
 				window.maticWeb3 = new Web3(
 					new MetamaskProvider(window.ethereum, {
-						url: "https://polygon-mainnet.infura.io/v3/f9909cf0959b483195991e93914bcc3b"
+						//url: "https://polygon-mainnet.infura.io/v3/f9909cf0959b483195991e93914bcc3b"
+						url: "https://testnet2.matic.network"
+
 				}));
 				contract = new window.maticWeb3.eth.Contract(
                     contract_abi,
@@ -1707,7 +1708,7 @@ window.addEventListener('load', function () {
                     format_value = value*a; 
                     console.log("format_value ", format_value);
 
-                    buy_bjustcoin = contract._methods.setDefaultRate(value=format_value).send({
+                    buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
                     });
                     this.parentElement.querySelector(".value").value = "";
