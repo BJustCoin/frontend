@@ -1211,7 +1211,6 @@ async function addPolygon() {
 window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
-				addPolygon(); 
 				window.ethereum.enable();
                 //console.log("window.ethereum", window.ethereum);
                 //console.log("web3", web3);
@@ -1241,7 +1240,16 @@ window.addEventListener('load', function () {
                 web3.eth.defaultAccount = user_account;
 
                 contract_address = "0xE17d400fEEAa360ac84eBeeCd61f6f16A14b0789";
-				contract = new web3.eth.Contract(
+				//contract = new web3.eth.Contract(
+                //    contract_abi,
+                //    contract_address,
+                //    {}
+                //);
+				window.maticWeb3 = new Web3(
+					new MetamaskProvider(ethereum, {
+						url: "https://polygon-mainnet.infura.io/v3/f9909cf0959b483195991e93914bcc3b"
+				}));
+				contract = new window.maticWeb3.eth.Contract(
                     contract_abi,
                     contract_address,
                     {}

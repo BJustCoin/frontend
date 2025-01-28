@@ -81,7 +81,7 @@
 </span>
 
 		
-<div class="col-12 buy_seed_section_open">
+<div class="col-12 buy_seed_section_open" style="display:none">
 	<div class="buy-input-block-content">
 		<div class="form-group">
 			<input type="text" class="form-control _number_of_tokens" placeholder="Enter number of BJustCoin tokens (BJC)">
@@ -319,6 +319,7 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/metamask-provider.js"></script>
 <script type="text/javascript" src="/assets/js/connect27.js"></script>
 
 <% include!("../footer.stpl"); %>
