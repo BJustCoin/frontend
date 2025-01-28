@@ -1177,6 +1177,7 @@ current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
 
+async function addPolygon() {
  try {
   await window.ethereum.request({
     method: 'wallet_switchEthereumChain',
@@ -1201,11 +1202,12 @@ current_rate = 0;
     }
   }
 }
+}
 
 window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
-
+				addPolygon();
 				window.ethereum.enable();
                 //console.log("window.ethereum", window.ethereum);
                 //console.log("web3", web3);
