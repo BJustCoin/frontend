@@ -1184,10 +1184,13 @@ async function addPolygon() {
     method: 'wallet_switchEthereumChain',
     params: [{ chainId: '0x89' }],
   });
-
+  console.log("wallet_switchEthereumChain");
 } catch (switchError) {
+	console.log("switchError");
   if (switchError.code === 4902) {
+	console.log("switchError.code === 4902");
     try {
+		console.log("wallet_addEthereumChain");
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
         params: [
