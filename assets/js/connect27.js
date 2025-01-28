@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
                 defaultAccount = user_account;
                 web3.eth.defaultAccount = user_account;
 
-                contract_address = "0x7e6A0Fe2376DBCde1f64cbe16C08682a74c1ab0e";
+                contract_address = "0xE17d400fEEAa360ac84eBeeCd61f6f16A14b0789";
 				contract = new web3.eth.Contract(
                     contract_abi,
                     contract_address,
