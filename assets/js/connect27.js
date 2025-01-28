@@ -1223,6 +1223,7 @@ window.addEventListener('load', function () {
                     contract_address,
                     {}
                 );
+				console.log("contract", contract);
                 console.log("contract.defaultAccount", contract.defaultAccount);
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
@@ -1743,8 +1744,6 @@ window.addEventListener('load', function () {
                                 amount=tokens_list,
                             ).send({
                                 from: defaultAccount,
-                                gasLimit: 310000,
-                                gas: 10000000,
                             });
                         })
                     };
