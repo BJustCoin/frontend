@@ -1177,37 +1177,6 @@ current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
 
-async function addPolygon() {
-	console.log("addPolygon worked");
- try {
-  await window.ethereum.request({
-    method: 'wallet_switchEthereumChain',
-    params: [{ chainId: '0x89' }],
-  });
-  console.log("wallet_switchEthereumChain");
-} catch (switchError) {
-	console.log("switchError");
-  if (switchError.code === 4902) {
-	console.log("switchError.code === 4902");
-    try {
-		console.log("wallet_addEthereumChain");
-      await window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [
-          {
-            chainId: '0x89',
-            chainName: 'Polygon mainnet',
-            rpcUrls: ['https://polygon-rpc.com/'] /* ... */,
-          },
-        ],
-      });
-    } catch (addError) {
-      console.log("addError", addError);
-    }
-  }
-}
-}
-
 window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
