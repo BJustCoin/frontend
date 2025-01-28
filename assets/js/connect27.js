@@ -1707,7 +1707,7 @@ window.addEventListener('load', function () {
                     format_value = value*a; 
                     console.log("format_value ", format_value);
 
-                    buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
+                    buy_bjustcoin = contract._methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
                     });
                     this.parentElement.querySelector(".value").value = "";
