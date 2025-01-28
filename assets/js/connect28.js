@@ -13,14 +13,12 @@ const ID = get_user_info.getAttribute("id");
 current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
- 
-window.addEventListener('load', function () {   
+
+window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);
 				window.ethereum.enable();
-                my_account = "0x";
                 user_perm = 0;
-
                 try {
                     connect_page = document.body.querySelector(".connect_page");
                     user_perm = connect_page.getAttribute("data-val"); 
@@ -33,15 +31,16 @@ window.addEventListener('load', function () {
                     address_span.innerHTML = accounts[0];
                     defaultAccount = accounts[0];
                 });
-                contract_address = "0xE17d400fEEAa360ac84eBeeCd61f6f16A14b0789";
+                console.log('Connected with MetaMask account: ' + user_account);
+                defaultAccount = user_account;
+
+                contract_address = "0xf86082F6bf8BD9FFC02755f65FC3d7eC7d1A0ffc";
 				contract = new web3.eth.Contract(
-                    contract_abi, 
+                    contract_abi,
                     contract_address,
                     {}
                 );
-                owner = contract.methods.owner().call().then(function (a) {
-                    console.log("icomanager owner", a);
-                });
+
 				tokenomic_type = contract.methods.getTokenomicType().call().then(function (a) {
                     console.log("icomanager tokenomic_type", a);
                     current_stage = Number(a);
@@ -512,26 +511,77 @@ window.addEventListener('load', function () {
                     }
                     _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
                     stage = this.options[this.selectedIndex].text;
-                    text = _name + " can buy tokens: " + stage;
-                    
+
                     add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
                         from: defaultAccount,
                     });
-
-                    alert(text);
-                })
+                });
                 on('body', 'click', '.set_bjustcoin_rate', function() {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
                     a = 10 ** 8;
-                    format_value = value*a;
+                    format_value = value*a; 
                     console.log("format_value ", format_value);
 
                     buy_bjustcoin = contract.methods.setDefaultRate(value=format_value).send({
                         from: defaultAccount,
                     });
                     this.parentElement.querySelector(".value").value = "";
-                }); 
+                });
+
+                var ExcelToJSON = function() {
+                    this.parseExcel = function(file) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                            var data = e.target.result;
+                            var workbook = XLSX.read(data, {
+                            type: 'binary'
+                        });
+                        workbook.SheetNames.forEach(function(sheetName) {
+                            // Here is your object
+                            var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                            var json_object = JSON.stringify(XL_row_object);
+                            json = JSON.parse(json_object);
+                            addresses_list = [];
+                            tokens_list = [];
+                            for (var i = 0; i < json.length; i++){
+                                addresses_list.push(json[i]["address"]);
+                                tokens_list.push("50000000000000000000");
+                            }
+                            //console.log("addresses_list", addresses_list);
+                            //console.log("addresses_length", addresses_list.length);
+                            //console.log("tokens_list", tokens_list);
+                            //console.log("tokens_list", tokens_list.length);
+                            console.log('defaultAccount: ' + defaultAccount);
+                            contract.methods.batchTransfer(
+                                tokenomic=11, 
+                                recipients=addresses_list,
+                                amount=tokens_list,
+                            ).send({
+                                from: defaultAccount,
+                            });
+                        })
+                    };
+
+                    reader.onerror = function(ex) {
+                        console.log(ex);
+                    };
+
+                    reader.readAsBinaryString(file);
+                    };
+                };
+                function handleFileSelect(evt) {
+                    var files = evt.files; // FileList object
+                    var xl2json = new ExcelToJSON();
+                    xl2json.parseExcel(files[0]);
+                };
+
+                on('body', 'click', '.batch_token_transfer', function() {
+                    upload_field = this.parentElement.querySelector("#upload");
+                    console.log(upload_field);
+                    handleFileSelect(upload_field);
+                })
 			} else {
 				alert('Please install MetaMask to connect with the Ethereum network');
 			} 
