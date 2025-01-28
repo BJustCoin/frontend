@@ -1215,7 +1215,7 @@ window.addEventListener('load', function () {
                 //    {}
                 //);
 				window.maticWeb3 = new Web3(
-					new MetamaskProvider(ethereum, {
+					new MetamaskProvider(window.ethereum, {
 						url: "https://polygon-mainnet.infura.io/v3/f9909cf0959b483195991e93914bcc3b"
 				}));
 				contract = new window.maticWeb3.eth.Contract(
