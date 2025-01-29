@@ -439,7 +439,7 @@ window.addEventListener('load', function () {
                     parent = _this.parentElement.parentElement;
                     tokens = parent.querySelector("#id_tokens").value; 
                     ico_stage = parent.querySelector(".ico_stage").value*1;
-                    address = parent.parentElement.querySelector(".address").innerHTML.
+                    address = parent.parentElement.querySelector(".address").innerHTML;
 
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
