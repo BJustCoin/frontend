@@ -28,7 +28,7 @@
                             </thead> 
                             <tbody class="is_paginate">
                                 <% for object in object_list { %>
-                                <tr id="<%= object.id %>" class="action_tr"> 
+                                <tr id="<%= object.id %>" class="action_tr" style="cursor: pointer"> 
                                     <td>  
                                         <p class="mb-0 full_name">
                                             <%= object.first_name %> <%= object.middle_name %> <%= object.last_name %>

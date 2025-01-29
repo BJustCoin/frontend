@@ -52,13 +52,13 @@
 					  <a href="/logs/"><i class="ti-more"></i><span>Logs</span></a>
 					</li>
 					<li>
-					  <a href="/get_new_applications/"><i class="ti-more"></i><span>Applications for purchase (New)</span></a>
+					  <a href="/get_new_applications/"><i class="ti-more"></i><span>New Applications for purchase</span></a>
 					</li>
 					<li>
-					  <a href="/get_approved_applications/"><i class="ti-more"></i><span>Applications for purchase (Approved)</span></a>
+					  <a href="/get_approved_applications/"><i class="ti-more"></i><span>Approved Applications for purchase</span></a>
 					</li>
 					<li>
-					  <a href="/get_rejected_applications/"><i class="ti-more"></i><span>Applications for purchase (Rejected)</span></a>
+					  <a href="/get_rejected_applications/"><i class="ti-more"></i><span>Rejected Applications for purchase</span></a>
 					</li>
 				  </ul>
 				</li>

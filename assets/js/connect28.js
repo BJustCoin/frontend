@@ -656,7 +656,7 @@ on('body', 'input', '._number_of_tokens', function() {
 
 on('body', 'click', '.action_tr', function() {
     _this = this;
-    form = document.body.querySelector("new_white_list_form");
+    form = document.body.querySelector(".new_white_list_form");
     full_name = _this.querySelector(".full_name").innerHTML;
     walett = _this.querySelector(".addresss").innerHTML;
     if (form.classList.contains("hide")) {
