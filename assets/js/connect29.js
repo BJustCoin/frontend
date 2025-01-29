@@ -541,8 +541,8 @@ window.addEventListener('load', function () {
                             addresses_list = [];
                             tokens_list = [];
                             for (var i = 0; i < json.length; i++){
-                                val = json[i]["address"].trim();
-                                addresses_list.push(val);
+                                val = json[i]["address"];
+                                addresses_list.push(json[i]["address"]);
                                 tokens_list.push("50000000000000000000");
                             }
                             console.log("addresses_list", addresses_list);
