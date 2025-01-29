@@ -661,7 +661,11 @@ on('body', 'click', '.action_tr', function() {
     walett = _this.querySelector(".addresss").innerHTML;
     form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
     _title = "<span style='font-size:25px'>" + full_name + " (" + walett + ")</span>";
-    _close = "<span style='font-size:18px; cursor: pointer; text-align:right' class='close_white_list_window'>Close window</span>";
+    _close = "<a style='font-size:18px; cursor: pointer; float: right;' class='close_white_list_window'>Close window</a>";
     form.querySelector(".info_check").innerHTML = _title + _close;
     form.classList.remove("hide");
+});
+
+on('body', 'click', '.close_white_list_window', function() {
+    this.parentElement.parentElement.classList.add("hide");
 });
