@@ -436,14 +436,16 @@ window.addEventListener('load', function () {
                     _this = this;
                     console.log("add_to_whitelist");
                     id = this.getAttribute("id");
-                    tokens = _this.parentElement.parentElement.querySelector("#id_tokens").value; 
-                    ico_stage = _this.parentElement.parentElement.querySelector(".ico_stage").value*1;
+                    parent = _this.parentElement.parentElement;
+                    tokens = parent.querySelector("#id_tokens").value; 
+                    ico_stage = parent.querySelector(".ico_stage").value*1;
+                    address = parent.parentElement.querySelector(".address").innerHTML.
 
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
                         _tokenomicType=ico_stage,
                         _isWhitelisting=true
-                    ).send({
+                    ).send({ 
                         from: defaultAccount,
                     }); 
                     ////////
@@ -662,7 +664,7 @@ on('body', 'click', '.action_tr', function() {
     full_name = _this.querySelector(".full_name").innerHTML;
     walett = _this.querySelector(".addresss").innerHTML;
     form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
-    _title = "<span style='font-size:25px'>" + full_name + " (" + walett + ")</span>";
+    _title = "<span style='font-size:25px'>" + full_name + " (<span class='address'>" + walett + "</span>)</span>";
     _close = "<a style='font-size:18px; cursor: pointer; float: right;' class='close_white_list_window'>Close window</a>";
     form.querySelector(".info_check").innerHTML = _title + _close;
     form.classList.remove("hide");
