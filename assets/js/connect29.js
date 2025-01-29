@@ -436,8 +436,8 @@ window.addEventListener('load', function () {
                     _this = this;
                     console.log("add_to_whitelist");
                     id = this.getAttribute("id");
-                    tokens = _this.parentElement.previousElementSibling.querySelector("#id_ico_stage").value; 
-                    ico_stage = _this.parentElement.querySelector(".ico_stage").value*1;
+                    tokens = _this.parentElement.parentElement.querySelector("#id_tokens").value; 
+                    ico_stage = _this.parentElement.parentElement.querySelector(".ico_stage").value*1;
 
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
