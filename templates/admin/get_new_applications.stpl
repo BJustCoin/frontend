@@ -24,17 +24,14 @@
                                     <th>Tokens</th>
                                     <th>Agreement</th>
                                     <th>Created</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead> 
                             <tbody class="is_paginate">
                                 <% for object in object_list { %>
-                                <tr> 
+                                <tr id="<%= object.id %>" class="action_tr"> 
                                     <td>  
-                                        <p class="mb-0">
-                                            <span class="first_name"><%= object.first_name %><span> 
-                                            <%= object.middle_name %> 
-                                            <span class="last_name"><%= object.last_name %><span>
+                                        <p class="mb-0 full_name">
+                                            <%= object.first_name %> <%= object.middle_name %> <%= object.last_name %>
                                         </p>
                                     </td>
                                     <td>  
@@ -62,10 +59,7 @@
                                         </p>
                                     </td>
                                     <td>  
-                                        <p class="mb-0 created"><%= object.created.format("%d-%b-%Y %H:%M:%S %P").to_string() %></p>
-                                    </td>
-                                    <td>  
-                                        <input class="id_action" type="checkbox" name="is_agree">
+                                        <p class="mb-0 created"><%= object.created.format("%d-%b-%Y %H:%M").to_string() %></p>
                                     </td>
                                 </tr>
                                 <% } %>
@@ -83,13 +77,34 @@
     </div>
 </section>
 
-<section style="position:sticky;bottom:0;left:0;right:0;color:background-color:#12161f;border-top: 1px solid grey">
+<section class="new_white_list_form hide" style="position:fixed;bottom:30px;left:10px;right:10px;background-color:#12161f">
+    <h6 class="info_check"></h6>
+
     <div class="row">
-        <div class="col-md-6">
-            <button type="button" disabled class="mr-5 waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_approved_list">Approved list</button>
+        <div class="col-md-4">
+            <select class="coins-exchange form-control ico_stage mt-15" id="id_ico_stage" tabindex="-1">
+                <option value="">Select ICO stage</option>
+                <option value="0">Strategic</option>
+                <option value="1">Seed</option>
+                <option value="2">Private Sale</option>
+                <option value="3">IDO</option>
+                <option value="4">Public Sale</option>
+                <option value="5">Advisors</option>
+                <option value="6">Team</option>
+                <option value="7">Future Team</option>
+                <option value="8">Incetives</option>
+                <option value="9">Liquidity</option>
+                <option value="10">Ecosystem</option>
+                <option value="11">Loyalty</option>
+            </select>
         </div>
-        <div class="col-md-6">
-            <button type="button" disabled class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100" id="create_reject_list">Reject list</button>
+        <div class="col-md-4">
+            <div class="form-group">
+				<input type="text" class="form-control" id="id_tokens" placeholder="tokens">
+			</div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 add_to_whitelist" id="0">Add</button>
         </div>
     </div>
 </section>

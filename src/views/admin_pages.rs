@@ -781,21 +781,16 @@ pub async fn delete_can_buy(session: Session, data: Json<ItemIdTypes>) -> actix_
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Wallet {
-    pub user_id:   i32,
-    pub link:      String,
+    pub id:        i32,
+    pub tokens:    String,
     pub ico_stage: i16,
-} 
+}  
 pub async fn create_wallet(session: Session, data: Json<Wallet>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = Wallet {
-            user_id:   data.user_id,
-            link:      data.link.clone(),
-            ico_stage: data.ico_stage,
-        };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<Wallet, ()> (
             URL.to_owned() + &"/create_wallet/".to_string(),
-            &l_data, 
+            &data,
             _request_user.uuid
         ).await; 
 

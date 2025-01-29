@@ -284,7 +284,7 @@ window.addEventListener('load', function () {
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
                     a = 10 ** 18; 
-                    final_value = amount * a;
+                    final_value = amount + "000000000000000000";
                     console.log("ico stage", type);
                     stage_name = "";
 
@@ -428,37 +428,39 @@ window.addEventListener('load', function () {
 
                     this.parentElement.querySelector(".number_of_tokens").value = "";
                     //alert("Successfully!");
-                }); 
+                });
                 
                 on('body', 'click', '.add_to_whitelist', function() {
+                    _this = this;
                     console.log("add_to_whitelist");
-                    address = this.parentElement.querySelector(".address").value;
-                    user_id = this.parentElement.querySelector(".user_id").value;
-                    ico_stage = this.parentElement.querySelector(".ico_stage").value*1;
-                    val = ico_stage - 1;
-                    console.log("current ico stage for white_list", val);
+                    id = this.getAttribute("id");
+                    tokens = _this.parentElement.previousElementSibling.querySelector("#id_ico_stage").value; 
+                    ico_stage = _this.parentElement.querySelector(".ico_stage").value*1;
+
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
-                        _tokenomicType=val,
+                        _tokenomicType=ico_stage,
                         _isWhitelisting=true
                     ).send({
                         from: defaultAccount,
-                    });
+                    }); 
                     ////////
                     object = {
-                        "user_id": user_id*1, 
-                        "link": address,
-                        "ico_stage": ico_stage*1, 
-                    };
+                        "id":        id,
+                        "tokens":    tokens + "000000000000000000",
+                        "ico_stage": ico_stage,
+                    }; 
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
                     
-                    link.open( 'POST', "/create_wallet/", true );
+                    link.open( 'POST', "/create_wallet/", true ); 
                     link.setRequestHeader('Content-Type', 'application/json');
                 
                     link.onreadystatechange = function () {
                     if ( link.readyState == 4 && link.status == 200 ) {
                         console.log("add_to_whitelist send!!");
+                        _this.parentElement.parentElement.parentElement.classList.add("hide");
+                        document.body.querySelector('[id=' + '"' + id + '"' + ']').remove();
                     }}
                     link.send(json);
 
@@ -505,17 +507,6 @@ window.addEventListener('load', function () {
                     }); 
                 });
 
-                on('body', 'change', '.toggle_ico_white_list', function() {
-                    if (this.getAttribute("data-value") == "0") {
-                        return; 
-                    }
-                    _name = this.parentElement.parentElement.parentElement.querySelector("strong").innerHTML;
-                    stage = this.options[this.selectedIndex].text;
-
-                    add_to_wishlist = contract.methods.whitelist(_address=address, _tokenomicType=this.val).send({
-                        from: defaultAccount,
-                    });
-                });
                 on('body', 'click', '.set_bjustcoin_rate', function() {
                     console.log("set_bjustcoin_rate");
                     value = this.parentElement.querySelector(".value").value;
@@ -661,3 +652,22 @@ on('body', 'input', '._number_of_tokens', function() {
         }
     //} catch { null };
 }); 
+
+
+on('body', 'click', '.action_tr', function() {
+    _this = this;
+    form = document.body.querySelector("new_white_list_form");
+    full_name = _this.querySelector(".full_name").innerHTML;
+    walett = _this.querySelector(".addresss").innerHTML;
+    if (form.classList.contains("hide")) {
+        form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
+        form.querySelector(".info_check").innerHTML = "<h6>" + full_name + "</h6><p>" + walett + "</p>";
+        form.classList.remove("hide");
+
+    }
+    else {
+        form.classList.add("hide");
+        form.querySelector(".info_check").innerHTML = "";
+        form.querySelector(".add_to_whitelist").setAttribute("id", "0");
+    }
+});
