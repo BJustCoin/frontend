@@ -661,7 +661,7 @@ on('body', 'click', '.action_tr', function() {
     walett = _this.querySelector(".addresss").innerHTML;
     if (form.classList.contains("hide")) {
         form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
-        form.querySelector(".info_check").innerHTML = "<h6>" + full_name + "</h6><p>" + walett + "</p>";
+        form.querySelector(".info_check").innerHTML = "<h6>" + full_name + " (" + walett + ")</h6>";
         form.classList.remove("hide");
 
     }
