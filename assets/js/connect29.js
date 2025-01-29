@@ -27,8 +27,10 @@ window.addEventListener('load', function () {
 				/// 
 				user_account = web3.eth.getAccounts().then(function (accounts) {
                     console.log('Connected with MetaMask account: ' + accounts[0]);
+                    try {
                     address_span = document.body.querySelector(".get_metamask_address");
                     address_span.innerHTML = accounts[0];
+                    } catch { null };
                     defaultAccount = accounts[0];
                 });
                 console.log('Connected with MetaMask account: ' + user_account);
