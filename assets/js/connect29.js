@@ -556,7 +556,7 @@ window.addEventListener('load', function () {
                                 amount=tokens_list,
                             ).send({
                                 from: defaultAccount,
-                                gasLimit: ,
+                                //gasLimit: ,
                             });
                         })
                     };
