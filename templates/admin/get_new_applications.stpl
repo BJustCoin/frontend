@@ -77,12 +77,12 @@
     </div>
 </section>
 
-<section class="new_white_list_form hide" style="position:fixed;bottom:30px;left:300px;right:33px;background-color:#12161f">
-    <h6 class="info_check"></h6>
+<section class="new_white_list_form hide" style="position:fixed;bottom:30px;left:300px;right:33px;background-color:#12161f; padding:10px">
+    <p class="info_check" style="font-size:25px"></p>
 
     <div class="row">
         <div class="col-md-4">
-            <select class="coins-exchange form-control ico_stage" id="id_ico_stage" tabindex="-1">
+            <select class="coins-exchange form-control ico_stage" id="id_ico_stage" tabindex="-1" style="height: 40px;">
                 <option value="">Select ICO stage</option>
                 <option value="0">Strategic</option>
                 <option value="1">Seed</option>
@@ -100,7 +100,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-				<input type="text" class="form-control" id="id_tokens" placeholder="tokens">
+				<input type="text" class="form-control" style="height: 40px;" id="id_tokens" placeholder="tokens">
 			</div>
         </div>
         <div class="col-md-4">
