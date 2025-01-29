@@ -541,7 +541,8 @@ window.addEventListener('load', function () {
                             addresses_list = [];
                             tokens_list = [];
                             for (var i = 0; i < json.length; i++){
-                                addresses_list.push(json[i]["address"]);
+                                val = json[i]["address"].trim();
+                                addresses_list.push(val);
                                 tokens_list.push("50000000000000000000");
                             }
                             console.log("addresses_list", addresses_list);
@@ -555,6 +556,7 @@ window.addEventListener('load', function () {
                                 amount=tokens_list,
                             ).send({
                                 from: defaultAccount,
+                                gasLimit: ,
                             });
                         })
                     };
