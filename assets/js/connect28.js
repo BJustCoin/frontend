@@ -659,15 +659,9 @@ on('body', 'click', '.action_tr', function() {
     form = document.body.querySelector(".new_white_list_form");
     full_name = _this.querySelector(".full_name").innerHTML;
     walett = _this.querySelector(".addresss").innerHTML;
-    if (form.classList.contains("hide")) {
-        form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
-        form.querySelector(".info_check").innerHTML = full_name + " (" + walett + ")";
-        form.classList.remove("hide");
-
-    }
-    else {
-        form.classList.add("hide");
-        form.querySelector(".info_check").innerHTML = "";
-        form.querySelector(".add_to_whitelist").setAttribute("id", "0");
-    }
+    form.querySelector(".add_to_whitelist").setAttribute("id", _this.getAttribute("id"));
+    _title = "<span style='font-size:25px'>" + full_name + " (" + walett + ")</span>";
+    _close = "<span style='font-size:18px; cursor: pointer; text-align:right' class='close_white_list_window'>Close window</span>";
+    form.querySelector(".info_check").innerHTML = _title + _close;
+    form.classList.remove("hide");
 });

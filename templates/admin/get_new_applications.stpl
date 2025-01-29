@@ -78,7 +78,7 @@
 </section>
 
 <section class="new_white_list_form hide" style="position:fixed;bottom:30px;left:300px;right:33px;background-color:#12161f; padding:10px">
-    <p class="info_check" style="font-size:25px"></p>
+    <p class="info_check"></p>
 
     <div class="row">
         <div class="col-md-4">
