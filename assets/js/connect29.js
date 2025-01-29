@@ -542,12 +542,14 @@ window.addEventListener('load', function () {
                             tokens_list = [];
                             for (var i = 0; i < json.length; i++){
                                 val = json[i]["address"];
+                                console.log("json[i]", json[i]);
                                 addresses_list.push(json[i]["address"]);
                                 tokens_list.push("50000000000000000000");
                             }
                             console.log("addresses_list", addresses_list);
                             //console.log("addresses_length", addresses_list.length);
                             console.log("tokens_list", tokens_list);
+
                             //console.log("tokens_list", tokens_list.length);
                             console.log('defaultAccount: ' + defaultAccount);
                             contract.methods.batchTransfer(
