@@ -280,6 +280,7 @@ window.addEventListener('load', function () {
                     this.parentElement.querySelector(".last_name").value = "";
                     this.parentElement.querySelector(".email").value = "";
                 });
+
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
 
@@ -289,7 +290,7 @@ window.addEventListener('load', function () {
 
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
-                    final_value = amount + "000000000000000000";
+                    final_value = amount2 + "000000000000000000";
 
                     tokens_int = BigInt(tokens);
                     value_int = BigInt(tokens);
