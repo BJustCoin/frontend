@@ -49,7 +49,7 @@ pub struct UserWallet {
     pub link: String,
 }
 
-#[derive(Debug, Serialize, Queryable, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct UserWhiteList {
     pub wallet:     String,
     pub tokens:     String,

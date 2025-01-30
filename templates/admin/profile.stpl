@@ -76,7 +76,7 @@
                         </span>
 
                         <% for i in request_user.white_list.iter() { %>
-                        <% let round = i.get_tokenomic_type() %>
+                        <% let round = i.get_tokenomic_type(); %>
                         <div class="col-12">
                             <div class="buy-input-block-content">
                                 <div class="form-group">
