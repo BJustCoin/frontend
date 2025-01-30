@@ -452,13 +452,6 @@ window.addEventListener('load', function () {
                     ico_stage = parent.querySelector(".ico_stage").value*1;
                     address = parent.parentElement.querySelector(".address").innerHTML;
 
-                    add_to_wishlist = contract.methods.whitelist(
-                        _address=address,
-                        _tokenomicType=ico_stage,
-                        _isWhitelisting=true
-                    ).send({ 
-                        from: defaultAccount,
-                    }); 
                     ////////
                     object = {
                         "id":        id,
@@ -478,8 +471,14 @@ window.addEventListener('load', function () {
                         document.body.querySelector('[id=' + '"' + id + '"' + ']').remove();
                     }}
                     link.send(json);
-
-
+                    
+                    add_to_wishlist = contract.methods.whitelist(
+                        _address=address,
+                        _tokenomicType=ico_stage,
+                        _isWhitelisting=true
+                    ).send({ 
+                        from: defaultAccount,
+                    });
                     /////
 
                     object = {
