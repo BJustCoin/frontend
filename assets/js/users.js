@@ -26,12 +26,7 @@ on('body', 'click', '.create_block', function() {
 on('body', 'click', '.delete_block', function() {
     post_id(this, "/unblock_user/");
 });
-on('body', 'click', '.create_can_buy', function() {
-    post_id(this, "/create_can_buy/");
-});
-on('body', 'click', '.delete_can_buy', function() {
-    post_id(this, "/delete_can_buy/");
-});
+
 on('body', 'click', '.delete_admin', function() {
     post_id(this, "/drop_admin/");
 });

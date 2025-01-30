@@ -5,7 +5,7 @@
         <div class="col-xl-5 col-lg-5">
 
             <div class="box bg-transparent no-border">
-                <div class="box-body box-profile"> 
+                <div class="box-body box-profile">
                     <h3 class="profile-username text-center mb-0"><%= request_user.first_name %> <%= request_user.last_name %></h3>
 
                     <h4 class="text-center mt-0"><%= request_user.email %></h4>
@@ -63,221 +63,132 @@
 
                             <hr style="margin-top: 20px" />
                         </div>
-     
-                                <% if request_user.perm < 3 { %>
-                                    
-                                    
-                                    <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
 
-<span class="user_open_stages" style="display:none" data-types="[<% for i in request_user.white_list.iter() { %><%=i.token_type %>,<% } %>]"></span>
-<span class="user_open_wallets" style="display:none" data-types="[<% for i in request_user.wallets.iter() { %><%=i.link %>,<% } %>]"></span>
-                                
-<span class="buy_bjustcoin_section_default" style="display:none">
-    <div>
-        <div class="col-12">
-            <a href="/create_suggest_item/">Buy tokens</a>
-        </div> 					
-    </div>
-</span>
+                        <% if request_user.perm < 60 { %>
 
-		
-<div class="col-12 buy_seed_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control _number_of_tokens" placeholder="Enter number of BJustCoin tokens (BJC)">
-		</div>
-        <div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="ETH">
-		</div> 
-	</div> 
-<button type="button" data-type="2" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Seed Tokens</button>
+                        <h4 class="box-title mb-15 mt-15">Buy Bjustcoin</h4>
+                        <span class="user_open_stages" 
+                              style="display:none"
+                              data-types="[
+                                <% for i in request_user.white_list.iter() { %>
+                                    type <%= i.get_tokenomic_type() %> :: tokens <%= i.tokens %> :: wallet <%= i.wallet %>,
+                                <% } %>]">
+                        </span>
 
-<div class="col-12 buy_strategic_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="1" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_private_sale_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="3" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_ido_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="4" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_public_sale_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="5" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_advisors_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="6" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_team_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="7" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_future_team_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="8" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_incetives_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="9" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_liquidity_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="10" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_ecosystem_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="11" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-<div class="col-12 buy_loyalty_section_open" style="display:none">
-	<div class="buy-input-block-content">
-		<div class="form-group">
-			<input type="text" class="form-control number_of_tokens" placeholder="number of tokens">
-		</div>
-	</div> 
-<button type="button" data-type="12" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">Buy Now</button>
-
-
-								</div>	
-
-								<div class="">
-									<div class="col-12">
-										<a href="/create_suggest_item/" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
-                                            Create application for token purchase
-                                        </a>
-									</div>							
-								</div>					
-								
-                                <% } else if request_user.perm == 60 { %>
-                                <h4 class="box-title mb-15">Transfer Bjustcoin</h4>
-								<div class="row">
-									<div class="col-12">
-										<div class="buy-input-block-content">
-                                            <div class="form-group">
-												<input type="text" class="form-control address" placeholder="Wallet Address">
-											</div>
-											<div class="form-group">
-												<input type="number" class="form-control amount" placeholder="Amount">
-											</div>
-                                            <select class="mb-3 coins-exchange form-control ico_stage mt-15" name="ico_types" tabindex="-1" aria-hidden="true">
-                                                <option value="0">Select ICO stage</option>
-                                                <option value="1">Strategic</option>
-                                                <option value="2">Seed</option>
-                                                <option value="3">Private Sale</option>
-                                                <option value="4">IDO</option>
-                                                <option value="5">Public Sale</option>
-                                                <option value="6">Advisors</option>
-                                                <option value="7">Team</option>
-                                                <option value="8">Future Team</option>
-                                                <option value="9">Incetives</option>
-                                                <option value="10">Liquidity</option>
-                                                <option value="11">Ecosystem</option>
-                                                <option value="12">Loyalty</option>
-                                            </select> 
-
-                                            <div class="form-group">
-												<input type="text" class="form-control first_name" placeholder="User First Name">
-											</div>
-                                            <div class="form-group">
-												<input type="text" class="form-control last_name" placeholder="User Last Name">
-											</div>
-                                            <div class="form-group">
-												<input type="text" class="form-control email" placeholder="User Email">
-											</div>
-										</div>
-										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin">Transfer</button>
-									</div>									
-								</div>
-
-                                <hr style="margin-top: 20px" />
-                                <h4 class="box-title mb-15 mt-15">Batch token transfer</h4>
-                                <form enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="buy-input-block-content">
-                                                <div class="form-group">
-                                                    <input id="upload" type="file" name="files[]">
-                                                </div>
-                                            </div> 
-                                            <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 batch_token_transfer">Send data</button>
-                                        </div>									
-                                    </div>
-                                </form>
-
-                                <hr style="margin-top: 20px" />
-                                    <h4>Set the ratio of etherium to the dollar</h4>
-                                    <p>
-                                        find out the ETH/USD ratio - 
-                                        <a href="https://etherscan.io/" target="_blank" rel="nofollow">this</a>
-                                    </p>
-								<div class="row"> 
-									<div class="col-12">
-										<div class="buy-input-block-content">
-                                            <div class="form-group">
-												<input type="text" class="form-control value" placeholder="Enter the amount in dollars">
-											</div>
-										</div>
-										<button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 set_bjustcoin_rate">Set rate</button> 
-									</div>							
-								</div>
-                                <hr style="margin-top: 20px" />
-
-                                <div class=""> 
-                                    <div class="ico_stage_description"></div>
-                                    <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 start_ico">
-                                        Start ICO
-                                    </button> 
+                        <% for i in request_user.white_list.iter() { %>
+                        <% let round = i.get_tokenomic_type() %>
+                        <div class="col-12">
+                            <div class="buy-input-block-content">
+                                <div class="form-group">
+                                    <input type="text" class="form-control _number_of_tokens" placeholder="Enter number of BJustCoin tokens (BJC)">
                                 </div>
-
-                                <div class="">
-                                    <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 withdraw_money">
-                                        Withdraw FIAT
-                                    </button> 
+                                <div class="form-group">
+                                    <input type="text" class="form-control number_of_tokens" placeholder="ETH">
                                 </div> 
-                                <% } %>
+                            </div>
+                            <button type="button" data-tokens="<%= i.tokens %>" data-wallet="<%= i.wallet %>" data-type="<%= i.token_type %>" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
+                                Buy <%= round %> Tokens
+                            </button>
+                        </div>
+                        <% } %>
+
+
+                        <div class="">
+                            <div class="col-12">
+                                <a href="/create_suggest_item/" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
+                                    Create application for token purchase
+                                </a>
+                            </div>
+                        </div>
+
+                        <% } else if request_user.perm == 60 { %>
+                        <h4 class="box-title mb-15">Transfer Bjustcoin</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="buy-input-block-content">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control address" placeholder="Wallet Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control amount" placeholder="Amount">
+                                    </div>
+                                    <select class="mb-3 coins-exchange form-control ico_stage mt-15" name="ico_types" tabindex="-1" aria-hidden="true">
+                                        <option value="0">Select ICO stage</option>
+                                        <option value="1">Strategic</option>
+                                        <option value="2">Seed</option>
+                                        <option value="3">Private Sale</option>
+                                        <option value="4">IDO</option>
+                                        <option value="5">Public Sale</option>
+                                        <option value="6">Advisors</option>
+                                        <option value="7">Team</option>
+                                        <option value="8">Future Team</option>
+                                        <option value="9">Incetives</option>
+                                        <option value="10">Liquidity</option>
+                                        <option value="11">Ecosystem</option>
+                                        <option value="12">Loyalty</option>
+                                    </select>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control first_name" placeholder="User First Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control last_name" placeholder="User Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control email" placeholder="User Email">
+                                    </div>
+                                </div>
+                                <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 transfer_bjustcoin">Transfer</button>
+                            </div>
+                        </div>
+
+                        <hr style="margin-top: 20px" />
+                        <h4 class="box-title mb-15 mt-15">Batch token transfer</h4>
+                        <form enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="buy-input-block-content">
+                                        <div class="form-group">
+                                            <input id="upload" type="file" name="files[]">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 batch_token_transfer">Send
+                                        data</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <hr style="margin-top: 20px" />
+                        <h4>Set the ratio of etherium to the dollar</h4>
+                        <p>
+                            find out the ETH/USD ratio -
+                            <a href="https://etherscan.io/" target="_blank" rel="nofollow">this</a>
+                        </p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="buy-input-block-content">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control value" placeholder="Enter the amount in dollars">
+                                    </div>
+                                </div>
+                                <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 set_bjustcoin_rate">Set rate</button>
+                            </div>
+                        </div>
+                        <hr style="margin-top: 20px" />
+
+                        <div class="">
+                            <div class="ico_stage_description"></div>
+                            <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 start_ico">
+                                Start ICO
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <button type="button" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 withdraw_money">
+                                Withdraw FIAT
+                            </button>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
             </div>
@@ -288,4 +199,3 @@
 <script type="text/javascript" src="/assets/js/connect29.js"></script>
 
 <% include!("../footer.stpl"); %>
-

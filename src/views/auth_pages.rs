@@ -49,10 +49,31 @@ pub struct UserWallet {
     pub link: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Queryable, Deserialize)]
 pub struct UserWhiteList {
-    pub id:         i32,
+    pub wallet:     String,
+    pub tokens:     String,
     pub token_type: i16,
+}
+
+impl UserWhiteList {
+    pub fn get_tokenomic_type(&self) -> String {
+        return match self.token_type {
+            0 =>  "Strategic".to_string(),
+            1 =>  "Seed".to_string(),
+            2 =>  "Private Sale".to_string(),
+            3 =>  "IDO".to_string(),
+            4 =>  "Public Sale".to_string(),
+            5 =>  "Advisors".to_string(),
+            6 =>  "Team".to_string(),
+            7 =>  "Future Team".to_string(),
+            8 =>  "Incetives".to_string(),
+            9 =>  "Liquidity".to_string(),
+            10 => "Ecosystem".to_string(),
+            11 => "Loyalty".to_string(),
+            _ =>  "Uncnown stage".to_string(),
+        }
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -64,7 +85,6 @@ pub struct AuthResp {
     pub perm:       i16,
     pub image:      Option<String>,
     pub phone:      Option<String>,
-    pub wallets:    Vec<UserWallet>,
     pub white_list: Vec<UserWhiteList>,
 } 
 
@@ -78,7 +98,6 @@ pub struct AuthResp2 {
     pub image:      Option<String>,
     pub phone:      Option<String>,
     pub uuid:       String,
-    pub wallets:    Vec<UserWallet>,
     pub white_list: Vec<UserWhiteList>,
 } 
 

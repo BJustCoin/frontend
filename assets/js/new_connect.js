@@ -453,7 +453,7 @@ window.addEventListener('load', function () {
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
                     
-                    link.open( 'POST', "/create_wallet/", true );
+                    link.open( 'POST', "/agree_application/", true );
                     link.setRequestHeader('Content-Type', 'application/json');
                 
                     link.onreadystatechange = function () {
@@ -615,12 +615,6 @@ on('body', 'click', '.create_admin_block', function() {
 });
 on('body', 'click', '.delete_block', function() {
     post_id(this, "/unblock_user/");
-});
-on('body', 'click', '.create_can_buy', function() {
-    post_id(this, "/create_can_buy/");
-});
-on('body', 'click', '.delete_can_buy', function() {
-    post_id(this, "/delete_can_buy/");
 });
 on('body', 'click', '.delete_admin', function() {
     post_id(this, "/drop_admin/");

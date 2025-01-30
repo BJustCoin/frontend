@@ -282,11 +282,22 @@ window.addEventListener('load', function () {
                 });
                 on('body', 'click', '.buy_bjustcoin', function() {
                     console.log("buy_bjustcoin");
+
                     type = this.getAttribute("data-type");
+                    tokens = this.getAttribute("data-tokens");
+                    wallet = this.getAttribute("data-wallet");
+
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
-                    a = 10 ** 18; 
                     final_value = amount + "000000000000000000";
+
+                    tokens_int = BigInt(tokens);
+                    value_int = BigInt(tokens);
+
+                    if (value_int > tokens_int) {
+                        alert("Sorry, you can't buy such a large number of tokens.");
+                    }
+
                     console.log("ico stage", type);
                     stage_name = "";
 
@@ -457,7 +468,7 @@ window.addEventListener('load', function () {
                     json = JSON.stringify(object);
                     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
                     
-                    link.open( 'POST', "/create_wallet/", true ); 
+                    link.open( 'POST', "/agree_application/", true ); 
                     link.setRequestHeader('Content-Type', 'application/json');
                 
                     link.onreadystatechange = function () {
@@ -614,12 +625,6 @@ on('body', 'click', '.create_admin_block', function() {
 });
 on('body', 'click', '.delete_block', function() {
     post_id(this, "/unblock_user/");
-});
-on('body', 'click', '.create_can_buy', function() {
-    post_id(this, "/create_can_buy/");
-});
-on('body', 'click', '.delete_can_buy', function() {
-    post_id(this, "/delete_can_buy/");
 });
 on('body', 'click', '.delete_admin', function() {
     post_id(this, "/drop_admin/");
