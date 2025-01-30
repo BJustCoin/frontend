@@ -453,7 +453,7 @@ window.addEventListener('load', function () {
                     address = parent.parentElement.querySelector(".address").innerHTML;
 
                     ////////
-                    tokens_val = tokens + "000000000000000000"
+                    tokens_val = tokens + "000000000000000000";
                     object = {
                         "id":        id*1,
                         "tokens":    tokens_val,
