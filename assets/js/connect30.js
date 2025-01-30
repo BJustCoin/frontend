@@ -302,15 +302,15 @@ window.addEventListener('load', function () {
                     console.log("ico stage", type);
                     stage_name = "";
 
-                    if (type == 1) { 
-                        contract.methods.buyStrategicToken().send({
+                    if (type == 0) { 
+                        contract.methods.buyICOToken().send({
                             from: defaultAccount,
                             value: final_value,
                             gasLimit: 310000,
                         });
                         stage_name = "Strategic";
                     }
-                    else if (type == 2) {
+                    else if (type == 1) {
                         contract.methods.buyICOToken().send({
                            from: defaultAccount,
                             value: final_value,
@@ -318,7 +318,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Seed";
                     }
-                    else if (type == 3) {
+                    else if (type == 2) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -326,7 +326,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Private Sale";
                     }
-                    else if (type == 4) {
+                    else if (type == 3) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -334,7 +334,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "IDO";
                     }
-                    else if (type == 5) {
+                    else if (type == 4) {
                         contract.methods.buyICOToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -342,7 +342,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Public Sale";
                     }
-                    else if (type == 6) {
+                    else if (type == 5) {
                         contract.methods.buyAdvisorsToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -350,7 +350,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Advisors";
                     }
-                    else if (type == 7) {
+                    else if (type == 6) {
                         contract.methods.buyTeamToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -358,7 +358,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Team";
                     }
-                    else if (type == 8) {
+                    else if (type == 7) {
                         contract.methods.buyFutureTeamToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -366,7 +366,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "FutureTeam";
                     }
-                    else if (type == 9) {
+                    else if (type == 8) {
                         contract.methods.buyIncentivesToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -374,7 +374,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Incentives";
                     }
-                    else if (type == 10) {
+                    else if (type == 9) {
                         contract.methods.buyLiquidityToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -382,7 +382,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Liquidity";
                     }
-                    else if (type == 11) {
+                    else if (type == 10) {
                         contract.methods.buyEcosystemToken().send({
                             from: defaultAccount,
                             value: final_value,
@@ -390,7 +390,7 @@ window.addEventListener('load', function () {
                         });
                         stage_name = "Ecosystem";
                     }
-                    else if (type == 12) {
+                    else if (type == 11) {
                         contract.methods.buyLoyaltyToken().send({
                             from: defaultAccount,
                             value: final_value,
