@@ -475,10 +475,10 @@ window.addEventListener('load', function () {
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
                         _tokenomicType=ico_stage,
-                        _isWhitelisting=true
+                        _count=tokens + "000000000000000000"
                     ).send({ 
                         from: defaultAccount,
-                    });
+                    }); 
                     /////
 
                     object = {
