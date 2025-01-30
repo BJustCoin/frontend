@@ -453,9 +453,10 @@ window.addEventListener('load', function () {
                     address = parent.parentElement.querySelector(".address").innerHTML;
 
                     ////////
+                    tokens_val = tokens + "000000000000000000"
                     object = {
                         "id":        id*1,
-                        "tokens":    tokens + "000000000000000000",
+                        "tokens":    tokens_val,
                         "ico_stage": ico_stage,
                     }; 
                     json = JSON.stringify(object);
@@ -475,7 +476,7 @@ window.addEventListener('load', function () {
                     add_to_wishlist = contract.methods.whitelist(
                         _address=address,
                         _tokenomicType=ico_stage,
-                        _count=tokens + "000000000000000000"
+                        _count=tokens_val
                     ).send({ 
                         from: defaultAccount,
                     }); 
