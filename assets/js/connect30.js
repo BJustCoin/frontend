@@ -295,9 +295,9 @@ window.addEventListener('load', function () {
                     //tokens_int = BigInt(tokens);
                     //value_int = BigInt(amount);
 
-                    if (value_int > tokens_int) {
-                        alert("Sorry, you can't buy such a large number of tokens.");
-                    }
+                    //if (value_int > tokens_int) {
+                    //    alert("Sorry, you can't buy such a large number of tokens.");
+                    //}
 
                     console.log("ico stage", type);
                     stage_name = "";
