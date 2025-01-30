@@ -654,7 +654,7 @@ on('body', 'input', '._number_of_tokens', function() {
         rate = current_rate;
         val = this.value;
         eth_val = document.body.querySelector(".number_of_tokens");
-        eth_val.value = val * cost * 100 / rate;
+        eth_val.value = val * cost * 100000000 / rate;
 
         value = this.value*1;
         btn = this.parentElement.parentElement.parentElement.querySelector("button");
