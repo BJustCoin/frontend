@@ -292,8 +292,8 @@ window.addEventListener('load', function () {
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
                     final_value = amount;
 
-                    tokens_int = BigInt(tokens);
-                    value_int = BigInt(amount);
+                    //tokens_int = BigInt(tokens);
+                    //value_int = BigInt(amount);
 
                     if (value_int > tokens_int) {
                         alert("Sorry, you can't buy such a large number of tokens.");
