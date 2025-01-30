@@ -292,6 +292,7 @@ window.addEventListener('load', function () {
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
                     final_value = amount;
 
+                    console.log("final_value", final_value);
                     //tokens_int = BigInt(tokens);
                     //value_int = BigInt(amount);
 
