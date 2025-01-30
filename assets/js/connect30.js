@@ -454,7 +454,7 @@ window.addEventListener('load', function () {
 
                     ////////
                     object = {
-                        "id":        id,
+                        "id":        id*1,
                         "tokens":    tokens + "000000000000000000",
                         "ico_stage": ico_stage,
                     }; 
