@@ -291,7 +291,8 @@ window.addEventListener('load', function () {
                     amount = this.parentElement.querySelector(".number_of_tokens").value;
                     amount2 = this.parentElement.querySelector("._number_of_tokens").value;
                     a = 10 ** 18;
-                    final_value = BigInt(amount*a);
+                    final_value1 = amount*a + "";
+                    final_value = final_value1.split(".")[0];
                     console.log("final_value", final_value);
                     //tokens_int = BigInt(tokens);
                     //value_int = BigInt(amount);
