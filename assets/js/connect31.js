@@ -191,7 +191,7 @@ window.addEventListener('load', function () {
                     } 
                     else if (ico_stage == 2) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
-                        stage_name = "Seed";
+                        stage_name = "Seed"; 
                     }
                     else if (ico_stage == 3) {
                         contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
@@ -210,7 +210,7 @@ window.addEventListener('load', function () {
                         stage_name = "Advisors";
                     }
                     else if (ico_stage == 7) {
-                        contract.methods.transferICOToken(to=address, amount=final_value).send({from: defaultAccount,});
+                        contract.methods.transferTeamToken(to=address, amount=final_value).send({from: defaultAccount,});
                         stage_name = "Team";
                     }
                     else if (ico_stage == 8) {
