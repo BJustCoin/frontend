@@ -142,9 +142,9 @@ input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-form-label">Number of tokens (<span style="color:#F00000">*</span>)</label>
+                                <label class="col-form-label">Number of tokens - 50 (BJC) min purchase  (<span style="color:#F00000">*</span>)</label>
                                 <div class="">
-                                    <input class="form-control" id="id_tokens" type="text" name="tokens" placeholder="Number of tokens">
+                                    <input class="form-control" id="id_tokens" type="number" name="tokens" placeholder="Number of tokens - 50 (BJC) min purchase">
                                 </div>
                             </div>
 
@@ -238,6 +238,11 @@ on('body', 'click', '#create_suggest_item', function() {
     } else if (!form.querySelector("#id_is_agree").checked){
       form.querySelector(".question-card").style.border = "1px #FF0000 solid";
       response.innerHTML = "Agreement is required!";
+      response.classList.add("error");
+      return
+    } else if (form.querySelector("#id_tokens").value*1 < 50){
+      form.querySelector(".question-card").style.border = "1px #FF0000 solid";
+      response.innerHTML = "50 (BJC) min purchase";
       response.classList.add("error");
       return
     }
