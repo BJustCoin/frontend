@@ -891,7 +891,7 @@ pub struct SmallUsers {
     pub users: Vec<SmallUser>,
 } 
 
-pub async fn admin_profile_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+pub async fn admin_profile_page(session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
         let object_list: Vec<SmallUser>;
