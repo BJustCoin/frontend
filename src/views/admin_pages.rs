@@ -94,6 +94,9 @@ pub struct ApplicationIdsJson {
 pub async fn approve_white_lists(session: Session, data: Json<ApplicationsJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ApplicationsJson, ()> (
             URL.to_owned() + &"/approve_white_lists/".to_string(),
             &data, 
@@ -110,6 +113,9 @@ pub async fn approve_white_lists(session: Session, data: Json<ApplicationsJson>)
 pub async fn reject_white_lists(session: Session, data: Json<ApplicationIdsJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ApplicationIdsJson, ()> (
             URL.to_owned() + &"/reject_white_lists/".to_string(),
             &data, 
@@ -166,6 +172,9 @@ pub struct LogRespData {
 pub async fn logs_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }   
         let page = crate::utils::get_page(&req);
         let object_list: Vec<LogData>;
         let next_page: i64;
@@ -207,6 +216,9 @@ pub async fn logs_page(req: HttpRequest, session: Session) -> actix_web::Result<
 pub async fn user_logs_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let id = crate::utils::get_id(&req);
         let object_list: Vec<LogData>;
@@ -275,6 +287,9 @@ pub struct SuggestRespData {
 pub async fn get_new_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<SuggestItem>;
         let next_page: i64;
@@ -315,6 +330,9 @@ pub async fn get_new_applications(req: HttpRequest, session: Session) -> actix_w
 pub async fn get_approved_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<SuggestItem>;
         let next_page: i64;
@@ -355,6 +373,9 @@ pub async fn get_approved_applications(req: HttpRequest, session: Session) -> ac
 pub async fn get_rejected_applications(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<SuggestItem>;
         let next_page: i64;
@@ -399,8 +420,11 @@ pub struct AuthRespData {
     pub next: i64, 
 }
 pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
-    if is_signed_in(&session) {
+    if is_signed_in(&session) { 
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -441,6 +465,9 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
 pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -481,6 +508,9 @@ pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::
 pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -521,6 +551,9 @@ pub async fn banned_users_list_page(req: HttpRequest, session: Session) -> actix
 pub async fn banned_admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return admin_profile_page(session.clone()).await;
+        }
         let page = crate::utils::get_page(&req);
         let object_list: Vec<AuthResp>;
         let next_page: i64;
@@ -619,6 +652,9 @@ pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Resu
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
             &l_data, 
@@ -638,6 +674,9 @@ pub async fn unblock_user(session: Session, data: Json<ItemId>) -> actix_web::Re
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_user/".to_string(),
             &l_data, 
@@ -657,6 +696,9 @@ pub async fn block_admin(session: Session, data: Json<ItemId>) -> actix_web::Res
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_admin/".to_string(),
             &l_data, 
@@ -676,6 +718,9 @@ pub async fn unblock_admin(session: Session, data: Json<ItemId>) -> actix_web::R
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/unblock_admin/".to_string(),
             &l_data, 
@@ -695,6 +740,9 @@ pub async fn create_admin(session: Session, data: Json<ItemId>) -> actix_web::Re
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/create_admin/".to_string(),
             &l_data, 
@@ -714,6 +762,9 @@ pub async fn drop_admin(session: Session, data: Json<ItemId>) -> actix_web::Resu
             id: data.id,
         };
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/drop_admin/".to_string(),
             &l_data, 
@@ -738,6 +789,9 @@ pub struct Wallet {
 pub async fn agree_application(session: Session, data: Json<Wallet>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<Wallet, ()> (
             URL.to_owned() + &"/agree_application/".to_string(),
             &data,
