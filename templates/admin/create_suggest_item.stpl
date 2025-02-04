@@ -197,53 +197,43 @@ function on(elSelector, eventName, selector, fn) {var element = document.querySe
 on('body', 'click', '#create_suggest_item', function() {
     _this = this;
     form = _this.parentElement;
-    response = form.querySelector(".api_response");
-    form.querySelector(".question-card").style.border = "unset";
+    form.querySelector(".question-card").style.borderColor = "rgba(255, 255, 255, 0.35)";
     
     if (!form.querySelector("#id_first_name").value){
       form.querySelector("#id_first_name").style.border = "1px #FF0000 solid";
-      response.innerHTML = "First name is required!";
-      response.classList.add("error");
+      alert("First name is required!");
       return
     } else if (!form.querySelector("#id_last_name").value){
       form.querySelector("#id_last_name").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Last name is required!";
-      response.classList.add("error");
+      alert("Last name is required!");
       return
     } else if (!form.querySelector("#id_email").value){
       form.querySelector("#id_email").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Input email!";
-      response.classList.add("error");
+      alert("Input email!");
       return
     } else if (!form.querySelector("#id_phone").value){
       form.querySelector("#id_phone").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Phone is required!";
-      response.classList.add("error");
+      alert("Phone is required!");
       return
     } else if (!form.querySelector("#id_mobile").value){
       form.querySelector("#id_mobile").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Input mobile phone!";
-      response.classList.add("error");
+      alert("Input mobile phone!");
       return
     } else if (!form.querySelector("#id_wallet").value){
       form.querySelector("#id_wallet").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Waller address is required!";
-      response.classList.add("error");
+      alert("Waller address is required!");
       return
     } else if (!form.querySelector("#id_tokens").value){
       form.querySelector("#id_tokens").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Number of tokens is required!";
-      response.classList.add("error");
+      alert("Number of tokens is required!");
       return
     } else if (!form.querySelector("#id_is_agree").checked){
       form.querySelector(".question-card").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Agreement is required!";
-      response.classList.add("error");
+      alert("Agreement is required!");
       return
     } else if (form.querySelector("#id_tokens").value*1 < 50){
       form.querySelector(".question-card").style.border = "1px #FF0000 solid";
-      response.innerHTML = "50 (BJC) min purchase";
-      response.classList.add("error");
+      alert("50 (BJC) min purchase");
       return
     }
     else {
