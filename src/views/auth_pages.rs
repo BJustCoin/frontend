@@ -198,7 +198,7 @@ pub async fn signup(req: HttpRequest, session: Session, data: Json<NewUser>) -> 
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_profile_page(req, session).await
+            crate::views::admin_profile_page(session).await
         },
         Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
     }
@@ -225,7 +225,7 @@ pub async fn reset(req: HttpRequest, session: Session, data: Json<NewPasswordJso
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_profile_page(req, session).await
+            crate::views::admin_profile_page(session).await
         },
         Err(_) => crate::views::not_found_page(session.clone()).await,
     }
