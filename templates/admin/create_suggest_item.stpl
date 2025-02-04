@@ -232,7 +232,7 @@ on('body', 'click', '#create_suggest_item', function() {
       alert("Agreement is required!");
       return
     } else if (form.querySelector("#id_tokens").value*1 < 50){
-      form.querySelector(".question-card").style.border = "1px #FF0000 solid";
+      form.querySelector("#id_tokens").style.border = "1px #FF0000 solid";
       alert("50 (BJC) min purchase");
       return
     }
