@@ -14,6 +14,27 @@ current_stage = 0;
 tokenomic_type = 0;
 current_rate = 0;
 
+function send_mail (first_name, last_name, email, subtitle, text) {
+    object = {
+        "subtitle": subtitle, 
+        "text": text,
+        "first_name": first_name,
+        "last_name": last_name, 
+        "email": email, 
+    };
+    json = JSON.stringify(object);
+    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' ); 
+                    
+    link.open( 'POST', "/send_mail/", true );
+    link.setRequestHeader('Content-Type', 'application/json');
+                
+    link.onreadystatechange = function () {
+    if ( link.readyState == 4 && link.status == 200 ) {
+        console.log("email send!!");
+    }}
+    link.send(json);
+}
+
 window.addEventListener('load', function () {
 			if (typeof window.ethereum !== 'undefined') {
 				web3 = new Web3(window.ethereum);

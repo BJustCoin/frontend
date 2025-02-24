@@ -1,0 +1,33 @@
+<% include!("anon_header.stpl"); %>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <h1>FAQ</h1>
+
+                    <div class="d-flex flex-column flex-1 overflow-auto px-2">
+                        <h2>1) MetaMask Wallet For Beginners</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/G_JiU-6dcu8?si=WtbRTAB9yUBQ_KT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <hr />
+
+                        <h2>2) How to connect MetaMask wallet (BJC) dashboard</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/oWzBlVy5IgQ?si=xwvRuJDRM44Z8SsH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <hr />
+
+                        <h2>3) How to buy (ETH)</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZWLGh3u0JbE?si=joqkyUzVykR8O6Kz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <hr />
+
+                        <h2>4)  How to purchase BJC</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jxVcnEYxRhY?si=qTbNdAowuARopxN8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include!("anon_footer.stpl"); %>
