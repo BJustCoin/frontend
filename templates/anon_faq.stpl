@@ -1,10 +1,23 @@
 <% include!("anon_header.stpl"); %>
-
+<style>
+.erty {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .erty {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+  }
+</style>
 <section class="content">
     <div class="row">
         <div class="col-12">
             <div class="box">
-                <div class="box-body">
+                <div class="box-body erty">
                     <h1>FAQ</h1>
 
                     <div class="d-flex flex-column flex-1 overflow-auto px-2">
