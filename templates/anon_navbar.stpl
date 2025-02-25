@@ -127,6 +127,7 @@
               <li class="user-body">
 				 <a class="dropdown-item" href="/login/"><i class="ti-user text-muted me-2"></i> Sign In</a>
 				 <a class="dropdown-item" href="/signup/"><i class="ti-wallet text-muted me-2"></i> Sign Up</a>
+				 <a class="dropdown-item" href="/faq/"><i class="ti-wallet text-muted me-2"></i> FAQ</a>
               </li>
             </ul>
           </li>	
