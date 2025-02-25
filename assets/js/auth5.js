@@ -36,7 +36,7 @@ on('body', 'click', '#logg', function() {
       return
     }
     else {
-      _this.disabled = true;
+      //_this.disabled = true;
     }
     errors = validatePassword(form.querySelector("#id_password").value);
     if (errors.length > 0) {
