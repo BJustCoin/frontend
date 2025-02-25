@@ -59,12 +59,12 @@ on('body', 'click', '#logg', function() {
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
       status1 = JSON.parse(link.responseText)["status"];
-      console.log(status1);
-      if (status1 != "error") {
+      console.log(status1); 
+      if (status1 == "ok!") {
         window.location.href = "/profile/";
       } 
       else {
-        response.innerHTML = "The email address or password is incorrect.";
+        response.innerHTML = status1;
       }
     }
     else {

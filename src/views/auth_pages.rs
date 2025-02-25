@@ -121,7 +121,7 @@ pub struct Resp {
 
 pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
     if is_signed_in(&session) {
-        return Json(Resp { 
+        return Json(Resp {  
             status: "error".to_string(),
         }); 
     }
@@ -137,9 +137,14 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
 
     match res {
         Ok(user) => {
-            if user.id == 0 {
+            if user.perm == 0 {
                 return Json(Resp {
-                    status: "error".to_string(),
+                    status: "The email address or password is incorrect.".to_string(),
+                });
+            }
+            else if user.perm == 5 {
+                return Json(Resp {
+                    status: "This profile is block.".to_string(),
                 });
             }
             crate::utils::set_current_user(&session, &user);
