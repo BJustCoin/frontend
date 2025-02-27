@@ -186,7 +186,7 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::R
     ).await; 
 
     match res {
-        Ok(ok) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(ok)),
+        Ok(ok) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(ok.message)),
         Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("Error")),
     }
 }
