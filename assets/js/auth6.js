@@ -119,6 +119,12 @@ on('body', 'click', '#signup', function() {
       response.classList.remove("error");
     }
 
+    first_name = form.querySelector("#id_first_name").value;
+    last_name = form.querySelector("#id_last_name").value;
+
+    form.querySelector("#id_first_name").value = first_name.replace(/[^a-zA-Z ]/g, "");
+    form.querySelector("#id_last_name").value = last_name.replace(/[^a-zA-Z ]/g, "");
+
     errors = validatePassword(form.querySelector("#id_password").value);
     if (errors.length > 0) {
       output = "";
@@ -272,6 +278,7 @@ on('body', 'click', '#send_token', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
+        console.log(link.responseText);
         form.querySelector("#send_token").remove();
         document.body.querySelector(".action_btn").parentElement.classList.remove("hide");
         response.innerHTML = "We have sent the confirmation code to your email.";

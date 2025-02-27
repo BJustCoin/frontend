@@ -100,30 +100,6 @@ input[type="checkbox"]:checked ~ .confirm-checkbox .checkmark-image {
                     <h1>Application for Token purchase</h1>
                         <form>
                             <div class="form-group">
-                                <label class="col-form-label">First Name (<span style="color:#F00000">*</span>)</label>
-                                <div class="">
-                                    <input class="form-control" id="id_first_name" name="first_name" value="<%= request_user.first_name %>" type="text" placeholder="First name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Middle Name</label>
-                                <div class="">
-                                    <input class="form-control" id="id_middle_name" name="middle_name" type="text" placeholder="Middle name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Last Name (<span style="color:#F00000">*</span>)</label>
-                                <div class="">
-                                    <input class="form-control" id="id_last_name" name="last_name" value="<%= request_user.last_name %>" type="text" placeholder="Last name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Email Adress (<span style="color:#F00000">*</span>)</label>
-                                <div class="">
-                                    <input class="form-control" id="id_email" name="email" value="<%= request_user.email %>" type="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-form-label">Phone Number (<span style="color:#F00000">*</span>)</label>
                                 <div class="">
                                     <input class="form-control" name="phone" id="id_phone" type="text" placeholder="Phone Number">
@@ -199,19 +175,7 @@ on('body', 'click', '#create_suggest_item', function() {
     form = _this.parentElement;
     form.querySelector(".question-card").style.border = "1px rgba(255, 255, 255, 0.35) solid";
     
-    if (!form.querySelector("#id_first_name").value){
-      form.querySelector("#id_first_name").style.border = "1px #FF0000 solid";
-      alert("First name is required!");
-      return
-    } else if (!form.querySelector("#id_last_name").value){
-      form.querySelector("#id_last_name").style.border = "1px #FF0000 solid";
-      alert("Last name is required!");
-      return
-    } else if (!form.querySelector("#id_email").value){
-      form.querySelector("#id_email").style.border = "1px #FF0000 solid";
-      alert("Input email!");
-      return
-    } else if (!form.querySelector("#id_phone").value){
+    if (!form.querySelector("#id_phone").value){
       form.querySelector("#id_phone").style.border = "1px #FF0000 solid";
       alert("Phone is required!");
       return

@@ -808,33 +808,18 @@ pub async fn agree_application(session: Session, data: Json<Wallet>) -> actix_we
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct NewSuggestJson {
-    pub first_name:  String,
-    pub middle_name: String,
-    pub last_name:   String,
-    pub email:       String,
-    pub phone:       String, 
-    pub mobile:      String,
-    pub is_agree:    String,
-    pub address:     String,
-    pub tokens:      String,
+    pub phone:    String, 
+    pub mobile:   String,
+    pub is_agree: String,
+    pub address:  String,
+    pub tokens:   String,
 }
 pub async fn create_suggest_item(session: Session, data: Json<NewSuggestJson>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
-        let l_data = NewSuggestJson {
-            first_name:  data.first_name.clone(),
-            middle_name: data.middle_name.clone(),
-            last_name:   data.last_name.clone(),
-            email:       data.email.clone(),
-            phone:       data.phone.clone(),
-            mobile:      data.mobile.clone(),
-            is_agree:    data.is_agree.clone(),
-            address:     data.address.clone(),
-            tokens:      data.tokens.clone(),
-        };
         let _request_user = get_current_user(&session).expect("E.");
         let res = crate::utils::request_post::<NewSuggestJson, ()> (
             URL.to_owned() + &"/create_suggest_item/".to_string(),
-            &l_data, 
+            &data,
             _request_user.uuid
         ).await;
 

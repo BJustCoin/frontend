@@ -35,13 +35,13 @@
 			
 			link.onreadystatechange = function () {
 				if ( link.readyState == 4 && link.status == 200 ) {
-					window.location.href = "/login/";
+					window.location.href = "/";
 				}
 				else {
 					console.log()
 				}};
 				link.send( null );
 });
-	</script>
+	</script> 
 </body>
 </html>
