@@ -242,27 +242,10 @@ on('body', 'click', '#send_token', function() {
       response.classList.add("error");
       return
     }
-    else if (!form.querySelector("#id_password").value){
-      form.querySelector("#id_password").style.border = "1px #FF0000 solid";
-      response.innerHTML = "Password is required";
-      response.classList.add("error");
-      return
-    }
     else {
       form.querySelector("#id_email").style.border = "unset";
       this.disabled = true; 
       response.classList.remove("error");
-    }
-
-    errors = validatePassword(form.querySelector("#id_password").value);
-    if (errors.length > 0) {
-      output = "";
-      for (var i = 0; i < errors.length; i++){
-        output += errors[i];
-      };
-      response.innerHTML = output;
-      response.classList.add("error");
-      return;
     }
 
     form.querySelector("#send_token").setAttribute("disabled", "true");
@@ -281,13 +264,13 @@ on('body', 'click', '#send_token', function() {
         console.log(link.responseText);
         form.querySelector("#send_token").remove();
         document.body.querySelector(".action_btn").parentElement.classList.remove("hide");
-        response.innerHTML = "We have sent the confirmation code to your email.";
+        response.innerHTML = link.responseText;
     }
     else {
         _this.disabled = false;
         response.style.display = "block";
-        response.innerHTML = "Error";
-        response.classList.add("error");
+        //response.innerHTML = "Error";
+        //response.classList.add("error");
     }};
     link.send(json);
 });
