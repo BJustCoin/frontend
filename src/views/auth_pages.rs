@@ -208,7 +208,7 @@ pub async fn signup(req: HttpRequest, session: Session, data: Json<NewUser>) -> 
     match res {
         Ok(user) => {
             crate::utils::set_current_user(&session, &user);
-            crate::views::admin_profile_page(session).await
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(user))
         },
         Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
     }
