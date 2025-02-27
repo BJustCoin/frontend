@@ -148,9 +148,10 @@ on('body', 'click', '#signup', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-        link.responseText;
+        console.log(link.responseText);
+        console.log(link.responseText["perm"]);
         window.location.href = "/profile/";
-    }
+    } 
     else {
         _this.disabled = false;
         response.style.display = "block";
