@@ -207,7 +207,9 @@ pub async fn signup(req: HttpRequest, session: Session, data: Json<NewUser>) -> 
 
     match res {
         Ok(user) => {
-            crate::utils::set_current_user(&session, &user);
+            if user.perm != 0 {
+                crate::utils::set_current_user(&session, &user);
+            }
             Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(user.first_name))
         },
         Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
