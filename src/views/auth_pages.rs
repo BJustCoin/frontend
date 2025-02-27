@@ -169,16 +169,21 @@ pub struct EmailUserReq2 {
     name:  String,
     email: String,
 }
+#[derive(Debug, Deserialize)]
+struct EmailResp {
+    message:  String,
+}
+
 pub async fn invite(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::Result<HttpResponse> {
     let l_data = EmailUserReq2 {
         name:  data.name.clone(),
         email: data.email.clone(),
     }; 
-    let res = request_post::<EmailUserReq2, String> (
+    let res = request_post::<EmailUserReq2, EmailResp> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
         "".to_string()
-    ).await;
+    ).await; 
 
     match res {
         Ok(ok) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(ok)),
