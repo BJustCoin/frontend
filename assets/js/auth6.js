@@ -148,6 +148,7 @@ on('body', 'click', '#signup', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
+        link.responseText;
         window.location.href = "/profile/";
     }
     else {
