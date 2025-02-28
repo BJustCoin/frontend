@@ -236,10 +236,10 @@ on('body', 'click', '#reset', function() {
 on('body', 'click', '#send_token', function() {
     _this = this;
     if (_this.classList.contains("code2")) {
-      url = "/invite/";
+      url = "/invite_reset/";
     }
     else {
-      url = "/invite_reset/";
+      url = "/invite/";
     }
     form = _this.parentElement.parentElement.parentElement;
     response = form.querySelector(".api_response");
