@@ -28,6 +28,7 @@ pub fn auth_urls(config: &mut web::ServiceConfig) {
     config.route("/signup/", web::post().to(signup));
     config.route("/reset/", web::post().to(reset));
     config.route("/invite/", web::post().to(invite));
+    config.route("/invite_reset/", web::post().to(invite_reset));
     config.route("/logout/", web::get().to(logout));
 }
 
@@ -182,6 +183,18 @@ pub async fn invite(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::R
     let res = request_post::<EmailUserReq2, EmailResp> (
         URL.to_owned() + &"/invite/".to_string(),
         &l_data, 
+        "".to_string()
+    ).await; 
+
+    match res {
+        Ok(ok) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(ok.message)),
+        Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("Error")),
+    }
+}
+pub async fn invite_reset(req: HttpRequest, data: Json<EmailUserReq2>) -> actix_web::Result<HttpResponse> {
+    let res = request_post::<EmailUserReq2, EmailResp> (
+        URL.to_owned() + &"/invite_reset/".to_string(),
+        &data,
         "".to_string()
     ).await; 
 

@@ -235,6 +235,12 @@ on('body', 'click', '#reset', function() {
 
 on('body', 'click', '#send_token', function() {
     _this = this;
+    if (_this.classList.contains("code2")) {
+      url = "/invite/";
+    }
+    else {
+      url = "/invite_reset/";
+    }
     form = _this.parentElement.parentElement.parentElement;
     response = form.querySelector(".api_response");
     if (!form.querySelector("#id_email").value){
@@ -257,7 +263,7 @@ on('body', 'click', '#send_token', function() {
     };
     json = JSON.stringify(object);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    link.open( 'POST', "/invite/", true );
+    link.open( 'POST', url, true );
     link.setRequestHeader('Content-Type', 'application/json');
   
     link.onreadystatechange = function () {

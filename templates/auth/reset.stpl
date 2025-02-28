@@ -62,8 +62,8 @@
 										  </div>
 										</div> 
 										<div class="col-12 text-center hide">
-										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10">Get code</button>
-										</div>
+										  	<button id="send_token" type="button" style="background-color: #E8AA37;" class="btn margin-top-10 code2">Get code</button>
+										</div> 
 										<div class="col-12 text-center hide">
 										  	<button id="reset" type="button" style="background-color: #E8AA37;" class="action_btn btn margin-top-10">Reset</button>
 										</div> 
@@ -87,6 +87,6 @@
 	<script src="/assets/js/vendors.min.js"></script>
 	<script src="/assets/js/chat-popup.js"></script>
     <script src="/assets/js/feather.min.js"></script>	
-	<script src="/assets/js/auth6.js"></script>
+	<script src="/assets/js/auth7.js"></script>
 </body>
 </html>
