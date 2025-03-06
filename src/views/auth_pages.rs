@@ -143,11 +143,11 @@ pub async fn login(session: Session, data: Json<LoginUser>) -> Json<Resp> {
                     status: "The email address or password is incorrect.".to_string(),
                 });
             }
-            //else if user.perm == 5 {
-            //    return Json(Resp {
-            //        status: "This profile is block.".to_string(),
-            //    });
-            //}
+            else if user.perm == 5 {
+                return Json(Resp {
+                    status: "This profile is block.".to_string(),
+                });
+            }
             crate::utils::set_current_user(&session, &user);
             return Json(Resp {
                 status: "ok!".to_string(),
