@@ -86,8 +86,8 @@
                                     <input type="text" class="form-control number_of_tokens" placeholder="ETH">
                                 </div> 
                             </div>
-                            <button type="button" data-tokens="<%= i.tokens %>" data-wallet="<%= i.wallet %>" data-type="<%= i.token_type %>" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
-                                Buy <%= round %> Tokens
+                            <button type="button" data-tokens="<%= i.tokens %>" data-wallet="<%= i.wallet %>" data-type="4" class="waves-effect waves-light btn btn-primary mt-10 d-block w-p100 buy_bjustcoin">
+                                Buy Public Sale Tokens
                             </button>
                         </div>
                         <% } %>
