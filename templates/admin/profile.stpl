@@ -13,7 +13,7 @@
                     <p class="text-center mt-0">Metamask: <span class="get_metamask_address"></span></p>
 
                     <div class="row">
-                        <h3 class="title w-p100 mt-10 mb-0 p-20">Last Transactions</h3>
+                        <h3 class="title w-p100 mt-10 mb-0 p-20">Tokens Stats</h3>
                         <div class="col-12">
                             <div class="media-list media-list-hover w-p100 mt-0">
                                 <!--
@@ -25,9 +25,98 @@
                                     <span class="text-end pull-right"><span class="badge badge-sm badge-danger mb-10">sell</span><br>0.12458921 BJC</span>
                                 </h5>
                                 -->
-                                <h5 class="media media-single py-10 px-0 w-p100 justify-content-between">
-                                    <span>No Transactions...</span>
-                                </h5>
+                                <p class="overview" style="font-weight: bold">
+                                    <span class="token_name">Smartcontract</span> | 
+                                    <span class="token_total">token total</span> | 
+                                    <span class="token_count">token count</span>
+                                    <a style="cursor: pointer; text-decoration: underline; float: right">Action</a>
+                                </p>
+                                <hr style="font-weight: bold" />
+                                <p class="bjustcoin_token" style="font-weight: bold">
+                                    <span class="token_name">BJustCoin</span> | 
+                                    <span class="token_total">100 000 000</span> | 
+                                    <span class="token_count"></span>
+                                </p>
+                                <hr />
+                                <p class="strategic_token">
+                                    <span class="token_name">Strategic</span> | 
+                                    <span class="token_total">3 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="strategic_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="seed_token">
+                                    <span class="token_name">Seed</span> | 
+                                    <span class="token_total">300 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="seed_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="ido_token">
+                                    <span class="token_name">IDO</span> | 
+                                    <span class="token_total">14 700 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="ido_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="public_sale_token">
+                                    <span class="token_name">Public Sale</span> | 
+                                    <span class="token_total">20 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="public_sale_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="advisors_token">
+                                    <span class="token_name">Advisors</span> | 
+                                    <span class="token_total">1 500 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="advisors_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="team_token">
+                                    <span class="token_name">Team</span> | 
+                                    <span class="token_total">4 500 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="team_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="future_team_token">
+                                    <span class="token_name">Future Team</span> | 
+                                    <span class="token_total">5 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="future_team_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="incetives_token">
+                                    <span class="token_name">Incetives</span> | 
+                                    <span class="token_total">6 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="incetives_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="liquidity_token">
+                                    <span class="token_name">Liquidity</span> | 
+                                    <span class="token_total">20 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="liquidity_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+
+                                <hr /> 
+                                <p class="ecosystem_token">
+                                    <span class="token_name">Ecosystem</span> | 
+                                    <span class="token_total">10 000 000</span> | 
+                                    <span class="token_count"></span> 
+                                    <a class="ecosystem_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                <p class="loyalty_token">
+                                    <span class="token_name">Loyalty</span> | 
+                                    <span class="token_total">15 000 000</span> | 
+                                    <span class="token_count"></span>
+                                    <a class="loyalty_token_claim" style="cursor: pointer; text-decoration: underline; float: right">Claim</a>
+                                </p>
+                                <hr />
+                                
                             </div>
                         </div>
                     </div>
@@ -196,6 +285,6 @@
     </div>
 </section>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/assets/js/connect31.js"></script>
+<script type="text/javascript" src="/assets/js/connect32.js"></script>
 
 <% include!("../footer.stpl"); %>
