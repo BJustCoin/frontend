@@ -898,6 +898,9 @@ on('body', 'click', '.create_admin', function() {
 on('body', 'click', '.create_block', function() {
     post_id(this, "/block_user/");
 });
+on('body', 'click', '.delete_holder', function() {
+    post_id(this, "/delete_holder/");
+});
 on('body', 'click', '.create_admin_block', function() {
     post_id(this, "/create_admin_block/");
 });

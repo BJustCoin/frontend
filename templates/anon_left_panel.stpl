@@ -12,7 +12,7 @@
 				  </a>
 				  <ul class="treeview-menu">
 					<li>
-					  <a href="/admin_home/"><i class="ti-more"></i><span>Dashboard</span></a>
+					  <a href="/holders/"><i class="ti-more"></i><span>Holders</span></a>
 					</li>
 					<li>
 					  <a href="/support/"><i class="ti-more"></i><span>Support</span></a>

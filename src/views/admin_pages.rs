@@ -21,6 +21,7 @@ use crate::views::{AuthResp, AuthResp2};
 pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/admin_home/", web::get().to(admin_home_page));
     config.route("/users/", web::get().to(users_list_page));
+    config.route("/holders/", web::get().to(holders_page));
     config.route("/admins/", web::get().to(admins_list_page));
     config.route("/banned_users/", web::get().to(banned_users_list_page));
     config.route("/banned_admins/", web::get().to(banned_admins_list_page));
@@ -460,6 +461,72 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
     }
     else {
         crate::views::auth_page(session.clone()).await
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Holder {
+    pub id:      i32,
+    pub address: String,
+    pub count:   i16,
+    pub stage:   String,
+}
+#[derive(Debug, Deserialize, Serialize)]
+pub struct HolderRespData {
+    pub data: Vec<Holder>,
+    pub next: i64,
+}
+pub async fn holders_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
+    let page = crate::utils::get_page(&req);
+    let object_list: Vec<Holder>;
+    let next_page: i64;
+    let url = URL.to_string() + &"/get_holders/?page=".to_string() + &page.to_string();
+    let resp = crate::utils::request_get::<HolderRespData>(url, "".to_string()).await;
+    if resp.is_ok() { 
+        let data = resp.expect("E.");
+        (object_list, next_page) = (data.data, data.next);
+    }
+    else {
+        (object_list, next_page) = (Vec::new(), 0);
+    }
+    let mut list: Vec<Holder> = Vec::new();
+    for object in object_list.into_iter() {
+        list.push(object);
+    }
+
+    if is_signed_in(&session) { 
+        let _request_user = get_current_user(&session).expect("E.");
+
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/holders.stpl")]
+        struct Template {
+            request_user: AuthResp2,
+            object_list:  Vec<Holder>,
+            next_page:    i64,
+        }
+        let body = Template {
+            request_user: _request_user,
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "admin/anon_holders.stpl")]
+        struct Template {
+            object_list:  Vec<Holder>,
+            next_page:    i64,
+        }
+        let body = Template {
+            object_list:  list,
+            next_page:    next_page,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
 }
 pub async fn admins_list_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
