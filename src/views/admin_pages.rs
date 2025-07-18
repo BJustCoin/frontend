@@ -465,11 +465,12 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct Holder {
+pub struct Holder { 
     pub id:      i32,
     pub address: String,
     pub count:   i16,
     pub stage:   String,
+    pub count2:  String,
 }
 #[derive(Debug, Deserialize, Serialize)]
 pub struct HolderRespData {

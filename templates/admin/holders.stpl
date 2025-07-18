@@ -24,7 +24,7 @@
                                             <strong><%= object.address %></strong>
                                         </p>
                                         <p class="mb-0">
-                                            <%= object.count %>
+                                            <%= object.count2 %>
                                         </p>    
                                     </td>
                                     <td>
