@@ -22,17 +22,14 @@
                                     <td class="w-300">
                                         <p class="mb-0">
                                             <strong><%= object.address %></strong>
-                                        </p>
+                                        </p>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-300">
                                         <p class="mb-0">
                                             <%= object.count2 %>
                                         </p>    
-                                    </td>
-                                    <td>
-                                        <nav class="nav mt-2" data-pk="<%= object.id %>">
-                                            <a class="nav-link delete_holder" style="cursor: pointer">
-                                                    Delete
-                                            </a>
-                                        </nav> 
                                     </td>
                                 </tr>
                                 <% } %>
