@@ -887,11 +887,14 @@ function post_id(_this, url) {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      block.remove();
+      block.remove(); 
     }}
     link.send(json);
 };
 
+on('body', 'click', '.delete_holder', function() {
+    post_id(this, "/delete_holder/");
+});
 on('body', 'click', '.create_admin', function() {
     post_id(this, "/create_admin/");
 });

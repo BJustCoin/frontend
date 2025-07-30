@@ -71,6 +71,7 @@ pub fn admin_urls(config: &mut web::ServiceConfig) {
     config.route("/create_suggest_item/", web::post().to(create_suggest_item));
     config.route("/send_mail/", web::post().to(send_mail));
     config.route("/subscribe/", web::post().to(subscribe));
+    config.route("/delete_holder/", web::post().to(delete_holder));
 }
 
 
@@ -725,6 +726,28 @@ pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Resu
         }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/block_user/".to_string(),
+            &l_data, 
+            _request_user.uuid
+        ).await;
+
+        return match res {
+            Ok(user) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok")),
+            Err(_) => Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err")),
+        }
+    }
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("ok"))
+}
+pub async fn delete_holder(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
+    if is_signed_in(&session) {
+        let l_data = ItemId {
+            id: data.id,
+        };
+        let _request_user = get_current_user(&session).expect("E.");
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
+        let res = crate::utils::request_post::<ItemId, ()> (
+            URL.to_owned() + &"/delete_holder/".to_string(),
             &l_data, 
             _request_user.uuid
         ).await;
