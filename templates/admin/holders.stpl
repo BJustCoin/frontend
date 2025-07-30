@@ -13,9 +13,12 @@
                                 <tr>
                                     <th>Address</th>
                                     <th>Count</th>
+                                    <!--
                                     <% if request_user.perm == 60 { %>
                                         <th>Action</th>
                                     <% } %>
+                                    <th>Action</th>
+                                    -->
                                 </tr>
                             </thead>
                             <tbody class="is_paginate">
@@ -36,13 +39,20 @@
                                             <strong><%= object.count2 %></strong>
                                         </p>  
                                     </td>
+                                    <!--
                                     <% if request_user.perm == 60 { %>
                                         <td class="w-300">
+                                            <p class="mb-0" data-pk="<%= object.id %>">
+                                                <span style="cursor: pointer" class="delete_holder">delete</strong>
+                                            </p>  
+                                        </td>
+                                    <% } %>
+                                    -->
+                                    <td class="w-300">
                                         <p class="mb-0" data-pk="<%= object.id %>">
                                             <span style="cursor: pointer" class="delete_holder">delete</strong>
                                         </p>  
                                     </td>
-                                    <% } %>
                                 </tr> 
                                 <% } %>
                                 <% if next_page > 0 { %>
