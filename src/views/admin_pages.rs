@@ -740,9 +740,9 @@ pub async fn block_user(session: Session, data: Json<ItemId>) -> actix_web::Resu
 pub async fn delete_holder(session: Session, data: Json<ItemId>) -> actix_web::Result<HttpResponse> {
     if is_signed_in(&session) {
         let _request_user = get_current_user(&session).expect("E.");
-        //if _request_user.perm < 60 {
-        //    return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
-        //}
+        if _request_user.perm < 60 {
+            return Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("err"));
+        }
         let res = crate::utils::request_post::<ItemId, ()> (
             URL.to_owned() + &"/delete_holder/".to_string(),
             &data, 
