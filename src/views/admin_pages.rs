@@ -471,16 +471,12 @@ pub struct Holder {
     pub address: String,
     pub balance: f64,
 } 
-#[derive(Debug, Deserialize, Serialize)]
-pub struct HolderRespData {
-    pub data: Vec<Holder>,
-}
 pub async fn holders_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
     //let page = crate::utils::get_page(&req);
     let object_list: Vec<Holder>;
     //let next_page: i64;
     let url = "http://45.153.189.238:8080/AllAccountBalance/".to_string();
-    let resp = crate::utils::request_get::<HolderRespData>(url, "".to_string()).await;
+    let resp = crate::utils::request_get::<Vec<Holder>>(url, "".to_string()).await;
     if resp.is_ok() { 
         object_list = resp.expect("E.");
     }
