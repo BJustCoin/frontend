@@ -466,35 +466,31 @@ pub async fn users_list_page(req: HttpRequest, session: Session) -> actix_web::R
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct Holder { 
-    pub id:      i32,
+pub struct Holder {
+    #[serde(rename = "accountNumber")]
     pub address: String,
-    pub count:   i16,
-    pub stage:   String,
-    pub count2:  String,
-}
+    pub balance: f64,
+} 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct HolderRespData {
     pub data: Vec<Holder>,
-    pub next: i64,
 }
 pub async fn holders_page(req: HttpRequest, session: Session) -> actix_web::Result<HttpResponse> {
-    let page = crate::utils::get_page(&req);
+    //let page = crate::utils::get_page(&req);
     let object_list: Vec<Holder>;
-    let next_page: i64;
-    let url = URL.to_string() + &"/get_holders/?page=".to_string() + &page.to_string();
+    //let next_page: i64;
+    let url = "http://45.153.189.238:8080/AllAccountBalance/".to_string();
     let resp = crate::utils::request_get::<HolderRespData>(url, "".to_string()).await;
     if resp.is_ok() { 
-        let data = resp.expect("E.");
-        (object_list, next_page) = (data.data, data.next);
+        object_list = resp.expect("E.");
     }
     else {
-        (object_list, next_page) = (Vec::new(), 0);
+        object_list = Vec::new();
     }
-    let mut list: Vec<Holder> = Vec::new();
-    for object in object_list.into_iter() {
-        list.push(object);
-    }
+    //let mut list: Vec<Holder> = Vec::new();
+    //for object in object_list.into_iter() {
+    //    list.push(object);
+    //}
 
     if is_signed_in(&session) { 
         let _request_user = get_current_user(&session).expect("E.");
@@ -504,12 +500,10 @@ pub async fn holders_page(req: HttpRequest, session: Session) -> actix_web::Resu
         struct Template {
             request_user: AuthResp2,
             object_list:  Vec<Holder>,
-            next_page:    i64,
         }
         let body = Template {
             request_user: _request_user,
-            object_list:  list,
-            next_page:    next_page,
+            object_list:  object_list,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -520,11 +514,9 @@ pub async fn holders_page(req: HttpRequest, session: Session) -> actix_web::Resu
         #[template(path = "admin/anon_holders.stpl")]
         struct Template {
             object_list:  Vec<Holder>,
-            next_page:    i64,
         }
         let body = Template {
-            object_list:  list,
-            next_page:    next_page,
+            object_list:  object_list,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

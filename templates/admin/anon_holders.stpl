@@ -11,8 +11,8 @@
                         <table id="example5" class="table table-hover">
                             <thead class="">
                                 <tr>
-                                    <th>Address</th>
-                                    <th>Count</th>
+                                    <th>Wallet Address</th>
+                                    <th>Balance</th>
                                 </tr>
                             </thead>
                             <tbody class="is_paginate">
@@ -25,21 +25,12 @@
                                     </td>
                                     <td class="w-300">
                                         <p class="mb-0">
-                                            <strong><%= object.count2 %></strong>
+                                            <strong><%= object.balance %></strong>
                                         </p>  
                                     </td>
                                 </tr>
                                 <% } %> 
-                                <% if next_page > 0 { %>
-                                <tr class="w-300 load centered m-1 next_page_list" data-link="/holders/?page=<%= next_page %>">
-                                    <td>
-                                        <img src="/assets/images/preloader.gif">
-                                    </td>
-                                    <td>
-                                        <img src="/assets/images/preloader.gif">
-                                    </td>
-                                </tr>
-                                <% } %>
+                                
                             </tbody>
                         </table>
                     </div>
